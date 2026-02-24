@@ -39,64 +39,63 @@ export default async function HomePage({
 
   return (
     <>
-      {/* Hero Section - Compact & Layered */}
-      <section className="relative min-h-[48vh] lg:min-h-[55vh] flex items-center overflow-hidden bg-accent pt-12 pb-6">
-        {/* Floating Decorative Characters */}
-        <FloatingCharacter type="bubble" position="top-left" delay={0} opacity={0.4} scale={0.8} />
-        <FloatingCharacter type="star" position="top-right" delay={0.5} opacity={0.35} scale={0.7} />
-        <FloatingCharacter type="shape" position="bottom-left" delay={1} opacity={0.3} scale={0.6} />
+      {/* Hero Section - Professional & Spacious */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-accent pt-20">
+        {/* Decorative Background Elements */}
+        <div className="absolute top-0 right-0 w-1/3 h-full opacity-[0.08] pointer-events-none">
+          <Image src="/images/Whisk_3da4c60c2d295d7b7ee45f21d2e0efe6dr.png" alt="" fill className="object-cover" />
+        </div>
 
-        {/* Soft Glows */}
-        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-white/10 rounded-full blur-[120px]" />
-        <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px]" />
-
-        <div className="relative mx-auto max-w-[1600px] px-6 lg:px-12 z-10 w-full">
-          <div className="grid gap-10 lg:grid-cols-2 items-center lg:gap-16">
-
-            {/* LEFT SIDE */}
-            <div className="relative">
-
-              {/* Soft Premium Glow */}
-              <div className="absolute -left-16 top-10 w-80 h-80 bg-white/10 blur-3xl rounded-full pointer-events-none"></div>
-
-              <div className="space-y-7 text-left max-w-xl relative z-10 animate-fadeUp">
-
-                {/* Top Line */}
-                <p className="text-sm tracking-[0.25em] uppercase text-white/70 font-semibold">
-                  International Early Learning
+        <div className="relative container-wide z-10 w-full">
+          <div className="grid gap-12 lg:grid-cols-2 items-center">
+            {/* LEFT SIDE - Text Content */}
+            <div className="space-y-8 animate-fadeUp">
+              <div className="space-y-6">
+                <p className="text-sm tracking-widest uppercase font-semibold text-primary/70">
+                  International Early Learning Platform
                 </p>
 
-                {/* Headline */}
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.15] text-white tracking-tight">
-                  Shaping the
-                  <span className="relative block w-fit mb-4">
-                    Future
-                    {/* Clean underline */}
-                    <span className="absolute -bottom-3 left-0 h-[8px] w-full bg-white/25 rounded-full animate-grow"></span>
-                  </span>
-                  <span className="block text-white/75 font-semibold">
-                    of Early Education
-                  </span>
+                <h1 className="heading-primary text-white">
+                  Shaping the Future of Early Education
                 </h1>
 
-                {/* Description */}
-                <p className="text-base md:text-lg text-white/80 leading-relaxed max-w-lg">
-                  A global network of kindergartens built on innovation, warmth, and proven educational excellence — empowering the next generation with confidence.
+                <p className="text-lg text-white/80 leading-relaxed max-w-lg">
+                  A global network of programs built on innovation, warmth, and proven educational excellence — empowering children and families with confidence and joy.
                 </p>
+              </div>
 
-                {/* Single CTA */}
-                <div className="pt-4">
-                  <Link
-                    href={`/${lang}/parents`}
-                    className="group inline-flex items-center gap-2 rounded-full bg-white text-primary px-7 py-3 text-sm font-semibold shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-                  >
-                    Explore Programs
-                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
-                </div>
-
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-6">
+                <Link
+                  href={`/${lang}/parents`}
+                  className="btn-primary bg-white text-primary hover:bg-white/90 shadow-lg"
+                >
+                  For Parents
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+                <Link
+                  href={`/${lang}/educators`}
+                  className="btn-outline border-white text-white hover:bg-white/10"
+                >
+                  For Educators
+                </Link>
               </div>
             </div>
+
+            {/* RIGHT SIDE - Hero Images */}
+            <div className="relative hidden lg:block animate-slideInRight">
+              <div className="relative h-[500px]">
+                <Image
+                  src="/images/7.png"
+                  alt="Happy children learning"
+                  fill
+                  className="object-contain animate-float"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
 
 
@@ -160,14 +159,18 @@ export default async function HomePage({
           <WaveDivider color="white" />
         </div>
       </section>      {/* Pathways / Discovery - Audience Cards */}
-      <section className="bg-white py-16 lg:py-24">
-        <div className="mx-auto max-w-[1600px] px-4 lg:px-8">
-          <div className="grid gap-8 md:grid-cols-3">
+      <section className="section-white section-spacing">
+        <div className="container-wide">
+          <div className="mb-16 text-center animate-fadeUp">
+            <h2 className="heading-secondary mb-4">Find Your Path</h2>
+            <p className="text-body max-w-2xl mx-auto">Choose the program that best fits your needs and join the HiKids family</p>
+          </div>
 
+          <div className="grid gap-8 md:grid-cols-3">
             {/* Franchise Pathway – businessman */}
             <Link
               href={`/${lang}/franchise`}
-              className="group relative rounded-[3rem] bg-primary overflow-hidden min-h-[380px] flex flex-col justify-end transition-all hover:shadow-2xl hover:-translate-y-3 duration-500 hover:animate-glow-pulse"
+              className="group pathway-card bg-primary"
             >
               {/* Photo */}
               <div className="absolute bottom-0 right-0 w-[75%] h-[90%] z-0">
@@ -200,7 +203,7 @@ export default async function HomePage({
             {/* Educators Pathway */}
             <Link
               href={`/${lang}/educators`}
-              className="group relative rounded-[3rem] bg-accent overflow-hidden min-h-[380px] flex flex-col justify-end transition-all hover:shadow-2xl hover:-translate-y-3 duration-500"
+              className="group pathway-card bg-accent"
             >
               {/* Photo */}
               <div className="absolute bottom-0 right-[-4%] w-[85%] h-[88%] z-0">
@@ -233,7 +236,7 @@ export default async function HomePage({
             {/* Parents Pathway */}
             <Link
               href={`/${lang}/parents`}
-              className="group relative rounded-[3rem] bg-secondary overflow-hidden min-h-[380px] flex flex-col justify-end transition-all hover:shadow-2xl hover:-translate-y-3 duration-500"
+              className="group pathway-card bg-secondary"
             >
               {/* Photo */}
               <div className="absolute bottom-0 right-[-2%] w-[90%] h-[85%] z-0">
@@ -266,30 +269,19 @@ export default async function HomePage({
           </div>
         </div>
       </section>      {/* Brand Story / What is HiKids */}
-      <section className="py-20 lg:py-28 relative overflow-hidden bg-white">
-        {/* Floating Characters */}
-        <FloatingCharacter type="shape" position="top-right" delay={0.3} opacity={0.25} scale={1.2} />
-        <FloatingCharacter type="bubble" position="bottom-left" delay={0.8} opacity={0.2} scale={0.9} />
-
-        <div className="absolute -right-20 top-0 opacity-10 hidden xl:block pointer-events-none animate-float-slow">
-          <Image src="/images/Whisk_3da4c60c2d295d7b7ee45f21d2e0efe6dr.png" alt="" width={500} height={500} />
-        </div>
-
-        <div className="mx-auto max-w-[1600px] px-4 lg:px-8 relative z-10 text-center">
-          <SectionHeader title={t.whatIs.title} subtitle={t.whatIs.subtitle} />
-
-          <div className="mx-auto max-w-5xl text-center mb-16 animate-fade-in-up">
-            <p className="text-2xl font-medium text-muted-foreground leading-relaxed text-pretty">
+      <section className="section-white section-spacing">
+        <div className="container-wide">
+          <div className="text-center mb-20 animate-fadeUp">
+            <p className="text-sm tracking-widest uppercase font-semibold text-primary/70 mb-4">
+              {t.whatIs.subtitle}
+            </p>
+            <h2 className="heading-secondary mb-8">{t.whatIs.title}</h2>
+            <p className="text-body max-w-3xl mx-auto">
               {t.whatIs.description}
             </p>
-            {/* Franchise network mention
-            <div className="mt-8 inline-flex items-center gap-3 rounded-2xl bg-primary/5 px-6 py-3 text-primary font-bold">
-              <Globe className="h-5 w-5" />
-              Part of an International Franchise Network
-            </div> */}
           </div>
 
-          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mt-16">
             {t.whatIs.levels.map((level, i) => {
               const patternImages = [
                 "/images/6.png", // Blue
@@ -297,17 +289,16 @@ export default async function HomePage({
                 "/images/3.png", // Yellow
                 "/images/9.png", // Alternative Yellow/Blue
               ];
+              const colors = [
+                "bg-blue-50 border-primary/20 hover:bg-primary/5",
+                "bg-amber-50 border-accent/20 hover:bg-accent/5",
+                "bg-green-50 border-secondary/20 hover:bg-secondary/5",
+                "bg-blue-50 border-primary/20 hover:bg-primary/5",
+              ];
               return (
                 <div
                   key={level.name}
-                  className={`group relative rounded-[3rem] border-2 p-10 transition-all hover:shadow-3xl hover:-translate-y-3 duration-500 overflow-hidden ${i === 0
-                    ? "bg-primary/5 border-primary/20 hover:bg-primary/10"
-                    : i === 1
-                      ? "bg-accent/10 border-accent/30 hover:bg-accent/20"
-                      : i === 2
-                        ? "bg-secondary/5 border-secondary/20 hover:bg-secondary/10"
-                        : "bg-primary/5 border-primary/20 hover:bg-primary/10"
-                    }`}
+                  className={`feature-card ${colors[i % colors.length]}`}
                 >
                   {/* <div className="absolute -right-6 -top-6 opacity-5 group-hover:opacity-10 transition-opacity"> */}
 
