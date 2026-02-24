@@ -393,7 +393,7 @@
 
   /* Card styles */
   .feature-card {
-    @apply bg-white rounded-2xl p-8 md:p-10 border border-border/20 shadow-soft hover:shadow-lg-soft transition-all duration-400 hover:-translate-y-1;
+    @apply bg-white rounded-2xl p-8 md:p-10 border border-border/20 shadow-soft hover:shadow-lg-soft transition-all duration-300 hover:-translate-y-1;
   }
 
   .pathway-card {
