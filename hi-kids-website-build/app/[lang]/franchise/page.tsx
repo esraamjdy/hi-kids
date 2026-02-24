@@ -16,9 +16,6 @@ import {
 import { getDictionary } from "@/lib/dictionaries";
 import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
-import { SectionHeader } from "@/components/section-header";
-import { WaveDivider } from "@/components/wave-divider";
-import { FloatingCharacter } from "@/components/floating-character";
 
 export const metadata: Metadata = {
   title: "Franchise Opportunity | HiKids Global",
@@ -36,48 +33,59 @@ export default async function FranchisePage({
 
   return (
     <>
-      {/* Hero - Business Focused yet Playful */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-b from-primary/20 via-background to-background pt-20">
-        {/* Floating Characters */}
-        <FloatingCharacter type="bubble" position="top-right" delay={0.2} opacity={0.3} scale={0.9} />
-        <FloatingCharacter type="star" position="bottom-left" delay={0.8} opacity={0.25} scale={0.8} />
-
-        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="absolute -right-20 top-0 h-[600px] w-[600px] rounded-full bg-primary/10 blur-[120px]" />
-          <div className="absolute -left-20 bottom-0 h-[500px] w-[500px] rounded-full bg-accent/10 blur-[100px]" />
-
-          {/* Decorative Mascot */}
-          <div className="absolute -right-20 bottom-20 hidden xl:block opacity-20 rotate-[-15deg] animate-float-slow">
-            <Image src="/images/8.png" alt="" width={600} height={600} className="object-contain" />
-          </div>
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-primary pt-20">
+        <div className="absolute top-0 right-0 w-1/3 h-full opacity-[0.05] pointer-events-none">
+          <Image src="/images/patterns.png" alt="" fill className="object-cover" />
         </div>
 
-        <div className="relative mx-auto max-w-[1600px] px-4 py-20 lg:px-8 z-10 w-full">
-          <div className="grid gap-16 lg:grid-cols-2 items-center">
-            <div className="text-left animate-fade-in-up">
-              <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-primary/20 bg-white/50 px-5 py-2 text-sm font-black text-primary shadow-soft backdrop-blur-md uppercase tracking-widest">
-                <ShieldCheck className="h-4 w-4" />
-                Partner with the Leaders
+        <div className="relative container-wide z-10 w-full">
+          <div className="grid gap-12 lg:grid-cols-2 items-center">
+            <div className="space-y-8 animate-fadeUp">
+              <div className="space-y-6">
+                <p className="text-sm tracking-widest uppercase font-semibold text-white/70">
+                  Business Opportunity
+                </p>
+
+                <h1 className="heading-primary text-white">
+                  {t.landing.title}
+                </h1>
+
+                <p className="text-lg text-white/80 leading-relaxed max-w-lg">
+                  {t.landing.subtitle}
+                </p>
               </div>
 
-              <h1 className="text-5xl font-black tracking-tight text-foreground md:text-6xl lg:text-8xl text-balance leading-[1.1]">
-                {t.landing.title.split(' ').map((word, i) => (
-                  <span key={i} className={i >= 2 ? "text-primary" : ""}>{word} </span>
-                ))}
-              </h1>
-
-              <p className="mt-10 text-2xl text-muted-foreground leading-relaxed text-pretty font-medium max-w-xl">
-                {t.landing.subtitle}
-              </p>
-
-              <div className="mt-12 flex flex-wrap items-center gap-6">
+              <div className="flex flex-col sm:flex-row gap-4 pt-6">
                 <Link
                   href={`/${lang}/franchise/inquiry`}
-                  className="group inline-flex items-center gap-3 rounded-2xl bg-primary px-10 py-5 text-xl font-black text-primary-foreground shadow-2xl shadow-primary/20 transition-all hover:bg-primary/90 hover:-translate-y-1 hover:shadow-primary/40"
+                  className="btn-primary bg-white text-primary hover:bg-white/90 shadow-lg"
                 >
                   {t.landing.cta}
-                  <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
+                <Link
+                  href={`/${lang}/franchise/details`}
+                  className="btn-outline border-white text-white hover:bg-white/10"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </div>
+
+            <div className="relative hidden lg:block animate-slideInRight">
+              <div className="relative h-[500px]">
+                <Image
+                  src="/images/businessman.png"
+                  alt="Business opportunity with HiKids"
+                  fill
+                  className="object-contain animate-float"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
                 <Link
                   href={`/${lang}/franchise/why-join`}
                   className="inline-flex items-center gap-3 rounded-2xl border-2 border-border bg-white px-10 py-5 text-xl font-black text-foreground shadow-soft transition-all hover:border-primary/30 hover:bg-muted hover:-translate-y-1"

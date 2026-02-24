@@ -6,9 +6,6 @@ import { getDictionary } from "@/lib/dictionaries";
 import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 import { CtaCard } from "@/components/cta-card";
-import { WaveDivider } from "@/components/wave-divider";
-import { SectionHeader } from "@/components/section-header";
-import { FloatingCharacter } from "@/components/floating-character";
 
 export const metadata: Metadata = {
   title: "A Bright Future for Your Child | HiKids Parents",
@@ -34,121 +31,131 @@ export default async function ParentsPage({
 
   return (
     <>
-      {/* Hero - Warm & Emotional */}
-      <section className="relative min-h-[75vh] flex items-center overflow-hidden bg-gradient-to-b from-accent/20 via-background to-background pt-20">
-        {/* Floating Characters */}
-        <FloatingCharacter type="bubble" position="top-left" delay={0.2} opacity={0.3} scale={0.85} />
-        <FloatingCharacter type="star" position="bottom-right" delay={0.9} opacity={0.25} scale={0.75} />
-
-        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="absolute -right-20 top-1/2 -translate-y-1/2 opacity-20 hidden lg:block translate-x-1/4">
-            <Image src="/images/7.png" alt="" width={500} height={500} className="object-contain" />
-          </div>
-          <div className="absolute left-[5%] bottom-[15%] h-64 w-64 bg-primary/10 rounded-full blur-[100px] animate-float" />
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-accent pt-20">
+        <div className="absolute top-0 right-0 w-1/3 h-full opacity-[0.05] pointer-events-none">
+          <Image src="/images/patterns.png" alt="" fill className="object-cover" />
         </div>
 
-        <div className="relative mx-auto max-w-[1600px] px-4 py-20 lg:px-8 z-10 w-full">
-          <div className="grid gap-16 lg:grid-cols-2 items-center">
-            <div className="text-left animate-fade-in-up">
-              <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-accent/30 bg-white/50 px-5 py-2 text-sm font-black text-foreground shadow-soft backdrop-blur-md uppercase tracking-widest">
-                <Heart className="h-4 w-4 text-hikids-yellow fill-current" />
-                Trusted by Families Worldwide
+        <div className="relative container-wide z-10 w-full">
+          <div className="grid gap-12 lg:grid-cols-2 items-center">
+            <div className="space-y-8 animate-fadeUp">
+              <div className="space-y-6">
+                <p className="text-sm tracking-widest uppercase font-semibold text-primary/70">
+                  For Parents & Families
+                </p>
+
+                <h1 className="heading-primary text-white">
+                  {t.title}
+                </h1>
+
+                <p className="text-lg text-white/80 leading-relaxed max-w-lg">
+                  {t.subtitle}
+                </p>
               </div>
-              <h1 className="text-5xl font-black tracking-tight text-foreground md:text-6xl lg:text-8xl text-balance leading-[1.1]">
-                {t.title}
-              </h1>
-              <p className="mt-10 text-2xl text-muted-foreground font-medium leading-relaxed text-pretty max-w-xl">
-                {t.subtitle}
-              </p>
-              <div className="mt-12 flex flex-wrap gap-4">
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-6">
                 <Link
                   href={`/${lang}/parents/find-kindergarten`}
-                  className="inline-flex items-center gap-3 rounded-[2rem] bg-primary px-10 py-5 text-lg font-black text-white shadow-xl shadow-primary/20 hover:bg-primary/90 hover:-translate-y-1 transition-all"
+                  className="btn-primary bg-white text-primary hover:bg-white/90 shadow-lg"
                 >
                   Find a Center
-                  <MapPin className="h-5 w-5" />
+                  <MapPin className="ml-2 h-4 w-4" />
+                </Link>
+                <Link
+                  href={`/${lang}/parents/why-choose`}
+                  className="btn-outline border-white text-white hover:bg-white/10"
+                >
+                  Learn More
                 </Link>
               </div>
             </div>
 
-            <div className="relative h-[600px] hidden lg:block animate-scale-in">
-              <Image
-                src="/images/8.png"
-                alt="HiKids for Parents"
-                fill
-                className="object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)] scale-110"
-                priority
-              />
+            <div className="relative hidden lg:block animate-slideInRight">
+              <div className="relative h-[500px]">
+                <Image
+                  src="/images/7.png"
+                  alt="Happy families with HiKids"
+                  fill
+                  className="object-contain animate-float"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Feature Paths */}
-      <section className="py-24 lg:py-40 bg-white relative overflow-hidden">
-        <div className="absolute -left-10 bottom-20 opacity-10 rotate-12 hidden xl:block animate-float-slow">
-          <Image src="/images/4.png" alt="" width={350} height={350} />
-        </div>
+      {/* Features Section */}
+      <section className="section-white section-spacing">
+        <div className="container-wide">
+          <div className="text-center mb-20 animate-fadeUp">
+            <p className="text-sm tracking-widest uppercase font-semibold text-primary/70 mb-4">
+              Discover
+            </p>
+            <h2 className="heading-secondary mb-8">Everything You Need</h2>
+            <p className="text-body max-w-2xl mx-auto">
+              Support your child's journey with resources, guidance, and a community of parents
+            </p>
+          </div>
 
-        <div className="mx-auto max-w-[1600px] px-4 lg:px-8 relative z-10">
-          <SectionHeader
-            title="Explore Your Options"
-            subtitle="Everything you need to support your child's journey at HiKids."
-          />
-
-          <div className="mt-24 grid gap-10 md:grid-cols-2">
+          <div className="grid gap-8 md:grid-cols-2">
             {t.features.map((feature, i) => {
               const Icon = icons[i];
               return (
-                <div key={feature.title} className="group relative">
-                  <CtaCard
-                    title={feature.title}
-                    description={feature.description}
-                    href={hrefs[i]}
-                    cta={feature.cta}
-                    icon={<Icon className="h-8 w-8" />}
-                    variant={i % 2 === 0 ? "accent" : "default"}
-                    className="h-full p-12 hover:-translate-y-2 transition-all duration-500 shadow-soft"
-                  />
-                  <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                    <Icon className="h-24 w-24" />
+                <Link
+                  key={feature.title}
+                  href={hrefs[i]}
+                  className="feature-card group p-10 hover:shadow-lg-soft"
+                >
+                  <div className="flex items-start gap-6">
+                    <div className={`p-4 rounded-2xl ${i % 2 === 0 ? 'bg-primary/10' : 'bg-accent/10'}`}>
+                      <Icon className={`h-8 w-8 ${i % 2 === 0 ? 'text-primary' : 'text-accent'}`} />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="heading-tertiary mb-2">{feature.title}</h3>
+                      <p className="text-body mb-4">{feature.description}</p>
+                      <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
+                        {feature.cta}
+                        <ArrowRight className="h-4 w-4" />
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* Global CTA */}
-      <section className="py-32 lg:py-48 relative overflow-hidden bg-accent/20">
-        <div className="absolute inset-0 pointer-events-none opacity-30">
-          <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,white_0%,transparent_70%)]" />
-        </div>
+      {/* Final CTA Section */}
+      <section className="section-white section-spacing">
+        <div className="container-wide">
+          <div className="rounded-3xl bg-gradient-to-br from-primary via-primary to-primary/90 p-12 md:p-16 lg:p-20 overflow-hidden relative">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -mr-32 -mt-32" />
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -ml-32 -mb-32" />
 
-        <div className="mx-auto max-w-5xl px-4 text-center lg:px-8 relative z-10">
-          <div className="animate-fade-in-up">
-            <div className="mb-10 inline-flex h-24 w-24 items-center justify-center rounded-[3rem] bg-white shadow-2xl scale-125">
-              <Sparkles className="h-10 w-10 text-hikids-yellow fill-current" />
+            <div className="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-semibold text-white">
+                <Heart className="h-4 w-4 text-accent fill-current" />
+                Find Your Perfect Match
+              </div>
+
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                Your Child Deserves the Best Start
+              </h2>
+
+              <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-10">
+                Find a HiKids center near you and discover the difference our progressive learning approach makes.
+              </p>
+
+              <Link
+                href={`/${lang}/parents/find-kindergarten`}
+                className="btn-primary bg-white text-primary hover:bg-white/90"
+              >
+                Find a Center Near You
+                <MapPin className="ml-2 h-4 w-4" />
+              </Link>
             </div>
-            <h2 className="text-5xl font-black text-foreground md:text-7xl mb-12 tracking-tight leading-[1.1]">
-              Your Child Deserves the Best Start
-            </h2>
-            <p className="mx-auto max-w-2xl text-2xl text-muted-foreground leading-relaxed font-medium mb-16">
-              Find a HiKids kindergarten near you and see the difference our progressive learning approach makes.
-            </p>
-            <Link
-              href={`/${lang}/parents/find-kindergarten`}
-              className="inline-flex items-center gap-5 rounded-[2rem] bg-foreground px-12 py-7 text-2xl font-black text-background shadow-2xl transition-all hover:bg-foreground/90 hover:-translate-y-2 hover:shadow-black/20"
-            >
-              Get Started Today
-              <ArrowRight className="h-8 w-8" />
-            </Link>
-          </div>
-
-          {/* Decorative Mascot */}
-          <div className="absolute bottom-0 right-[-10%] opacity-15 hidden xl:block animate-float">
-            <Image src="/images/Whisk_61d9a24bbad8193df45fec5f308801d0dr.png" alt="" width={450} height={450} />
           </div>
         </div>
       </section>

@@ -23,8 +23,8 @@ export function Header({ locale, dict }: HeaderProps) {
   const isInSection = (section: string) => pathname.startsWith(`/${locale}/${section}`);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-primary shadow-lg transition-all duration-300 hover:shadow-xl">
-      <div className="mx-auto flex h-24 max-w-[1600px] items-center justify-between px-4 lg:px-8">
+    <header className="sticky top-0 z-50 w-full bg-primary shadow-soft transition-all duration-300 hover:shadow-medium">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link
           href={`/${locale}`}
@@ -43,12 +43,12 @@ export function Header({ locale, dict }: HeaderProps) {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-2 lg:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
           <Link
             href={`/${locale}`}
-            className={`rounded-2xl px-5 py-2.5 text-sm font-black uppercase tracking-widest transition-all ${pathname === `/${locale}`
+            className={`rounded-lg px-4 py-2 text-sm font-semibold transition-all ${pathname === `/${locale}`
               ? "text-white bg-white/20"
-              : "text-white/90 hover:text-white hover:bg-white/10"
+              : "text-white/80 hover:text-white hover:bg-white/10"
               }`}
           >
             {t.nav.home}
@@ -56,9 +56,9 @@ export function Header({ locale, dict }: HeaderProps) {
 
           <Link
             href={`/${locale}/about`}
-            className={`rounded-2xl px-5 py-2.5 text-sm font-black uppercase tracking-widest transition-all ${isActive(`/${locale}/about`)
+            className={`rounded-lg px-4 py-2 text-sm font-semibold transition-all ${isActive(`/${locale}/about`)
               ? "text-white bg-white/20"
-              : "text-white/90 hover:text-white hover:bg-white/10"
+              : "text-white/80 hover:text-white hover:bg-white/10"
               }`}
           >
             {t.nav.about}
@@ -66,9 +66,9 @@ export function Header({ locale, dict }: HeaderProps) {
 
           <Link
             href={`/${locale}/franchise`}
-            className={`rounded-2xl px-5 py-2.5 text-sm font-black uppercase tracking-widest transition-all ${isInSection("franchise")
+            className={`rounded-lg px-4 py-2 text-sm font-semibold transition-all ${isInSection("franchise")
               ? "text-white bg-white/20"
-              : "text-white/90 hover:text-white hover:bg-white/10"
+              : "text-white/80 hover:text-white hover:bg-white/10"
               }`}
           >
             {t.nav.franchise}
@@ -76,9 +76,9 @@ export function Header({ locale, dict }: HeaderProps) {
 
           <Link
             href={`/${locale}/educators`}
-            className={`rounded-2xl px-5 py-2.5 text-sm font-black uppercase tracking-widest transition-all ${isInSection("educators")
+            className={`rounded-lg px-4 py-2 text-sm font-semibold transition-all ${isInSection("educators")
               ? "text-white bg-white/20"
-              : "text-white/90 hover:text-white hover:bg-white/10"
+              : "text-white/80 hover:text-white hover:bg-white/10"
               }`}
           >
             {t.nav.educators}
@@ -86,9 +86,9 @@ export function Header({ locale, dict }: HeaderProps) {
 
           <Link
             href={`/${locale}/parents`}
-            className={`rounded-2xl px-5 py-2.5 text-sm font-black uppercase tracking-widest transition-all ${isInSection("parents")
+            className={`rounded-lg px-4 py-2 text-sm font-semibold transition-all ${isInSection("parents")
               ? "text-white bg-white/20"
-              : "text-white/90 hover:text-white hover:bg-white/10"
+              : "text-white/80 hover:text-white hover:bg-white/10"
               }`}
           >
             {t.nav.parents}
@@ -96,9 +96,9 @@ export function Header({ locale, dict }: HeaderProps) {
 
           <Link
             href={`/${locale}/contact`}
-            className={`rounded-2xl px-5 py-2.5 text-sm font-black uppercase tracking-widest transition-all ${isActive(`/${locale}/contact`)
+            className={`rounded-lg px-4 py-2 text-sm font-semibold transition-all ${isActive(`/${locale}/contact`)
               ? "text-white bg-white/20"
-              : "text-white/90 hover:text-white hover:bg-white/10"
+              : "text-white/80 hover:text-white hover:bg-white/10"
               }`}
           >
             {t.nav.contact}
@@ -110,7 +110,7 @@ export function Header({ locale, dict }: HeaderProps) {
           <LanguageSwitcher locale={locale} />
           <Link
             href={`/${locale}/contact`}
-            className="hidden rounded-full bg-secondary px-8 py-3.5 text-sm font-black uppercase tracking-widest text-white shadow-xl shadow-green-900/10 transition-all hover:bg-secondary/90 hover:-translate-y-0.5 lg:inline-flex"
+            className="hidden rounded-full bg-secondary px-8 py-2.5 text-sm font-semibold text-white shadow-soft hover:bg-secondary/90 hover:shadow-medium transition-all lg:inline-flex"
           >
             {t.cta.contactUs}
           </Link>

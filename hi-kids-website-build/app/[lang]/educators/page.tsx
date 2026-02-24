@@ -6,9 +6,6 @@ import { getDictionary } from "@/lib/dictionaries";
 import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 import { CtaCard } from "@/components/cta-card";
-import { WaveDivider } from "@/components/wave-divider";
-import { SectionHeader } from "@/components/section-header";
-import { FloatingCharacter } from "@/components/floating-character";
 
 export const metadata: Metadata = {
   title: "Empowering Educators | HiKids Global",
@@ -34,66 +31,99 @@ export default async function EducatorsPage({
 
   return (
     <>
-      {/* Hero - Inspiring & Professional */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-b from-primary/10 via-background to-background pt-20">
-        {/* Floating Characters */}
-        <FloatingCharacter type="star" position="top-left" delay={0.3} opacity={0.3} scale={0.8} />
-        <FloatingCharacter type="shape" position="bottom-right" delay={1} opacity={0.25} scale={0.75} />
-
-        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="absolute -right-20 top-1/2 -translate-y-1/2 opacity-20 hidden lg:block translate-x-1/4">
-            <Image src="/images/Whisk_ba46783577f5efb8588459e8166e51a2dr.png" alt="" width={600} height={600} className="object-contain" />
-          </div>
-          <div className="absolute left-[5%] top-40 h-80 w-80 bg-secondary/10 rounded-full blur-[120px] animate-float" />
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-primary pt-20">
+        <div className="absolute top-0 right-0 w-1/3 h-full opacity-[0.05] pointer-events-none">
+          <Image src="/images/patterns.png" alt="" fill className="object-cover" />
         </div>
 
-        <div className="relative mx-auto max-w-[1600px] px-4 py-20 lg:px-8 z-10 w-full text-center">
-          <div className="mx-auto max-w-4xl animate-fade-in-up">
-            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-primary/20 bg-white/50 px-5 py-2 text-sm font-black text-primary shadow-soft backdrop-blur-md uppercase tracking-widest">
-              <GraduationCap className="h-4 w-4" />
-              Empowering the Next Generation
+        <div className="relative container-wide z-10 w-full">
+          <div className="grid gap-12 lg:grid-cols-2 items-center">
+            <div className="space-y-8 animate-fadeUp">
+              <div className="space-y-6">
+                <p className="text-sm tracking-widest uppercase font-semibold text-white/70">
+                  For Educators & Institutions
+                </p>
+
+                <h1 className="heading-primary text-white">
+                  {t.title}
+                </h1>
+
+                <p className="text-lg text-white/80 leading-relaxed max-w-lg">
+                  {t.subtitle}
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-6">
+                <Link
+                  href={`/${lang}/educators/materials`}
+                  className="btn-primary bg-white text-primary hover:bg-white/90 shadow-lg"
+                >
+                  Explore Resources
+                  <BookOpen className="ml-2 h-4 w-4" />
+                </Link>
+                <Link
+                  href={`/${lang}/educators/certification`}
+                  className="btn-outline border-white text-white hover:bg-white/10"
+                >
+                  Get Certified
+                </Link>
+              </div>
             </div>
-            <h1 className="text-5xl font-black tracking-tight text-foreground md:text-6xl lg:text-8xl text-balance leading-[1.1]">
-              {t.title}
-            </h1>
-            <p className="mt-10 text-2xl text-muted-foreground font-medium leading-relaxed text-pretty max-w-3xl mx-auto">
-              {t.subtitle}
-            </p>
+
+            <div className="relative hidden lg:block animate-slideInRight">
+              <div className="relative h-[500px]">
+                <Image
+                  src="/images/educators.png"
+                  alt="Educators with HiKids"
+                  fill
+                  className="object-contain animate-float"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Pathways */}
-      <section className="py-24 lg:py-40 bg-white relative overflow-hidden">
-        <div className="absolute left-10 bottom-20 opacity-10 hidden xl:block -rotate-12 animate-float-slow">
-          <Image src="/images/2.png" alt="" width={400} height={400} />
-        </div>
+      {/* Features Section */}
+      <section className="section-white section-spacing">
+        <div className="container-wide">
+          <div className="text-center mb-20 animate-fadeUp">
+            <p className="text-sm tracking-widest uppercase font-semibold text-primary/70 mb-4">
+              Professional Development
+            </p>
+            <h2 className="heading-secondary mb-8">Your Professional Journey</h2>
+            <p className="text-body max-w-2xl mx-auto">
+              Access the tools, methods, and certifications you need to excel as a HiKids educator
+            </p>
+          </div>
 
-        <div className="mx-auto max-w-[1600px] px-4 lg:px-8 relative z-10">
-          <SectionHeader
-            title="Your Professional Journey"
-            subtitle="Access the tools, methods, and certifications you need to excel as a HiKids educator."
-          />
-
-          <div className="mt-24 grid gap-10 md:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-3">
             {t.features.map((feature, i) => {
               const Icon = icons[i];
+              const colorVariants = [
+                { bg: "bg-primary/10", text: "text-primary" },
+                { bg: "bg-accent/10", text: "text-accent" },
+                { bg: "bg-secondary/10", text: "text-secondary" },
+              ];
+              const variant = colorVariants[i % colorVariants.length];
+              
               return (
-                <div key={feature.title} className="group relative">
-                  <CtaCard
-                    title={feature.title}
-                    description={feature.description}
-                    href={hrefs[i]}
-                    cta={feature.cta}
-                    icon={<Icon className="h-8 w-8" />}
-                    variant={i === 1 ? "accent" : i === 2 ? "secondary" : "default"}
-                    className="h-full p-12 hover:-translate-y-3 transition-transform duration-500"
-                  />
-                  {/* Decorative number */}
-                  <div className="absolute -top-6 -right-6 h-12 w-12 rounded-full bg-white shadow-xl border border-border flex items-center justify-center text-lg font-black text-muted-foreground/30 group-hover:text-primary transition-colors">
-                    0{i + 1}
+                <Link
+                  key={feature.title}
+                  href={hrefs[i]}
+                  className="feature-card"
+                >
+                  <div className={`p-4 rounded-2xl ${variant.bg} mb-6 inline-block`}>
+                    <Icon className={`h-8 w-8 ${variant.text}`} />
                   </div>
-                </div>
+                  <h3 className="heading-tertiary mb-3">{feature.title}</h3>
+                  <p className="text-body mb-6">{feature.description}</p>
+                  <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
+                    {feature.cta}
+                    <ArrowRight className="h-4 w-4" />
+                  </div>
+                </Link>
               );
             })}
           </div>

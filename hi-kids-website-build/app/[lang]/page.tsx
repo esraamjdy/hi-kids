@@ -17,9 +17,6 @@ import {
 import { getDictionary } from "@/lib/dictionaries";
 import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
-import { SectionHeader } from "@/components/section-header";
-import { WaveDivider } from "@/components/wave-divider";
-import { FloatingCharacter } from "@/components/floating-character";
 import {
   LEVEL_COLORS,
   LEVEL_ICONS,
@@ -97,68 +94,7 @@ export default async function HomePage({
         </div>
       </section>
 
-
-
-
-            {/* RIGHT SIDE VISUAL – exact reference composition */}
-            <div className="relative w-full flex items-center justify-center lg:justify-end">
-
-              {/* Container للصور بدون خلفية */}
-              <div className="relative w-[480px] h-[440px] lg:w-[580px] lg:h-[520px] xl:w-[650px] xl:h-[580px] overflow-visible">
-
-                {/* LAYER 1: patterns (الأشكال الخضراء في الخلفية أعلى اليمين) */}
-                <div className="absolute top-4 right-4 w-[55%] h-[64%] z-0 opacity-90">
-                  <Image
-                    src="/images/patterns.png"
-                    alt="background patterns"
-                    fill
-                    className="object-contain object-right-top"
-                  />
-                </div>
-
-                {/* LAYER 2: hi.png (البطريق) - خلف الولد، مائل لليسار، ومكانه يسار المنتصف */}
-                <div className="absolute top-[-5%] left-[-7%] w-[82%] h-[102%] z-10 -rotate-[28deg] animate-float">
-                  <Image
-                    src="/images/hi.png"
-                    alt="HiKids mascot"
-                    fill
-                    className="object-contain object-bottom drop-shadow-lg scale-x-[-1]"
-                  />
-                </div>
-
-                {/* LAYER 3: boy.png (الولد) - العنصر الأكبر، في المنتصف لليمين قليلاً وفي الواجهة */}
-                <div className="absolute bottom-[8%] right-[-5%] w-[105%] h-[180%] z-20">
-                  <Image
-                    src="/images/boy.png"
-                    alt="Student reading"
-                    fill
-                    className="object-contain object-bottom drop-shadow-[0_25px_50px_rgba(0,0,0,0.15)]"
-                    priority
-                  />
-                </div>
-
-                {/* LAYER 4: shape.png (المربع الأخضر) - في المقدمة تماماً، بجانب الولد ومغطي جزء بسيط من البطريق */}
-                <div className="absolute bottom-[8%] left-[7%] w-[22%] h-[38%] z-[5] drop-shadow-xl">
-                  <Image
-                    src="/images/shape.png"
-                    alt="shape accent"
-                    fill
-                    className="object-contain "
-                  />
-                </div>
-
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-
-        {/* Bottom Wave - White rising curve */}
-        <div className="absolute -bottom-[1px] left-0 w-full leading-none">
-          <WaveDivider color="white" />
-        </div>
-      </section>      {/* Pathways / Discovery - Audience Cards */}
+      {/* Pathways / Discovery - Audience Cards */}
       <section className="section-white section-spacing">
         <div className="container-wide">
           <div className="mb-16 text-center animate-fadeUp">
@@ -351,18 +287,16 @@ export default async function HomePage({
 
 
       {/* Why HiKids is Different */}
-      <section className="py-20 lg:py-28 relative overflow-hidden bg-gradient-to-b from-white/50 to-white">
-        {/* Floating Characters */}
-        <FloatingCharacter type="star" position="top-left" delay={0.4} opacity={0.25} scale={0.8} />
-        <FloatingCharacter type="shape" position="bottom-right" delay={1.2} opacity={0.2} scale={0.7} />
+      <section className="section-white section-spacing">
+        <div className="container-wide">
+          <div className="text-center mb-20 animate-fadeUp">
+            <p className="text-sm tracking-widest uppercase font-semibold text-primary/70 mb-4">
+              {t.whyDifferent.subtitle}
+            </p>
+            <h2 className="heading-secondary mb-8">{t.whyDifferent.title}</h2>
+          </div>
 
-        <div className="mx-auto max-w-[1600px] px-4 lg:px-8">
-          <SectionHeader
-            title={t.whyDifferent.title}
-            subtitle={t.whyDifferent.subtitle}
-          />
-
-          <div className="mt-24 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {t.whyDifferent.features.map((feature, i) => {
               const Icon = differentIcons[i];
               const accentColors = [
@@ -373,7 +307,7 @@ export default async function HomePage({
               ];
               const textAccent = [
                 "text-primary",
-                "text-[hsl(51,100%,40%)]",
+                "text-accent",
                 "text-secondary",
                 "text-primary",
               ];
@@ -381,24 +315,18 @@ export default async function HomePage({
               return (
                 <div
                   key={feature.title}
-                  className="group relative rounded-[2.5rem] bg-white border border-border/40 p-10 transition-all duration-500 text-center shadow-lg hover:shadow-2xl hover:-translate-y-4 overflow-hidden hover:scale-105"
+                  className="feature-card text-center"
                 >
-                  <div className={`absolute top-0 left-0 w-full h-3 ${accentColors[i]}`} />
-                  <div className="absolute top-6 right-6 w-24 h-24 opacity-5 pointer-events-none grayscale brightness-0">
-                    <Image src="/images/patterns.png" alt="" fill className="object-contain" />
+                  <div className={`mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl ${accentColors[i]} text-white shadow-lg group-hover:scale-110 transition-transform duration-500`}>
+                    <Icon className="h-10 w-10" />
                   </div>
-                  <div className="absolute -bottom-6 -left-6 w-32 h-32 opacity-0 group-hover:opacity-[0.04] transition-opacity duration-700 pointer-events-none rotate-12">
-                    <Image src="/images/hi.png" alt="" fill className="object-contain grayscale brightness-0" />
-                  </div>
-                  <div className={`mx-auto mb-8 flex h-24 w-24 items-center justify-center rounded-3xl ${accentColors[i]} text-white shadow-xl group-hover:scale-110 transition-transform duration-500`}>
-                    <Icon className="h-12 w-12" />
-                  </div>
-                  <h3 className={`mb-4 text-2xl font-black transition-colors ${textAccent[i]}`}>
+                  <h3 className={`mb-3 text-xl font-bold transition-colors ${textAccent[i]}`}>
                     {feature.title}
                   </h3>
-                  <p className="text-lg leading-relaxed font-medium text-muted-foreground">
+                  <p className="text-body">
                     {feature.description}
                   </p>
+                  <div className={`mt-6 h-1 w-12 rounded-full mx-auto group-hover:w-full transition-all duration-700 ${accentColors[i]}`} />
                 </div>
               );
             })}
@@ -410,47 +338,35 @@ export default async function HomePage({
 
 
 
-      {/* Trust / Final Action Banner - Simplified */}
-      {/* Premium CTA */}
-      <section className="bg-white py-24 lg:py-32 relative overflow-hidden">
-        {/* Floating Characters for visual interest */}
-        <FloatingCharacter type="bubble" position="top-left" delay={0.2} opacity={0.2} scale={0.75} />
-        <FloatingCharacter type="star" position="top-right" delay={0.7} opacity={0.22} scale={0.8} />
-        <FloatingCharacter type="shape" position="bottom-right" delay={1.3} opacity={0.18} scale={0.65} />
+      {/* Final CTA Section */}
+      <section className="section-white section-spacing">
+        <div className="container-wide">
+          <div className="rounded-3xl bg-gradient-to-br from-primary via-primary to-primary/90 p-12 md:p-16 lg:p-20 overflow-hidden relative">
+            {/* Background accent */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -mr-32 -mt-32" />
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -ml-32 -mb-32" />
 
-        {/* Background Decorative - subtle brand identity */}
-        <div className="absolute top-0 right-0 w-[40%] h-full opacity-[0.03] pointer-events-none">
-          <Image src="/images/patterns.png" alt="" fill className="object-contain" />
-        </div>
-        {/* Premium Content Box */}
-        <div className="mx-auto max-w-[1400px] px-6 relative z-10">
-          <div className="relative overflow-hidden rounded-[4rem] bg-primary p-12 lg:p-24 shadow-[0_50px_100px_-20px_rgba(0,10,100,0.3)]">
-            <div className="absolute -right-20 -bottom-20 w-96 h-96 opacity-10 rotate-12 pointer-events-none">
-              <Image src="/images/hi.png" alt="" fill className="object-contain brightness-0 invert" />
-            </div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-br from-white/10 to-transparent opacity-50" />
-
-            <div className="relative z-20 flex flex-col items-center text-center max-w-4xl mx-auto">
-              <div className="mb-8 inline-flex items-center gap-3 rounded-full bg-white/15 px-6 py-2 text-sm font-black text-white uppercase tracking-widest backdrop-blur-md">
+            <div className="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-semibold text-white">
                 <Sparkles className="h-4 w-4 text-accent" />
-                Join Our Global Network
+                Ready to join us?
               </div>
 
-              <h2 className="text-4xl md:text-6xl font-black text-white text-balance tracking-tight leading-[1.1]">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
                 {dict.common.tagline}
               </h2>
 
-              <p className="mt-8 text-xl md:text-2xl text-white/80 font-medium max-w-2xl leading-relaxed">
+              <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-10">
                 Empower your journey with HiKids. Whether you are a parent, educator, or business owner—we are here for you.
               </p>
 
-              <div className="mt-12 flex flex-wrap justify-center gap-6">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href={`/${lang}/franchise/inquiry`}
-                  className="group inline-flex items-center gap-4 rounded-full bg-white px-10 py-5 text-xl font-black text-primary transition-all hover:scale-105 hover:shadow-2xl active:scale-95"
+                  className="btn-primary bg-white text-primary hover:bg-white/90"
                 >
                   {dict.common.cta.getStarted}
-                  <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
                 <Link
                   href={`/${lang}/contact`}

@@ -8,9 +8,6 @@ import {
 import { getDictionary } from "@/lib/dictionaries";
 import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
-import { SectionHeader } from "@/components/section-header";
-import { WaveDivider } from "@/components/wave-divider";
-import { FloatingCharacter } from "@/components/floating-character";
 
 export const metadata: Metadata = {
   title: "About HiKids | Progressive Early Childhood Education",
@@ -27,48 +24,25 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
   return (
     <div className="bg-white overflow-hidden selection:bg-hikids-blue/20">
 
-      {/* ================= HERO: CREATIVE & PROFESSIONAL ================= */}
-      {/* ================= HERO: PREMIUM CREATIVE ================= */}
-      {/* ================= HERO: MATCHED WITH HOME RHYTHM ================= */}
-      <section className="relative min-h-[60vh] lg:min-h-[70vh] flex items-center pt-28 pb-20 overflow-hidden bg-accent">
-        {/* Floating Characters */}
-        <FloatingCharacter type="bubble" position="top-right" delay={0.3} opacity={0.35} scale={0.85} />
-        <FloatingCharacter type="shape" position="bottom-left" delay={1.1} opacity={0.3} scale={0.7} />
-
-        {/* Soft Premium Glows to match Home */}
-        <div className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-white/10 rounded-full blur-[120px]" />
-        <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px]" />
-
-        {/* Dynamic Canvas Particles */}
-        <div className="absolute top-[20%] left-[5%] w-10 h-10 opacity-10 animate-float-slow">
-          <Rocket className="text-white" />
-        </div>
-        <div className="absolute bottom-[20%] right-[10%] w-12 h-12 opacity-10 animate-sway">
-          <Sparkles className="text-white" />
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-accent pt-20">
+        <div className="absolute top-0 right-0 w-1/3 h-full opacity-[0.08] pointer-events-none">
+          <Image src="/images/patterns.png" alt="" fill className="object-cover" />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-            {/* TEXT SIDE: White Typography on Yellow */}
-            <div className="space-y-10 animate-fadeUp">
-              <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 rounded-full border border-white/10">
-                <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-                <span className="text-[11px] font-black text-white uppercase tracking-[0.25em]">
-                  The Future of Learning
-                </span>
-              </div>
-
+        <div className="relative container-wide z-10 w-full">
+          <div className="grid gap-12 lg:grid-cols-2 items-center">
+            <div className="space-y-8 animate-fadeUp">
               <div className="space-y-6">
-                <h1 className="text-6xl md:text-7xl font-black text-white leading-[0.95] tracking-tight">
-                  Shaping the <br />
-                  <span className="relative inline-block w-fit">
-                    Next Genius
-                    {/* Consistent white underline */}
-                    <span className="absolute -bottom-3 left-0 h-[8px] w-full bg-white/30 rounded-full animate-grow"></span>
-                  </span>
+                <p className="text-sm tracking-widest uppercase font-semibold text-primary/70">
+                  Our Story
+                </p>
+
+                <h1 className="heading-primary text-white">
+                  Shaping the Future of Early Education
                 </h1>
-                <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-lg font-medium">
+
+                <p className="text-lg text-white/80 leading-relaxed max-w-lg">
                   We bridge the gap between global standards and individual curiosity, preparing children for a world of unlimited potential.
                 </p>
               </div>

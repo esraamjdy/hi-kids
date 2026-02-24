@@ -14,9 +14,9 @@ export function Footer({ locale, dict }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#08090A] text-white pt-24 pb-12 border-t border-white/5">
-      <div className="mx-auto max-w-[1400px] px-6">
-        <div className="grid gap-16 md:grid-cols-2 lg:grid-cols-4 mb-20 text-center md:text-left">
+    <footer className="bg-foreground text-white pt-20 pb-10 border-t border-white/5">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4 mb-16 text-center md:text-left">
           {/* Column 1: Brand */}
           <div className="flex flex-col items-center md:items-start">
             <Link href={`/${locale}`} className="relative h-12 w-32 mb-8">
@@ -36,7 +36,7 @@ export function Footer({ locale, dict }: FooterProps) {
 
           {/* Column 2: Navigation */}
           <div>
-            <h4 className="text-sm font-black uppercase tracking-[0.2em] text-primary mb-8">Quick Navigation</h4>
+            <h4 className="text-sm font-bold uppercase tracking-wide text-primary mb-6">Navigation</h4>
             <ul className="space-y-4">
               {[
                 { href: `/${locale}/about`, label: t.nav.about },
@@ -55,7 +55,7 @@ export function Footer({ locale, dict }: FooterProps) {
 
           {/* Column 3: Contact */}
           <div>
-            <h4 className="text-sm font-black uppercase tracking-[0.2em] text-secondary mb-8">Contact Us</h4>
+            <h4 className="text-sm font-bold uppercase tracking-wide text-secondary mb-6">Contact</h4>
             <ul className="space-y-6">
               <li className="flex flex-col gap-1">
                 <span className="text-[10px] uppercase tracking-widest text-white/20 font-black">Email</span>
