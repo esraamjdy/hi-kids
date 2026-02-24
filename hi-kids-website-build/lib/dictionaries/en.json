@@ -1,0 +1,688 @@
+{
+  "common": {
+    "brand": "HiKids",
+    "tagline": "Shaping the Future of Early Education",
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "franchise": "Franchise",
+      "educators": "Educators",
+      "parents": "Parents",
+      "contact": "Contact",
+      "franchiseItems": {
+        "overview": "Overview",
+        "whyJoin": "Why Join HiKids",
+        "whatYouGet": "What You Get",
+        "model": "Franchise Model",
+        "inquiry": "Inquiry Form",
+        "brochure": "Download Brochure"
+      },
+      "educatorItems": {
+        "overview": "Overview",
+        "materials": "Free Materials",
+        "method": "Teaching Method",
+        "certification": "Certification"
+      },
+      "parentItems": {
+        "overview": "Overview",
+        "findKindergarten": "Find a Kindergarten",
+        "learningLevels": "Learning Levels",
+        "whyChoose": "Why Choose HiKids",
+        "app": "HiKids App"
+      }
+    },
+    "cta": {
+      "learnMore": "Learn More",
+      "getStarted": "Get Started",
+      "contactUs": "Contact Us",
+      "downloadBrochure": "Download Brochure",
+      "applyNow": "Apply Now",
+      "findKindergarten": "Find a Kindergarten",
+      "forBusinessOwners": "For Business Owners",
+      "forEducators": "For Educators",
+      "forParents": "For Parents"
+    },
+    "footer": {
+      "about": "About HiKids",
+      "aboutText": "HiKids is a modern kindergarten franchise bringing structured, progressive early education to communities worldwide.",
+      "quickLinks": "Quick Links",
+      "contactInfo": "Contact Info",
+      "email": "hello@hikids.com",
+      "phone": "+1 (555) 123-4567",
+      "address": "123 Education Lane, Learning City",
+      "followUs": "Follow Us",
+      "rights": "All rights reserved.",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "languages": {
+      "en": "English",
+      "fr": "French",
+      "it": "Italian",
+      "pl": "Polish"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Shaping the Future of Early Education",
+      "subtitle": "HiKids brings a structured, progressive approach to kindergarten learning -- empowering children, educators, and communities around the world.",
+      "ctaFranchise": "For Business Owners",
+      "ctaEducators": "For Educators",
+      "ctaParents": "For Parents"
+    },
+    "whatIs": {
+      "title": "What is HiKids?",
+      "subtitle": "A modern educational franchise built on progressive learning levels, designed to nurture every child's potential from their earliest years.",
+      "description": "HiKids combines structured curriculum with creative, play-based learning. Our method guides children through progressive developmental levels, ensuring each milestone is celebrated and built upon.",
+      "levels": [
+        {
+          "name": "Explorers",
+          "age": "Ages 2-3",
+          "description": "Sensory discovery, basic social skills, and language foundations through guided play."
+        },
+        {
+          "name": "Discoverers",
+          "age": "Ages 3-4",
+          "description": "Creative expression, early numeracy, and collaborative learning adventures."
+        },
+        {
+          "name": "Innovators",
+          "age": "Ages 4-5",
+          "description": "Critical thinking, problem-solving, and pre-literacy skills for school readiness."
+        },
+        {
+          "name": "Leaders",
+          "age": "Ages 5-6",
+          "description": "Independence, advanced communication, and social-emotional leadership development."
+        }
+      ]
+    },
+    "whyDifferent": {
+      "title": "Why HiKids is Different",
+      "subtitle": "We combine the best of modern early education with a proven franchise model.",
+      "features": [
+        {
+          "title": "Structured Levels",
+          "description": "Four progressive learning stages ensure every child develops at the right pace with clear milestones."
+        },
+        {
+          "title": "Modern Method",
+          "description": "Our curriculum blends Montessori-inspired independence with structured, evidence-based learning outcomes."
+        },
+        {
+          "title": "Brand Strength",
+          "description": "A recognizable, trusted brand with consistent quality across all locations worldwide."
+        },
+        {
+          "title": "Teacher Support",
+          "description": "Comprehensive training, materials, and ongoing professional development for every educator."
+        }
+      ]
+    },
+    "audiences": {
+      "title": "How Can We Help You?",
+      "subtitle": "HiKids serves three communities. Find the path that's right for you.",
+      "franchise": {
+        "title": "Business Owners",
+        "description": "Open a HiKids kindergarten in your community. Access our proven model, brand, and complete support system.",
+        "cta": "Explore Franchise"
+      },
+      "educators": {
+        "title": "Educators",
+        "description": "Access free materials, teaching methods, and professional certification to elevate your early education practice.",
+        "cta": "Educator Resources"
+      },
+      "parents": {
+        "title": "Parents",
+        "description": "Find a HiKids kindergarten near you, explore our learning levels, and stay connected through our app.",
+        "cta": "Parent Resources"
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About HiKids",
+      "subtitle": "Dedicated to providing the highest quality early education through innovation, care, and community."
+    },
+    "story": {
+      "title": "Our Story",
+      "subtitle": "A Legacy of Learning & Love",
+      "description": "HiKids was born from a vision to revolutionize early childhood education. What started as a single innovative center has grown into a global family of kindergartens, united by a belief that every child deserves a brilliant start. Our journey is one of continuous discovery, driven by the smiles of our children and the trust of our parents.",
+      "achievements": [
+        {
+          "label": "Years of Excellence",
+          "value": "12+"
+        },
+        {
+          "label": "Global Locations",
+          "value": "50+"
+        },
+        {
+          "label": "Happy Children",
+          "value": "10,000+"
+        },
+        {
+          "label": "Certified Educators",
+          "value": "500+"
+        }
+      ]
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "To make world-class early education accessible to every child by empowering local entrepreneurs and educators with a proven, structured, and joyful learning system."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "A world where every child has access to nurturing, progressive early education that celebrates their unique potential and prepares them for lifelong learning."
+    },
+    "method": {
+      "title": "The HiKids Method",
+      "subtitle": "Our proprietary educational approach combines the best of modern pedagogy.",
+      "pillars": [
+        {
+          "title": "Play-Based Learning",
+          "description": "Children learn best through guided play experiences that stimulate curiosity and creativity."
+        },
+        {
+          "title": "Progressive Milestones",
+          "description": "Clear developmental goals for each age group, with regular assessments and celebrations."
+        },
+        {
+          "title": "Emotional Intelligence",
+          "description": "Social-emotional skills are woven into every activity, building empathy and self-awareness."
+        },
+        {
+          "title": "Parent Partnership",
+          "description": "Regular communication and involvement keeps families connected to their child's learning journey."
+        }
+      ]
+    },
+    "philosophy": {
+      "title": "Educational Philosophy",
+      "description": "We believe every child is born with incredible potential. Our role is to create safe, stimulating environments where that potential can flourish. The HiKids philosophy centers on respect for the child, structured exploration, and the joy of discovery.",
+      "principles": [
+        "Every child learns at their own pace",
+        "Play is the language of childhood",
+        "Safety and trust are the foundation",
+        "Teachers are guides, not gatekeepers",
+        "Families are essential partners"
+      ]
+    },
+    "levels": {
+      "title": "Progressive Levels System",
+      "subtitle": "Our four-stage developmental journey ensures every child is supported and challenged appropriately."
+    },
+    "founder": {
+      "title": "Meet the Founder",
+      "name": "Dr. Sarah Miller",
+      "role": "Founder & Visionary",
+      "description": "With over 20 years of experience in early childhood development, Dr. Sarah Miller founded HiKids to bridge the gap between academic rigor and the pure joy of play. Her innovative approach has set new standards for early education worldwide.",
+      "quote": "Our goal isn't just to teach kids facts, but to nurture a life-long love for learning and discovery."
+    },
+    "moka": {
+      "title": "Meet Moka",
+      "subtitle": "Your Learning Companion",
+      "description": "Moka is the heart and soul of the HiKids family. As our friendly mascot, Moka accompanies children through every level, making learning an adventure filled with curiosity and kindness.",
+      "traits": [
+        {
+          "title": "Inquisitive",
+          "description": "Always exploring new ideas and asking 'why'."
+        },
+        {
+          "title": "Empathetic",
+          "description": "Showing kindness and understanding to every friend."
+        },
+        {
+          "title": "Courageous",
+          "description": "Facing new challenges with a smile and a positive heart."
+        }
+      ]
+    }
+  },
+  "franchise": {
+    "landing": {
+      "title": "Open a HiKids Kindergarten",
+      "subtitle": "Join a growing network of passionate entrepreneurs bringing world-class early education to their communities.",
+      "cta": "Start Your Journey",
+      "stats": [
+        {
+          "value": "50+",
+          "label": "Locations"
+        },
+        {
+          "value": "12",
+          "label": "Countries"
+        },
+        {
+          "value": "10K+",
+          "label": "Children Served"
+        },
+        {
+          "value": "95%",
+          "label": "Partner Satisfaction"
+        }
+      ]
+    },
+    "whyJoin": {
+      "title": "Why Join HiKids",
+      "subtitle": "A franchise opportunity built for impact and growth.",
+      "features": [
+        {
+          "title": "Growing Market",
+          "description": "The global early education market is expanding rapidly. Parents increasingly seek structured, quality kindergarten programs for their children."
+        },
+        {
+          "title": "Competitive Advantage",
+          "description": "Our progressive learning levels, branded materials, and app integration set HiKids apart from traditional kindergartens."
+        },
+        {
+          "title": "Structured System",
+          "description": "From curriculum to marketing, everything is systematized. You don't need education experience to succeed with HiKids."
+        },
+        {
+          "title": "Brand Recognition",
+          "description": "Benefit from a professionally built brand with consistent messaging, visual identity, and market positioning."
+        }
+      ]
+    },
+    "whatYouGet": {
+      "title": "What You Get",
+      "subtitle": "Everything you need to launch and run a successful HiKids kindergarten.",
+      "items": [
+        {
+          "title": "License & Territory",
+          "description": "Exclusive territory rights and full licensing to operate under the HiKids brand."
+        },
+        {
+          "title": "Educational Framework",
+          "description": "Complete curriculum for all four progressive learning levels, including lesson plans and assessment tools."
+        },
+        {
+          "title": "Teacher Materials",
+          "description": "Ready-to-use classroom materials, activity kits, and digital resources for educators."
+        },
+        {
+          "title": "Marketing Support",
+          "description": "Brand guidelines, marketing templates, social media assets, and launch campaign support."
+        },
+        {
+          "title": "Training Program",
+          "description": "Comprehensive training for franchise owners and their teaching staff, with ongoing professional development."
+        },
+        {
+          "title": "Technology Platform",
+          "description": "Access to the HiKids app for parent communication, progress tracking, and digital learning resources."
+        }
+      ]
+    },
+    "model": {
+      "title": "Franchise Model",
+      "subtitle": "A clear path from interest to opening day and beyond.",
+      "steps": [
+        {
+          "title": "Initial Inquiry",
+          "description": "Submit your application and have an introductory call with our franchise development team."
+        },
+        {
+          "title": "Discovery & Approval",
+          "description": "Learn about the model in depth, review territories, and receive formal approval to proceed."
+        },
+        {
+          "title": "Agreement & Training",
+          "description": "Sign your franchise agreement and begin comprehensive owner and staff training."
+        },
+        {
+          "title": "Setup & Launch",
+          "description": "Prepare your facility, hire staff, and launch with full marketing and operational support."
+        },
+        {
+          "title": "Ongoing Growth",
+          "description": "Receive continuous support, curriculum updates, and business development guidance."
+        }
+      ],
+      "investment": {
+        "title": "Investment Overview",
+        "description": "Our franchise model is designed to be accessible with a clear return path. Contact us for detailed financial information tailored to your market.",
+        "cta": "Request Financial Details"
+      }
+    },
+    "inquiry": {
+      "title": "Franchise Inquiry",
+      "subtitle": "Ready to bring HiKids to your community? Fill out the form below and our team will be in touch.",
+      "form": {
+        "name": "Full Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "country": "Country",
+        "message": "Tell us about yourself and your interest in HiKids",
+        "submit": "Submit Inquiry",
+        "success": "Thank you for your inquiry! Our team will contact you within 2 business days.",
+        "error": "Something went wrong. Please try again or email us directly."
+      },
+      "countries": [
+        "United States",
+        "United Kingdom",
+        "France",
+        "Germany",
+        "Italy",
+        "Poland",
+        "Spain",
+        "Netherlands",
+        "Belgium",
+        "Switzerland",
+        "Austria",
+        "Canada",
+        "Australia",
+        "Other"
+      ]
+    },
+    "brochure": {
+      "title": "Download Our Franchise Brochure",
+      "subtitle": "Get a comprehensive overview of the HiKids franchise opportunity in one convenient document.",
+      "description": "Our brochure covers the HiKids method, franchise model, investment overview, and partner testimonials. No form required -- just click and download.",
+      "cta": "Download Brochure (PDF)",
+      "note": "Free download. No registration required."
+    }
+  },
+  "educators": {
+    "landing": {
+      "title": "For Educators",
+      "subtitle": "Access free materials, proven teaching methods, and professional certification to elevate your early education practice.",
+      "features": [
+        {
+          "title": "Free Materials",
+          "description": "Download activity sheets, lesson structures, and classroom resources at no cost.",
+          "cta": "Browse Materials"
+        },
+        {
+          "title": "Teaching Method",
+          "description": "Learn about the HiKids approach to progressive, play-based early education.",
+          "cta": "Explore Method"
+        },
+        {
+          "title": "Certification",
+          "description": "Get certified in the HiKids method and stand out as a qualified early educator.",
+          "cta": "Get Certified"
+        }
+      ]
+    },
+    "materials": {
+      "title": "Free Educational Materials",
+      "subtitle": "High-quality resources to enhance your classroom, completely free.",
+      "items": [
+        {
+          "title": "Activity Sheets: Explorers Level",
+          "description": "Sensory and motor skill activities for ages 2-3.",
+          "type": "PDF"
+        },
+        {
+          "title": "Activity Sheets: Discoverers Level",
+          "description": "Creative expression and early numeracy activities for ages 3-4.",
+          "type": "PDF"
+        },
+        {
+          "title": "Lesson Plan Template",
+          "description": "A structured weekly lesson plan template following the HiKids method.",
+          "type": "PDF"
+        },
+        {
+          "title": "Classroom Setup Guide",
+          "description": "How to organize your classroom for progressive learning levels.",
+          "type": "PDF"
+        },
+        {
+          "title": "Parent Communication Kit",
+          "description": "Templates for progress reports, newsletters, and parent meetings.",
+          "type": "PDF"
+        },
+        {
+          "title": "Assessment Toolkit",
+          "description": "Developmental milestone checklists and observation forms.",
+          "type": "PDF"
+        }
+      ]
+    },
+    "method": {
+      "title": "The HiKids Teaching Method",
+      "subtitle": "A comprehensive approach to early education that brings out the best in every child.",
+      "overview": "The HiKids method integrates structured curriculum with child-led exploration. Teachers act as facilitators, guiding children through carefully designed activities that build skills progressively across four developmental levels.",
+      "sections": [
+        {
+          "title": "Framework Overview",
+          "description": "Our curriculum is organized into thematic units that span all four learning levels. Each unit includes hands-on activities, group exercises, and individual exploration time."
+        },
+        {
+          "title": "Classroom Structure",
+          "description": "A typical HiKids day includes circle time, guided activities, free play, outdoor exploration, and reflection. The balance between structure and freedom is key to our approach."
+        },
+        {
+          "title": "Assessment Approach",
+          "description": "We use observation-based assessment rather than testing. Teachers document children's progress through portfolios, milestone checklists, and regular parent conferences."
+        },
+        {
+          "title": "Inclusive Practice",
+          "description": "The HiKids method is designed to be adaptable for children with diverse learning needs. Differentiation strategies are built into every lesson plan."
+        }
+      ]
+    },
+    "certification": {
+      "title": "HiKids Educator Certification",
+      "subtitle": "Become a certified HiKids educator and gain recognition for your commitment to quality early education.",
+      "description": "Our certification program covers the full HiKids method, including progressive learning levels, assessment techniques, and classroom management. Upon completion, you receive a digital certificate and access to our educator community.",
+      "benefits": [
+        "Comprehensive training in the HiKids method",
+        "Digital certificate upon completion",
+        "Access to exclusive educator community",
+        "Ongoing professional development resources",
+        "Priority consideration for HiKids positions"
+      ],
+      "cta": "Request Certification Information",
+      "success": "Thank you! We've sent the certification program details to your email.",
+      "emailPlaceholder": "Enter your email address"
+    }
+  },
+  "parents": {
+    "landing": {
+      "title": "For Parents",
+      "subtitle": "Everything you need to support your child's learning journey with HiKids.",
+      "features": [
+        {
+          "title": "Find a Kindergarten",
+          "description": "Locate a HiKids kindergarten near you with our interactive map.",
+          "cta": "Find Nearby"
+        },
+        {
+          "title": "Learning Levels",
+          "description": "Understand the four progressive stages your child will experience.",
+          "cta": "View Levels"
+        },
+        {
+          "title": "Why Choose HiKids",
+          "description": "Discover what makes HiKids the right choice for your family.",
+          "cta": "Learn Why"
+        },
+        {
+          "title": "HiKids App",
+          "description": "Stay connected to your child's progress with our mobile app.",
+          "cta": "Get the App"
+        }
+      ]
+    },
+    "findKindergarten": {
+      "title": "Find a HiKids Kindergarten",
+      "subtitle": "Use the map below to find a HiKids location near you.",
+      "branches": [
+        {
+          "name": "HiKids London Central",
+          "address": "42 Kensington Road, London, UK",
+          "phone": "+44 20 7123 4567",
+          "lat": 51.5074,
+          "lng": -0.1278
+        },
+        {
+          "name": "HiKids Paris Marais",
+          "address": "15 Rue des Rosiers, Paris, France",
+          "phone": "+33 1 42 72 1234",
+          "lat": 48.8566,
+          "lng": 2.3522
+        },
+        {
+          "name": "HiKids Warsaw Mokotow",
+          "address": "88 Pulawska Street, Warsaw, Poland",
+          "phone": "+48 22 123 4567",
+          "lat": 52.2297,
+          "lng": 21.0122
+        },
+        {
+          "name": "HiKids Milan Centro",
+          "address": "27 Via Torino, Milan, Italy",
+          "phone": "+39 02 1234 5678",
+          "lat": 45.4642,
+          "lng": 9.1900
+        },
+        {
+          "name": "HiKids Berlin Mitte",
+          "address": "5 Friedrichstrasse, Berlin, Germany",
+          "phone": "+49 30 1234 5678",
+          "lat": 52.5200,
+          "lng": 13.4050
+        }
+      ]
+    },
+    "learningLevels": {
+      "title": "Our Learning Levels",
+      "subtitle": "A progressive journey designed to meet your child where they are and take them where they can go.",
+      "levels": [
+        {
+          "name": "Explorers",
+          "age": "Ages 2-3",
+          "focus": "Sensory Discovery",
+          "description": "Your child begins their learning journey through sensory play, basic social interactions, and language foundations. Every day is an adventure of discovery.",
+          "skills": [
+            "Fine motor development",
+            "Language foundations",
+            "Social awareness",
+            "Sensory exploration"
+          ]
+        },
+        {
+          "name": "Discoverers",
+          "age": "Ages 3-4",
+          "focus": "Creative Expression",
+          "description": "Children expand their world through creative arts, early numeracy, and collaborative play. They learn to express themselves and work with others.",
+          "skills": [
+            "Creative expression",
+            "Early numeracy",
+            "Collaborative play",
+            "Emotional regulation"
+          ]
+        },
+        {
+          "name": "Innovators",
+          "age": "Ages 4-5",
+          "focus": "Critical Thinking",
+          "description": "Problem-solving, pre-literacy, and scientific thinking take center stage. Children learn to ask questions, test ideas, and think independently.",
+          "skills": [
+            "Pre-literacy skills",
+            "Problem-solving",
+            "Scientific thinking",
+            "Independence"
+          ]
+        },
+        {
+          "name": "Leaders",
+          "age": "Ages 5-6",
+          "focus": "School Readiness",
+          "description": "The final stage prepares children for primary school with advanced communication, leadership skills, and a love for learning.",
+          "skills": [
+            "Advanced literacy",
+            "Mathematical thinking",
+            "Leadership skills",
+            "School transition readiness"
+          ]
+        }
+      ]
+    },
+    "whyChoose": {
+      "title": "Why Choose HiKids",
+      "subtitle": "Your child's safety, happiness, and development are at the heart of everything we do.",
+      "sections": [
+        {
+          "title": "Proven Educational Method",
+          "description": "Our progressive learning levels are backed by modern pedagogy and designed by early education experts. Every activity has a developmental purpose."
+        },
+        {
+          "title": "Safety First",
+          "description": "All HiKids locations maintain the highest safety standards, including certified staff, secure facilities, and comprehensive health protocols."
+        },
+        {
+          "title": "Emotional Development",
+          "description": "We prioritize social-emotional learning because we know that happy, confident children are better learners. Empathy, self-regulation, and resilience are core to our approach."
+        },
+        {
+          "title": "Parent Partnership",
+          "description": "Stay connected through our app, regular progress reports, and parent-teacher conferences. You're always part of your child's learning journey."
+        },
+        {
+          "title": "Qualified Educators",
+          "description": "Every HiKids teacher is trained and certified in our method, ensuring consistent quality across all locations."
+        },
+        {
+          "title": "International Standards",
+          "description": "Whether in London, Warsaw, or Milan, your child receives the same high-quality HiKids experience."
+        }
+      ]
+    },
+    "app": {
+      "title": "The HiKids App",
+      "subtitle": "Stay connected to your child's learning journey, right from your phone.",
+      "description": "The HiKids app gives parents real-time updates on daily activities, progress reports, photo sharing, and direct messaging with teachers. It's the easiest way to stay involved in your child's education.",
+      "features": [
+        "Daily activity updates and photos",
+        "Progress tracking across learning levels",
+        "Direct messaging with teachers",
+        "Event calendar and reminders",
+        "Digital portfolio of your child's work"
+      ],
+      "downloadTitle": "Download the App",
+      "appStore": "Download on the App Store",
+      "googlePlay": "Get it on Google Play"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We'd love to hear from you. Choose the category that best fits your inquiry.",
+    "categories": [
+      {
+        "title": "General Inquiries",
+        "description": "Questions about HiKids, our mission, or anything else.",
+        "email": "hello@hikids.com"
+      },
+      {
+        "title": "Franchise Inquiries",
+        "description": "Interested in opening a HiKids kindergarten? Let's talk.",
+        "email": "franchise@hikids.com"
+      },
+      {
+        "title": "Educator Inquiries",
+        "description": "Questions about materials, certification, or teaching methods.",
+        "email": "educators@hikids.com"
+      },
+      {
+        "title": "Press & Media",
+        "description": "Media inquiries, press kits, and partnership requests.",
+        "email": "press@hikids.com"
+      }
+    ],
+    "form": {
+      "title": "Send Us a Message",
+      "name": "Your Name",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Your Message",
+      "submit": "Send Message",
+      "success": "Thank you for your message! We'll get back to you within 24 hours.",
+      "error": "Something went wrong. Please try again."
+    }
+  }
+}
