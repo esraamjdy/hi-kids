@@ -23,7 +23,7 @@ export function Header({ locale, dict }: HeaderProps) {
   const isInSection = (section: string) => pathname.startsWith(`/${locale}/${section}`);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-primary shadow-lg">
+    <header className="sticky top-0 z-50 w-full bg-primary shadow-lg transition-all duration-300 hover:shadow-xl">
       <div className="mx-auto flex h-24 max-w-[1600px] items-center justify-between px-4 lg:px-8">
         {/* Logo */}
         <Link

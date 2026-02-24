@@ -18,6 +18,7 @@ import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 import { SectionHeader } from "@/components/section-header";
 import { WaveDivider } from "@/components/wave-divider";
+import { FloatingCharacter } from "@/components/floating-character";
 
 export const metadata: Metadata = {
   title: "Franchise Opportunity | HiKids Global",
@@ -37,6 +38,10 @@ export default async function FranchisePage({
     <>
       {/* Hero - Business Focused yet Playful */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-b from-primary/20 via-background to-background pt-20">
+        {/* Floating Characters */}
+        <FloatingCharacter type="bubble" position="top-right" delay={0.2} opacity={0.3} scale={0.9} />
+        <FloatingCharacter type="star" position="bottom-left" delay={0.8} opacity={0.25} scale={0.8} />
+
         <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
           <div className="absolute -right-20 top-0 h-[600px] w-[600px] rounded-full bg-primary/10 blur-[120px]" />
           <div className="absolute -left-20 bottom-0 h-[500px] w-[500px] rounded-full bg-accent/10 blur-[100px]" />

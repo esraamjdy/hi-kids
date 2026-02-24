@@ -10,6 +10,7 @@ import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 import { SectionHeader } from "@/components/section-header";
 import { WaveDivider } from "@/components/wave-divider";
+import { FloatingCharacter } from "@/components/floating-character";
 
 export const metadata: Metadata = {
   title: "About HiKids | Progressive Early Childhood Education",
@@ -30,6 +31,10 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       {/* ================= HERO: PREMIUM CREATIVE ================= */}
       {/* ================= HERO: MATCHED WITH HOME RHYTHM ================= */}
       <section className="relative min-h-[60vh] lg:min-h-[70vh] flex items-center pt-28 pb-20 overflow-hidden bg-accent">
+        {/* Floating Characters */}
+        <FloatingCharacter type="bubble" position="top-right" delay={0.3} opacity={0.35} scale={0.85} />
+        <FloatingCharacter type="shape" position="bottom-left" delay={1.1} opacity={0.3} scale={0.7} />
+
         {/* Soft Premium Glows to match Home */}
         <div className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-white/10 rounded-full blur-[120px]" />
         <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px]" />

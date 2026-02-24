@@ -128,6 +128,29 @@ const config: Config = {
           '25%': { transform: 'translate(10px, -10px)' },
           '50%': { transform: 'translate(20px, 0)' },
           '75%': { transform: 'translate(10px, 10px)' },
+        },
+        'float-gentle': {
+          '0%, 100%': { transform: 'translateY(0px) translateX(0px)' },
+          '25%': { transform: 'translateY(-15px) translateX(5px)' },
+          '50%': { transform: 'translateY(-8px) translateX(-8px)' },
+          '75%': { transform: 'translateY(-12px) translateX(8px)' },
+        },
+        'float-slow-sway': {
+          '0%, 100%': { transform: 'translateY(0px) translateX(0px) rotate(0deg)' },
+          '33%': { transform: 'translateY(-20px) translateX(10px) rotate(2deg)' },
+          '66%': { transform: 'translateY(-10px) translateX(-10px) rotate(-2deg)' },
+        },
+        'bounce-gentle': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-25px)' },
+        },
+        'pulse-subtle': {
+          '0%, 100%': { opacity: '0.7', transform: 'scale(1)' },
+          '50%': { opacity: '0.85', transform: 'scale(1.05)' },
+        },
+        'glow-pulse': {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(75, 184, 233, 0.3)' },
+          '50%': { boxShadow: '0 0 40px rgba(75, 184, 233, 0.5)' },
         }
       },
       animation: {
@@ -136,6 +159,11 @@ const config: Config = {
         float: 'float 6s ease-in-out infinite',
         'float-slow': 'float 8s ease-in-out infinite',
         'float-alt': 'float-alt 7s ease-in-out infinite',
+        'float-gentle': 'float-gentle 8s ease-in-out infinite',
+        'float-slow-sway': 'float-slow-sway 10s ease-in-out infinite',
+        'bounce-gentle': 'bounce-gentle 7s ease-in-out infinite',
+        'pulse-subtle': 'pulse-subtle 6s ease-in-out infinite',
+        'glow-pulse': 'glow-pulse 3s ease-in-out infinite',
         wiggle: 'wiggle 4s ease-in-out infinite',
         'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
         'fade-in-down': 'fade-in-down 0.6s ease-out forwards',

@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import { CtaCard } from "@/components/cta-card";
 import { WaveDivider } from "@/components/wave-divider";
 import { SectionHeader } from "@/components/section-header";
+import { FloatingCharacter } from "@/components/floating-character";
 
 export const metadata: Metadata = {
   title: "Empowering Educators | HiKids Global",
@@ -35,6 +36,10 @@ export default async function EducatorsPage({
     <>
       {/* Hero - Inspiring & Professional */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-b from-primary/10 via-background to-background pt-20">
+        {/* Floating Characters */}
+        <FloatingCharacter type="star" position="top-left" delay={0.3} opacity={0.3} scale={0.8} />
+        <FloatingCharacter type="shape" position="bottom-right" delay={1} opacity={0.25} scale={0.75} />
+
         <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
           <div className="absolute -right-20 top-1/2 -translate-y-1/2 opacity-20 hidden lg:block translate-x-1/4">
             <Image src="/images/Whisk_ba46783577f5efb8588459e8166e51a2dr.png" alt="" width={600} height={600} className="object-contain" />

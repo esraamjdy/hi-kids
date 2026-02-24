@@ -19,6 +19,7 @@ import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 import { SectionHeader } from "@/components/section-header";
 import { WaveDivider } from "@/components/wave-divider";
+import { FloatingCharacter } from "@/components/floating-character";
 import {
   LEVEL_COLORS,
   LEVEL_ICONS,
@@ -40,6 +41,11 @@ export default async function HomePage({
     <>
       {/* Hero Section - Compact & Layered */}
       <section className="relative min-h-[48vh] lg:min-h-[55vh] flex items-center overflow-hidden bg-accent pt-12 pb-6">
+        {/* Floating Decorative Characters */}
+        <FloatingCharacter type="bubble" position="top-left" delay={0} opacity={0.4} scale={0.8} />
+        <FloatingCharacter type="star" position="top-right" delay={0.5} opacity={0.35} scale={0.7} />
+        <FloatingCharacter type="shape" position="bottom-left" delay={1} opacity={0.3} scale={0.6} />
+
         {/* Soft Glows */}
         <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-white/10 rounded-full blur-[120px]" />
         <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px]" />
@@ -161,7 +167,7 @@ export default async function HomePage({
             {/* Franchise Pathway – businessman */}
             <Link
               href={`/${lang}/franchise`}
-              className="group relative rounded-[3rem] bg-primary overflow-hidden min-h-[380px] flex flex-col justify-end transition-all hover:shadow-2xl hover:-translate-y-2 duration-500"
+              className="group relative rounded-[3rem] bg-primary overflow-hidden min-h-[380px] flex flex-col justify-end transition-all hover:shadow-2xl hover:-translate-y-3 duration-500 hover:animate-glow-pulse"
             >
               {/* Photo */}
               <div className="absolute bottom-0 right-0 w-[75%] h-[90%] z-0">
@@ -194,7 +200,7 @@ export default async function HomePage({
             {/* Educators Pathway */}
             <Link
               href={`/${lang}/educators`}
-              className="group relative rounded-[3rem] bg-accent overflow-hidden min-h-[380px] flex flex-col justify-end transition-all hover:shadow-2xl hover:-translate-y-2 duration-500"
+              className="group relative rounded-[3rem] bg-accent overflow-hidden min-h-[380px] flex flex-col justify-end transition-all hover:shadow-2xl hover:-translate-y-3 duration-500"
             >
               {/* Photo */}
               <div className="absolute bottom-0 right-[-4%] w-[85%] h-[88%] z-0">
@@ -227,7 +233,7 @@ export default async function HomePage({
             {/* Parents Pathway */}
             <Link
               href={`/${lang}/parents`}
-              className="group relative rounded-[3rem] bg-secondary overflow-hidden min-h-[380px] flex flex-col justify-end transition-all hover:shadow-2xl hover:-translate-y-2 duration-500"
+              className="group relative rounded-[3rem] bg-secondary overflow-hidden min-h-[380px] flex flex-col justify-end transition-all hover:shadow-2xl hover:-translate-y-3 duration-500"
             >
               {/* Photo */}
               <div className="absolute bottom-0 right-[-2%] w-[90%] h-[85%] z-0">
@@ -261,6 +267,10 @@ export default async function HomePage({
         </div>
       </section>      {/* Brand Story / What is HiKids */}
       <section className="py-20 lg:py-28 relative overflow-hidden bg-white">
+        {/* Floating Characters */}
+        <FloatingCharacter type="shape" position="top-right" delay={0.3} opacity={0.25} scale={1.2} />
+        <FloatingCharacter type="bubble" position="bottom-left" delay={0.8} opacity={0.2} scale={0.9} />
+
         <div className="absolute -right-20 top-0 opacity-10 hidden xl:block pointer-events-none animate-float-slow">
           <Image src="/images/Whisk_3da4c60c2d295d7b7ee45f21d2e0efe6dr.png" alt="" width={500} height={500} />
         </div>
@@ -290,15 +300,14 @@ export default async function HomePage({
               return (
                 <div
                   key={level.name}
-                  className={`group relative rounded-[3rem] border-2 p-10 transition-all hover:shadow-3xl hover:-translate-y-2 duration-500 ${i === 0
+                  className={`group relative rounded-[3rem] border-2 p-10 transition-all hover:shadow-3xl hover:-translate-y-3 duration-500 overflow-hidden ${i === 0
                     ? "bg-primary/5 border-primary/20 hover:bg-primary/10"
                     : i === 1
                       ? "bg-accent/10 border-accent/30 hover:bg-accent/20"
                       : i === 2
                         ? "bg-secondary/5 border-secondary/20 hover:bg-secondary/10"
                         : "bg-primary/5 border-primary/20 hover:bg-primary/10"
-                    }
- overflow-hidden`}
+                    }`}
                 >
                   {/* <div className="absolute -right-6 -top-6 opacity-5 group-hover:opacity-10 transition-opacity"> */}
 
@@ -351,7 +360,11 @@ export default async function HomePage({
 
 
       {/* Why HiKids is Different */}
-      <section className="py-20 lg:py-28 relative overflow-hidden">
+      <section className="py-20 lg:py-28 relative overflow-hidden bg-gradient-to-b from-white/50 to-white">
+        {/* Floating Characters */}
+        <FloatingCharacter type="star" position="top-left" delay={0.4} opacity={0.25} scale={0.8} />
+        <FloatingCharacter type="shape" position="bottom-right" delay={1.2} opacity={0.2} scale={0.7} />
+
         <div className="mx-auto max-w-[1600px] px-4 lg:px-8">
           <SectionHeader
             title={t.whyDifferent.title}
@@ -377,7 +390,7 @@ export default async function HomePage({
               return (
                 <div
                   key={feature.title}
-                  className="group relative rounded-[2.5rem] bg-white border border-border/40 p-10 transition-all duration-500 text-center shadow-lg hover:shadow-2xl hover:-translate-y-3 overflow-hidden"
+                  className="group relative rounded-[2.5rem] bg-white border border-border/40 p-10 transition-all duration-500 text-center shadow-lg hover:shadow-2xl hover:-translate-y-4 overflow-hidden hover:scale-105"
                 >
                   <div className={`absolute top-0 left-0 w-full h-3 ${accentColors[i]}`} />
                   <div className="absolute top-6 right-6 w-24 h-24 opacity-5 pointer-events-none grayscale brightness-0">
@@ -409,6 +422,11 @@ export default async function HomePage({
       {/* Trust / Final Action Banner - Simplified */}
       {/* Premium CTA */}
       <section className="bg-white py-24 lg:py-32 relative overflow-hidden">
+        {/* Floating Characters for visual interest */}
+        <FloatingCharacter type="bubble" position="top-left" delay={0.2} opacity={0.2} scale={0.75} />
+        <FloatingCharacter type="star" position="top-right" delay={0.7} opacity={0.22} scale={0.8} />
+        <FloatingCharacter type="shape" position="bottom-right" delay={1.3} opacity={0.18} scale={0.65} />
+
         {/* Background Decorative - subtle brand identity */}
         <div className="absolute top-0 right-0 w-[40%] h-full opacity-[0.03] pointer-events-none">
           <Image src="/images/patterns.png" alt="" fill className="object-contain" />

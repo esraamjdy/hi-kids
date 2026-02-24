@@ -6,6 +6,7 @@ import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 import { ContactForm } from "./contact-form";
 import { SectionHeader } from "@/components/section-header";
+import { FloatingCharacter } from "@/components/floating-character";
 
 export const metadata: Metadata = {
   title: "Contact Us | HiKids Global",
@@ -28,6 +29,10 @@ export default async function ContactPage({
     <>
       {/* Hero - Friendly & Premium */}
       <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-gradient-to-b from-primary/10 via-background to-background pt-20">
+        {/* Floating Characters */}
+        <FloatingCharacter type="star" position="top-right" delay={0.4} opacity={0.3} scale={0.8} />
+        <FloatingCharacter type="bubble" position="bottom-left" delay={1} opacity={0.25} scale={0.75} />
+
         <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
           <div className="absolute -right-20 top-1/2 -translate-y-1/2 opacity-20 hidden lg:block translate-x-1/4">
             <Image src="/images/3.png" alt="" width={500} height={500} className="object-contain" />

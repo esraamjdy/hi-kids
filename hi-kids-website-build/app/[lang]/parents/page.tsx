@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import { CtaCard } from "@/components/cta-card";
 import { WaveDivider } from "@/components/wave-divider";
 import { SectionHeader } from "@/components/section-header";
+import { FloatingCharacter } from "@/components/floating-character";
 
 export const metadata: Metadata = {
   title: "A Bright Future for Your Child | HiKids Parents",
@@ -35,6 +36,10 @@ export default async function ParentsPage({
     <>
       {/* Hero - Warm & Emotional */}
       <section className="relative min-h-[75vh] flex items-center overflow-hidden bg-gradient-to-b from-accent/20 via-background to-background pt-20">
+        {/* Floating Characters */}
+        <FloatingCharacter type="bubble" position="top-left" delay={0.2} opacity={0.3} scale={0.85} />
+        <FloatingCharacter type="star" position="bottom-right" delay={0.9} opacity={0.25} scale={0.75} />
+
         <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
           <div className="absolute -right-20 top-1/2 -translate-y-1/2 opacity-20 hidden lg:block translate-x-1/4">
             <Image src="/images/7.png" alt="" width={500} height={500} className="object-contain" />
