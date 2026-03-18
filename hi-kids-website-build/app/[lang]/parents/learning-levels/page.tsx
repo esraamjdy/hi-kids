@@ -1,12 +1,25 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Star, Sparkles, Layers, Shield, ArrowRight, CheckCircle2, Navigation } from "lucide-react";
+import {
+  Star,
+  Sparkles,
+  Layers,
+  Shield,
+  ArrowRight,
+  CheckCircle2,
+  Navigation,
+  Zap,
+  Check,
+  Info,
+  ChevronRight,
+  GraduationCap,
+  Globe
+} from "lucide-react";
 import { getDictionary } from "@/lib/dictionaries";
 import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 import { WaveDivider } from "@/components/wave-divider";
-import { SectionHeader } from "@/components/section-header";
 import { MotionWrapper, MotionContainer, MotionItem } from "@/components/motion-wrapper";
 
 export const metadata: Metadata = {
@@ -23,166 +36,235 @@ export default async function LearningLevelsPage({
   const dict = await getDictionary(lang);
   const t = dict.parents.learningLevels;
 
-  const levelIcons = [Star, Sparkles, Layers, Shield];
+  const levelSvgs = ["/images/level-1.svg", "/images/level-2.svg", "/images/level-3.svg", "/images/level-4.svg"];
+  const hexColors = ['#ED1C24', '#00AEEF', '#8CC63F', '#f0b952'];
+  const characters = ["/images/7.png", "/images/8.png", "/images/hi.png", "/images/boy.png"];
 
   return (
-    <>
-      {/* Hero - Inspiring & Professional */}
-      <section className="bg-hikids-blue relative min-h-[92vh] flex items-center overflow-hidden pt-32 pb-48 lg:py-48">
-        {/* Playful Pattern Overlay */}
-        <div className="absolute inset-0 opacity-[0.05] bg-[url('/images/moka-line-art-01.svg')] animate-drift pointer-events-none mix-blend-overlay" />
-        
-        {/* Decorative elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="absolute -left-10 top-[20%] opacity-20 hidden lg:block -translate-x-1/4 drop-shadow-2xl animate-float-slow">
-            <Image src="/images/2.png" alt="" width={500} height={500} className="object-contain" />
+    <div className="bg-white overflow-hidden selection:bg-hikids-blue/20">
+
+      {/* ─── IMMERSIVE STORY HEADER ─── */}
+      <section className="relative min-h-[50vh] flex items-center pt-32 pb-20 overflow-hidden bg-[#FFEB00]">
+        {/* Background Decor */}
+        <div className="absolute inset-0 opacity-[0.03] bg-[url('/images/moka-line-art-01.svg')] animate-drift pointer-events-none" />
+
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 w-full text-center lg:text-left z-10">
+          <div className="grid lg:grid-cols-12 gap-16 items-center">
+            <div className="lg:col-span-12 xl:col-span-8">
+              <MotionWrapper direction="right">
+                <span className="bg-white/30 text-slate-900 border-white/20 text-[10px] font-black uppercase tracking-[0.3em] px-6 py-2 rounded-full inline-block border backdrop-blur-md mb-8">
+                  The Educational Journey
+                </span>
+                <h1 className="text-6xl lg:text-9xl font-fredoka font-black text-slate-900 leading-[0.95] tracking-tight">
+                  A Path Designed <br className="hidden lg:block" />
+                  for <span className="text-white text-7xl lg:text-[10rem] ml-1 inline-block transition-transform hover:scale-105 duration-300"
+                    style={{
+                      WebkitTextStroke: "16px #00AEEF",
+                      paintOrder: "stroke fill",
+                      filter: "drop-shadow(0 10px 0 rgba(0,0,0,0.1))"
+                    }}>
+                    Growth
+                  </span>
+                </h1>
+              </MotionWrapper>
+            </div>
           </div>
-          <div className="absolute right-[5%] bottom-[10%] opacity-25 hidden xl:block animate-float drop-shadow-3xl">
-            <Image src="/images/Whisk_61d9a24bbad8193df45fec5f308801d0dr.png" alt="" width={500} height={500} />
-          </div>
-          <div className="absolute right-[10%] top-20 h-80 w-80 bg-white/20 rounded-full blur-[120px]" />
         </div>
 
-        <div className="relative mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 z-10 w-full text-center">
-          <MotionWrapper className="mx-auto max-w-5xl" type="fade" direction="up">
-            <div className="mb-10 inline-flex items-center gap-4 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm md:text-base font-black text-white shadow-soft backdrop-blur-md uppercase tracking-[0.2em]">
-              <Sparkles className="h-5 w-5 fill-current text-white" />
-              Progressive Learning Journey
-            </div>
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-fredoka font-black text-white tracking-tight leading-[0.95] lg:mb-12">
-              {t.title}
-            </h1>
-            <p className="mt-10 text-xl md:text-2xl lg:text-4xl text-white/90 font-medium leading-relaxed max-w-4xl mx-auto text-balance">
+        {/* Peeking Character */}
+        <div className="absolute right-0 bottom-0 translate-y-12 translate-x-12 opacity-30 lg:opacity-100">
+          <Image src="/images/Moka-Dance.png" alt="Moka" width={600} height={600} className="object-contain" />
+        </div>
+      </section>
+
+      {/* Hero Divider */}
+      <div className="w-full relative -mt-[100px] lg:-mt-[100px] z-20">
+        <WaveDivider color="white" />
+      </div>
+
+      {/* ─── THE INTERACTIVE EXPANDED MAP ─── */}
+      <section className="py-24 lg:py-48 bg-white relative">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 relative z-10 w-full">
+
+          <MotionWrapper className="text-center mb-24 max-w-4xl mx-auto space-y-8" direction="up">
+            <h2 className="text-4xl lg:text-6xl font-fredoka font-black text-slate-800 leading-tight">Every Step is a Milestone</h2>
+            <p className="text-lg lg:text-2xl text-slate-500 font-medium">
               {t.subtitle}
             </p>
           </MotionWrapper>
-        </div>
 
-        <div className="absolute -bottom-[1px] left-0 w-full leading-none z-20">
-          <WaveDivider color="white" />
-        </div>
-      </section>
+          {/* The Map Interface */}
+          <div className="relative space-y-48 lg:space-y-80">
 
-      {/* Levels Detail */}
-      <section className="py-32 lg:py-56 relative bg-white overflow-hidden min-h-[95vh] flex flex-col justify-center">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10 w-full">
-          <MotionWrapper type="fade" direction="up" className="text-center mb-24 space-y-6">
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-fredoka font-black text-slate-900 leading-[1.05] tracking-tight">Educational Milestones</h2>
-            <p className="text-xl md:text-2xl lg:text-4xl text-slate-600 font-medium max-w-4xl mx-auto text-balance">
-              Explore our structured curriculum designed to support every stage of your child's development.
-            </p>
-          </MotionWrapper>
+            {/* Vertical Connectivity Line */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-[8px] -translate-x-1/2 overflow-hidden pointer-events-none hidden lg:block opacity-10">
+              <div className="w-full h-full bg-gradient-to-b from-hikids-red via-hikids-blue to-hikids-yellow" />
+            </div>
 
-          <MotionContainer className="mt-16 space-y-24 lg:space-y-40">
-            {t.levels.map(
-              (
-                level: {
-                  name: string;
-                  age: string;
-                  focus: string;
-                  description: string;
-                  skills: string[];
-                },
-                i: number
-              ) => {
-                const Icon = levelIcons[i];
-                return (
-                  <MotionItem
-                    key={level.name}
-                    className="group relative rounded-[4rem] border border-slate-100 bg-slate-50/50 p-12 lg:p-24 transition-all hover:shadow-2xl hover:bg-white duration-700 overflow-hidden"
-                    direction={i % 2 === 0 ? "right" : "left"}
-                  >
-                    <div className="absolute top-0 right-0 p-24 opacity-0 group-hover:opacity-10 transition-all duration-1000 translate-x-12 -translate-y-12 group-hover:translate-0 text-hikids-blue pointer-events-none">
-                      <Icon className="h-96 w-96 lg:h-[30rem] lg:w-[30rem]" />
-                    </div>
+            {t.levels.map((level: any, i: number) => {
+              const isEven = i % 2 === 0;
+              return (
+                <div key={level.name} className="relative">
 
-                    <div className="flex flex-col lg:flex-row gap-16 lg:gap-32 relative z-10">
-                      {/* Level Identity */}
-                      <div className="flex items-center lg:flex-col lg:items-center gap-8 shrink-0">
-                         <div className="flex h-28 w-28 items-center justify-center rounded-[2.5rem] bg-white shadow-xl border border-slate-100 text-hikids-blue group-hover:bg-hikids-blue group-hover:text-white transition-all duration-700 group-hover:scale-110 group-hover:-rotate-12 group-hover:shadow-hikids-blue/20">
-                           <Icon className="h-12 w-12 lg:h-14 lg:w-14" />
-                         </div>
-                         <div className="lg:text-center">
-                            <span className="text-sm font-black uppercase tracking-[0.3em] text-slate-400 block mb-2">Stage</span>
-                            <span className="text-4xl lg:text-5xl font-fredoka font-black text-slate-300 group-hover:text-hikids-blue transition-colors">0{i + 1}</span>
-                         </div>
-                      </div>
+                  {/* Level Node Pin */}
+                  <div className="hidden lg:flex absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-28 h-28 bg-white rounded-full items-center justify-center shadow-2xl border-4 z-50 group hover:scale-125 transition-transform duration-500"
+                    style={{ borderColor: hexColors[i] }}>
+                    <Image src={levelSvgs[i]} alt="icon" width={100} height={100} className="object-contain" />
+                  </div>
 
-                      {/* Content */}
-                      <div className="flex-1">
-                        <div className="mb-10 flex flex-wrap items-center gap-6">
-                          <h3 className="text-4xl md:text-6xl lg:text-7xl font-fredoka font-black text-slate-900 tracking-tight leading-none">
-                            {level.name}
-                          </h3>
-                          <div className="rounded-full bg-hikids-yellow/10 border border-hikids-yellow/20 px-6 py-2 text-sm lg:text-base font-black text-slate-800 uppercase tracking-widest shadow-sm">
-                            {level.age}
+                  <div className={`flex flex-col lg:flex-row items-stretch gap-12 lg:gap-20 ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+
+                    {/* Visual Showcase Zone */}
+                    <div className="w-full lg:w-1/2 flex items-center justify-center relative">
+                      <MotionWrapper type="scale" direction={isEven ? "right" : "left"}>
+                        <div className="relative group">
+                          {/* The Zone Map Card */}
+                          <div className="w-full aspect-[4/3] rounded-[4rem] bg-slate-50 overflow-hidden relative shadow-inner border-2 border-slate-100 group-hover:border-slate-200 transition-colors">
+                            <Image
+                              src={characters[i]}
+                              alt="Character Animation"
+                              fill
+                              className="object-contain p-12 lg:p-20 group-hover:scale-110 transition-transform duration-1000"
+                            />
+                            {/* Abstract Floating Shapes */}
+                            <div className="absolute top-10 right-10 w-24 h-24 rounded-full opacity-10 blur-2xl animate-pulse" style={{ backgroundColor: hexColors[i] }} />
+                            <div className="absolute bottom-10 left-10 w-32 h-32 rounded-full opacity-10 blur-2xl animate-drift" style={{ backgroundColor: hexColors[i] }} />
+
+                            {/* Level Number Overlay */}
+                            <div className="absolute top-8 left-8 text-6xl font-black font-fredoka opacity-[0.05]" style={{ color: hexColors[i] }}>0{i + 1}</div>
                           </div>
                         </div>
-
-                        <div className="mb-10 inline-flex items-center gap-3 rounded-full bg-white px-6 py-2.5 text-sm md:text-base font-black text-hikids-blue uppercase tracking-widest border border-slate-100 shadow-sm">
-                          <Sparkles className="h-5 w-5 fill-current" />
-                          Core Focus: {level.focus}
-                        </div>
-
-                        <p className="mb-16 text-xl md:text-2xl lg:text-4xl text-slate-600 leading-relaxed font-medium text-balance opacity-90">
-                          {level.description}
-                        </p>
-
-                        <div className="grid gap-6 md:grid-cols-2 pt-16 border-t border-slate-100">
-                          {level.skills.map((skill: string) => (
-                            <div
-                              key={skill}
-                              className="group/skill flex items-center gap-6 p-8 rounded-[3rem] bg-white border border-slate-100 hover:border-hikids-blue/30 hover:shadow-xl transition-all duration-500 shadow-sm"
-                            >
-                              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-slate-50 text-hikids-blue group-hover/skill:bg-hikids-blue group-hover/skill:text-white transition-all duration-500 group-hover/skill:rotate-12">
-                                <CheckCircle2 className="h-6 w-6" strokeWidth={3} />
-                              </div>
-                              <span className="text-xl lg:text-2xl font-black text-slate-700 leading-tight group-hover/skill:text-slate-900 transition-colors">
-                                {skill}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
+                      </MotionWrapper>
                     </div>
-                  </MotionItem>
-                );
-              }
-            )}
-          </MotionContainer>
-        </div>
-      </section>
 
-      {/* High-Impact Final CTA */}
-      <section className="py-32 lg:py-56 relative overflow-hidden bg-slate-900 m-6 lg:m-12 rounded-[5rem] min-h-[90vh] flex items-center">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10 w-full">
-           <div className="text-center space-y-12">
-              <MotionWrapper type="scale">
-                <div className="mb-12 inline-flex h-28 w-28 items-center justify-center rounded-[2.5rem] bg-white/5 border border-white/10 shadow-3xl backdrop-blur-md">
-                  <Navigation className="h-12 w-12 text-hikids-blue " strokeWidth={3} />
+                    {/* Data Zone */}
+                    <div className="w-full lg:w-1/2 flex flex-col justify-center">
+                      <MotionWrapper direction={isEven ? "left" : "right"}>
+                        <div className="space-y-8 p-10 lg:p-14 bg-white rounded-[4rem] border shadow-2xl shadow-slate-200/50 relative overflow-hidden group hover:shadow-hikids-yellow/5 transition-all">
+
+                          {/* Decorative corner accent */}
+                          <div className="absolute top-0 right-0 w-32 h-32 opacity-[0.03] grayscale pointer-events-none">
+                            <Image src="/images/moka-line-art-01.svg" alt="" fill className="object-contain" />
+                          </div>
+
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-4">
+                              <div className="w-3 h-3 rounded-full animate-pulse" style={{ backgroundColor: hexColors[i] }} />
+                              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400">Level Progression</span>
+                            </div>
+                            <h3 className="text-4xl lg:text-7xl font-fredoka font-black text-slate-900 leading-tight">
+                              {level.name}
+                            </h3>
+                          </div>
+
+                          <div className="flex flex-wrap items-center gap-4">
+                            <div className="px-6 py-2 rounded-2xl bg-slate-900 text-white text-xs font-black uppercase tracking-widest shadow-xl">
+                              Focus: {level.focus}
+                            </div>
+                            <div className="px-6 py-2 rounded-2xl bg-white border border-slate-100 font-bold text-slate-400 uppercase tracking-widest text-[10px]">
+                              {level.age}
+                            </div>
+                          </div>
+
+                          <p className="text-lg lg:text-2xl text-slate-500 leading-relaxed font-medium">
+                            {level.description}
+                          </p>
+
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+                            {level.skills.map((skill: string) => (
+                              <div key={skill} className="flex items-center gap-3 p-5 rounded-3xl bg-[#fafafa] group/skill hover:bg-slate-900 hover:text-white transition-all cursor-default">
+                                <div className="w-10 h-10 rounded-2xl bg-white flex items-center justify-center shadow-sm group-hover/skill:bg-hikids-yellow group-hover/skill:rotate-12 transition-all">
+                                  <Check size={16} strokeWidth={4} style={{ color: hexColors[i] }} />
+                                </div>
+                                <span className="text-xs lg:text-sm font-black uppercase tracking-tight leading-tight">{skill}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </MotionWrapper>
+                    </div>
+
+                  </div>
                 </div>
-                <h2 className="text-5xl md:text-7xl lg:text-[7rem] font-fredoka font-black text-white tracking-tight leading-[0.95] mb-12">
-                  Ready to Start the Journey?
-                </h2>
-                <p className="mt-10 text-xl md:text-3xl lg:text-5xl text-slate-400 font-medium leading-relaxed max-w-4xl mx-auto text-balance mb-20">
-                  Find a HiKids kindergarten near you and give your child the gift of world-class early education.
-                </p>
-                <Link
-                  href={`/${lang}/parents/find-kindergarten`}
-                  className="inline-flex items-center gap-6 rounded-[2.5rem] bg-hikids-blue px-14 py-8 text-xl md:text-2xl lg:text-3xl font-black text-white shadow-3xl transition-all hover:bg-hikids-blue/90 hover:scale-105 hover:-translate-y-2 ring-4 ring-hikids-blue/20"
-                >
-                  Explore Locations
-                  <ArrowRight className="h-10 w-10 transition-transform group-hover:translate-x-4" strokeWidth={3} />
-                </Link>
-              </MotionWrapper>
-           </div>
-        </div>
-
-        {/* Mascot background decoration */}
-        <div className="absolute right-[-10%] bottom-[-10%] opacity-20 pointer-events-none drop-shadow-3xl lg:scale-150 animate-float-slow">
-           <Image src="/images/Whisk_61d9a24bbad8193df45fec5f308801d0dr.png" alt="" width={600} height={600} />
+              );
+            })}
+          </div>
         </div>
       </section>
-    </>
+
+      {/* ─── EDUCATIONAL REASSURANCE ─── */}
+      <section className="py-24 lg:py-48 bg-slate-900 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.05] bg-[url('/images/moka-line-art-02.svg')] mix-blend-overlay rotate-12" />
+        <div className="mx-auto max-w-[1400px] px-6 text-center space-y-12 relative z-10">
+          <MotionWrapper type="scale">
+            <h2 className="text-5xl lg:text-8xl font-fredoka font-black text-white leading-tight">
+              A World of <br className="hidden lg:block" />
+              <span className="text-hikids-yellow">Possibilities</span>
+            </h2>
+            <p className="text-xl lg:text-3xl text-slate-400 font-medium max-w-4xl mx-auto leading-relaxed">
+              Our curriculum is a live roadmap, constantly evolving with the latest international standards to give every child their best unique start.
+            </p>
+            <div className="pt-10 flex flex-wrap justify-center gap-8">
+              {['Global Curriculum', 'Elite Staff', 'Safe Haven'].map((tag, idx) => (
+                <div key={idx} className="flex items-center gap-4 bg-white/5 border border-white/10 px-10 py-5 rounded-[2.5rem] text-white font-black uppercase tracking-[0.2em] text-xs hover:bg-hikids-yellow hover:text-slate-900 transition-all cursor-default group">
+                  <Zap className="text-hikids-blue group-hover:scale-125 transition-transform" size={18} /> {tag}
+                </div>
+              ))}
+            </div>
+          </MotionWrapper>
+        </div>
+      </section>
+
+      {/* ─── FINAL ACTION CTA ─── */}
+      <section className="py-12 lg:py-24 bg-[#FFEB00] relative overflow-hidden">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 relative z-10 w-full">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+            {/* Visual Action Column */}
+            <div className="flex justify-center relative">
+              <MotionWrapper type="scale" className="relative w-full aspect-square max-w-[800px]">
+                <Image src="/images/Moka-Plays.png" alt="Moka Playful" fill className="object-contain drop-shadow-3xl" />
+              </MotionWrapper>
+            </div>
+
+            {/* Selection Text Column */}
+            <div className="space-y-12">
+              <MotionWrapper direction="left">
+                <div className="space-y-8 text-center lg:text-left">
+                  <span className="bg-slate-900 text-white text-[10px] font-black uppercase tracking-[0.3em] px-8 py-3 rounded-full inline-block shadow-2xl">
+                    JOIN THE MOVEMENT
+                  </span>
+                  <h2 className="text-6xl lg:text-9xl font-fredoka font-black text-slate-900 tracking-tight leading-[0.95]">
+                    Start your <br />
+                    <span className="text-white inline-block transition-transform hover:scale-105 duration-300"
+                      style={{
+                        WebkitTextStroke: "16px #00AEEF",
+                        paintOrder: "stroke fill",
+                        filter: "drop-shadow(0 12px 0 rgba(0,0,0,0.1))"
+                      }}>
+                      Success
+                    </span>
+                  </h2>
+                  <p className="text-2xl lg:text-4xl text-slate-800 font-bold max-w-xl mx-auto lg:mx-0">
+                    The journey of a thousand steps begins with a single level.
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row gap-8 pt-8 justify-center lg:justify-start">
+                    <Link
+                      href={`/${lang}/parents/find-kindergarten`}
+                      className="btn-primary !bg-slate-900 !text-white px-16 py-8 text-2xl tracking-tighter !rounded-[3rem] hover:shadow-3xl hover:-translate-y-2 transition-all flex items-center justify-center gap-4 group"
+                    >
+                      Visit Centers <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                    </Link>
+                  </div>
+                </div>
+              </MotionWrapper>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
   );
 }

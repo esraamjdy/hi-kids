@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image"; // Added Image import
-import { TrendingUp, Trophy, Settings, Globe, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { TrendingUp, Trophy, Settings, Globe, ArrowRight, Zap } from "lucide-react";
 import { getDictionary } from "@/lib/dictionaries";
 import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
-import { SectionHeader } from "@/components/section-header";
 import { WaveDivider } from "@/components/wave-divider";
-import { MotionWrapper, MotionContainer, MotionItem } from "@/components/motion-wrapper"; // Added Motion components import
+import { MotionWrapper, MotionContainer, MotionItem } from "@/components/motion-wrapper";
 
 export const metadata: Metadata = {
-  title: "Why Join HiKids",
+  title: "Why Join HiKids | Franchise Benefits",
 };
 
 export default async function WhyJoinPage({
@@ -26,74 +25,119 @@ export default async function WhyJoinPage({
   const icons = [TrendingUp, Trophy, Settings, Globe];
 
   return (
-    <>
-      <section className="bg-hikids-yellow relative min-h-[92vh] flex items-center overflow-hidden pt-32 pb-48 lg:py-48">
-        {/* Playful Pattern Overlay */}
-        <div className="absolute inset-0 opacity-[0.04] bg-[url('/images/moka-line-art-01.svg')] animate-drift pointer-events-none mix-blend-darken" />
-        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="absolute left-[10%] top-20 h-[500px] w-[500px] bg-white/20 rounded-full blur-[100px]" />
-          <div className="absolute -right-20 top-1/2 -translate-y-1/2 opacity-30 drop-shadow-2xl hidden lg:block translate-x-1/4">
-            <Image src="/images/1.png" alt="" width={600} height={600} className="object-contain" />
-          </div>
-        </div>
-
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10 w-full text-center lg:text-left">
-          <MotionWrapper type="fade" direction="right" className="max-w-5xl">
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-fredoka font-black text-slate-900 tracking-tight leading-[0.95] mb-12">
-              {t.title}
-            </h1>
-            <p className="mt-10 text-xl md:text-2xl lg:text-4xl text-slate-800 font-medium leading-relaxed max-w-4xl opacity-90 text-balance">
-              {t.subtitle}
-            </p>
-          </MotionWrapper>
-        </div>
-
-        <div className="absolute -bottom-[1px] left-0 w-full leading-none z-20">
-          <WaveDivider color="white" />
+    <div className="bg-white overflow-hidden selection:bg-hikids-blue/20 pt-16 lg:pt-24">
+      
+      {/* ─── CREATIVE HEADER (No Hero) ─── */}
+      <section className="py-4 lg:py-8 bg-white relative overflow-visible">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 w-full">
+           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 border-b border-slate-100 pb-12 mb-12">
+               {/* peeking mascot */}
+               <MotionWrapper type="scale" className="relative w-48 h-48 lg:w-64 lg:h-64 -mb-16 lg:-mb-24 z-10">
+                  <Image src="/images/Moka-Dance.png" alt="Moka" fill className="object-contain drop-shadow-2xl" />
+               </MotionWrapper>
+               
+               <div className="flex-1 text-center lg:text-left pt-8">
+                  <MotionWrapper direction="right">
+                    <span className="bg-yellow-100 text-[#FFEB00] border-yellow-200 text-xs font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full inline-block border backdrop-blur-sm mb-4"
+                        style={{ WebkitTextStroke: "1px #00AEEF" }}>
+                        BENEFITS
+                    </span>
+                    <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.1] tracking-tight text-balance">
+                      Why <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                          style={{
+                            WebkitTextStroke: "12px #00AEEF",
+                            paintOrder: "stroke fill",
+                            filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                          }}>
+                        Join
+                      </span> HiKids?
+                    </h1>
+                  </MotionWrapper>
+               </div>
+           </div>
         </div>
       </section>
 
-      <section className="py-32 lg:py-56 bg-white relative overflow-hidden min-h-[95vh] flex flex-col justify-center">
-        {/* Floating Grayscale Mascot */}
-        <div className="absolute -left-10 bottom-20 opacity-20 drop-shadow-sm -rotate-12 hidden xl:block animate-float-slow grayscale">
-          <Image src="/images/7.png" alt="" width={400} height={400} />
-        </div>
+      {/* ─── FEATURES GRID ─── */}
+      <section className="py-4 lg:py-8 bg-white relative overflow-hidden">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+          {/* Subtitle fix: Ensure it's not white on white */}
+          <p className="text-lg lg:text-3xl text-slate-600 leading-relaxed font-medium mb-16 text-center lg:text-left max-w-4xl">
+             {t.subtitle}
+          </p>
 
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10">
-          <MotionContainer className="grid gap-12 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-8">
             {t.features.map((feature, i) => {
               const Icon = icons[i];
               return (
                 <MotionItem
                   key={feature.title}
-                  className="group relative rounded-[4rem] bg-slate-50 p-16 lg:p-20 transition-all duration-700 hover:shadow-2xl hover:-translate-y-4 overflow-hidden border border-slate-100 hover:bg-white"
+                  className="group relative rounded-[3rem] bg-yellow-50 p-10 lg:p-14 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 border border-yellow-100 overflow-hidden"
                 >
-                  <div className="mb-10 flex h-20 w-20 items-center justify-center rounded-3xl bg-white shadow-sm border border-slate-100 text-hikids-blue group-hover:bg-hikids-blue group-hover:text-white transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12">
-                    <Icon className="h-10 w-10" />
+                  <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-sm border border-yellow-200 text-hikids-yellow group-hover:bg-[#FFEB00] group-hover:text-slate-900 transition-all duration-500 group-hover:scale-110">
+                    <Icon size={32} />
                   </div>
-                  <h2 className="text-3xl lg:text-5xl font-fredoka font-black text-slate-900 mb-8 transition-colors group-hover:text-hikids-blue">
+                  <h3 className="text-2xl lg:text-4xl font-fredoka font-black text-slate-900 mb-6 group-hover:text-hikids-blue transition-colors">
                     {feature.title}
-                  </h2>
-                  <p className="text-xl lg:text-3xl text-slate-600 leading-relaxed font-medium relative z-10 text-balance">
+                  </h3>
+                  <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed font-medium text-balance">
                     {feature.description}
                   </p>
-                  <div className="mt-10 h-2 absolute bottom-0 left-0 w-0 bg-hikids-blue group-hover:w-full transition-all duration-[800ms]" />
                 </MotionItem>
               );
             })}
-          </MotionContainer>
-
-          <MotionWrapper className="mt-24 text-center pb-12" type="scale">
-            <Link
-              href={`/${lang}/franchise/inquiry`}
-              className="group inline-flex items-center gap-6 rounded-[2.5rem] bg-hikids-blue px-14 py-8 text-xl md:text-2xl font-black text-white shadow-2xl shadow-hikids-blue/20 transition-all hover:bg-hikids-blue/90 hover:scale-105 hover:-translate-y-2"
-            >
-              {dict.common.cta.applyNow}
-              <ArrowRight className="h-8 w-8 group-hover:translate-x-3 transition-transform" strokeWidth={3} />
-            </Link>
-          </MotionWrapper>
+          </div>
         </div>
       </section>
-    </>
+
+      {/* ─── FINAL CTA ─── */}
+      <section className="py-4 lg:py-8 bg-[#FFEB00] relative overflow-hidden">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Column: Mascot */}
+            <div className="lg:col-span-6 flex justify-center lg:justify-center order-2 lg:order-1 mt-12 lg:mt-0">
+               <MotionWrapper type="scale" className="relative w-[450px] h-[450px] lg:w-[1000px] lg:h-[1000px] lg:-ml-32">
+                  <Image src="/images/Moka-Plays.png" alt="Moka Plays" fill className="object-contain drop-shadow-2xl" />
+               </MotionWrapper>
+            </div>
+
+            {/* Right Column: Text */}
+            <div className="lg:col-span-6 space-y-10 order-1 lg:order-2">
+               <MotionWrapper direction="left">
+                  <div className="space-y-6 text-center lg:text-left">
+                     <span className="bg-white/30 text-slate-900 text-xs font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full inline-block border border-slate-900/10 backdrop-blur-sm">
+                        OPPORTUNITY
+                     </span>
+                     <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.1] tracking-tight">
+                        Your <br className="sm:hidden" />
+                        <span className="text-white text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                           style={{
+                              WebkitTextStroke: "12px #00AEEF",
+                              paintOrder: "stroke fill",
+                              filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                           }}>
+                           Success
+                        </span>
+                        <br /> Starts Here
+                     </h2>
+                  </div>
+               </MotionWrapper>
+
+               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
+                  <Link
+                    href={`/${lang}/franchise/inquiry`}
+                    className="btn-primary !bg-slate-900 !text-white px-12 py-5 text-xl tracking-tight !rounded-3xl hover:shadow-2xl transition-all"
+                  >
+                    Apply Now <ArrowRight className="h-6 w-6 ml-2" />
+                  </Link>
+               </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
   );
 }

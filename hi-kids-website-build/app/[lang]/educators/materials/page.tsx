@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { FileText, Download, Sparkles, BookOpen, Clock, Tag } from "lucide-react";
+import { FileText, Download, Sparkles, BookOpen, Clock, Tag, Zap, ArrowRight } from "lucide-react";
 import { getDictionary } from "@/lib/dictionaries";
 import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { WaveDivider } from "@/components/wave-divider";
+import { MotionWrapper, MotionContainer, MotionItem } from "@/components/motion-wrapper";
 
 export const metadata: Metadata = {
   title: "Free Educational Materials | HiKids Educator Resources",
@@ -22,123 +23,133 @@ export default async function MaterialsPage({
   const t = dict.educators.materials;
 
   return (
-    <>
-      {/* Hero - Resource Library */}
-      <section className="bg-primary relative min-h-[50vh] flex items-center overflow-hidden pt-28 pb-32 lg:pb-48 py-32 lg:py-48">
-        {/* Playful Pattern Overlay */}
-        <div className="absolute inset-0 opacity-10 bg-kids-pattern mix-blend-overlay pointer-events-none" />
-        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="absolute -left-20 top-1/2 -translate-y-1/2 opacity-20 drop-shadow-sm hidden lg:block -translate-x-1/4">
-            <Image src="/images/Whisk_ba46783577f5efb8588459e8166e51a2dr.png" alt="" width={500} height={500} className="object-contain" />
-          </div>
-          <div className="absolute right-[5%] top-20 h-64 w-64 bg-[var(--hikids-yellow)]/20 rounded-full blur-[100px] animate-float" />
-        </div>
-
-        <div className="relative mx-auto max-w-[1600px] px-4 lg:px-8 z-10 w-full text-center">
-          <div className="mx-auto max-w-[1200px] w-full animate-fade-in-up">
-            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-5 py-2  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-bold text-white shadow-soft backdrop-blur-md uppercase tracking-widest">
-              <BookOpen className="h-4 w-4 text-white" />
-              Educator Resource Hub
-            </div>
-            <h1 className="font-bold tracking-tight text-white text-balance leading-[1.1]">
-              {t.title}
-            </h1>
-            <p className="mt-10  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] text-white/90 font-normal leading-relaxed text-pretty max-w-[1200px] w-full mx-auto">
-              {t.subtitle}
-            </p>
-          </div>
-        </div>
-
-        <div className="absolute -bottom-[1px] left-0 w-full leading-none z-20">
-          <WaveDivider color="white" />
+    <div className="bg-white overflow-hidden selection:bg-hikids-blue/20 pt-16 lg:pt-24">
+      
+      {/* ─── CREATIVE HEADER (No Hero) ─── */}
+      <section className="py-4 lg:py-8 bg-white relative overflow-visible">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 w-full">
+           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 border-b border-blue-50 pb-12 mb-12">
+               {/* peeking mascot */}
+               <MotionWrapper type="scale" className="relative w-48 h-48 lg:w-64 lg:h-64 -mb-16 lg:-mb-24 z-10">
+                  <Image src="/images/Moka-Dance.png" alt="Moka" fill className="object-contain drop-shadow-2xl" />
+               </MotionWrapper>
+               
+               <div className="flex-1 text-center lg:text-left pt-8">
+                  <MotionWrapper direction="right">
+                    <span className="bg-blue-50 text-hikids-blue border-blue-100 text-xs font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full inline-block border backdrop-blur-sm mb-4">
+                        RESOURCE HUB
+                    </span>
+                    <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.1] tracking-tight text-balance">
+                      Free <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                          style={{
+                            WebkitTextStroke: "12px #00AEEF",
+                            paintOrder: "stroke fill",
+                            filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                          }}>
+                        Materials
+                      </span>
+                    </h1>
+                  </MotionWrapper>
+               </div>
+           </div>
+           
+           <p className="text-lg lg:text-3xl text-slate-600 leading-relaxed font-medium mb-16 text-center mx-auto max-w-4xl">
+             {t.subtitle}
+           </p>
         </div>
       </section>
 
-      {/* Materials Grid */}
-      <section className=" py-32 lg:py-48 bg-white relative overflow-hidden min-h-[95vh] flex flex-col justify-center">
-        <div className="absolute right-10 bottom-20 opacity-20 drop-shadow-sm rotate-12 hidden xl:block animate-float-slow">
-          <Image src="/images/2.png" alt="" width={350} height={350} className="grayscale" />
-        </div>
-
-        <div className="mx-auto max-w-[1700px] px-4 lg:px-8 relative z-10">
-          <div className="grid gap-20 lg:gap-24 lg:gap-20 xl:gap-32 lg:gap-20 xl:gap-32 lg:gap-20 md:grid-cols-2 lg:grid-cols-3">
+      {/* ─── MATERIALS GRID ─── */}
+      <section className="py-4 lg:py-8 bg-white relative overflow-hidden">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {t.items.map((item: { title: string; type: string; description: string }, i: number) => (
-              <div
+              <MotionItem
                 key={item.title}
-                className="group flex flex-col rounded-[2.5rem] bg-[#fafafa] p-14 lg:p-20 lg:p-16 transition-all duration-700 hover:shadow-[0_40px_100px_-20px_rgba(0,0,0,0.06)] hover:-translate-y-4 lg:hover:-translate-y-6 overflow-hidden ring-1 ring-black/[0.03] hover:ring-primary/30 hover:bg-white"
+                className="group relative rounded-[3rem] bg-blue-50/50 p-10 lg:p-14 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 border border-blue-100 overflow-hidden flex flex-col"
               >
-                <div className="absolute top-0 right-0 p-14 lg:p-20 lg:p-14 opacity-0 group-hover:opacity-5 transition-opacity duration-700 translate-x-4 -translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 text-primary">
-                  <FileText className="h-32 w-32" />
+                <div className="mb-8 flex items-center justify-between relative z-10">
+                   <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-hikids-blue shadow-sm border border-blue-100 group-hover:bg-hikids-blue group-hover:text-white transition-all duration-500 group-hover:scale-110">
+                      <FileText size={28} />
+                   </div>
+                   <div className="px-4 py-2 rounded-full bg-white text-[10px] font-black uppercase tracking-widest text-slate-500 border border-blue-100">
+                      {item.type}
+                   </div>
                 </div>
 
-                <div className="mb-10 flex items-center justify-between relative z-10">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-[1.25rem] bg-white shadow-sm border border-slate-100 text-slate-300 group-hover:bg-primary group-hover:text-white group-hover:border-transparent transition-all duration-500 group-hover:scale-110">
-                    <FileText className="h-8 w-8" strokeWidth={2.5} />
-                  </div>
-                  <div className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-slate-700 shadow-sm border border-slate-100 group-hover:border-primary/20 transition-colors">
-                    <Tag className="h-3 w-3 text-primary" />
-                    {item.type}
-                  </div>
-                </div>
-
-                <h3 className="mb-4 font-bold text-slate-900 group-hover:text-primary tracking-tight transition-colors">
+                <h3 className="text-2xl lg:text-3xl font-fredoka font-black text-slate-900 mb-4 group-hover:text-hikids-blue transition-colors leading-tight">
                   {item.title}
                 </h3>
-
-                <p className="mb-10 flex-1  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] text-slate-600 leading-relaxed font-normal">
+                <p className="text-lg lg:text-xl text-slate-500 leading-relaxed font-medium mb-10 flex-1">
                   {item.description}
                 </p>
 
-                <div className="flex items-center justify-between mt-auto pt-8 border-t border-slate-100 relative z-10">
-                  <div className="flex items-center gap-2 text-[11px] font-bold text-slate-400 uppercase tracking-widest">
-                    <Clock className="h-3.5 w-3.5" />
-                    PDF • 2.4 MB
-                  </div>
-                  <button
-                    className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-bold text-white hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                  >
-                    <Download className="h-4 w-4" />
-                    Download
-                  </button>
+                <div className="pt-6 border-t border-blue-100/50 flex items-center justify-between mt-auto">
+                   <div className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">
+                      <Clock size={14} className="text-hikids-blue" />
+                      PDF • 2.4 MB
+                   </div>
+                   <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900 text-white font-bold text-sm hover:bg-hikids-blue transition-all hover:scale-105">
+                      <Download size={16} />
+                      Download
+                   </button>
                 </div>
-              </div>
+              </MotionItem>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Bottom CTA Banner */}
-      <section className=" py-32 lg:py-48 relative overflow-hidden bg-slate-900 m-4 lg:m-8 rounded-[3rem] lg:rounded-[4rem] min-h-[95vh] flex flex-col justify-center">
-        {/* Soft internal glows */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-hikids-blue/20 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[var(--hikids-yellow)]/10 rounded-full blur-[100px] pointer-events-none translate-y-1/2 -translate-x-1/2" />
-
-        <div className="mx-auto max-w-[1400px] px-4 lg:px-8 relative z-10 text-center">
-          <div className="animate-fade-in-up">
-            <div className="inline-flex h-20 w-20 items-center justify-center rounded-full bg-white/5 border border-white/10 text-[var(--hikids-yellow)] mb-12 backdrop-blur-md">
-              <Sparkles className="h-10 w-10" />
+      {/* ─── FINAL CTA ─── */}
+      <section className="py-4 lg:py-8 bg-hikids-blue relative overflow-hidden">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Column: Mascot */}
+            <div className="lg:col-span-6 flex justify-center lg:justify-center order-2 lg:order-1 mt-12 lg:mt-0">
+               <MotionWrapper type="scale" className="relative w-[450px] h-[450px] lg:w-[1000px] lg:h-[1000px] lg:-ml-32">
+                  <Image src="/images/Moka-Plays.png" alt="Moka Plays" fill className="object-contain drop-shadow-2xl" />
+               </MotionWrapper>
             </div>
-            <h2 className="font-bold text-white  mb-12 tracking-tight leading-[1.1]">
-              Need More Resources?
-            </h2>
-            <p className="mx-auto max-w-2xl  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] text-slate-300 leading-relaxed font-normal mb-16">
-              Our HiKids Certified Educators get access to our full digital library, including interactive lesson plans and assessment tools.
-            </p>
-            <Link
-              href={`/${lang}/educators/certification`}
-              className="inline-flex items-center gap-5 rounded-full bg-[var(--hikids-yellow)] px-12 py-7  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-bold text-white shadow-[0_20px_40px_-10px_rgba(254,216,0,0.3)] transition-all hover:bg-[#eab308] hover:scale-105"
-            >
-              Get Certified
-              <Download className="h-6 w-6" />
-            </Link>
+
+            {/* Right Column: Text */}
+            <div className="lg:col-span-6 space-y-10 order-1 lg:order-2">
+               <MotionWrapper direction="left">
+                  <div className="space-y-6 text-center lg:text-left">
+                     <span className="bg-white/20 text-white text-xs font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full inline-block border border-white/10 backdrop-blur-sm">
+                        PREMIUM LIBRARY
+                     </span>
+                     <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-white leading-[1.1] tracking-tight">
+                        Need More <br className="sm:hidden" />
+                        <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                           style={{
+                              WebkitTextStroke: "12px #00AEEF",
+                              paintOrder: "stroke fill",
+                              filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                           }}>
+                           Support?
+                        </span>
+                     </h2>
+                     <p className="text-lg lg:text-3xl text-blue-50 font-medium max-w-xl mx-auto lg:mx-0 opacity-90 leading-relaxed text-center lg:text-left">
+                        Get unlimited access to our elite digital library by becoming a HiKids Certified Educator.
+                     </p>
+                  </div>
+               </MotionWrapper>
+
+               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
+                  <Link
+                    href={`/${lang}/educators/certification`}
+                    className="btn-primary px-12 py-5 text-xl tracking-tight !rounded-3xl hover:shadow-2xl transition-all"
+                  >
+                    Get Certified <ArrowRight className="h-6 w-6 ml-2" />
+                  </Link>
+               </div>
+            </div>
+
           </div>
         </div>
-
-        {/* Decorative Mascot */}
-        <div className="absolute bottom-[-10%] left-[-5%] opacity-[0.05] hidden xl:block pointer-events-none grayscale">
-          <Image src="/images/Whisk_998be7f5470b4334f59ae78964d88e0bdr.png" alt="" width={550} height={550} />
-        </div>
       </section>
-    </>
+
+    </div>
   );
 }

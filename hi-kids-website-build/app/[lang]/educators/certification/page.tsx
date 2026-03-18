@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Award, CheckCircle2, Sparkles, GraduationCap, ShieldCheck } from "lucide-react";
+import { Award, CheckCircle2, Sparkles, GraduationCap, ShieldCheck, ArrowRight } from "lucide-react";
 import { getDictionary } from "@/lib/dictionaries";
 import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
@@ -23,97 +23,96 @@ export default async function CertificationPage({
   const t = dict.educators.certification;
 
   return (
-    <>
-      <section className="bg-hikids-blue relative min-h-[92vh] flex items-center overflow-hidden pt-32 pb-48 lg:py-48">
-        {/* Playful Pattern Overlay */}
-        <div className="absolute inset-0 opacity-[0.05] bg-[url('/images/moka-line-art-01.svg')] animate-drift pointer-events-none mix-blend-overlay" />
-        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="absolute -right-20 top-1/2 -translate-y-1/2 opacity-[0.1] hidden lg:block translate-x-1/4 scale-125">
-             <Image src="/images/Whisk_998be7f5470b4334f59ae78964d88e0bdr.png" alt="" width={600} height={600} className="object-contain" />
-          </div>
-          <div className="absolute left-[5%] top-40 h-[600px] w-[600px] bg-white/10 rounded-full blur-[120px]" />
-        </div>
-
-        <div className="relative mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 z-10 w-full text-center">
-          <MotionWrapper className="mx-auto max-w-5xl" type="fade" direction="up">
-            <div className="mb-10 inline-flex items-center gap-4 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm md:text-base font-black text-white shadow-soft backdrop-blur-md uppercase tracking-[0.2em]">
-              <Award className="h-5 w-5 text-white" />
-              Global Standard of Excellence
-            </div>
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-fredoka font-black text-white tracking-tight leading-[0.95] mb-12">
-              {t.title}
-            </h1>
-            <p className="mt-10 text-xl md:text-2xl lg:text-4xl text-white/90 font-medium leading-relaxed max-w-4xl mx-auto text-balance opacity-90">
-              {t.subtitle}
-            </p>
-          </MotionWrapper>
-        </div>
-
-        <div className="absolute -bottom-[1px] left-0 w-full leading-none z-20">
-          <WaveDivider color="white" />
+    <div className="bg-white overflow-hidden selection:bg-hikids-blue/20 pt-16 lg:pt-24">
+      
+      {/* ─── CREATIVE HEADER (No Hero) ─── */}
+      <section className="py-4 lg:py-8 bg-white relative overflow-visible">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 w-full">
+           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 border-b border-blue-50 pb-12 mb-12">
+               {/* peeking mascot */}
+               <MotionWrapper type="scale" className="relative w-48 h-48 lg:w-64 lg:h-64 -mb-16 lg:-mb-24 z-10">
+                  <Image src="/images/Moka-Dance.png" alt="Moka" fill className="object-contain drop-shadow-2xl" />
+               </MotionWrapper>
+               
+               <div className="flex-1 text-center lg:text-left pt-8">
+                  <MotionWrapper direction="right">
+                    <span className="bg-blue-50 text-hikids-blue border-blue-100 text-xs font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full inline-block border backdrop-blur-sm mb-4">
+                        PROFESSIONAL ELITE
+                    </span>
+                    <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.1] tracking-tight text-balance">
+                      Earn Your <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                          style={{
+                            WebkitTextStroke: "12px #00AEEF",
+                            paintOrder: "stroke fill",
+                            filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                          }}>
+                        Certificate
+                      </span>
+                    </h1>
+                  </MotionWrapper>
+               </div>
+           </div>
+           
+           <p className="text-lg lg:text-3xl text-slate-600 leading-relaxed font-medium mb-16 text-center mx-auto max-w-4xl">
+             {t.subtitle}
+           </p>
         </div>
       </section>
 
-      <section className="py-32 lg:py-56 bg-white relative overflow-hidden min-h-[95vh] flex flex-col justify-center">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10 w-full">
-          <div className="grid items-start gap-24 lg:grid-cols-2">
-            {/* Benefits */}
-            <MotionWrapper type="fade" direction="right" className="space-y-16">
-              <div className="space-y-8">
-                <div className="flex h-24 w-24 items-center justify-center rounded-[2.5rem] bg-hikids-blue/5 border border-hikids-blue/10 shadow-xl">
-                  <GraduationCap className="h-12 w-12 text-hikids-blue" />
-                </div>
-                <h2 className="text-5xl md:text-7xl lg:text-8xl font-fredoka font-black text-slate-900 tracking-tight leading-none">
-                  Professional Recognition
+      {/* ─── BENEFITS & FORM ─── */}
+      <section className="py-4 lg:py-8 bg-white relative overflow-hidden">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+            
+            {/* Left Column: Benefits */}
+            <div className="lg:col-span-6 space-y-12">
+              <div className="space-y-6">
+                <h2 className="text-4xl lg:text-6xl font-fredoka font-black text-slate-900 leading-tight">
+                  Why Get <br className="hidden lg:block" /> Certified?
                 </h2>
-                <p className="text-xl md:text-2xl lg:text-4xl text-slate-600 font-medium leading-relaxed text-balance opacity-90">
+                <p className="text-lg lg:text-2xl text-slate-500 font-medium leading-relaxed">
                   {t.description}
                 </p>
               </div>
 
-              <div className="grid gap-6">
+              <div className="grid gap-4">
                 {t.benefits.map((benefit: string) => (
-                  <div key={benefit} className="group flex items-center gap-8 p-10 rounded-[3.5rem] bg-slate-50 border border-slate-100 hover:bg-white hover:border-hikids-blue/30 hover:shadow-2xl transition-all duration-700">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-slate-300 shadow-sm border border-slate-100 group-hover:text-hikids-blue group-hover:bg-hikids-blue/5 transition-all duration-500 group-hover:rotate-12">
-                      <CheckCircle2 className="h-6 w-6" strokeWidth={3} />
+                  <div key={benefit} className="flex items-center gap-6 p-8 rounded-[2.5rem] bg-blue-50 border border-blue-100 hover:bg-white transition-all duration-500 group">
+                    <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-hikids-blue shadow-sm border border-blue-100 group-hover:scale-110 transition-transform">
+                      <GraduationCap size={20} className="fill-blue-50/50" />
                     </div>
-                    <span className="text-xl lg:text-2xl font-black text-slate-700 group-hover:text-slate-900 transition-colors uppercase tracking-tight">{benefit}</span>
+                    <span className="text-lg lg:text-xl font-fredoka font-black text-slate-700">{benefit}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="p-12 lg:p-16 rounded-[4rem] bg-hikids-yellow/5 border border-hikids-yellow/20 flex items-start gap-10 hover:shadow-2xl transition-all duration-700">
-                <ShieldCheck className="h-16 w-16 text-hikids-yellow shrink-0 mt-1" />
-                <div className="space-y-4">
-                  <h4 className="text-3xl lg:text-4xl font-fredoka font-black text-slate-900">Verified Achievement</h4>
-                  <p className="text-xl lg:text-3xl text-slate-600 font-medium leading-relaxed opacity-90">Earn a globally recognized certificate that validates your expertise in the HiKids pedagogical model.</p>
-                </div>
+              <div className="p-10 rounded-[3rem] bg-slate-900 text-white flex items-start gap-8 shadow-xl">
+                 <ShieldCheck size={48} className="text-hikids-blue shrink-0" />
+                 <div className="space-y-2">
+                    <h4 className="text-xl lg:text-2xl font-fredoka font-black">Verified Excellence</h4>
+                    <p className="text-slate-400 font-medium">Your certification is globally tracked and verifies your expertise in the HiKids pedagogical model.</p>
+                 </div>
               </div>
-            </MotionWrapper>
+            </div>
 
-            {/* Form Container */}
-            <MotionWrapper type="scale" delay={0.3} className="relative mt-20 lg:mt-0">
-              {/* Decorative glows */}
-              <div className="absolute -inset-20 bg-hikids-blue/5 blur-[120px] rounded-full" />
-
-              <div className="relative rounded-[5rem] border border-slate-100 bg-white p-12 lg:p-20 shadow-3xl ring-1 ring-slate-100 overflow-hidden">
-                <div className="mb-16">
-                  <div className="flex items-center gap-4 text-hikids-blue font-black uppercase tracking-[0.3em] text-sm mb-6">
-                    <Sparkles className="h-6 w-6 fill-current" />
-                    Application Form
+            {/* Right Column: Form */}
+            <div className="lg:col-span-6">
+               <MotionWrapper type="scale">
+                  <div className="bg-blue-50 p-10 lg:p-14 rounded-[4rem] border border-blue-100 shadow-xl relative overflow-hidden group">
+                     <div className="absolute top-0 right-0 w-32 h-32 bg-hikids-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+                     <div className="relative z-10 mb-10">
+                        <span className="bg-white/50 text-hikids-blue text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full border border-blue-200">APPLICATION</span>
+                        <h3 className="text-3xl lg:text-5xl font-fredoka font-black text-slate-900 mt-6 leading-tight">{t.cta}</h3>
+                     </div>
+                     <CertificationForm dict={dict} />
                   </div>
-                  <h3 className="text-4xl md:text-6xl font-fredoka font-black text-slate-900 tracking-tight leading-none mb-4">
-                    {t.cta}
-                  </h3>
-                </div>
-                <div className="bg-slate-50/50 rounded-[4rem] p-8 md:p-12 border border-slate-100">
-                  <CertificationForm dict={dict} />
-                </div>
-              </div>
-            </MotionWrapper>
+               </MotionWrapper>
+            </div>
+
           </div>
         </div>
       </section>
-    </>
+
+    </div>
   );
 }

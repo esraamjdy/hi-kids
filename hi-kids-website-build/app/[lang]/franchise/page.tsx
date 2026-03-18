@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { TrendingUp, Globe, Users, ShieldCheck, ArrowRight, Building2, Briefcase } from "lucide-react";
+import { TrendingUp, Globe, Users, ShieldCheck, ArrowRight, Building2, Briefcase, Zap } from "lucide-react";
 import { getDictionary } from "@/lib/dictionaries";
 import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
@@ -46,119 +46,183 @@ export default async function FranchiseLandingPage({
   ];
 
   return (
-    <div className="bg-white">
-      {/* Hero - Business Focused - Dominant Yellow */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-hikids-yellow pt-32 pb-48 lg:py-48">
-        <div className="absolute inset-0 opacity-[0.04] bg-[url('/images/moka-line-art-01.svg')] animate-drift pointer-events-none mix-blend-darken" />
+    <div className="bg-white overflow-hidden selection:bg-hikids-blue/20">
+      
+      {/* ─── HERO ─── */}
+      <section className="relative min-h-[35vh] lg:min-h-[50vh] flex items-center overflow-hidden bg-[#FFEB00] py-4 lg:py-8">
         
-        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="absolute -right-10 top-[15%] opacity-30 hidden lg:block translate-x-1/4 scale-125 drop-shadow-2xl animate-float-slow grayscale-0">
-             <Image src="/images/Whisk_ba46783577f5efb8588459e8166e51a2dr.png" alt="" width={700} height={700} className="object-contain" />
+        <div className="relative mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 z-10 w-full">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            
+            {/* Left Content */}
+            <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
+              <MotionWrapper direction="right" delay={0.2}>
+                <div className="space-y-6">
+                  <div className="inline-flex items-center gap-4 rounded-full border border-slate-900/10 bg-white/30 px-6 py-2 text-xs font-black text-slate-900 uppercase tracking-[0.2em] backdrop-blur-sm mx-auto lg:mx-0">
+                    <Zap className="h-4 w-4 fill-current" />
+                    Franchise Opportunity
+                  </div>
+                  <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.05] tracking-tight text-balance">
+                    Lead the Future <br className="hidden lg:block" />
+                    of <span className="text-white text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                        style={{
+                          WebkitTextStroke: "12px #00AEEF",
+                          paintOrder: "stroke fill",
+                          filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                        }}>
+                      Education
+                    </span>
+                  </h1>
+                  <p className="text-lg lg:text-3xl text-slate-800 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium opacity-90">
+                    {t.subtitle}
+                  </p>
+                  <div className="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
+                    <Link
+                      href={`/${lang}/franchise/inquiry`}
+                      className="btn-primary !bg-slate-900 !text-white px-12 py-5 text-xl tracking-tight !rounded-3xl hover:scale-105 transition-transform"
+                    >
+                      {t.cta} <ArrowRight className="h-6 w-6 ml-2" />
+                    </Link>
+                  </div>
+                </div>
+              </MotionWrapper>
+            </div>
+
+            {/* Right Visual: Stats or Mascot */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <MotionWrapper type="scale" delay={0.4} className="relative w-[350px] h-[350px] lg:w-[600px] lg:h-[600px]">
+                <Image
+                  src="/images/Moka-Dance.png"
+                  alt="Moka"
+                  fill
+                  className="object-contain drop-shadow-2xl"
+                />
+              </MotionWrapper>
+            </div>
+
           </div>
-          <div className="absolute left-[5%] bottom-[10%] h-[600px] w-[600px] bg-white/20 rounded-full blur-[120px]" />
         </div>
+      </section>
 
-        <div className="relative mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 z-10 w-full text-center lg:text-left">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <MotionWrapper type="fade" direction="right" className="max-w-4xl">
-              <div className="mb-10 inline-flex items-center gap-4 rounded-full border border-slate-900/10 bg-white/20 px-6 py-3 text-sm md:text-base font-black text-slate-900 backdrop-blur-md uppercase tracking-[0.2em] shadow-sm">
-                <Briefcase className="h-5 w-5" />
-                Franchise Opportunity
-              </div>
-              <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-fredoka font-black text-slate-900 tracking-tight leading-[0.95] mb-12 text-balance">
-                {t.title}
-              </h1>
-              <p className="mt-10 text-xl md:text-2xl lg:text-4xl text-slate-800 font-medium leading-relaxed max-w-3xl opacity-90 text-balance mb-16">
-                {t.subtitle}
-              </p>
-              <Link
-                href={`/${lang}/franchise/inquiry`}
-                className="group inline-flex items-center gap-6 rounded-[2.5rem] bg-slate-900 px-14 py-8 text-xl md:text-2xl font-black text-white shadow-2xl transition-all hover:bg-slate-800 hover:-translate-y-2 hover:scale-105"
-              >
-                {t.cta}
-                <ArrowRight className="h-8 w-8 group-hover:translate-x-3 transition-transform" strokeWidth={3} />
-              </Link>
-            </MotionWrapper>
+      {/* Hero Divider */}
+      <div className="w-full relative -mt-[100px] lg:-mt-[100px] z-20">
+        <WaveDivider color="white" />
+      </div>
 
-            {/* Stats Grid */}
-            <MotionContainer className="grid grid-cols-2 gap-6 lg:gap-10">
+      {/* ─── GROWTH STATS ─── */}
+      <section className="py-4 lg:py-8 bg-white relative overflow-hidden">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {t.stats.map((stat: any, i: number) => {
                 const Icon = statsIcons[i];
                 return (
-                  <MotionItem key={i} className="bg-white/40 backdrop-blur-md p-10 rounded-[3rem] border border-white/40 shadow-xl group hover:bg-white/60 transition-all">
-                    <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center text-hikids-yellow mb-6 shadow-sm group-hover:scale-110 transition-transform">
-                      <Icon size={32} />
+                  <MotionItem key={i} className="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-100 group hover:bg-white hover:shadow-xl transition-all duration-500 hover:-translate-y-2 text-center items-center flex flex-col">
+                    <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-hikids-yellow mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                      <Icon size={28} />
                     </div>
-                    <div className="text-5xl lg:text-7xl font-black text-slate-900 mb-2">{stat.value}</div>
-                    <div className="text-sm font-black text-slate-700/60 uppercase tracking-widest">{stat.label}</div>
+                    <div className="text-4xl lg:text-5xl font-black text-slate-900 mb-2 font-fredoka">{stat.value}</div>
+                    <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-tight">{stat.label}</div>
                   </MotionItem>
                 );
               })}
-            </MotionContainer>
-          </div>
-        </div>
-
-        <div className="absolute -bottom-[1px] left-0 w-full leading-none z-20">
-          <WaveDivider color="white" />
-        </div>
-      </section>
-
-      {/* Pathways */}
-      <section className="py-32 lg:py-56 bg-white relative overflow-hidden min-h-[95vh] flex flex-col justify-center">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10 w-full">
-          <MotionWrapper type="fade" direction="up" className="text-center mb-24 space-y-8">
-            <h2 className="text-6xl md:text-8xl lg:text-[7rem] font-fredoka font-black text-slate-900 tracking-tight leading-[0.95]">Explore the Model</h2>
-            <p className="text-xl md:text-2xl lg:text-4xl text-slate-600 font-medium max-w-4xl mx-auto text-balance">
-              Find everything you need to know about our partnership structure and support systems.
-            </p>
-          </MotionWrapper>
-
-          <MotionContainer className="grid md:grid-cols-3 gap-10">
-            {pathwayLinks.map((path, i) => (
-              <MotionItem key={i}>
-                <CtaCard
-                  title={path.title}
-                  description={path.description}
-                  href={path.href}
-                  cta="Learn More"
-                  icon={<path.icon size={32} />}
-                  variant="accent"
-                  className="h-full p-12 lg:p-16 hover:-translate-y-4 transition-all duration-500 bg-slate-50/80 hover:bg-white rounded-[3rem] shadow-sm hover:shadow-2xl border border-slate-100"
-                />
-              </MotionItem>
-            ))}
-          </MotionContainer>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-32 lg:py-56 bg-slate-50 relative overflow-hidden min-h-[90vh] flex items-center">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10 w-full">
-           <div className="bg-hikids-yellow rounded-[5rem] p-16 lg:p-24 relative overflow-hidden shadow-2xl flex flex-col lg:flex-row items-center gap-20">
-              <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
-              
-              <div className="relative z-10 flex-1 space-y-12">
-                <h2 className="text-5xl md:text-7xl lg:text-8xl font-fredoka font-black text-slate-900 leading-[1.0] tracking-tight">Ready to building your legacy?</h2>
-                <p className="text-xl md:text-2xl lg:text-4xl text-slate-800 font-medium opacity-90 leading-relaxed text-balance">
-                  Take the first step towards opening your own HiKids Kindergarten. Our team is ready to support you.
-                </p>
-                <div className="pt-6">
-                  <Link
-                    href={`/${lang}/franchise/inquiry`}
-                    className="inline-flex items-center gap-6 rounded-[2.5rem] bg-white px-14 py-8 text-xl md:text-2xl font-black text-slate-900 shadow-xl transition-all hover:-translate-y-2 hover:scale-105"
-                  >
-                    Partner with Us
-                    <ArrowRight className="h-8 w-8 transition-transform group-hover:translate-x-3" strokeWidth={3} />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="relative w-full lg:w-1/3 aspect-square lg:scale-125 animate-float-slow">
-                 <Image src="/images/hi.png" alt="Moka Mascot" fill className="object-contain drop-shadow-3xl" />
-              </div>
            </div>
         </div>
       </section>
+
+      {/* ─── THE MODEL – ZigZag ─── */}
+      <section className="py-4 lg:py-8 bg-yellow-50 relative overflow-hidden">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight">
+              Explore the <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                  style={{
+                    WebkitTextStroke: "12px #00AEEF",
+                    paintOrder: "stroke fill",
+                    filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                  }}>
+                Model
+              </span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+             {pathwayLinks.map((path, i) => (
+                <MotionItem key={i} className="h-full">
+                   <Link href={path.href} className="group block h-full bg-white p-10 lg:p-12 rounded-[3.5rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-hikids-yellow/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-hikids-yellow/10 transition-colors" />
+                      <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-hikids-yellow mb-8 shadow-inner group-hover:scale-110 transition-transform">
+                         <path.icon size={32} />
+                      </div>
+                      <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mb-4 font-fredoka leading-tight">{path.title}</h3>
+                      <p className="text-slate-500 text-lg leading-relaxed font-medium mb-8">
+                         {path.description}
+                      </p>
+                      <div className="inline-flex items-center text-hikids-yellow font-bold text-lg group-hover:translate-x-2 transition-transform">
+                         Discover Plan <ArrowRight className="ml-2 h-5 w-5" />
+                      </div>
+                   </Link>
+                </MotionItem>
+             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── FINAL CTA ─── */}
+      <section className="py-4 lg:py-8 bg-[#FFEB00] relative overflow-hidden">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Column: Mascot */}
+            <div className="lg:col-span-6 flex justify-center lg:justify-center order-2 lg:order-1 mt-12 lg:mt-0">
+               <MotionWrapper type="scale" className="relative w-[450px] h-[450px] lg:w-[1000px] lg:h-[1000px] lg:-ml-32">
+                  <Image src="/images/Moka-Plays.png" alt="Moka Plays" fill className="object-contain drop-shadow-2xl" />
+               </MotionWrapper>
+            </div>
+
+            {/* Right Column: Text */}
+            <div className="lg:col-span-6 space-y-10 order-1 lg:order-2">
+               <MotionWrapper direction="left">
+                  <div className="space-y-6 text-center lg:text-left">
+                     <span className="bg-white/30 text-slate-900 text-xs font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full inline-block border border-slate-900/10 backdrop-blur-sm">
+                        START TODAY
+                     </span>
+                     <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.1] tracking-tight">
+                        Build your <br className="sm:hidden" />
+                        <span className="text-white text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                           style={{
+                              WebkitTextStroke: "12px #00AEEF",
+                              paintOrder: "stroke fill",
+                              filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                           }}>
+                           Legacy
+                        </span>
+                     </h2>
+                     <p className="text-lg lg:text-2xl text-slate-800 font-medium max-w-xl mx-auto lg:mx-0 opacity-90 leading-relaxed">
+                        Join our international family of successful educators and business owners.
+                     </p>
+                  </div>
+               </MotionWrapper>
+
+               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
+                  <Link
+                    href={`/${lang}/franchise/inquiry`}
+                    className="btn-primary !bg-slate-900 !text-white px-12 py-5 text-xl tracking-tight !rounded-3xl hover:shadow-2xl transition-all"
+                  >
+                    Apply Now <ArrowRight className="h-6 w-6 ml-2" />
+                  </Link>
+                  <Link
+                    href={`/${lang}/contact`}
+                    className="btn-outline px-12 py-5 text-xl tracking-tight bg-white/80 border-slate-900/10 shadow-xl hover:bg-white !rounded-3xl transition-all"
+                  >
+                    Contact Support
+                  </Link>
+               </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }

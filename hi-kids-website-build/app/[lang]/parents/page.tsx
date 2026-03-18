@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Layers, Heart, Smartphone, ArrowRight, Sparkles } from "lucide-react";
+import { MapPin, Layers, Heart, Smartphone, ArrowRight, Sparkles, Zap } from "lucide-react";
 import { getDictionary } from "@/lib/dictionaries";
 import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
-import { CtaCard } from "@/components/cta-card";
 import { WaveDivider } from "@/components/wave-divider";
-import { SectionHeader } from "@/components/section-header";
 import { MotionWrapper, MotionContainer, MotionItem } from "@/components/motion-wrapper";
 
 export const metadata: Metadata = {
@@ -33,137 +31,161 @@ export default async function ParentsPage({
   ];
 
   return (
-    <>
-      {/* Hero - Warm & Emotional - Dominant Cream for Parents Pathway */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-slate-50 pt-32 pb-48 lg:py-48">
-        {/* Playful Pattern Overlay */}
-        <div className="absolute inset-0 opacity-[0.03] bg-[url('/images/moka-line-art-02.svg')] animate-drift pointer-events-none mix-blend-darken" />
-
-        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="absolute -right-10 top-[20%] opacity-30 hidden lg:block translate-x-1/4 scale-110 drop-shadow-2xl animate-float-slow">
-            <Image src="/images/7.png" alt="" width={450} height={450} className="object-contain" />
-          </div>
-          <div className="absolute left-[2%] top-[30%] opacity-20 hidden lg:block -translate-x-1/4 scale-90 drop-shadow-xl animate-float">
-            <Image src="/images/2.png" alt="" width={300} height={300} className="object-contain" />
-          </div>
-          <div className="absolute left-[5%] bottom-[10%] h-[500px] w-[500px] bg-primary/5 rounded-full blur-[120px]" />
-        </div>
-
+    <div className="bg-white overflow-hidden selection:bg-hikids-blue/20">
+      
+      {/* ─── HERO ─── */}
+      <section className="relative min-h-[35vh] lg:min-h-[50vh] flex items-center overflow-hidden bg-[#FFEB00] py-4 lg:py-8">
+        <div className="absolute inset-0 opacity-[0.05] bg-[url('/images/moka-line-art-02.svg')] animate-drift pointer-events-none mix-blend-darken" />
+        
         <div className="relative mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 z-10 w-full">
-          <div className="grid gap-20 lg:grid-cols-2 items-center">
-            <MotionWrapper className="text-left" type="fade" direction="right">
-              <div className="mb-10 inline-flex items-center gap-4 rounded-full border border-primary/20 bg-white/40 px-6 py-2.5 text-sm md:text-base font-black text-primary shadow-soft backdrop-blur-md uppercase tracking-[0.2em]">
-                <Heart className="h-5 w-5 text-primary fill-current" />
-                Trusted by Families Worldwide
-              </div>
-              <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] font-fredoka font-black text-slate-900 tracking-tight leading-[0.95] mb-12">
-                {t.title}
-              </h1>
-              <p className="mt-10 text-xl md:text-2xl lg:text-3xl text-slate-600 font-medium leading-relaxed max-w-2xl text-balance">
-                {t.subtitle}
-              </p>
-              <div className="mt-16 flex flex-wrap gap-6">
-                <Link
-                  href={`/${lang}/parents/find-kindergarten`}
-                  className="inline-flex items-center gap-4 rounded-[2.5rem] bg-hikids-blue px-12 py-7 text-xl font-black text-white shadow-2xl shadow-hikids-blue/20 hover:bg-hikids-blue/90 hover:-translate-y-2 hover:scale-105 transition-all"
-                >
-                  Find a Center
-                  <MapPin className="h-6 w-6" strokeWidth={3} />
-                </Link>
-              </div>
-            </MotionWrapper>
-
-            <MotionWrapper className="relative h-[650px] hidden lg:block" type="scale" delay={0.3}>
-              <Image
-                src="/images/8.png"
-                alt="HiKids for Parents"
-                fill
-                className="object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.12)] lg:scale-125"
-                priority
-              />
-            </MotionWrapper>
-          </div>
-        </div>
-        <div className="absolute -bottom-[1px] left-0 w-full leading-none z-20">
-          <WaveDivider color="white" />
-        </div>
-      </section>
-
-      {/* Feature Paths */}
-      <section className="py-32 lg:py-56 bg-white relative overflow-hidden min-h-[95vh] flex flex-col justify-center">
-        <div className="absolute -left-10 bottom-20 opacity-15 rotate-12 hidden xl:block animate-float-slow drop-shadow-lg">
-          <Image src="/images/4.png" alt="" width={350} height={350} />
-        </div>
-        <div className="absolute right-[-5%] top-10 opacity-10 hidden xl:block -rotate-12 animate-float drop-shadow-md">
-          <Image src="/images/3.png" alt="" width={300} height={300} />
-        </div>
-
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10">
-          <MotionWrapper type="fade" direction="up">
-            <div className="text-center mb-24 space-y-6">
-              <h2 className="text-5xl md:text-7xl lg:text-8xl font-fredoka font-black text-slate-900 leading-[1.05] tracking-tight">Explore Your Options</h2>
-              <p className="text-xl md:text-2xl lg:text-4xl text-slate-600 font-medium max-w-4xl mx-auto text-balance">
-                Everything you need to support your child's journey at HiKids.
-              </p>
-            </div>
-          </MotionWrapper>
-
-          <MotionContainer className="mt-16 grid gap-12 md:grid-cols-2">
-            {t.features.map((feature, i) => {
-              const Icon = icons[i];
-              return (
-                <MotionItem key={feature.title} className="group relative">
-                  <CtaCard
-                    title={feature.title}
-                    description={feature.description}
-                    href={hrefs[i]}
-                    cta={feature.cta}
-                    icon={<Icon className="h-10 w-10 text-hikids-blue" />}
-                    variant="secondary"
-                    className="h-full p-12 lg:p-20 hover:-translate-y-4 lg:hover:-translate-y-6 transition-all duration-700 shadow-sm hover:shadow-2xl bg-slate-50/80 hover:bg-white rounded-[4rem] border border-slate-100"
-                  />
-                  <div className="absolute top-0 right-0 p-12 lg:p-20 opacity-0 group-hover:opacity-10 transition-all duration-700 text-hikids-blue translate-x-4 -translate-y-4 group-hover:translate-0 pointer-events-none">
-                    <Icon className="h-32 w-32" />
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            
+            {/* Left Content */}
+            <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
+              <MotionWrapper direction="right" delay={0.2}>
+                <div className="space-y-6">
+                  <div className="inline-flex items-center gap-4 rounded-full border border-slate-900/10 bg-white/30 px-6 py-2 text-xs font-black text-slate-900 uppercase tracking-[0.2em] backdrop-blur-sm mx-auto lg:mx-0">
+                    <Heart className="h-4 w-4 fill-current" />
+                    Trusted by Families
                   </div>
-                </MotionItem>
-              );
-            })}
-          </MotionContainer>
-        </div>
-      </section>
-
-      {/* Global CTA */}
-      <section className="py-32 lg:py-56 relative overflow-hidden bg-slate-900 m-6 lg:m-12 rounded-[5rem] min-h-[90vh] flex flex-col justify-center">
-        {/* Soft internal glows */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-hikids-blue/20 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-hikids-blue/10 rounded-full blur-[100px] pointer-events-none translate-y-1/2 -translate-x-1/2" />
-
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 text-center relative z-10 w-full">
-          <MotionWrapper type="scale">
-            <div className="mb-12 inline-flex h-24 w-24 items-center justify-center rounded-[2rem] bg-white/5 border border-white/10 shadow-2xl backdrop-blur-md">
-              <Sparkles className="h-10 w-10 text-hikids-blue fill-hikids-blue" />
+                  <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.05] tracking-tight text-balance">
+                    Bright Future <br className="hidden lg:block" />
+                    starts <span className="text-white text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                        style={{
+                          WebkitTextStroke: "12px #00AEEF",
+                          paintOrder: "stroke fill",
+                          filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                        }}>
+                      Here
+                    </span>
+                  </h1>
+                  <p className="text-lg lg:text-3xl text-slate-800 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium opacity-90">
+                    {t.subtitle}
+                  </p>
+                  <div className="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
+                    <Link
+                      href={`/${lang}/parents/find-kindergarten`}
+                      className="btn-primary !bg-slate-900 !text-white px-12 py-5 text-xl tracking-tight !rounded-3xl hover:scale-105 transition-transform"
+                    >
+                      Find a Center <MapPin className="h-6 w-6 ml-2" />
+                    </Link>
+                  </div>
+                </div>
+              </MotionWrapper>
             </div>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-fredoka font-black text-white mb-12 tracking-tight leading-[1.05]">
-              Your Child Deserves the Best Start
-            </h2>
-            <p className="mx-auto max-w-3xl text-xl md:text-2xl lg:text-3xl text-slate-300 leading-relaxed font-medium mb-16 text-balance">
-              Find a HiKids kindergarten near you and see the difference our progressive learning approach makes.
-            </p>
-            <Link
-              href={`/${lang}/parents/find-kindergarten`}
-              className="inline-flex items-center gap-6 rounded-[2.5rem] bg-hikids-blue px-14 py-8 text-xl font-black text-white shadow-2xl shadow-hikids-blue/20 transition-all hover:bg-hikids-blue/90 hover:scale-105 hover:-translate-y-2"
-            >
-              Get Started Today
-              <ArrowRight className="h-8 w-8 transition-transform group-hover:translate-x-3" strokeWidth={3} />
-            </Link>
-          </MotionWrapper>
 
-          {/* Decorative Mascot */}
-          <div className="absolute bottom-[-5%] right-[-5%] opacity-20 hidden xl:block pointer-events-none drop-shadow-3xl animate-float-slow">
-            <Image src="/images/Whisk_61d9a24bbad8193df45fec5f308801d0dr.png" alt="" width={500} height={500} />
+            {/* Right Visual */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <MotionWrapper type="scale" delay={0.4} className="relative w-[350px] h-[350px] lg:w-[600px] lg:h-[600px]">
+                <Image
+                  src="/images/Moka-Dance.png"
+                  alt="Moka"
+                  fill
+                  className="object-contain drop-shadow-2xl"
+                />
+              </MotionWrapper>
+            </div>
+
           </div>
         </div>
       </section>
-    </>
+
+      {/* Hero Divider */}
+      <div className="w-full relative -mt-[100px] lg:-mt-[100px] z-20">
+        <WaveDivider color="white" />
+      </div>
+
+      {/* ─── PATHWAYS ─── */}
+      <section className="py-4 lg:py-8 bg-white relative overflow-hidden">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+           <div className="text-center mb-16">
+              <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.05] tracking-tight">
+                Family <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                    style={{
+                      WebkitTextStroke: "12px #00AEEF",
+                      paintOrder: "stroke fill",
+                      filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                    }}>
+                  Portal
+                </span>
+              </h2>
+           </div>
+
+           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {t.features.map((feature, i) => {
+                const Icon = icons[i];
+                return (
+                  <MotionItem key={feature.title} className="h-full">
+                     <Link href={hrefs[i]} className="group block h-full bg-yellow-50/50 p-10 lg:p-12 rounded-[3.5rem] border border-yellow-100 shadow-sm hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 relative overflow-hidden text-center">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-hikids-yellow/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-hikids-yellow/10 transition-colors" />
+                        <div className="w-20 h-20 rounded-3xl bg-white flex items-center justify-center text-hikids-yellow mb-8 shadow-inner group-hover:scale-110 transition-transform mx-auto">
+                           <Icon size={40} />
+                        </div>
+                        <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mb-4 font-fredoka leading-tight">{feature.title}</h3>
+                        <p className="text-slate-500 text-lg leading-relaxed font-medium mb-8">
+                           {feature.description}
+                        </p>
+                        <div className="inline-flex items-center text-hikids-yellow font-bold text-lg group-hover:translate-x-2 transition-transform">
+                           {feature.cta} <ArrowRight className="ml-2 h-5 w-5" />
+                        </div>
+                     </Link>
+                  </MotionItem>
+                );
+              })}
+           </div>
+        </div>
+      </section>
+
+      {/* ─── FINAL CTA – YELLOW THEME ─── */}
+      <section className="py-4 lg:py-8 bg-[#FFEB00] relative overflow-hidden">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Column: Mascot */}
+            <div className="lg:col-span-6 flex justify-center lg:justify-center order-2 lg:order-1 mt-12 lg:mt-0">
+               <MotionWrapper type="scale" className="relative w-[450px] h-[450px] lg:w-[1000px] lg:h-[1000px] lg:-ml-32">
+                  <Image src="/images/Moka-Plays.png" alt="Moka Plays" fill className="object-contain drop-shadow-2xl" />
+               </MotionWrapper>
+            </div>
+
+            {/* Right Column: Text */}
+            <div className="lg:col-span-6 space-y-10 order-1 lg:order-2">
+               <MotionWrapper direction="left">
+                  <div className="space-y-6 text-center lg:text-left">
+                     <span className="bg-white/30 text-slate-900 text-xs font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full inline-block border border-slate-900/10 backdrop-blur-sm">
+                        JOIN THE FAMILY
+                     </span>
+                     <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.1] tracking-tight">
+                        Start child's <br className="sm:hidden" />
+                        <span className="text-white text-6xl lg:text-8xl xl:text-[7.5rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                           style={{
+                              WebkitTextStroke: "12px #00AEEF",
+                              paintOrder: "stroke fill",
+                              filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                           }}>
+                           Success
+                        </span>
+                     </h2>
+                     <p className="text-lg lg:text-3xl text-slate-800 font-medium max-w-xl mx-auto lg:mx-0 opacity-90 leading-relaxed text-center lg:text-left text-balance">
+                        Your child deserves the best start. Join our progressive community today.
+                     </p>
+                  </div>
+               </MotionWrapper>
+
+               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
+                  <Link
+                    href={`/${lang}/parents/find-kindergarten`}
+                    className="btn-primary px-12 py-5 text-xl tracking-tight !rounded-3xl hover:shadow-2xl transition-all"
+                  >
+                    Find a Kindergarten <ArrowRight className="h-6 w-6 ml-2" />
+                  </Link>
+               </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
   );
 }

@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Zap, CheckCircle2 } from "lucide-react";
 import { getDictionary } from "@/lib/dictionaries";
 import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
-import { SectionHeader } from "@/components/section-header";
 import { WaveDivider } from "@/components/wave-divider";
 import { MotionWrapper, MotionContainer, MotionItem } from "@/components/motion-wrapper";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Franchise Model",
+  title: "Franchise Model | HiKids Steps to Success",
 };
 
 export default async function ModelPage({
@@ -24,92 +23,103 @@ export default async function ModelPage({
   const t = dict.franchise.model;
 
   return (
-    <>
-      <section className="bg-hikids-yellow relative min-h-[92vh] flex items-center overflow-hidden pt-32 pb-48 lg:py-48">
-        {/* Playful Pattern Overlay */}
-        <div className="absolute inset-0 opacity-[0.04] bg-[url('/images/moka-line-art-01.svg')] animate-drift pointer-events-none mix-blend-darken" />
-        
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10 w-full">
-          <MotionWrapper className="mx-auto max-w-5xl text-center" type="fade" direction="up">
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-fredoka font-black text-slate-900 tracking-tight leading-[0.95] mb-12">
-              {t.title}
-            </h1>
-            <p className="mt-10 text-xl md:text-2xl lg:text-4xl text-slate-800 font-medium leading-relaxed opacity-90 text-balance">
-              {t.subtitle}
-            </p>
-          </MotionWrapper>
-        </div>
-        <div className="absolute -bottom-[1px] left-0 w-full leading-none z-20">
-          <WaveDivider color="white" />
+    <div className="bg-white overflow-hidden selection:bg-hikids-blue/20 pt-16 lg:pt-24">
+      
+      {/* ─── CREATIVE HEADER (No Hero) ─── */}
+      <section className="py-4 lg:py-8 bg-white relative overflow-visible">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 w-full">
+           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 border-b border-slate-100 pb-12 mb-12">
+               {/* peeking mascot */}
+               <MotionWrapper type="scale" className="relative w-48 h-48 lg:w-64 lg:h-64 -mb-16 lg:-mb-24 z-10">
+                  <Image src="/images/Moka-Dance.png" alt="Moka" fill className="object-contain drop-shadow-2xl" />
+               </MotionWrapper>
+               
+               <div className="flex-1 text-center lg:text-left pt-8">
+                  <MotionWrapper direction="right">
+                    <span className="bg-blue-50 text-hikids-blue border-blue-100 text-xs font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full inline-block border backdrop-blur-sm mb-4">
+                        PARTNERSHIP
+                    </span>
+                    <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.1] tracking-tight text-balance">
+                      Our Proven <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                          style={{
+                            WebkitTextStroke: "12px #00AEEF",
+                            paintOrder: "stroke fill",
+                            filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                          }}>
+                        Model
+                      </span>
+                    </h1>
+                  </MotionWrapper>
+               </div>
+           </div>
+           
+           <p className="text-lg lg:text-3xl text-slate-600 leading-relaxed font-medium mb-16 text-center mx-auto max-w-4xl">
+             {t.subtitle}
+           </p>
         </div>
       </section>
 
-      {/* Steps Timeline */}
-      <section className="py-32 lg:py-56 bg-white relative overflow-hidden min-h-[95vh] flex flex-col justify-center">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24">
-          <div className="relative">
-            {/* Vertical line - Premium gradient */}
-            <div
-              className="absolute left-6 md:left-1/2 top-0 bottom-0 w-2 bg-gradient-to-b from-hikids-yellow via-hikids-blue to-hikids-blue -translate-x-1/2 opacity-20 hidden sm:block rounded-full"
-              aria-hidden="true"
-            />
-
-            <MotionContainer className="flex flex-col gap-24 lg:gap-40">
+      {/* ─── STEPS TIMELINE ─── */}
+      <section className="py-4 lg:py-8 bg-white relative overflow-hidden">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+           <div className="space-y-12">
               {t.steps.map((step: any, i: number) => (
-                <MotionItem
-                  key={step.title}
-                  className={`relative flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-24 lg:gap-32 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                    }`}
-                  direction={i % 2 === 0 ? "right" : "left"}
-                >
-                  {/* Step Number - Large & Prominent */}
-                  <div className="relative z-10 flex h-24 w-24 shrink-0 items-center justify-center rounded-[2rem] bg-slate-900 text-3xl font-black text-white shadow-2xl md:absolute md:left-1/2 md:-translate-x-1/2 border-4 border-white">
-                    {i + 1}
-                  </div>
-
-                  {/* Content Card */}
-                  <div
-                    className={`flex-1 rounded-[4rem] bg-slate-50 p-12 lg:p-20 transition-all hover:shadow-2xl hover:-translate-y-2 duration-500 border border-slate-100 hover:bg-white group ${i % 2 === 0 ? "md:mr-[calc(50%+60px)]" : "md:ml-[calc(50%+60px)]"
-                      }`}
-                  >
-                    <span className="text-hikids-blue font-black uppercase tracking-[0.3em] text-sm mb-6 block">Step {i + 1}</span>
-                    <h3 className="text-3xl lg:text-5xl font-fredoka font-black text-slate-900 mb-8 group-hover:text-hikids-blue transition-colors">
-                      {step.title}
-                    </h3>
-                    <p className="text-xl lg:text-3xl text-slate-600 leading-relaxed font-medium text-balance">
-                      {step.description}
-                    </p>
-                  </div>
+                <MotionItem key={i} className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+                   <div className={`lg:col-span-12 flex flex-col lg:flex-row gap-8 lg:gap-12 items-center ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
+                      <div className="w-20 h-20 shrink-0 rounded-full bg-slate-900 text-white flex items-center justify-center text-3xl font-black font-fredoka shadow-lg">
+                        {i + 1}
+                      </div>
+                      <div className={`flex-1 bg-slate-50 p-10 lg:p-14 rounded-[3rem] border border-slate-100 group hover:bg-white hover:shadow-xl transition-all duration-500 hover:-translate-y-2 ${i % 2 !== 0 ? 'text-right' : ''}`}>
+                         <h3 className="text-2xl lg:text-4xl font-fredoka font-black text-slate-900 mb-4 group-hover:text-hikids-blue transition-colors">
+                            {step.title}
+                         </h3>
+                         <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed font-medium">
+                            {step.description}
+                         </p>
+                      </div>
+                   </div>
                 </MotionItem>
               ))}
-            </MotionContainer>
+           </div>
+        </div>
+      </section>
+
+      {/* ─── INVESTMENT SECTION ─── */}
+      <section className="py-4 lg:py-8 bg-[#FFEB00] relative overflow-hidden">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            
+             {/* Text side */}
+             <div className="lg:col-span-7 space-y-8">
+                <MotionWrapper direction="right">
+                   <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.1] tracking-tight">
+                      {t.investment.title}
+                   </h2>
+                   <p className="text-lg lg:text-3xl text-slate-800 font-medium leading-relaxed opacity-90">
+                      {t.investment.description}
+                   </p>
+                   <div className="pt-8 text-center lg:text-left">
+                      <Link
+                        href={`/${lang}/franchise/inquiry`}
+                        className="btn-primary !bg-slate-900 !text-white px-12 py-5 text-xl tracking-tight !rounded-3xl hover:shadow-2xl transition-all inline-flex items-center gap-4"
+                      >
+                         {t.investment.cta} <ArrowRight className="h-6 w-6" />
+                      </Link>
+                   </div>
+                </MotionWrapper>
+             </div>
+
+             {/* Visual side */}
+             <div className="lg:col-span-5 flex justify-center">
+                <MotionWrapper type="scale" className="relative w-[300px] h-[300px] lg:w-[600px] lg:h-[600px]">
+                   <Image src="/images/Moka-Plays.png" alt="Moka Investment" fill className="object-contain drop-shadow-2xl" />
+                </MotionWrapper>
+             </div>
+
           </div>
         </div>
       </section>
 
-      {/* Investment Information */}
-      <section className="bg-slate-900 py-32 lg:py-56 min-h-[90vh] flex flex-col justify-center relative overflow-hidden m-6 lg:m-12 rounded-[5rem]">
-        {/* Glows */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-hikids-yellow/10 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/2" />
-        
-        <div className="mx-auto max-w-[1600px] w-full px-6 lg:px-16 xl:px-24 text-center relative z-10">
-          <MotionWrapper type="scale">
-            <h2 className="text-6xl md:text-8xl font-fredoka font-black text-white mb-12 tracking-tight">
-              {t.investment.title}
-            </h2>
-            <p className="text-xl md:text-3xl lg:text-4xl text-slate-300 leading-relaxed font-medium mb-20 max-w-4xl mx-auto text-balance">
-              {t.investment.description}
-            </p>
-            <Link
-              href={`/${lang}/franchise/inquiry`}
-              className="group inline-flex items-center gap-6 rounded-[2.5rem] bg-hikids-yellow px-14 py-8 text-xl md:text-2xl font-black text-slate-900 shadow-2xl shadow-hikids-yellow/20 transition-all hover:bg-hikids-yellow/90 hover:-translate-y-2 hover:scale-105"
-            >
-              {t.investment.cta}
-              <ArrowRight className="h-8 w-8 group-hover:translate-x-3 transition-transform" strokeWidth={3} />
-            </Link>
-          </MotionWrapper>
-        </div>
-      </section>
-    </>
+    </div>
   );
 }
