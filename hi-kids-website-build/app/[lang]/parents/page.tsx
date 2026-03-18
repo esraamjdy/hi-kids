@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import { CtaCard } from "@/components/cta-card";
 import { WaveDivider } from "@/components/wave-divider";
 import { SectionHeader } from "@/components/section-header";
+import { MotionWrapper, MotionContainer, MotionItem } from "@/components/motion-wrapper";
 
 export const metadata: Metadata = {
   title: "A Bright Future for Your Child | HiKids Parents",
@@ -33,117 +34,133 @@ export default async function ParentsPage({
 
   return (
     <>
-      {/* Hero - Warm & Emotional */}
-      <section className="relative min-h-[75vh] flex items-center overflow-hidden bg-gradient-to-b from-accent/20 via-background to-background pt-20">
+      {/* Hero - Warm & Emotional - Dominant Cream for Parents Pathway */}
+      <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-slate-50 pt-32 pb-48 lg:py-48">
+        {/* Playful Pattern Overlay */}
+        <div className="absolute inset-0 opacity-[0.03] bg-[url('/images/moka-line-art-02.svg')] animate-drift pointer-events-none mix-blend-darken" />
+
         <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="absolute -right-20 top-1/2 -translate-y-1/2 opacity-20 hidden lg:block translate-x-1/4">
-            <Image src="/images/7.png" alt="" width={500} height={500} className="object-contain" />
+          <div className="absolute -right-10 top-[20%] opacity-30 hidden lg:block translate-x-1/4 scale-110 drop-shadow-2xl animate-float-slow">
+            <Image src="/images/7.png" alt="" width={450} height={450} className="object-contain" />
           </div>
-          <div className="absolute left-[5%] bottom-[15%] h-64 w-64 bg-primary/10 rounded-full blur-[100px] animate-float" />
+          <div className="absolute left-[2%] top-[30%] opacity-20 hidden lg:block -translate-x-1/4 scale-90 drop-shadow-xl animate-float">
+            <Image src="/images/2.png" alt="" width={300} height={300} className="object-contain" />
+          </div>
+          <div className="absolute left-[5%] bottom-[10%] h-[500px] w-[500px] bg-primary/5 rounded-full blur-[120px]" />
         </div>
 
-        <div className="relative mx-auto max-w-[1600px] px-4 py-20 lg:px-8 z-10 w-full">
-          <div className="grid gap-16 lg:grid-cols-2 items-center">
-            <div className="text-left animate-fade-in-up">
-              <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-accent/30 bg-white/50 px-5 py-2 text-sm font-black text-foreground shadow-soft backdrop-blur-md uppercase tracking-widest">
-                <Heart className="h-4 w-4 text-hikids-yellow fill-current" />
+        <div className="relative mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 z-10 w-full">
+          <div className="grid gap-20 lg:grid-cols-2 items-center">
+            <MotionWrapper className="text-left" type="fade" direction="right">
+              <div className="mb-10 inline-flex items-center gap-4 rounded-full border border-primary/20 bg-white/40 px-6 py-2.5 text-sm md:text-base font-black text-primary shadow-soft backdrop-blur-md uppercase tracking-[0.2em]">
+                <Heart className="h-5 w-5 text-primary fill-current" />
                 Trusted by Families Worldwide
               </div>
-              <h1 className="text-5xl font-black tracking-tight text-foreground md:text-6xl lg:text-8xl text-balance leading-[1.1]">
+              <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] font-fredoka font-black text-slate-900 tracking-tight leading-[0.95] mb-12">
                 {t.title}
               </h1>
-              <p className="mt-10 text-2xl text-muted-foreground font-medium leading-relaxed text-pretty max-w-xl">
+              <p className="mt-10 text-xl md:text-2xl lg:text-3xl text-slate-600 font-medium leading-relaxed max-w-2xl text-balance">
                 {t.subtitle}
               </p>
-              <div className="mt-12 flex flex-wrap gap-4">
+              <div className="mt-16 flex flex-wrap gap-6">
                 <Link
                   href={`/${lang}/parents/find-kindergarten`}
-                  className="inline-flex items-center gap-3 rounded-[2rem] bg-primary px-10 py-5 text-lg font-black text-white shadow-xl shadow-primary/20 hover:bg-primary/90 hover:-translate-y-1 transition-all"
+                  className="inline-flex items-center gap-4 rounded-[2.5rem] bg-hikids-blue px-12 py-7 text-xl font-black text-white shadow-2xl shadow-hikids-blue/20 hover:bg-hikids-blue/90 hover:-translate-y-2 hover:scale-105 transition-all"
                 >
                   Find a Center
-                  <MapPin className="h-5 w-5" />
+                  <MapPin className="h-6 w-6" strokeWidth={3} />
                 </Link>
               </div>
-            </div>
+            </MotionWrapper>
 
-            <div className="relative h-[600px] hidden lg:block animate-scale-in">
+            <MotionWrapper className="relative h-[650px] hidden lg:block" type="scale" delay={0.3}>
               <Image
                 src="/images/8.png"
                 alt="HiKids for Parents"
                 fill
-                className="object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)] scale-110"
+                className="object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.12)] lg:scale-125"
                 priority
               />
-            </div>
+            </MotionWrapper>
           </div>
+        </div>
+        <div className="absolute -bottom-[1px] left-0 w-full leading-none z-20">
+          <WaveDivider color="white" />
         </div>
       </section>
 
       {/* Feature Paths */}
-      <section className="py-24 lg:py-40 bg-white relative overflow-hidden">
-        <div className="absolute -left-10 bottom-20 opacity-10 rotate-12 hidden xl:block animate-float-slow">
+      <section className="py-32 lg:py-56 bg-white relative overflow-hidden min-h-[95vh] flex flex-col justify-center">
+        <div className="absolute -left-10 bottom-20 opacity-15 rotate-12 hidden xl:block animate-float-slow drop-shadow-lg">
           <Image src="/images/4.png" alt="" width={350} height={350} />
         </div>
+        <div className="absolute right-[-5%] top-10 opacity-10 hidden xl:block -rotate-12 animate-float drop-shadow-md">
+          <Image src="/images/3.png" alt="" width={300} height={300} />
+        </div>
 
-        <div className="mx-auto max-w-[1600px] px-4 lg:px-8 relative z-10">
-          <SectionHeader
-            title="Explore Your Options"
-            subtitle="Everything you need to support your child's journey at HiKids."
-          />
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10">
+          <MotionWrapper type="fade" direction="up">
+            <div className="text-center mb-24 space-y-6">
+              <h2 className="text-5xl md:text-7xl lg:text-8xl font-fredoka font-black text-slate-900 leading-[1.05] tracking-tight">Explore Your Options</h2>
+              <p className="text-xl md:text-2xl lg:text-4xl text-slate-600 font-medium max-w-4xl mx-auto text-balance">
+                Everything you need to support your child's journey at HiKids.
+              </p>
+            </div>
+          </MotionWrapper>
 
-          <div className="mt-24 grid gap-10 md:grid-cols-2">
+          <MotionContainer className="mt-16 grid gap-12 md:grid-cols-2">
             {t.features.map((feature, i) => {
               const Icon = icons[i];
               return (
-                <div key={feature.title} className="group relative">
+                <MotionItem key={feature.title} className="group relative">
                   <CtaCard
                     title={feature.title}
                     description={feature.description}
                     href={hrefs[i]}
                     cta={feature.cta}
-                    icon={<Icon className="h-8 w-8" />}
-                    variant={i % 2 === 0 ? "accent" : "default"}
-                    className="h-full p-12 hover:-translate-y-2 transition-all duration-500 shadow-soft"
+                    icon={<Icon className="h-10 w-10 text-hikids-blue" />}
+                    variant="secondary"
+                    className="h-full p-12 lg:p-20 hover:-translate-y-4 lg:hover:-translate-y-6 transition-all duration-700 shadow-sm hover:shadow-2xl bg-slate-50/80 hover:bg-white rounded-[4rem] border border-slate-100"
                   />
-                  <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                    <Icon className="h-24 w-24" />
+                  <div className="absolute top-0 right-0 p-12 lg:p-20 opacity-0 group-hover:opacity-10 transition-all duration-700 text-hikids-blue translate-x-4 -translate-y-4 group-hover:translate-0 pointer-events-none">
+                    <Icon className="h-32 w-32" />
                   </div>
-                </div>
+                </MotionItem>
               );
             })}
-          </div>
+          </MotionContainer>
         </div>
       </section>
 
       {/* Global CTA */}
-      <section className="py-32 lg:py-48 relative overflow-hidden bg-accent/20">
-        <div className="absolute inset-0 pointer-events-none opacity-30">
-          <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,white_0%,transparent_70%)]" />
-        </div>
+      <section className="py-32 lg:py-56 relative overflow-hidden bg-slate-900 m-6 lg:m-12 rounded-[5rem] min-h-[90vh] flex flex-col justify-center">
+        {/* Soft internal glows */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-hikids-blue/20 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-hikids-blue/10 rounded-full blur-[100px] pointer-events-none translate-y-1/2 -translate-x-1/2" />
 
-        <div className="mx-auto max-w-5xl px-4 text-center lg:px-8 relative z-10">
-          <div className="animate-fade-in-up">
-            <div className="mb-10 inline-flex h-24 w-24 items-center justify-center rounded-[3rem] bg-white shadow-2xl scale-125">
-              <Sparkles className="h-10 w-10 text-hikids-yellow fill-current" />
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 text-center relative z-10 w-full">
+          <MotionWrapper type="scale">
+            <div className="mb-12 inline-flex h-24 w-24 items-center justify-center rounded-[2rem] bg-white/5 border border-white/10 shadow-2xl backdrop-blur-md">
+              <Sparkles className="h-10 w-10 text-hikids-blue fill-hikids-blue" />
             </div>
-            <h2 className="text-5xl font-black text-foreground md:text-7xl mb-12 tracking-tight leading-[1.1]">
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-fredoka font-black text-white mb-12 tracking-tight leading-[1.05]">
               Your Child Deserves the Best Start
             </h2>
-            <p className="mx-auto max-w-2xl text-2xl text-muted-foreground leading-relaxed font-medium mb-16">
+            <p className="mx-auto max-w-3xl text-xl md:text-2xl lg:text-3xl text-slate-300 leading-relaxed font-medium mb-16 text-balance">
               Find a HiKids kindergarten near you and see the difference our progressive learning approach makes.
             </p>
             <Link
               href={`/${lang}/parents/find-kindergarten`}
-              className="inline-flex items-center gap-5 rounded-[2rem] bg-foreground px-12 py-7 text-2xl font-black text-background shadow-2xl transition-all hover:bg-foreground/90 hover:-translate-y-2 hover:shadow-black/20"
+              className="inline-flex items-center gap-6 rounded-[2.5rem] bg-hikids-blue px-14 py-8 text-xl font-black text-white shadow-2xl shadow-hikids-blue/20 transition-all hover:bg-hikids-blue/90 hover:scale-105 hover:-translate-y-2"
             >
               Get Started Today
-              <ArrowRight className="h-8 w-8" />
+              <ArrowRight className="h-8 w-8 transition-transform group-hover:translate-x-3" strokeWidth={3} />
             </Link>
-          </div>
+          </MotionWrapper>
 
           {/* Decorative Mascot */}
-          <div className="absolute bottom-0 right-[-10%] opacity-15 hidden xl:block animate-float">
-            <Image src="/images/Whisk_61d9a24bbad8193df45fec5f308801d0dr.png" alt="" width={450} height={450} />
+          <div className="absolute bottom-[-5%] right-[-5%] opacity-20 hidden xl:block pointer-events-none drop-shadow-3xl animate-float-slow">
+            <Image src="/images/Whisk_61d9a24bbad8193df45fec5f308801d0dr.png" alt="" width={500} height={500} />
           </div>
         </div>
       </section>

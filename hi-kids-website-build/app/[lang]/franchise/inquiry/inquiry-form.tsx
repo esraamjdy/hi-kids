@@ -47,9 +47,9 @@ export function FranchiseInquiryForm({ dict }: { dict: Dictionary }) {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center gap-4 rounded-2xl border border-secondary/30 bg-secondary/5 p-8 text-center">
+      <div className="flex flex-col items-center gap-4 rounded-[3rem] lg:rounded-[4rem] lg:rounded-[2.5rem] border border-secondary/30 bg-secondary/5 p-14 lg:p-20 lg:p-14 text-center">
         <CheckCircle2 className="h-12 w-12 text-secondary" />
-        <p className="text-lg font-semibold text-foreground">{t.success}</p>
+        <p className=" text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-semibold text-white">{t.success}</p>
       </div>
     );
   }
@@ -57,20 +57,20 @@ export function FranchiseInquiryForm({ dict }: { dict: Dictionary }) {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
       {status === "error" && (
-        <div className="flex items-center gap-3 rounded-xl border border-destructive/30 bg-destructive/5 p-4 text-sm text-destructive">
+        <div className="flex items-center gap-3 rounded-xl border border-destructive/30 bg-destructive/5 p-4  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] text-destructive">
           <AlertCircle className="h-5 w-5 shrink-0" />
           {t.error}
         </div>
       )}
 
       <div className="flex flex-col gap-2">
-        <label htmlFor="name" className="text-sm font-medium text-foreground">
+        <label htmlFor="name" className=" text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-normal text-white">
           {t.name}
         </label>
         <input
           id="name"
           {...register("name")}
-          className="rounded-xl border border-input bg-card px-4 py-3 text-sm text-card-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+          className="rounded-xl border border-input bg-card px-4 py-3  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] text-card-foreground placeholder:text-white focus:outline-none focus:ring-2 focus:ring-ring"
           placeholder={t.name}
         />
         {errors.name && (
@@ -79,14 +79,14 @@ export function FranchiseInquiryForm({ dict }: { dict: Dictionary }) {
       </div>
 
       <div className="flex flex-col gap-2">
-        <label htmlFor="email" className="text-sm font-medium text-foreground">
+        <label htmlFor="email" className=" text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-normal text-white">
           {t.email}
         </label>
         <input
           id="email"
           type="email"
           {...register("email")}
-          className="rounded-xl border border-input bg-card px-4 py-3 text-sm text-card-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+          className="rounded-xl border border-input bg-card px-4 py-3  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] text-card-foreground placeholder:text-white focus:outline-none focus:ring-2 focus:ring-ring"
           placeholder={t.email}
         />
         {errors.email && (
@@ -95,14 +95,14 @@ export function FranchiseInquiryForm({ dict }: { dict: Dictionary }) {
       </div>
 
       <div className="flex flex-col gap-2">
-        <label htmlFor="phone" className="text-sm font-medium text-foreground">
+        <label htmlFor="phone" className=" text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-normal text-white">
           {t.phone}
         </label>
         <input
           id="phone"
           type="tel"
           {...register("phone")}
-          className="rounded-xl border border-input bg-card px-4 py-3 text-sm text-card-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+          className="rounded-xl border border-input bg-card px-4 py-3  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] text-card-foreground placeholder:text-white focus:outline-none focus:ring-2 focus:ring-ring"
           placeholder={t.phone}
         />
         {errors.phone && (
@@ -111,13 +111,13 @@ export function FranchiseInquiryForm({ dict }: { dict: Dictionary }) {
       </div>
 
       <div className="flex flex-col gap-2">
-        <label htmlFor="country" className="text-sm font-medium text-foreground">
+        <label htmlFor="country" className=" text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-normal text-white">
           {t.country}
         </label>
         <select
           id="country"
           {...register("country")}
-          className="rounded-xl border border-input bg-card px-4 py-3 text-sm text-card-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+          className="rounded-xl border border-input bg-card px-4 py-3  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] text-card-foreground focus:outline-none focus:ring-2 focus:ring-ring"
         >
           <option value="">{t.country}</option>
           {countries.map((c) => (
@@ -132,14 +132,14 @@ export function FranchiseInquiryForm({ dict }: { dict: Dictionary }) {
       </div>
 
       <div className="flex flex-col gap-2">
-        <label htmlFor="message" className="text-sm font-medium text-foreground">
+        <label htmlFor="message" className=" text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-normal text-white">
           {t.message}
         </label>
         <textarea
           id="message"
           rows={5}
           {...register("message")}
-          className="rounded-xl border border-input bg-card px-4 py-3 text-sm text-card-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring resize-none"
+          className="rounded-xl border border-input bg-card px-4 py-3  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] text-card-foreground placeholder:text-white focus:outline-none focus:ring-2 focus:ring-ring resize-none"
           placeholder={t.message}
         />
         {errors.message && (
@@ -150,7 +150,7 @@ export function FranchiseInquiryForm({ dict }: { dict: Dictionary }) {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-50"
+        className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-semibold text-white-foreground transition-all hover:bg-primary/90 disabled:opacity-50"
       >
         {status === "loading" && <Loader2 className="h-4 w-4 animate-spin" />}
         {t.submit}

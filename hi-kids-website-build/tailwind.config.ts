@@ -11,8 +11,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-nunito)', 'system-ui', 'sans-serif'],
-        body: ['var(--font-geist)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-fredoka)', 'system-ui', 'sans-serif'],
+        body: ['var(--font-fredoka)', 'system-ui', 'sans-serif'],
       },
       colors: {
         hikids: {

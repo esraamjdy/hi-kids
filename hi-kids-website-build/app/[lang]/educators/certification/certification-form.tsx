@@ -31,7 +31,7 @@ export function CertificationForm({ dict }: { dict: Dictionary }) {
     return (
       <div className="flex flex-col items-center gap-4 py-8 text-center">
         <CheckCircle2 className="h-12 w-12 text-secondary" />
-        <p className="text-lg font-semibold text-card-foreground">{t.success}</p>
+        <p className=" text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-semibold text-card-foreground">{t.success}</p>
       </div>
     );
   }
@@ -39,14 +39,14 @@ export function CertificationForm({ dict }: { dict: Dictionary }) {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       {status === "error" && (
-        <div className="flex items-center gap-3 rounded-xl border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive">
+        <div className="flex items-center gap-3 rounded-xl border border-destructive/30 bg-destructive/5 p-3  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] text-destructive">
           <AlertCircle className="h-5 w-5 shrink-0" />
           Something went wrong. Please try again.
         </div>
       )}
 
       <div className="flex flex-col gap-2">
-        <label htmlFor="cert-email" className="text-sm font-medium text-card-foreground">
+        <label htmlFor="cert-email" className=" text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-normal text-card-foreground">
           {t.emailPlaceholder}
         </label>
         <input
@@ -55,7 +55,7 @@ export function CertificationForm({ dict }: { dict: Dictionary }) {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+          className="rounded-xl border border-input bg-background px-4 py-3  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] text-white placeholder:text-white focus:outline-none focus:ring-2 focus:ring-ring"
           placeholder={t.emailPlaceholder}
         />
       </div>
@@ -63,7 +63,7 @@ export function CertificationForm({ dict }: { dict: Dictionary }) {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex items-center justify-center gap-2 rounded-xl bg-secondary px-6 py-3 text-sm font-semibold text-secondary-foreground transition-all hover:bg-secondary/90 disabled:opacity-50"
+        className="inline-flex items-center justify-center gap-2 rounded-xl bg-secondary px-6 py-3  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-semibold text-white-foreground transition-all hover:bg-secondary/90 disabled:opacity-50"
       >
         {status === "loading" && <Loader2 className="h-4 w-4 animate-spin" />}
         {t.cta}

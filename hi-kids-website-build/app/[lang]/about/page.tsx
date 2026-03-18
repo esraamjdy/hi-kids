@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Heart, Rocket, ShieldCheck, Sun, Eye, Target, Award,
   Globe, Smile, Trophy, Quote, Star, CheckCircle2,
-  Users, BookOpen, Sparkles, GraduationCap
+  Users, BookOpen, Sparkles, GraduationCap, ArrowRight,
+  Zap, Check
 } from "lucide-react";
 import { getDictionary } from "@/lib/dictionaries";
 import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 import { SectionHeader } from "@/components/section-header";
 import { WaveDivider } from "@/components/wave-divider";
+import { MotionWrapper, MotionContainer, MotionItem } from "@/components/motion-wrapper";
 
 export const metadata: Metadata = {
   title: "About HiKids | Progressive Early Childhood Education",
@@ -21,273 +24,53 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
   const dict = await getDictionary(lang);
   const t = dict.about;
 
-  const achievementIcons = [Award, Globe, Smile, Trophy];
-
   return (
     <div className="bg-white overflow-hidden selection:bg-hikids-blue/20">
 
-      {/* ================= HERO: CREATIVE & PROFESSIONAL ================= */}
-      {/* ================= HERO: PREMIUM CREATIVE ================= */}
-      {/* ================= HERO: MATCHED WITH HOME RHYTHM ================= */}
-      <section className="relative min-h-[60vh] lg:min-h-[70vh] flex items-center pt-28 pb-20 overflow-hidden bg-accent">
-        {/* Soft Premium Glows to match Home */}
-        <div className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-white/10 rounded-full blur-[120px]" />
-        <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px]" />
-
-        {/* Dynamic Canvas Particles */}
-        <div className="absolute top-[20%] left-[5%] w-10 h-10 opacity-10 animate-float-slow">
-          <Rocket className="text-white" />
-        </div>
-        <div className="absolute bottom-[20%] right-[10%] w-12 h-12 opacity-10 animate-sway">
-          <Sparkles className="text-white" />
+      {/* ─── HERO ─── */}
+      <section className="relative min-h-[30vh] lg:min-h-[45vh] flex items-center overflow-hidden bg-background pt-16 pb-8 lg:pt-12 lg:pb-12">
+        <div className="absolute bottom-[20%] right-[10%] w-14 h-14 opacity-30 animate-sway hidden lg:block">
+          <Sparkles className="text-slate-800" />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="relative mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 z-10 w-full">
+          <div className="grid gap-10 lg:grid-cols-2 items-center lg:gap-16 xl:gap-24">
 
-            {/* TEXT SIDE: White Typography on Yellow */}
-            <div className="space-y-10 animate-fadeUp">
-              <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 rounded-full border border-white/10">
-                <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-                <span className="text-[11px] font-black text-white uppercase tracking-[0.25em]">
-                  The Future of Learning
-                </span>
-              </div>
-
-              <div className="space-y-6">
-                <h1 className="text-6xl md:text-7xl font-black text-white leading-[0.95] tracking-tight">
-                  Shaping the <br />
-                  <span className="relative inline-block w-fit">
-                    Next Genius
-                    {/* Consistent white underline */}
-                    <span className="absolute -bottom-3 left-0 h-[8px] w-full bg-white/30 rounded-full animate-grow"></span>
-                  </span>
-                </h1>
-                <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-lg font-medium">
-                  We bridge the gap between global standards and individual curiosity, preparing children for a world of unlimited potential.
-                </p>
-              </div>
-
-              {/* Stats - White on Yellow */}
-              <div className="flex gap-12 items-center">
-                <div className="space-y-1">
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-5xl font-black text-white">20</span>
-                    <span className="text-2xl font-black text-white/50">+</span>
-                  </div>
-                  <p className="text-[10px] font-black text-white/60 uppercase tracking-[0.2em] leading-none font-bold">Years Legacy</p>
-                </div>
-                <div className="w-px h-12 bg-white/20" />
-                <div className="space-y-1">
-                  <div className="flex items-baseline gap-1 font-black text-white">
-                    <span className="text-5xl">IIT</span>
-                    <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-                  </div>
-                  <p className="text-[10px] font-black text-white/60 uppercase tracking-[0.2em] leading-none font-bold">Alumni Driven</p>
-                </div>
-              </div>
-            </div>
-
-            {/* VISUAL SIDE: The Architectural Composition */}
-            <div className="relative isolate px-6">
-              {/* Layer 1: The Massive Organic Shape */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-white/10 blob opacity-100 -z-10 animate-sway" />
-
-              {/* Layer 2: Brand Patterns */}
-              <div className="absolute -top-10 -right-10 w-[60%] h-[60%] opacity-20 -z-10 brightness-0 invert">
-                <Image src="/images/patterns.png" alt="" fill className="object-contain" />
-              </div>
-
-              {/* Layer 3: The Main Visual with Yellow Background */}
-              <div className="relative rounded-[5rem] overflow-hidden shadow-[0_80px_100px_-30px_rgba(0,0,0,0.3)] group bg-hikids-yellow">
-                {/* Texture for the Yellow Background */}
-                <div className="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none brightness-0 invert">
-                  <Image src="/images/patterns.png" alt="" fill className="object-cover" />
-                </div>
-
-                <Image
-                  src="/images/12.png"
-                  alt="Child Learning"
-                  width={800}
-                  height={1000}
-                  className="relative z-10 object-cover transition-transform duration-[2000ms] group-hover:scale-110"
-                  priority
-                />
-              </div>
-
-              {/* Layer 4: Peeking Mascot */}
-              <div className="absolute -bottom-12 -left-12 w-48 h-48 animate-float-slow z-20">
-                <Image src="/images/hi.png" alt="" fill className="object-contain drop-shadow-2xl" />
-              </div>
-
-              {/* Layer 5: Scientist Accent */}
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-white rounded-[2rem] shadow-xl flex items-center justify-center animate-wiggle z-20">
-                <Award className="text-hikids-blue w-10 h-10" />
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        {/* Bottom Transition matching Home */}
-        <div className="absolute -bottom-[1px] left-0 w-full leading-none z-20">
-          <WaveDivider color="white" />
-        </div>
-      </section>
-
-      {/* ================= VISION & MISSION: ARCHITECTURAL ================= */}
-      <section className="py-48 bg-white relative overflow-hidden">
-        {/* Subtle Side Pattern */}
-        <div className="absolute top-0 left-0 w-64 h-full opacity-[0.03] pointer-events-none">
-          <Image src="/patterns/HiKids-01.png" alt="" fill className="object-cover" />
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16">
-
-            {/* Vision Card */}
-            <div className="group relative p-16 rounded-[4rem] bg-slate-50 border border-slate-100 overflow-hidden transition-all duration-700 hover:shadow-2xl hover:-translate-y-2">
-              <div className="absolute -top-24 -right-24 w-64 h-64 bg-hikids-green/10 rounded-full blur-[80px]" />
-              <div className="relative z-10 space-y-10">
-                <div className="w-20 h-20 bg-white rounded-3xl flex items-center justify-center text-hikids-green shadow-sm group-hover:bg-hikids-green group-hover:text-white transition-all duration-500">
-                  <Eye size={40} />
-                </div>
-                <div className="space-y-6">
-                  <h2 className="text-5xl font-black text-slate-900 tracking-tight leading-none">{t.vision.title}</h2>
-                  <p className="text-xl text-slate-500 leading-relaxed font-medium">{t.vision.description}</p>
-                </div>
-                <div className="flex items-center gap-4 text-hikids-green font-black uppercase text-xs tracking-widest">
-                  Progressive Focus <Image src="/images/Whisk_20a92e893d0b223b56344de2f33393aedr.png" alt="" width={24} height={24} className="opacity-50" />
-                </div>
-              </div>
-            </div>
-
-            {/* Mission Card */}
-            <div className="group relative p-16 rounded-[4rem] bg-slate-900 text-white overflow-hidden transition-all duration-700 hover:shadow-2xl hover:-translate-y-2">
-              <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-hikids-blue/20 rounded-full blur-[100px]" />
-              <div className="relative z-10 space-y-10">
-                <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-3xl flex items-center justify-center text-hikids-blue group-hover:bg-hikids-blue group-hover:text-white transition-all duration-500">
-                  <Target size={40} />
-                </div>
-                <div className="space-y-6">
-                  <h2 className="text-5xl font-black tracking-tight leading-none">{t.mission.title}</h2>
-                  <p className="text-xl text-slate-400 leading-relaxed font-medium">{t.mission.description}</p>
-                </div>
-                <div className="flex items-center gap-4 text-hikids-blue font-black uppercase text-xs tracking-widest">
-                  Daily Execution <Rocket className="w-4 h-4" />
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ================= CORE VALUES: ARCHITECTURAL GRID ================= */}
-      <section className="py-20 mb-20 bg-white relative">
-        <div className="container mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">
-            <h2 className="text-6xl font-black text-slate-900 tracking-tighter">Why Families Choose Us</h2>
-            <p className="text-xl text-slate-500 font-medium font-pretty">A professional approach rooted in empathy and innovation.</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-10">
-            {[
-              { icon: Rocket, color: "blue", title: "Future-Ready Skills", desc: "Scientific frameworks that prepare children for a dynamic 21st century." },
-              { icon: Heart, color: "green", title: "Emotional Intelligence", desc: "Nurturing empathy and confidence in every social interaction." },
-              { icon: ShieldCheck, color: "yellow", title: "Safety First", desc: "A secure, tech-monitored environment for complete peace of mind." }
-            ].map((item, i) => (
-              <div key={i} className="group relative bg-slate-50 p-12 rounded-[3.5rem] transition-all duration-700 hover:bg-white hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] border border-transparent hover:border-slate-100">
-                <div className={`w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center text-hikids-${item.color} mb-10 group-hover:scale-110 transition-transform duration-500`}>
-                  <item.icon size={28} />
-                </div>
-                <h3 className="text-2xl font-black text-slate-900 mb-4 tracking-tight">{item.title}</h3>
-                <p className="text-slate-500 leading-relaxed font-medium">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ================= LEADERSHIP: ARCHITECTURAL ================= */}
-      <section className="py-48 bg-white overflow-hidden relative border-t border-slate-50">
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-32 items-center">
-
-            {/* Visual Side matching Hero Style */}
-            <div className="relative flex justify-center items-center">
-              {/* Soft Aura */}
-              <div className="absolute w-[120%] h-[120%] bg-hikids-blue/5 blur-[100px] rounded-full -z-10" />
-
-              {/* Big Wavy Accent Layer (Blue for Leadership) */}
-              <div className="absolute w-[95%] h-[95%] translate-x-6 -translate-y-6 bg-hikids-blue rounded-[50%_50%_60%_40%/45%_55%_45%_55%] -z-10 opacity-10 group-hover:rotate-6 transition-transform duration-1000" />
-
-              {/* Main Wavy Image with Clip Path */}
-              <div
-                className="relative w-full max-w-[500px] aspect-[4/5] overflow-hidden shadow-[0_70px_140px_-25px_rgba(0,0,0,0.15)] group"
-                style={{
-                  clipPath: "polygon(0% 0%, 100% 15%, 100% 100%, 15% 100%, 0% 85%)",
-                }}
-              >
-                <Image
-                  src="/images/businessman.png"
-                  alt="Leadership"
-                  fill
-                  className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 transform hover:scale-105"
-                />
-              </div>
-
-              {/* Secondary Floating Mascot */}
-              <div className="absolute -bottom-10 -right-10 w-48 h-48 animate-float-slow hidden xl:block">
-                <Image src="/images/Whisk_ba46783577f5efb8588459e8166e51a2dr.png" alt="" fill className="object-contain" />
-              </div>
-            </div>
-
-            {/* Content Side */}
-            <div className="space-y-16">
-              <div className="space-y-8">
-                <div className="inline-block px-5 py-2 bg-hikids-yellow/10 text-hikids-yellow rounded-full text-xs font-black tracking-widest uppercase">
-                  Founding Vision
-                </div>
-                <h2 className="text-6xl md:text-7xl font-black text-slate-900 leading-[0.9] tracking-tighter">
-                  Heritage Meets <br />
-                  <span className="text-hikids-blue">Pedagogy.</span>
-                </h2>
-                <p className="text-2xl text-slate-500 font-medium leading-relaxed max-w-2xl font-pretty">
-                  Led by an elite team of <span className="text-slate-900 font-bold">IIM & IIT alumni</span>, we are redefining early childhood potential through academic rigor and cultural warmth.
-                </p>
-              </div>
-
-              {/* Professional Features Grid */}
-              <div className="grid sm:grid-cols-2 gap-8">
-                {[
-                  { title: "Proprietary Pedagogy", icon: Sparkles, color: "green" },
-                  { title: "Scientific Rigor", icon: Rocket, color: "blue" },
-                  { title: "Personal Mentorship", icon: Users, color: "yellow" },
-                  { title: "Global Standards", icon: Globe, color: "blue" }
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 group">
-                    <div className={`w-12 h-12 rounded-2xl bg-hikids-${item.color}/10 flex items-center justify-center text-hikids-${item.color} group-hover:scale-110 transition-all`}>
-                      <item.icon size={22} />
-                    </div>
-                    <span className="text-lg font-bold text-slate-800">{item.title}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Executive Pull-Quote */}
-              <div className="relative p-12 bg-slate-50 rounded-[3rem] overflow-hidden border border-slate-100">
-                <Quote className="absolute -top-6 -left-6 text-slate-200" size={120} />
-                <div className="relative z-10 space-y-6">
-                  <p className="text-2xl font-black text-slate-800 leading-snug italic">
-                    "{t.founder.quote}"
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <div className="h-px w-12 bg-hikids-blue" />
-                    <span className="text-xs font-black text-slate-400 uppercase tracking-widest">
-                      The Leadership Philosophy
+            {/* LEFT – headline */}
+            <div className="relative text-center lg:text-left">
+              <MotionWrapper direction="right" delay={0.2} duration={1}>
+                <div className="space-y-4 max-w-2xl mx-auto lg:mx-0 relative z-10">
+                  <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4">
+                    Where <br className="hidden lg:block" />
+                    <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl mr-2 inline-block transition-transform hover:scale-105 duration-300"
+                        style={{
+                          WebkitTextStroke: "12px #00AEEF",
+                          paintOrder: "stroke fill",
+                          filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                        }}>
+                      Curiosity
                     </span>
+                    <br /> Becomes <span className="text-hikids-blue">Capability</span>
+                  </h1>
+                  <p className="text-author text-slate-700 leading-relaxed max-w-lg mx-auto lg:mx-0 opacity-90">
+                    {t.hero.subtitle}
+                  </p>
+                </div>
+              </MotionWrapper>
+            </div>
+
+            {/* RIGHT – visual */}
+            <div className="relative w-full flex items-center justify-center lg:justify-end">
+              <div className="relative w-[360px] h-[320px] lg:w-[420px] lg:h-[370px] xl:w-[480px] xl:h-[420px] overflow-visible">
+                
+                <MotionWrapper direction="down" delay={0.4}>
+                  <div className="absolute top-[-35%] right-[-75%] w-[85%] h-[70%] z-0 opacity-90">
+                    <Image src="/images/HiKids-57.svg" alt="" fill className="object-contain object-right-top [filter:invert(74%)_sepia(51%)_saturate(595%)_hue-rotate(160deg)_brightness(94%)_contrast(94%)]" />
                   </div>
+                </MotionWrapper>
+
+                <div className="absolute top-[-10%] left-[-25%] w-[120%] h-[150%] z-10 -rotate-[28deg] animate-float">
+                  <Image src="/images/Moka-Dance.png" alt="Moka Mascot" fill className="object-contain object-bottom drop-shadow-lg scale-x-[-1]" />
                 </div>
               </div>
             </div>
@@ -296,46 +79,258 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         </div>
       </section>
 
-      {/* ================= MOKA SPIRIT: INTERACTIVE FEEL ================= */}
-      <section className="py-32 bg-slate-900 text-white relative overflow-hidden">
-        {/* Subtle Background Patterns */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <Image src="/patterns/HiKids-11.png" alt="" fill className="object-cover invert" />
-        </div>
+      {/* Hero Divider */}
+      <div className="w-full relative -mt-[100px] lg:-mt-[100px] z-20">
+        <WaveDivider color="#fefce8" />
+      </div>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="order-2 lg:order-1 space-y-8">
-              <div className="inline-block px-4 py-1 bg-white/10 rounded-full text-hikids-yellow text-xs font-black tracking-[0.2em] uppercase">
-                Meet Moka
-              </div>
-              <h2 className="text-5xl font-black tracking-tight leading-tight">
-                A Companion for every <br />
-                <span className="text-hikids-yellow text-6xl">Discovery.</span>
-              </h2>
-              <p className="text-xl text-slate-400 leading-relaxed font-medium">
-                Moka isn't just a mascot—he's the personification of curiosity, kindness, and the "HiKids Spirit" that guides our students daily.
-              </p>
+      {/* ─── OUR STORY ─── */}
+      <section className="py-4 lg:py-8 bg-[#fefce8] relative overflow-hidden">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+          <div className="grid lg:grid-cols-12 gap-6 lg:gap-12 items-center">
 
-              <div className="grid gap-4">
-                {t.moka.traits.map((trait, i) => (
-                  <div key={i} className="flex items-start gap-4 p-6 bg-white/5 rounded-3xl hover:bg-white/10 transition-colors group">
-                    <Star className="text-hikids-yellow mt-1 group-hover:rotate-12 transition-transform" size={20} />
-                    <div>
-                      <h4 className="font-black text-lg text-white mb-1">{trait.title}</h4>
-                      <p className="text-slate-400 text-sm font-medium">{trait.description}</p>
-                    </div>
-                  </div>
+            {/* Left Column: Character Image */}
+            <div className="lg:col-span-6 flex justify-center lg:justify-center lg:sticky lg:top-16 lg:pt-2">
+              <MotionWrapper type="scale" delay={0.2} className="relative w-[450px] h-[450px] lg:w-[800px] lg:h-[800px] lg:-ml-16">
+                <Image
+                  src="/images/hi.png"
+                  alt="Moka"
+                  fill
+                  className="object-contain drop-shadow-2xl"
+                />
+              </MotionWrapper>
+            </div>
+
+            {/* Right Column: Text + Stats */}
+            <div className="lg:col-span-6 space-y-8 pt-4">
+              <MotionWrapper direction="left" delay={0.1}>
+                <div className="space-y-6">
+                  <span className="bg-hikids-blue/10 text-hikids-blue text-xs font-bold uppercase tracking-[0.15em] px-6 py-2 rounded-full inline-block border border-hikids-blue/20">
+                    OUR LEGACY
+                  </span>
+                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4">
+                    Our <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                        style={{
+                          WebkitTextStroke: "12px #00AEEF",
+                          paintOrder: "stroke fill",
+                          filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                        }}>
+                      Story
+                    </span>
+                  </h2>
+                  <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed max-w-2xl font-medium">
+                    {t.story.description}
+                  </p>
+                </div>
+              </MotionWrapper>
+
+              {/* Stats Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                {t.story.achievements.map((ach: { value: string; label: string }, i: number) => (
+                  <MotionItem key={i} className="bg-white p-6 lg:p-8 rounded-[1.5rem] shadow-sm border border-slate-100 flex flex-col items-start text-left group hover:shadow-lg transition-all duration-500 hover:-translate-y-1">
+                    <div className="text-4xl lg:text-5xl font-black text-hikids-blue mb-2 font-fredoka group-hover:scale-110 transition-transform">{ach.value}</div>
+                    <p className="text-slate-500 text-sm lg:text-base leading-relaxed font-bold uppercase tracking-widest text-[10px]">
+                      {ach.label}
+                    </p>
+                  </MotionItem>
                 ))}
               </div>
             </div>
 
-            <div className="order-1 lg:order-2 relative flex justify-center">
-              <div className="absolute w-[120%] h-[120%] bg-hikids-yellow/20 rounded-full blur-[120px] animate-pulse" />
-              <div className="relative w-full max-w-md aspect-square animate-float">
-                <Image src="/images/hi.png" alt="Moka Mascot" fill className="object-contain drop-shadow-[0_35px_35px_rgba(255,255,255,0.1)]" />
+          </div>
+        </div>
+      </section>
+
+      {/* ─── MISSION & VISION ─── */}
+      <section className="py-4 lg:py-8 bg-blue-50 relative overflow-hidden">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+          <div className="space-y-12">
+            
+            {/* MISSION (Left Text, Right Img) */}
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+              <div className="lg:col-span-7 space-y-6">
+                 <MotionWrapper direction="right">
+                    <span className="bg-hikids-green/10 text-hikids-green text-xs font-bold uppercase tracking-[0.15em] px-6 py-2 rounded-full inline-block border border-hikids-green/20">
+                      OUR MISSION
+                    </span>
+                    <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4 mt-4">
+                      {t.mission.title}
+                    </h2>
+                    <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed font-medium">
+                      {t.mission.description}
+                    </p>
+                 </MotionWrapper>
+              </div>
+              <div className="lg:col-span-5 flex justify-center">
+                 <MotionWrapper type="scale" className="relative w-[300px] h-[300px] lg:w-[500px] lg:h-[500px]">
+                    <Image src="/images/HiKids-02.png" alt="Mission" fill className="object-contain drop-shadow-xl" />
+                 </MotionWrapper>
               </div>
             </div>
+
+            {/* VISION (Right Text, Left Img) */}
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+              <div className="lg:col-span-5 flex justify-center order-2 lg:order-1">
+                 <MotionWrapper type="scale" className="relative w-[300px] h-[300px] lg:w-[500px] lg:h-[500px]">
+                    <Image src="/images/HiKids-03.png" alt="Vision" fill className="object-contain drop-shadow-xl" />
+                 </MotionWrapper>
+              </div>
+              <div className="lg:col-span-7 space-y-6 order-1 lg:order-2 text-right lg:text-left">
+                 <MotionWrapper direction="left">
+                    <span className="bg-hikids-blue/10 text-hikids-blue text-xs font-bold uppercase tracking-[0.15em] px-6 py-2 rounded-full inline-block border border-hikids-blue/20">
+                      OUR VISION
+                    </span>
+                    <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4 mt-4">
+                      {t.vision.title}
+                    </h2>
+                    <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed font-medium">
+                      {t.vision.description}
+                    </p>
+                 </MotionWrapper>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── THE METHOD ─── */}
+      <section className="py-4 lg:py-8 bg-white relative overflow-hidden">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+            <div className="text-center mb-12">
+                <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight">
+                    The HiKids <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block"
+                        style={{
+                          WebkitTextStroke: "12px #00AEEF",
+                          paintOrder: "stroke fill",
+                          filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                        }}>
+                      Method
+                    </span>
+                </h2>
+                <p className="text-lg lg:text-2xl text-slate-500 mt-6 font-medium">{t.method.subtitle}</p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {t.method.pillars.map((pillar: { title: string; description: string }, i: number) => (
+                    <MotionItem key={i} className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 flex flex-col items-center text-center group hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                         <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-hikids-blue mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                            {i === 0 && <Sparkles size={32} />}
+                            {i === 1 && <Rocket size={32} />}
+                            {i === 2 && <Smile size={32} />}
+                            {i === 3 && <Trophy size={32} />}
+                         </div>
+                         <h3 className="text-xl lg:text-2xl font-black text-slate-800 mb-3 font-fredoka">{pillar.title}</h3>
+                         <p className="text-slate-500 text-sm leading-relaxed font-medium">
+                            {pillar.description}
+                         </p>
+                    </MotionItem>
+                ))}
+            </div>
+        </div>
+      </section>
+
+      {/* ─── FOUNDER SPOTLIGHT ─── */}
+      <section className="py-4 lg:py-8 bg-slate-50 relative overflow-hidden">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+            
+            {/* Left: Founder Image */}
+            <div className="lg:col-span-5">
+              <MotionWrapper type="scale">
+                <div className="relative w-full aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white group">
+                  <Image src="/images/businessman.png" alt="Founder" fill className="object-cover group-hover:scale-105 transition-transform duration-1000 grayscale hover:grayscale-0" />
+                  <div className="absolute inset-0 bg-hikids-blue/5 group-hover:bg-transparent transition-colors" />
+                </div>
+              </MotionWrapper>
+            </div>
+
+            {/* Right: Content */}
+            <div className="lg:col-span-7 space-y-8">
+               <MotionWrapper direction="left">
+                 <div className="space-y-4">
+                    <span className="text-xs font-black uppercase tracking-[0.4em] text-hikids-blue">FOUNDER SPOTLIGHT</span>
+                    <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-tight">
+                        {t.founder.name}
+                    </h2>
+                    <h4 className="text-xl lg:text-2xl font-bold text-slate-400 uppercase tracking-widest">{t.founder.role}</h4>
+                 </div>
+                 <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed font-medium mt-8">
+                    {t.founder.description}
+                 </p>
+                 <div className="relative p-10 mt-12 bg-white rounded-[2.5rem] border border-slate-100 shadow-xl group hover:-translate-y-2 transition-transform duration-500">
+                    <Quote className="absolute top-8 right-8 text-slate-100 group-hover:text-hikids-blue/10 transition-colors" size={80} />
+                    <p className="relative z-10 text-2xl lg:text-3xl font-black text-slate-800 leading-snug italic font-fredoka">
+                       &quot;{t.founder.quote}&quot;
+                    </p>
+                 </div>
+               </MotionWrapper>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ─── FINAL CTA ─── */}
+      <section className="py-4 lg:py-8 relative overflow-hidden bg-white">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+
+            {/* Left Column: Character Image */}
+            <div className="lg:col-span-6 flex justify-center lg:justify-center lg:sticky lg:top-0 order-2 lg:order-1 mt-12 lg:mt-0">
+              <MotionWrapper type="scale" delay={0.2} className="relative w-[450px] h-[450px] lg:w-[1000px] lg:h-[1000px] lg:-ml-32">
+                <Image
+                  src="/images/Moka-Plays.png"
+                  alt="Moka Playing"
+                  fill
+                  className="object-contain drop-shadow-2xl"
+                />
+              </MotionWrapper>
+            </div>
+
+            {/* Right Column: Content */}
+            <div className="lg:col-span-6 space-y-10 order-1 lg:order-2">
+              <MotionWrapper direction="left" delay={0.1}>
+                <div className="space-y-6 text-center lg:text-left">
+                  <span className="bg-hikids-blue/10 text-hikids-blue text-xs font-bold uppercase tracking-[0.15em] px-6 py-2 rounded-full inline-block border border-hikids-blue/20">
+                    JOIN THE FAMILY
+                  </span>
+                  
+                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4">
+                    Build the <br className="sm:hidden" />
+                    <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                      style={{
+                        WebkitTextStroke: "12px #00AEEF",
+                        paintOrder: "stroke fill",
+                        filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                      }}>
+                      Future
+                    </span>
+                    <br /> Together
+                  </h2>
+                  
+                  <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed max-w-xl font-medium mx-auto lg:mx-0">
+                    HiKids is more than just schools. We are a community dedicated to raising the next generation.
+                  </p>
+                </div>
+              </MotionWrapper>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
+                <Link
+                  href={`/${lang}/contact`}
+                  className="btn-primary px-12 py-5 text-xl tracking-tight group"
+                >
+                  Contact Us <ArrowRight className="h-6 w-6 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Link>
+
+                <Link
+                   href={`/${lang}/franchise`}
+                   className="btn-outline px-12 py-5 text-xl tracking-tight bg-white shadow-xl hover:shadow-2xl transition-all"
+                >
+                   Explore Franchise
+                </Link>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

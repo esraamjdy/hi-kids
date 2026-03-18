@@ -1,4 +1,5 @@
 import { Sparkles } from "lucide-react";
+import { TextBanner } from "./text-banner";
 
 interface SectionHeaderProps {
   title: string;
@@ -17,15 +18,19 @@ export function SectionHeader({
     <div
       className={`mb-16 ${centered ? "text-center" : ""} ${className}`}
     >
-      <div className={`mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-bold uppercase tracking-widest text-primary ${centered ? "mx-auto" : ""}`}>
-        <Sparkles className="h-3 w-3" />
-        HiKids Global
+      <div className={`mb-6 ${centered ? "mx-auto" : ""} flex items-center justify-center w-fit`}>
+        <TextBanner color="hsl(var(--primary))">
+          <div className="flex items-center gap-2">
+            <Sparkles className="h-3 w-3" />
+            HiKids Global
+          </div>
+        </TextBanner>
       </div>
-      <h2 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl text-balance leading-tight">
+      <h2 className="text-subtitle text-slate-900 text-balance">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-6 max-w-2xl text-xl text-muted-foreground leading-relaxed mx-auto text-pretty font-medium">
+        <p className="mt-6 max-w-2xl text-lg lg:text-xl text-slate-500 leading-relaxed mx-auto text-pretty font-normal">
           {subtitle}
         </p>
       )}

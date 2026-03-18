@@ -11,7 +11,7 @@ import {
 
 export const LEVEL_COLORS = [
     "bg-hikids-blue/10 text-foreground border-hikids-blue/20",
-    "bg-hikids-green/10 text-foreground border-hikids-green/20",
+    "bg-hikids-blue/10 text-foreground border-hikids-blue/20",
     "bg-primary/10 text-foreground border-primary/20",
     "bg-hikids-yellow/10 text-foreground border-hikids-yellow/30",
 ];

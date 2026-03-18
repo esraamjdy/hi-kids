@@ -44,9 +44,9 @@ export function ContactForm({ dict }: { dict: ContactFormDict }) {
 
   if (status === "success") {
     return (
-      <div className="rounded-2xl border border-secondary/30 bg-secondary/5 p-8 text-center">
+      <div className="rounded-[3rem] lg:rounded-[4rem] lg:rounded-[2.5rem] border border-secondary/30 bg-secondary/5 p-14 lg:p-20 lg:p-14 text-center">
         <CheckCircle2 className="mx-auto mb-4 h-12 w-12 text-secondary" />
-        <p className="text-lg font-semibold text-foreground">{dict.success}</p>
+        <p className=" text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-semibold text-foreground">{dict.success}</p>
       </div>
     );
   }
@@ -56,7 +56,7 @@ export function ContactForm({ dict }: { dict: ContactFormDict }) {
       <div>
         <label
           htmlFor="contact-name"
-          className="mb-2 block text-sm font-semibold text-foreground"
+          className="mb-2 block  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-semibold text-foreground"
         >
           {dict.name}
         </label>
@@ -72,7 +72,7 @@ export function ContactForm({ dict }: { dict: ContactFormDict }) {
       <div>
         <label
           htmlFor="contact-email"
-          className="mb-2 block text-sm font-semibold text-foreground"
+          className="mb-2 block  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-semibold text-foreground"
         >
           {dict.email}
         </label>
@@ -88,7 +88,7 @@ export function ContactForm({ dict }: { dict: ContactFormDict }) {
       <div>
         <label
           htmlFor="contact-subject"
-          className="mb-2 block text-sm font-semibold text-foreground"
+          className="mb-2 block  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-semibold text-foreground"
         >
           {dict.subject}
         </label>
@@ -104,7 +104,7 @@ export function ContactForm({ dict }: { dict: ContactFormDict }) {
       <div>
         <label
           htmlFor="contact-message"
-          className="mb-2 block text-sm font-semibold text-foreground"
+          className="mb-2 block  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-semibold text-foreground"
         >
           {dict.message}
         </label>
@@ -118,13 +118,13 @@ export function ContactForm({ dict }: { dict: ContactFormDict }) {
       </div>
 
       {status === "error" && (
-        <p className="text-sm text-destructive">{dict.error}</p>
+        <p className=" text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] text-destructive">{dict.error}</p>
       )}
 
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 disabled:opacity-50"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-semibold text-white-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 disabled:opacity-50"
       >
         {status === "loading" ? (
           <Loader2 className="h-4 w-4 animate-spin" />

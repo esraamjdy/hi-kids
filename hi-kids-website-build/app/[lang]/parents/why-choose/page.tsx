@@ -17,6 +17,7 @@ import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 import { WaveDivider } from "@/components/wave-divider";
 import { SectionHeader } from "@/components/section-header";
+import { MotionWrapper, MotionContainer, MotionItem } from "@/components/motion-wrapper";
 
 export const metadata: Metadata = {
   title: "Why Choose HiKids | Trust & Excellence",
@@ -37,43 +38,51 @@ export default async function WhyChoosePage({
   return (
     <>
       {/* Hero - Trust & Excellence */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-b from-accent/20 via-background to-background pt-20">
+      <section className="bg-hikids-blue relative min-h-[92vh] flex items-center overflow-hidden pt-32 pb-48 lg:py-48">
+        {/* Playful Pattern Overlay */}
+        <div className="absolute inset-0 opacity-[0.05] bg-[url('/images/moka-line-art-02.svg')] animate-drift pointer-events-none mix-blend-overlay" />
         <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="absolute -right-20 top-1/2 -translate-y-1/2 opacity-20 hidden lg:block translate-x-1/4">
-            <Image src="/images/Whisk_3da4c60c2d295d7b7ee45f21d2e0efe6dr.png" alt="" width={500} height={500} className="object-contain" />
+          <div className="absolute -right-20 top-1/2 -translate-y-1/2 opacity-[0.1] hidden lg:block translate-x-1/4 scale-125">
+             <Image src="/images/Whisk_3da4c60c2d295d7b7ee45f21d2e0efe6dr.png" alt="" width={600} height={600} className="object-contain" />
           </div>
-          <div className="absolute left-[10%] top-20 h-64 w-64 bg-primary/10 rounded-full blur-[100px] animate-float" />
+          <div className="absolute left-[10%] top-20 h-80 w-80 bg-white/20 rounded-full blur-[120px]" />
         </div>
 
-        <div className="relative mx-auto max-w-[1600px] px-4 py-20 lg:px-8 z-10 w-full text-center">
-          <div className="mx-auto max-w-4xl animate-fade-in-up">
-            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-accent/30 bg-white/50 px-5 py-2 text-sm font-black text-foreground shadow-soft backdrop-blur-md uppercase tracking-widest">
-              <Star className="h-4 w-4 text-hikids-yellow fill-current" />
+        <div className="relative mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 z-10 w-full text-center lg:text-left">
+          <MotionWrapper className="max-w-5xl" type="fade" direction="right">
+            <div className="mb-10 inline-flex items-center gap-4 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm md:text-base font-black text-white shadow-soft backdrop-blur-md uppercase tracking-[0.2em]">
+              <Star className="h-5 w-5 text-white fill-current" />
               Trusted by Thousands of Families
             </div>
-            <h1 className="text-5xl font-black tracking-tight text-foreground md:text-6xl lg:text-8xl text-balance leading-[1.1]">
+            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-fredoka font-black text-white tracking-tight leading-[0.95] mb-12">
               {t.title}
             </h1>
-            <p className="mt-10 text-2xl text-muted-foreground font-medium leading-relaxed text-pretty max-w-3xl mx-auto">
+            <p className="mt-10 text-xl md:text-2xl lg:text-4xl text-white/90 font-medium leading-relaxed max-w-4xl opacity-90 text-pretty">
               {t.subtitle}
             </p>
-          </div>
+          </MotionWrapper>
+        </div>
+
+        <div className="absolute -bottom-[1px] left-0 w-full leading-none z-20">
+          <WaveDivider color="white" />
         </div>
       </section>
 
       {/* Reasons Grid */}
-      <section className="py-24 lg:py-40 bg-white relative overflow-hidden">
-        <div className="absolute -left-10 bottom-20 opacity-10 -rotate-12 hidden xl:block animate-float-slow">
+      <section className="py-32 lg:py-56 bg-white relative overflow-hidden min-h-[95vh] flex flex-col justify-center">
+        <div className="absolute -left-10 bottom-20 opacity-20 drop-shadow-sm -rotate-12 hidden xl:block animate-float-slow grayscale">
           <Image src="/images/8.png" alt="" width={400} height={400} />
         </div>
 
-        <div className="mx-auto max-w-[1600px] px-4 lg:px-8 relative z-10">
-          <SectionHeader
-            title="What Makes Us Different"
-            subtitle="Discover the pillars of excellence that define the HiKids experience."
-          />
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10">
+          <MotionWrapper type="fade" direction="up" className="text-center mb-24 space-y-6">
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-fredoka font-black text-slate-900 leading-[1.05] tracking-tight">What Makes Us Different</h2>
+            <p className="text-xl md:text-2xl lg:text-4xl text-slate-600 font-medium max-w-4xl mx-auto text-balance">
+              Discover the pillars of excellence that define the HiKids experience.
+            </p>
+          </MotionWrapper>
 
-          <div className="mt-24 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          <MotionContainer className="mt-16 grid gap-12 md:grid-cols-2 lg:grid-cols-3">
             {t.sections.map(
               (
                 section: { title: string; description: string },
@@ -81,80 +90,62 @@ export default async function WhyChoosePage({
               ) => {
                 const Icon = icons[i];
                 return (
-                  <div
+                  <MotionItem
                     key={section.title}
-                    className="group relative rounded-[3rem] border border-border/50 bg-white p-12 transition-all hover:shadow-3xl hover:-translate-y-2 duration-500 shadow-soft overflow-hidden"
+                    className="group relative rounded-[4rem] bg-slate-50 p-12 lg:p-16 transition-all duration-700 hover:shadow-2xl hover:-translate-y-4 overflow-hidden border border-slate-100 hover:bg-white"
                   >
-                    <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                      <Icon className="h-24 w-24" />
+                    <div className="absolute top-0 right-0 p-12 opacity-0 group-hover:opacity-10 transition-all duration-1000 translate-x-12 -translate-y-12 group-hover:translate-0 text-hikids-blue pointer-events-none">
+                      <Icon className="h-48 w-48" />
                     </div>
 
-                    <div className="mb-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-soft">
-                      <Icon className="h-8 w-8" />
+                    <div className="mb-10 flex h-20 w-20 shrink-0 items-center justify-center rounded-3xl bg-white shadow-sm border border-slate-100 text-hikids-blue group-hover:bg-hikids-blue group-hover:text-white transition-all duration-500 group-hover:scale-110 relative z-10 group-hover:-rotate-12">
+                      <Icon className="h-10 w-10" />
                     </div>
 
-                    <h3 className="mb-6 text-2xl font-black text-card-foreground group-hover:text-primary transition-colors">
+                    <h3 className="text-2xl lg:text-3xl font-fredoka font-black text-slate-900 mb-6 group-hover:text-hikids-blue tracking-tight transition-colors relative z-10">
                       {section.title}
                     </h3>
 
-                    <p className="text-lg text-muted-foreground leading-relaxed font-medium">
+                    <p className="text-lg lg:text-xl text-slate-600 leading-relaxed font-medium relative z-10 text-balance opacity-90">
                       {section.description}
                     </p>
 
-                    <div className="mt-10 h-1.5 w-12 rounded-full bg-primary/20 group-hover:w-full transition-all duration-700" />
-                  </div>
+                    <div className="mt-10 h-2 absolute bottom-0 left-0 w-0 bg-hikids-blue group-hover:w-full transition-all duration-[1000ms]" />
+                  </MotionItem>
                 );
               }
             )}
-          </div>
+          </MotionContainer>
         </div>
       </section>
 
       {/* Closing CTA */}
-      <section className="py-32 lg:py-48 relative overflow-hidden bg-accent/20">
-        <div className="absolute inset-0 pointer-events-none opacity-30">
-          <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,white_0%,transparent_70%)]" />
-        </div>
+      <section className="py-32 lg:py-56 relative overflow-hidden bg-slate-900 mx-6 lg:mx-12 rounded-[5rem] min-h-[90vh] flex flex-col justify-center">
+        {/* Soft internal glows */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-hikids-blue/20 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-hikids-blue/10 rounded-full blur-[100px] pointer-events-none translate-y-1/2 -translate-x-1/2" />
 
-        <div className="mx-auto max-w-[1600px] px-4 lg:px-8 relative z-10">
-          <div className="grid gap-20 lg:grid-cols-2 items-center">
-            <div className="text-left animate-fade-in-up">
-              <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-black text-primary uppercase tracking-widest">
-                <Sparkles className="h-4 w-4" />
-                The Journey Starts Here
-              </div>
-              <h2 className="text-5xl font-black text-foreground md:text-7xl mb-10 tracking-tight leading-[1.1]">
-                Give Your Child the Best Start
-              </h2>
-              <p className="mt-10 text-2xl text-muted-foreground leading-relaxed font-medium mb-12 max-w-xl">
-                Every HiKids kindergarten delivers the same trusted, progressive experience.
-              </p>
-              <div className="flex flex-wrap gap-6">
-                <Link
-                  href={`/${lang}/parents/find-kindergarten`}
-                  className="group inline-flex items-center gap-5 rounded-[2rem] bg-primary px-12 py-7 text-2xl font-black text-white shadow-2xl shadow-primary/20 transition-all hover:bg-primary/90 hover:-translate-y-2 hover:shadow-primary/40"
-                >
-                  Find a Center
-                  <ArrowRight className="h-8 w-8 group-hover:translate-x-2 transition-transform" />
-                </Link>
-                <Link
-                  href={`/${lang}/parents/app`}
-                  className="inline-flex items-center gap-5 rounded-[2rem] border-4 border-white bg-white/50 px-12 py-7 text-2xl font-black text-foreground backdrop-blur-md shadow-xl transition-all hover:bg-white hover:-translate-y-2"
-                >
-                  Get the App
-                </Link>
-              </div>
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10 text-center">
+          <MotionWrapper type="scale">
+            <div className="mb-12 inline-flex h-24 w-24 items-center justify-center rounded-[2rem] bg-white/5 border border-white/10 shadow-2xl backdrop-blur-md">
+              <Sparkles className="h-10 w-10 text-hikids-blue fill-hikids-blue" />
             </div>
-
-            <div className="relative h-[600px] w-full hidden lg:block animate-float">
-              <Image
-                src="/images/11.png"
-                alt="HiKids Education"
-                fill
-                className="object-contain drop-shadow-3xl scale-125 translate-x-10"
-              />
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-fredoka font-black text-white mb-12 tracking-tight leading-[1.05]">
+              Give Your Child the Best Start
+            </h2>
+            <p className="mt-10 text-xl md:text-3xl lg:text-4xl text-slate-300 leading-relaxed font-medium mb-16 max-w-4xl mx-auto text-balance">
+              Every HiKids kindergarten delivers the same trusted, progressive experience.
+            </p>
+            <div className="flex flex-wrap justify-center gap-6">
+              <Link
+                href={`/${lang}/parents/find-kindergarten`}
+                className="group inline-flex items-center gap-6 rounded-[2.5rem] bg-hikids-blue px-14 py-8 text-xl font-black text-white shadow-2xl shadow-hikids-blue/20 transition-all hover:bg-hikids-blue/90 hover:-translate-y-2 hover:scale-105"
+              >
+                Find a Center
+                <ArrowRight className="h-8 w-8 group-hover:translate-x-3 transition-transform" strokeWidth={3} />
+              </Link>
             </div>
-          </div>
+          </MotionWrapper>
         </div>
       </section>
     </>

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.5.4",
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "1.2.2",
     "@radix-ui/react-alert-dialog": "1.1.4",
@@ -43,8 +44,8 @@
     "cmdk": "1.1.1",
     "date-fns": "^3.6.0",
     "embla-carousel-react": "8.5.1",
+    "framer-motion": "^12.36.0",
     "input-otp": "1.4.1",
-    "@formatjs/intl-localematcher": "^0.5.4",
     "lucide-react": "^0.544.0",
     "negotiator": "^0.6.3",
     "next": "16.1.6",

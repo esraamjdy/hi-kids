@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -15,28 +15,51 @@ interface HeaderProps {
 }
 
 export function Header({ locale, dict }: HeaderProps) {
+  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
   const t = dict.common;
 
+  // Check if we are on the home page
+  const isHome = pathname === `/${locale}` || pathname === `/${locale}/`;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const isActive = (href: string) => pathname === href;
   const isInSection = (section: string) => pathname.startsWith(`/${locale}/${section}`);
 
+  // Dynamic Styles
+  const headerBg = isHome
+    ? scrolled
+      ? "bg-accent shadow-lg"
+      : "bg-background shadow-none"
+    : "bg-accent shadow-lg";
+
+  const textColor = isHome && !scrolled ? "text-slate-800" : "text-white";
+  const navActiveBg = isHome && !scrolled ? "bg-slate-800/5" : "bg-white/20";
+  const navHoverBg = isHome && !scrolled ? "hover:bg-slate-800/5" : "hover:bg-white/10";
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-primary shadow-lg">
-      <div className="mx-auto flex h-24 max-w-[1600px] items-center justify-between px-4 lg:px-8">
+    <header className={`sticky top-0 z-50 w-full transition-all duration-500 ease-in-out ${headerBg}`}>
+      <div className="mx-auto flex h-24 max-w-[1600px] items-center justify-between px-6 lg:px-16 xl:px-24">
         {/* Logo */}
         <Link
           href={`/${locale}`}
           className="flex items-center group transition-transform hover:scale-105 duration-500"
         >
-          <div className="relative h-20 w-auto aspect-[3/1]">
+          <div className="relative h-24 w-24 flex items-center justify-center">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-header.svg"
               alt="HiKids Logo"
-              width={192}
-              height={64}
-              className="object-contain"
+              width={120}
+              height={120}
+              className="object-contain scale-[1.4] transition-transform duration-500 group-hover:scale-[1.5]"
               priority
             />
           </div>
@@ -44,73 +67,35 @@ export function Header({ locale, dict }: HeaderProps) {
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-2 lg:flex" aria-label="Main navigation">
-          <Link
-            href={`/${locale}`}
-            className={`rounded-2xl px-5 py-2.5 text-sm font-black uppercase tracking-widest transition-all ${pathname === `/${locale}`
-              ? "text-white bg-white/20"
-              : "text-white/90 hover:text-white hover:bg-white/10"
-              }`}
-          >
-            {t.nav.home}
-          </Link>
-
-          <Link
-            href={`/${locale}/about`}
-            className={`rounded-2xl px-5 py-2.5 text-sm font-black uppercase tracking-widest transition-all ${isActive(`/${locale}/about`)
-              ? "text-white bg-white/20"
-              : "text-white/90 hover:text-white hover:bg-white/10"
-              }`}
-          >
-            {t.nav.about}
-          </Link>
-
-          <Link
-            href={`/${locale}/franchise`}
-            className={`rounded-2xl px-5 py-2.5 text-sm font-black uppercase tracking-widest transition-all ${isInSection("franchise")
-              ? "text-white bg-white/20"
-              : "text-white/90 hover:text-white hover:bg-white/10"
-              }`}
-          >
-            {t.nav.franchise}
-          </Link>
-
-          <Link
-            href={`/${locale}/educators`}
-            className={`rounded-2xl px-5 py-2.5 text-sm font-black uppercase tracking-widest transition-all ${isInSection("educators")
-              ? "text-white bg-white/20"
-              : "text-white/90 hover:text-white hover:bg-white/10"
-              }`}
-          >
-            {t.nav.educators}
-          </Link>
-
-          <Link
-            href={`/${locale}/parents`}
-            className={`rounded-2xl px-5 py-2.5 text-sm font-black uppercase tracking-widest transition-all ${isInSection("parents")
-              ? "text-white bg-white/20"
-              : "text-white/90 hover:text-white hover:bg-white/10"
-              }`}
-          >
-            {t.nav.parents}
-          </Link>
-
-          <Link
-            href={`/${locale}/contact`}
-            className={`rounded-2xl px-5 py-2.5 text-sm font-black uppercase tracking-widest transition-all ${isActive(`/${locale}/contact`)
-              ? "text-white bg-white/20"
-              : "text-white/90 hover:text-white hover:bg-white/10"
-              }`}
-          >
-            {t.nav.contact}
-          </Link>
+          {[
+            { href: `/${locale}`, label: t.nav.home, active: pathname === `/${locale}` },
+            { href: `/${locale}/about`, label: t.nav.about, active: isActive(`/${locale}/about`) },
+            { href: `/${locale}/franchise`, label: t.nav.franchise, active: isInSection("franchise") },
+            { href: `/${locale}/educators`, label: t.nav.educators, active: isInSection("educators") },
+            { href: `/${locale}/parents`, label: t.nav.parents, active: isInSection("parents") },
+          ].map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`rounded-2xl px-5 py-2.5 text-sm font-black uppercase tracking-widest transition-all ${link.active
+                ? `${textColor} ${navActiveBg}`
+                : `${isHome && !scrolled ? "text-slate-600" : "text-white/90"} ${navHoverBg} hover:${textColor}`
+                }`}
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
 
         {/* Right side */}
         <div className="flex items-center gap-4">
-          <LanguageSwitcher locale={locale} />
+          <LanguageSwitcher locale={locale} scrolled={scrolled} isHome={isHome} />
           <Link
             href={`/${locale}/contact`}
-            className="hidden rounded-full bg-secondary px-8 py-3.5 text-sm font-black uppercase tracking-widest text-white shadow-xl shadow-green-900/10 transition-all hover:bg-secondary/90 hover:-translate-y-0.5 lg:inline-flex"
+            className={`hidden rounded-full px-8 py-3.5 text-sm font-black uppercase tracking-widest shadow-xl transition-all hover:-translate-y-0.5 lg:inline-flex ${isHome && !scrolled
+              ? "bg-primary text-white hover:bg-primary/90"
+              : "bg-secondary text-white hover:bg-secondary/90 shadow-green-900/10"
+              }`}
           >
             {t.cta.contactUs}
           </Link>
@@ -118,7 +103,10 @@ export function Header({ locale, dict }: HeaderProps) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="inline-flex h-12 w-12 items-center justify-center rounded-2xl text-white hover:bg-white/10 border border-transparent hover:border-white/20 transition-all lg:hidden"
+            className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-transparent transition-all lg:hidden ${isHome && !scrolled
+              ? "text-slate-800 hover:bg-slate-800/5 hover:border-slate-800/10"
+              : "text-white hover:bg-white/10 hover:border-white/20"
+              }`}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

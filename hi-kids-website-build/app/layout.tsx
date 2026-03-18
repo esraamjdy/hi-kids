@@ -1,19 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Nunito } from "next/font/google";
-import { Geist } from "next/font/google";
+import { Fredoka } from "next/font/google";
 
 import "./globals.css";
 
-const nunito = Nunito({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-nunito",
-  display: "swap",
-});
-
-const geist = Geist({
+const fredoka = Fredoka({
   subsets: ["latin"],
-  variable: "--font-geist",
-  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-fredoka",
 });
 
 export const metadata: Metadata = {
@@ -37,10 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning>
-      <body
-        className={`${nunito.variable} ${geist.variable} font-sans antialiased`}
-      >
+    <html lang="en" className={`${fredoka.variable} font-sans`} suppressHydrationWarning>
+      <body className="antialiased">
         {children}
       </body>
     </html>
