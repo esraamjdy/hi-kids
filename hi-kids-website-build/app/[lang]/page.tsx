@@ -142,7 +142,7 @@ export default async function HomePage({
       </div>
 
       {/* ─── PATHWAYS ─── */}
-      <section className="bg-white py-4 lg:py-8 relative overflow-hidden min-h-[95vh] flex flex-col justify-center">
+      <section className="bg-white py-8 lg:py-12 relative overflow-hidden">
 
 
         <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10 mt-0">
@@ -177,12 +177,12 @@ export default async function HomePage({
 
             {/* Business Owners */}
             <MotionItem>
-              <div className="bg-[#f9f28c] rounded-[2.5rem] p-10 lg:p-12 flex flex-col h-full shadow-2xl shadow-yellow-500/20 border border-yellow-300/50 hover:shadow-yellow-500/30 hover:-translate-y-2 hover:scale-105 transition-all duration-500 group relative overflow-hidden">
+              <div className="bg-[#f9f28c] rounded-[2.5rem] p-10 lg:p-12 lg:pb-32 flex flex-col h-full shadow-2xl shadow-yellow-500/20 border border-yellow-300/50 hover:shadow-yellow-500/30 hover:-translate-y-2 hover:scale-105 transition-all duration-500 group relative overflow-hidden">
                 {/* Decorative background shape */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-hikids-yellow/30 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
                 {/* Businessman Background - Professional Integration */}
-                <div className="absolute bottom-0 right-0 w-[80%] h-[70%] opacity-[0.25] group-hover:opacity-40 pointer-events-none transition-all duration-700 group-hover:scale-110">
+                <div className="absolute bottom-0 right-0 w-[95%] h-[85%] opacity-[0.25] group-hover:opacity-40 pointer-events-none transition-all duration-700 group-hover:scale-[1.05]">
                   <Image
                     src="/images/businessman.png"
                     alt=""
@@ -191,7 +191,20 @@ export default async function HomePage({
                   />
                 </div>
 
-                {/* Decorative wavy accent - Top Cloud (Dark Yellow) via Masking */}
+                {/* Decorative wavy accent - Bottom Cloud (White Shadow) */}
+                <div
+                  className="absolute top-0 left-0 w-full h-full bg-white opacity-70 pointer-events-none z-10"
+                  style={{
+                    maskImage: "url('/images/HiKids-55.svg')",
+                    WebkitMaskImage: "url('/images/HiKids-55.svg')",
+                    maskSize: 'contain',
+                    maskRepeat: 'no-repeat',
+                    maskPosition: 'bottom',
+                    transform: 'translateY(-8px)'
+                  }}
+                />
+
+                {/* Decorative wavy accent - Bottom Cloud (Themed) */}
                 <div
                   className="absolute top-0 left-0 w-full h-full bg-hikids-yellow opacity-100 pointer-events-none z-20"
                   style={{
@@ -199,51 +212,79 @@ export default async function HomePage({
                     WebkitMaskImage: "url('/images/HiKids-55.svg')",
                     maskSize: 'contain',
                     maskRepeat: 'no-repeat',
-                    maskPosition: 'bottom',
-                    transform: 'scaleY(-1)'
+                    maskPosition: 'bottom'
                   }}
                 />
 
                 {/* Header: Icon Only */}
-                <div className="flex items-center gap-5 mb-8 relative z-30">
-                  <div className="w-16 h-16 rounded-[4rem] bg-white/40 backdrop-blur-sm flex items-center justify-center text-slate-900 shrink-0 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <div className="flex items-center gap-5 mb-4 relative z-30">
+                  <div className="w-16 h-16 rounded-[4rem] bg-white/40 backdrop-blur-sm flex items-center justify-center text-[#063354] shrink-0 shadow-sm group-hover:scale-110 transition-transform duration-300">
                     <Briefcase className="w-8 h-8" />
                   </div>
                 </div>
 
-                {/* Tag */}
-                <div className="mb-6 relative z-30">
-                  <span className="text-xs font-black text-slate-900 uppercase tracking-[0.2em] bg-white/40 backdrop-blur-sm px-4 py-2 rounded-full inline-block">Franchise Opportunities</span>
-                </div>
+
 
                 {/* Repositioned Title */}
-                <div className="mb-10 relative z-30 flex-1">
-                  <h3 className="text-4xl lg:text-5xl font-black text-slate-900 leading-tight">Business</h3>
-                  <span className="text-xl font-bold text-slate-800 uppercase tracking-widest mt-2 block">Owners</span>
+                <div className="mb-6 relative z-30 flex-1">
+                  <h3 className="text-5xl lg:text-6xl font-fredoka font-black leading-tight transition-transform hover:scale-105 duration-300"
+                    style={{
+                      color: "#FFEB00",
+                      WebkitTextStroke: "10px #fff",
+                      paintOrder: "stroke fill",
+                      filter: "drop-shadow(0 6px 0 rgba(0,0,0,0.1))"
+                    }}>
+                    Business
+                  </h3>
+                  <span className="text-xl font-bold text-[#063354] uppercase tracking-widest mt-2 block ml-1">Owners</span>
                 </div>
 
-                {/* Checklist */}
-                <div className="grid grid-cols-2 gap-y-5 gap-x-2 mb-10 relative z-30">
+                {/* Checklist: Subpages */}
+                <div className="grid grid-cols-2 gap-y-5 gap-x-2 mb-8 relative z-30">
                   {[
-                    "Proven Model",
-                    "Global Network",
-                    "Full Support",
-                    "High ROI",
+                    "Why Join",
+                    "What You Get",
+                    "The Model",
+                    "Brochure",
                   ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-3 text-[14px] lg:text-[15px] font-bold text-slate-900">
-                      <Check strokeWidth={4} className="w-6 h-6 text-slate-900 shrink-0 mt-[2px]" />
+                    <div key={i} className="flex items-center gap-4 text-[16px] lg:text-[17px] font-bold text-[#063354]">
+                      <div className="relative w-8 h-8 flex-shrink-0">
+                        {/* White Border Layer */}
+                        <div
+                          className="absolute inset-0 bg-white"
+                          style={{
+                            maskImage: "url('/images/HiKids-25.svg')",
+                            WebkitMaskImage: "url('/images/HiKids-25.svg')",
+                            maskSize: 'contain',
+                            maskRepeat: 'no-repeat',
+                            maskPosition: 'center',
+                            transform: 'scale(1.35)'
+                          }}
+                        />
+                        {/* Themed Fill Layer (Yellow) */}
+                        <div
+                          className="absolute inset-0 bg-[#FFEB00]"
+                          style={{
+                            maskImage: "url('/images/HiKids-25.svg')",
+                            WebkitMaskImage: "url('/images/HiKids-25.svg')",
+                            maskSize: 'contain',
+                            maskRepeat: 'no-repeat',
+                            maskPosition: 'center'
+                          }}
+                        />
+                      </div>
                       <span className="leading-tight">{item}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Button */}
-                <div className="mt-auto relative z-30">
+                <div className="mt-auto relative z-30 w-full flex justify-start">
                   <Link
                     href={`/${lang}/franchise`}
-                    className="btn-outline bg-white text-slate-900 border-transparent py-4 text-lg w-full justify-center shadow-xl hover:bg-slate-50 hover:scale-[1.02]"
+                    className="bg-white text-[#063354] py-2.5 px-8 text-xs font-black uppercase tracking-[0.15em] w-auto inline-flex justify-center rounded-2xl border-2 border-white/50 hover:bg-[#FFEB00] hover:scale-105 transition-all duration-300"
                   >
-                    Explore Franchise <ArrowRight className="w-5 h-5 ml-2" />
+                    See More <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
                 </div>
               </div>
@@ -251,12 +292,12 @@ export default async function HomePage({
 
             {/* Educators */}
             <MotionItem>
-              <div className="bg-blue-200 rounded-[2.5rem] p-10 lg:p-12 flex flex-col h-full shadow-2xl shadow-blue-500/20 border border-blue-300/50 hover:shadow-blue-500/30 hover:-translate-y-2 hover:scale-105 transition-all duration-500 group relative overflow-hidden">
+              <div className="bg-blue-200 rounded-[2.5rem] p-10 lg:p-12 lg:pb-32 flex flex-col h-full shadow-2xl shadow-blue-500/20 border border-blue-300/50 hover:shadow-blue-500/30 hover:-translate-y-2 hover:scale-105 transition-all duration-500 group relative overflow-hidden">
                 {/* Decorative background shape */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-hikids-blue/30 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
                 {/* Educators Background - Professional Integration */}
-                <div className="absolute bottom-0 right-0 w-[80%] h-[70%] opacity-[0.25] group-hover:opacity-45 pointer-events-none transition-all duration-700 group-hover:scale-110">
+                <div className="absolute bottom-0 right-0 w-[95%] h-[85%] opacity-[0.25] group-hover:opacity-45 pointer-events-none transition-all duration-700 group-hover:scale-[1.05]">
                   <Image
                     src="/images/educators.png"
                     alt=""
@@ -265,7 +306,20 @@ export default async function HomePage({
                   />
                 </div>
 
-                {/* Decorative wavy accent - Top Cloud (Dark Blue) via Masking */}
+                {/* Decorative wavy accent - Bottom Cloud (White Shadow) */}
+                <div
+                  className="absolute top-0 left-0 w-full h-full bg-white opacity-70 pointer-events-none z-10"
+                  style={{
+                    maskImage: "url('/images/HiKids-55.svg')",
+                    WebkitMaskImage: "url('/images/HiKids-55.svg')",
+                    maskSize: 'contain',
+                    maskRepeat: 'no-repeat',
+                    maskPosition: 'bottom',
+                    transform: 'translateY(-8px)'
+                  }}
+                />
+
+                {/* Decorative wavy accent - Bottom Cloud (Themed) */}
                 <div
                   className="absolute top-0 left-0 w-full h-full bg-hikids-blue opacity-100 pointer-events-none z-20"
                   style={{
@@ -273,47 +327,76 @@ export default async function HomePage({
                     WebkitMaskImage: "url('/images/HiKids-55.svg')",
                     maskSize: 'contain',
                     maskRepeat: 'no-repeat',
-                    maskPosition: 'bottom',
-                    transform: 'scaleY(-1)'
+                    maskPosition: 'bottom'
                   }}
                 />
 
-                <div className="flex items-center gap-5 mb-8 relative z-30">
-                  <div className="w-16 h-16 rounded-[4rem] bg-white/40 backdrop-blur-sm flex items-center justify-center text-slate-900 shrink-0 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <div className="flex items-center gap-5 mb-4 relative z-30">
+                  <div className="w-16 h-16 rounded-[4rem] bg-white/40 backdrop-blur-sm flex items-center justify-center text-[#063354] shrink-0 shadow-sm group-hover:scale-110 transition-transform duration-300">
                     <GraduationCap className="w-8 h-8" />
                   </div>
                 </div>
 
-                <div className="mb-6 relative z-30">
-                  <span className="text-xs font-black text-slate-900 uppercase tracking-[0.2em] bg-white/40 backdrop-blur-sm px-4 py-2 rounded-full inline-block">Teaching Excellence</span>
+
+
+                <div className="mb-6 relative z-30 flex-1">
+                  <h3 className="text-5xl lg:text-6xl font-fredoka font-black leading-tight transition-transform hover:scale-105 duration-300"
+                    style={{
+                      color: "#00AEEF",
+                      WebkitTextStroke: "10px #fff",
+                      paintOrder: "stroke fill",
+                      filter: "drop-shadow(0 6px 0 rgba(0,0,0,0.1))"
+                    }}>
+                    Educator
+                  </h3>
+                  <span className="text-xl font-bold text-[#063354] uppercase tracking-widest mt-2 block ml-1"></span>
                 </div>
 
-                <div className="mb-10 relative z-30 flex-1">
-                  <h3 className="text-4xl lg:text-5xl font-black text-slate-900 leading-tight">Educator</h3>
-                  <span className="text-xl font-bold text-slate-800 uppercase tracking-widest mt-2 block">Resources</span>
-                </div>
-
-                <div className="grid grid-cols-2 gap-y-5 gap-x-2 mb-10 relative z-30">
+                {/* Checklist: Subpages */}
+                <div className="grid grid-cols-2 gap-y-5 gap-x-2 mb-8 relative z-30">
                   {[
-                    "Rich Curriculum",
-                    "Modern Tools",
-                    "Training Access",
-                    "Community Forum",
+                    "Method",
+                    "Materials",
+                    "Certification",
                   ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-3 text-[14px] lg:text-[15px] font-bold text-slate-900">
-                      <Check strokeWidth={4} className="w-6 h-6 text-slate-900 shrink-0 mt-[2px]" />
+                    <div key={i} className="flex items-center gap-4 text-[16px] lg:text-[17px] font-bold text-[#063354]">
+                      <div className="relative w-8 h-8 flex-shrink-0">
+                        {/* White Border Layer */}
+                        <div
+                          className="absolute inset-0 bg-white"
+                          style={{
+                            maskImage: "url('/images/HiKids-25.svg')",
+                            WebkitMaskImage: "url('/images/HiKids-25.svg')",
+                            maskSize: 'contain',
+                            maskRepeat: 'no-repeat',
+                            maskPosition: 'center',
+                            transform: 'scale(1.35)'
+                          }}
+                        />
+                        {/* Themed Fill Layer (Blue) */}
+                        <div
+                          className="absolute inset-0 bg-hikids-blue"
+                          style={{
+                            maskImage: "url('/images/HiKids-25.svg')",
+                            WebkitMaskImage: "url('/images/HiKids-25.svg')",
+                            maskSize: 'contain',
+                            maskRepeat: 'no-repeat',
+                            maskPosition: 'center'
+                          }}
+                        />
+                      </div>
                       <span className="leading-tight">{item}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Button */}
-                <div className="mt-auto relative z-30">
+                <div className="mt-auto relative z-30 w-full flex justify-start">
                   <Link
                     href={`/${lang}/educators`}
-                    className="btn-outline bg-white text-slate-900 border-transparent py-4 text-lg w-full justify-center shadow-xl hover:bg-slate-50 hover:scale-[1.02]"
+                    className="bg-white text-[#063354] py-2.5 px-8 text-xs font-black uppercase tracking-[0.15em] w-auto inline-flex justify-center rounded-2xl border-2 border-white/50 hover:bg-hikids-blue hover:text-white hover:scale-105 transition-all duration-300"
                   >
-                    Access Library <ArrowRight className="w-5 h-5 ml-2" />
+                    See More <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
                 </div>
               </div>
@@ -321,12 +404,12 @@ export default async function HomePage({
 
             {/* Parents */}
             <MotionItem>
-              <div className="bg-[#f9f28c] rounded-[2.5rem] p-10 lg:p-12 flex flex-col h-full shadow-2xl shadow-yellow-500/20 border border-yellow-300/50 hover:shadow-yellow-500/30 hover:-translate-y-2 hover:scale-105 transition-all duration-500 group relative overflow-hidden">
+              <div className="bg-[#f9f28c] rounded-[2.5rem] p-10 lg:p-12 lg:pb-32 flex flex-col h-full shadow-2xl shadow-yellow-500/20 border border-yellow-300/50 hover:shadow-yellow-500/30 hover:-translate-y-2 hover:scale-105 transition-all duration-500 group relative overflow-hidden">
                 {/* Decorative background shape */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-hikids-yellow/20 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
                 {/* Parents Background - Professional Integration */}
-                <div className="absolute bottom-0 right-0 w-[80%] h-[70%] opacity-[0.15] group-hover:opacity-35 pointer-events-none transition-all duration-700 group-hover:scale-110">
+                <div className="absolute bottom-0 right-0 w-[95%] h-[85%] opacity-[0.15] group-hover:opacity-35 pointer-events-none transition-all duration-700 group-hover:scale-[1.05]">
                   <Image
                     src="/images/parents.png"
                     alt=""
@@ -335,7 +418,20 @@ export default async function HomePage({
                   />
                 </div>
 
-                {/* Decorative wavy accent - Top Cloud (Dark Yellow) via Masking */}
+                {/* Decorative wavy accent - Bottom Cloud (White Shadow) */}
+                <div
+                  className="absolute top-0 left-0 w-full h-full bg-white opacity-70 pointer-events-none z-10"
+                  style={{
+                    maskImage: "url('/images/HiKids-55.svg')",
+                    WebkitMaskImage: "url('/images/HiKids-55.svg')",
+                    maskSize: 'contain',
+                    maskRepeat: 'no-repeat',
+                    maskPosition: 'bottom',
+                    transform: 'translateY(-8px)'
+                  }}
+                />
+
+                {/* Decorative wavy accent - Bottom Cloud (Themed) */}
                 <div
                   className="absolute top-0 left-0 w-full h-full bg-hikids-yellow opacity-100 pointer-events-none z-20"
                   style={{
@@ -343,47 +439,77 @@ export default async function HomePage({
                     WebkitMaskImage: "url('/images/HiKids-55.svg')",
                     maskSize: 'contain',
                     maskRepeat: 'no-repeat',
-                    maskPosition: 'bottom',
-                    transform: 'scaleY(-1)'
+                    maskPosition: 'bottom'
                   }}
                 />
 
-                <div className="flex items-center gap-5 mb-8 relative z-30">
-                  <div className="w-16 h-16 rounded-[4rem] bg-white/40 backdrop-blur-sm flex items-center justify-center text-slate-900 shrink-0 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <div className="flex items-center gap-5 mb-4 relative z-30">
+                  <div className="w-16 h-16 rounded-[4rem] bg-white/40 backdrop-blur-sm flex items-center justify-center text-[#063354] shrink-0 shadow-sm group-hover:scale-110 transition-transform duration-300">
                     <Heart className="w-8 h-8" />
                   </div>
                 </div>
 
-                <div className="mb-6 relative z-30">
-                  <span className="text-xs font-black text-slate-900 uppercase tracking-[0.2em] bg-white/40 backdrop-blur-sm px-4 py-2 rounded-full inline-block">Parenting Support</span>
+
+
+                <div className="mb-6 relative z-30 flex-1">
+                  <h3 className="text-5xl lg:text-6xl font-fredoka font-black leading-tight transition-transform hover:scale-105 duration-300"
+                    style={{
+                      color: "#FFEB00",
+                      WebkitTextStroke: "10px #fff",
+                      paintOrder: "stroke fill",
+                      filter: "drop-shadow(0 6px 0 rgba(0,0,0,0.1))"
+                    }}>
+                    Parents
+                  </h3>
+                  <span className="text-xl font-bold text-[#063354] uppercase tracking-widest mt-2 block ml-1"></span>
                 </div>
 
-                <div className="mb-10 relative z-30 flex-1">
-                  <h3 className="text-4xl lg:text-5xl font-black text-slate-900 leading-tight">Parents</h3>
-                  <span className="text-xl font-bold text-slate-800 uppercase tracking-widest mt-2 block">Network</span>
-                </div>
-
-                <div className="grid grid-cols-2 gap-y-5 gap-x-2 mb-10 relative z-30">
+                {/* Checklist: Subpages */}
+                <div className="grid grid-cols-2 gap-y-5 gap-x-2 mb-8 relative z-30">
                   {[
-                    "Progress Tracking",
-                    "Expert Resources",
-                    "Development",
-                    "Safe Community",
+                    "Why Choose",
+                    "Learning Levels",
+                    "Find Us",
+                    "Mobile App",
                   ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-3 text-[14px] lg:text-[15px] font-bold text-slate-900">
-                      <Check strokeWidth={4} className="w-6 h-6 text-slate-900 shrink-0 mt-[2px]" />
+                    <div key={i} className="flex items-center gap-4 text-[16px] lg:text-[17px] font-bold text-[#063354]">
+                      <div className="relative w-8 h-8 flex-shrink-0">
+                        {/* White Border Layer */}
+                        <div
+                          className="absolute inset-0 bg-white"
+                          style={{
+                            maskImage: "url('/images/HiKids-25.svg')",
+                            WebkitMaskImage: "url('/images/HiKids-25.svg')",
+                            maskSize: 'contain',
+                            maskRepeat: 'no-repeat',
+                            maskPosition: 'center',
+                            transform: 'scale(1.35)'
+                          }}
+                        />
+                        {/* Themed Fill Layer (Yellow) */}
+                        <div
+                          className="absolute inset-0 bg-[#FFEB00]"
+                          style={{
+                            maskImage: "url('/images/HiKids-25.svg')",
+                            WebkitMaskImage: "url('/images/HiKids-25.svg')",
+                            maskSize: 'contain',
+                            maskRepeat: 'no-repeat',
+                            maskPosition: 'center'
+                          }}
+                        />
+                      </div>
                       <span className="leading-tight">{item}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Button */}
-                <div className="mt-auto relative z-30">
+                <div className="mt-auto relative z-30 w-full flex justify-start">
                   <Link
                     href={`/${lang}/parents`}
-                    className="btn-outline bg-white text-slate-900 border-transparent py-4 text-lg w-full justify-center shadow-xl hover:bg-slate-50 hover:scale-[1.02]"
+                    className="bg-white text-[#063354] py-2.5 px-8 text-xs font-black uppercase tracking-[0.15em] w-auto inline-flex justify-center rounded-2xl border-2 border-white/50 hover:bg-[#FFEB00] hover:scale-105 transition-all duration-300"
                   >
-                    Parent Portal <ArrowRight className="w-5 h-5 ml-2" />
+                    See More <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
                 </div>
               </div>
@@ -394,7 +520,7 @@ export default async function HomePage({
       </section>
 
       {/* ─── WHAT IS HIKIDS – Compact Milestone Strip ─── */}
-      <section className="bg-white py-4 lg:py-8 relative overflow-visible min-h-[95vh] flex flex-col justify-center">
+      <section className="bg-white py-20 lg:py-32 relative overflow-visible flex flex-col items-center">
         {/* Background Pattern from bottom to top */}
         {/* <div className="absolute bottom-0 left-0 w-full flex justify-center items-end h-[50%] lg:h-[70%] z-0 opacity-[0.25] pointer-events-none overflow-hidden blur-[1px]">
           <div className="relative w-[55%] h-full shrink-0 -mr-[5%]">
@@ -409,7 +535,7 @@ export default async function HomePage({
 
           {/* Header */}
           <MotionWrapper direction="up" viewportAmount={0.5}>
-            <div className="text-center flex flex-col items-center max-w-[1200px] w-full mx-auto mb-6 sm:mb-8 space-y-4 sm:space-y-6">
+            <div className="text-center flex flex-col items-center w-full mx-auto mb-12 lg:mb-20 space-y-4 sm:space-y-6">
               <div className="relative text-center items-center flex flex-col">
                 {/* Creative Background Glows */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/5 rounded-full blur-[80px] opacity-70 animate-pulse-slow pointer-events-none" />
@@ -430,13 +556,13 @@ export default async function HomePage({
 
 
 
-              <p className="text-author !text-lg lg:!text-xl text-slate-600 leading-relaxed max-w-[1200px] w-full mx-auto opacity-90">
+              <p className="text-author !text-lg lg:!text-xl text-slate-600 leading-relaxed w-full mx-auto opacity-90">
                 {t.whatIs.description}
               </p>
             </div>
           </MotionWrapper>
           {/* Creative Interactive Map - Milestone Roadmap */}
-          <MotionContainer className="relative mt-8 mb-8 lg:mb-12 mx-auto w-full max-w-[1600px] aspect-[4/9] md:aspect-[3/4] lg:aspect-[28/10] flex items-center justify-center overflow-visible">
+          <MotionContainer className="relative my-24 lg:my-32 mx-auto w-full max-w-[1600px] aspect-[4/9] md:aspect-[3/4] lg:aspect-[32/10] flex items-center justify-center overflow-visible">
 
             {/* Ambient Background Glows for the Map Area */}
             <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[40%] h-[60%] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
@@ -464,7 +590,7 @@ export default async function HomePage({
                 </filter>
               </defs>
               <path
-                d="M 0 250 C 100 250, 100 100, 200 100 C 300 100, 300 400, 400 400 C 500 400, 500 100, 600 100 C 700 100, 700 400, 800 400 C 900 400, 900 250, 1000 250"
+                d="M 0 250 C 50 250, 50 100, 100 100 C 230 100, 230 400, 360 400 C 500 400, 500 100, 630 100 C 760 100, 760 400, 900 400 C 950 400, 950 250, 1000 250"
                 fill="none"
                 stroke="url(#map-gradient)"
                 strokeWidth="6"
@@ -496,10 +622,10 @@ export default async function HomePage({
             {/* Dynamic Map Nodes */}
             {t.whatIs.levels.map((level, i) => {
               const positions = [
-                "left-[20%] top-[20%] lg:left-[20%] lg:top-[20%]",
-                "left-[80%] top-[40%] lg:left-[40%] lg:top-[80%]",
-                "left-[20%] top-[60%] lg:left-[60%] lg:top-[20%]",
-                "left-[80%] top-[80%] lg:left-[80%] lg:top-[80%]"
+                "left-[15%] top-[20%] lg:left-[10%] lg:top-[20%]",
+                "left-[85%] top-[40%] lg:left-[36%] lg:top-[80%]",
+                "left-[15%] top-[60%] lg:left-[63%] lg:top-[20%]",
+                "left-[85%] top-[80%] lg:left-[90%] lg:top-[80%]"
               ];
 
               const popupClasses = [
@@ -569,7 +695,7 @@ export default async function HomePage({
           </MotionContainer>
 
           {/* Franchise Network Mention - Refined Premium Card */}
-          <MotionWrapper className="mt-4 sm:mt-6 max-w-[1400px] w-full mx-auto px-4" type="scale" delay={0.2}>
+          <MotionWrapper className="mt-12 lg:mt-24 w-full mx-auto" type="scale" delay={0.2}>
             <div className="group relative overflow-hidden rounded-[3rem] bg-[#fbf7c3] border border-hikids-yellow/20 p-6 sm:p-10 lg:p-12 shadow-2xl shadow-hikids-yellow/5 transition-all duration-700 hover:shadow-hikids-yellow/10">
               {/* Refined Background Elements */}
               <div className="absolute top-0 right-0 w-96 h-96 bg-white/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 group-hover:scale-110 transition-transform duration-1000" />
@@ -612,12 +738,12 @@ export default async function HomePage({
 
       {/* ─── MEET MOKA SECTION – Reverted Layout with Fancy Title ─── */}
       <section className="py-4 lg:py-8 bg-yellow-50 relative overflow-hidden">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10 w-full">
           <div className="grid lg:grid-cols-12 gap-6 lg:gap-12 items-start">
 
             {/* Left Column: ONLY Character Image */}
             <div className="lg:col-span-6 flex justify-center lg:justify-center lg:sticky lg:top-16 lg:pt-2">
-              <MotionWrapper type="scale" delay={0.2} className="relative w-[450px] h-[450px] lg:w-[800px] lg:h-[800px] lg:-ml-16">
+              <MotionWrapper type="scale" delay={0.2} className="relative w-[450px] h-[450px] lg:w-[800px] lg:h-[800px] lg:-ml-48">
                 <Image
                   src="/images/hi.png"
                   alt="Moka"
@@ -688,8 +814,8 @@ export default async function HomePage({
       </section>
 
       {/* ─── WHY DIFFERENT SECTION – Organized Alignment ─── */}
-      <section className="py-4 lg:py-8 relative overflow-hidden bg-blue-50">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+      <section className="pt-10 lg:pt-20 pb-2 lg:pb-4 relative overflow-hidden bg-blue-50">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10 w-full">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-start">
 
             {/* Left Column: Text + Content Stack */}
@@ -739,7 +865,7 @@ export default async function HomePage({
 
             {/* Right Column: Image Only (Sticky) */}
             <div className="lg:col-span-5 flex justify-center lg:justify-center lg:sticky lg:top-0">
-              <MotionWrapper type="scale" delay={0.2} className="relative w-[600px] h-[600px] lg:w-[1300px] lg:h-[1300px] lg:-ml-24 lg:-mt-48">
+              <MotionWrapper type="scale" delay={0.2} className="relative w-[600px] h-[600px] lg:w-[1300px] lg:h-[1300px] lg:-mr-40 lg:-mt-48">
                 <Image
                   src="/images/Moka-Dance.png"
                   alt="Moka Dancing"
@@ -753,46 +879,62 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ─── FINAL CTA SECTION ─── */}
-      <section className="py-4 lg:py-8 relative overflow-hidden bg-white">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+      {/* ─── FINAL CTA SECTION: White Page with Yellow Card ─── */}
+      <section className="pt-8 pb-32 lg:pt-12 lg:pb-48 relative overflow-hidden bg-white">
 
-            {/* Left Column: Character Image */}
-            <div className="lg:col-span-6 flex justify-center lg:justify-center lg:sticky lg:top-0 order-2 lg:order-1 mt-12 lg:mt-0">
-              <MotionWrapper type="scale" delay={0.2} className="relative w-[450px] h-[450px] lg:w-[1000px] lg:h-[1000px] lg:-ml-32">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10 w-full">
+          <div className="relative overflow-hidden rounded-[4rem] bg-[#FFEB00] border-4 border-white shadow-[0_32px_80px_-16px_rgba(255,235,0,0.3)] p-8 lg:p-12 flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
+
+            {/* Background Texture inside card */}
+            <div className="absolute inset-0 opacity-[0.04] pointer-events-none p-2">
+              <div className="grid grid-cols-3 grid-rows-3 w-full h-full gap-8">
+                <div className="bg-[url('/images/HiKids-24.svg')] bg-no-repeat bg-center bg-contain scale-[1.8] lg:scale-[2.5]" />
+                <div className="bg-[url('/images/HiKids-24.svg')] bg-no-repeat bg-center bg-contain scale-[1.8] lg:scale-[2.5]" />
+                <div className="bg-[url('/images/HiKids-24.svg')] bg-no-repeat bg-center bg-contain scale-[1.8] lg:scale-[2.5]" />
+                <div className="bg-[url('/images/HiKids-24.svg')] bg-no-repeat bg-center bg-contain scale-[1.8] lg:scale-[2.5]" />
+                <div className="bg-[url('/images/HiKids-24.svg')] bg-no-repeat bg-center bg-contain scale-[1.8] lg:scale-[2.5]" />
+                <div className="bg-[url('/images/HiKids-24.svg')] bg-no-repeat bg-center bg-contain scale-[1.8] lg:scale-[2.5]" />
+                <div className="bg-[url('/images/HiKids-24.svg')] bg-no-repeat bg-center bg-contain scale-[1.8] lg:scale-[2.5]" />
+                <div className="bg-[url('/images/HiKids-24.svg')] bg-no-repeat bg-center bg-contain scale-[1.8] lg:scale-[2.5]" />
+                <div className="bg-[url('/images/HiKids-24.svg')] bg-no-repeat bg-center bg-contain scale-[1.8] lg:scale-[2.5]" />
+              </div>
+            </div>
+
+            {/* Left Column: Character Image jumping out */}
+            <div className="relative w-full lg:w-1/2 flex justify-center order-2 lg:order-1">
+              <MotionWrapper type="scale" delay={0.2} className="relative w-[360px] h-[360px] lg:w-[650px] lg:h-[650px] lg:-ml-24">
                 <Image
                   src="/images/Moka-Plays.png"
                   alt="Moka Playing"
                   fill
-                  className="object-contain drop-shadow-2xl"
+                  className="object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.2)]"
                 />
               </MotionWrapper>
             </div>
 
             {/* Right Column: Content */}
-            <div className="lg:col-span-6 space-y-10 order-1 lg:order-2">
-              <MotionWrapper direction="left" delay={0.1}>
-                <div className="space-y-6 text-center lg:text-left">
-                  <span className="bg-hikids-blue/10 text-hikids-blue text-xs font-bold uppercase tracking-[0.15em] px-6 py-2 rounded-full inline-block border border-hikids-blue/20">
-                    JOIN THE FAMILY
+            <div className="relative w-full lg:w-1/2 space-y-10 order-1 lg:order-2 text-center lg:text-left">
+              <MotionWrapper direction="up" delay={0.1}>
+                <div className="space-y-8">
+                  <span className="bg-hikids-blue/10 text-hikids-blue text-xs font-black uppercase tracking-[0.2em] px-8 py-2.5 rounded-full inline-block border border-hikids-blue/20">
+                    Join the Family
                   </span>
 
-                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4">
-                    Join the <br className="sm:hidden" />
-                    <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-[#063354] leading-[1.05] tracking-tight">
+                    Start your <br />
+                    <span className="text-white text-6xl lg:text-8xl xl:text-9xl mt-2 inline-block transition-transform hover:scale-105 duration-300"
                       style={{
                         WebkitTextStroke: "12px #00AEEF",
                         paintOrder: "stroke fill",
                         filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
                       }}>
-                      HiKids
+                      Journey
                     </span>
-                    <br /> Family
+                    <br /> with HiKids
                   </h2>
 
-                  <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed max-w-xl font-medium mx-auto lg:mx-0">
-                    Empower your journey with HiKids. Whether you are a parent, educator, or business owner — we are here for you.
+                  <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed font-medium max-w-xl mx-auto lg:mx-0 opacity-90">
+                    Empower your journey with HiKids. Whether you are a parent, educator, or business owner — we are here to support every step of the way.
                   </p>
                 </div>
               </MotionWrapper>
@@ -800,20 +942,19 @@ export default async function HomePage({
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
                 <Link
                   href={`/${lang}/franchise/inquiry`}
-                  className="btn-primary px-12 py-5 text-xl tracking-tight group"
+                  className="bg-[#063354] hover:bg-slate-800 text-white px-12 py-5 rounded-[2rem] text-lg font-black uppercase tracking-widest shadow-xl shadow-slate-900/10 transition-all hover:scale-105 active:scale-95 group flex items-center"
                 >
-                  {dict.common.cta.getStarted} <ArrowRight className="h-6 w-6 ml-2 group-hover:translate-x-1 transition-transform" />
+                  {dict.common.cta.getStarted} <ArrowRight className="h-6 w-6 ml-2 group-hover:translate-x-2 transition-transform" />
                 </Link>
 
                 <Link
                   href={`/${lang}/contact`}
-                  className="btn-outline px-12 py-5 text-xl tracking-tight bg-white shadow-xl hover:shadow-2xl transition-all"
+                  className="bg-white text-[#063354] hover:bg-slate-50 px-12 py-5 rounded-[2rem] text-lg font-black uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-sm"
                 >
                   {dict.common.cta.contactUs}
                 </Link>
               </div>
             </div>
-
           </div>
         </div>
       </section>

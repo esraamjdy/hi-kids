@@ -124,21 +124,21 @@
   h1,
   .text-main-title {
     @apply font-bold tracking-tight font-sans;
-    font-size: clamp(80px, 10vw, 120px);
+    font-size: clamp(36px, 8vw, 120px);
     line-height: 1.05;
   }
 
   h2,
   .text-subtitle {
     @apply font-semibold tracking-tight;
-    font-size: clamp(30px, 4vw, 50px);
+    font-size: clamp(24px, 4vw, 50px);
     line-height: 1.2;
   }
 
   h3,
   .text-author {
     @apply font-normal tracking-tight;
-    font-size: clamp(18px, 2.5vw, 28px);
+    font-size: clamp(16px, 2.5vw, 28px);
   }
 
   p,
