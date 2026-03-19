@@ -3,6 +3,7 @@ import { i18n, isValidLocale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionaries";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { FloatingAppButton } from "@/components/floating-app-button";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
@@ -24,10 +25,11 @@ export default async function LocaleLayout({
   const dict = await getDictionary(lang);
 
   return (
-    <div lang={lang}>
+    <div lang={lang} className="relative min-h-screen">
       <Header locale={lang} dict={dict} />
-      <main>{children}</main>
-      <Footer locale={lang} dict={dict} />
+      <main className="relative z-10">{children}</main>
+      <FloatingAppButton locale={lang as any} />
+      <Footer locale={lang as any} dict={dict} />
     </div>
   );
 }

@@ -46,7 +46,7 @@ export default async function HomePage({
 
 
       {/* ─── HERO ─── */}
-      <section className="relative min-h-[30vh] lg:min-h-[45vh] flex items-center overflow-hidden bg-background py-4 lg:py-8">
+      <section className="relative min-h-[30vh] lg:min-h-[45vh] flex items-center overflow-hidden bg-background py-4 lg:py-8 pb-20 lg:pb-24">
 
         <div className="absolute bottom-[20%] right-[10%] w-14 h-14 opacity-30 animate-sway hidden lg:block">
           <Sparkles className="text-slate-800" />
@@ -60,29 +60,41 @@ export default async function HomePage({
               <MotionWrapper direction="right" delay={0.2} duration={1}>
                 <div className="space-y-4 max-w-2xl mx-auto lg:mx-0 relative z-10">
                   <h1 className="text-main-title text-slate-800 drop-shadow-sm leading-[1.05]">
-                    Shaping the Future<br />
+                    Shaping the{" "}
+                    <span
+                      className="inline-block transition-transform hover:scale-105 duration-300"
+                      style={{
+                        color: "#FFEB00",
+                        WebkitTextStroke: "10px #00AEEF",
+                        paintOrder: "stroke fill",
+                        filter: "drop-shadow(0 6px 0 rgba(0,0,0,0.1))",
+                      }}
+                    >
+                      Future
+                    </span>
+                    <br />
                     of Early Education
                   </h1>
                   <p className="text-author text-slate-700 leading-relaxed max-w-lg mx-auto lg:mx-0 opacity-90">
-                    A global network built on innovation and educational excellence — empowering the next generation.
+                    Empowering children through innovation and educational excellence.
                   </p>
                 </div>
               </MotionWrapper>
             </div>
 
             {/* RIGHT – visual */}
-            <div className="relative w-full flex items-center justify-center lg:justify-end">
+            <div className="relative w-full flex items-center justify-center lg:justify-center">
               <div className="relative w-[360px] h-[320px] lg:w-[420px] lg:h-[370px] xl:w-[480px] xl:h-[420px] overflow-visible">
 
                 <MotionWrapper direction="down" delay={0.4}>
-                  <div className="absolute top-[-35%] right-[-75%] w-[85%] h-[70%] z-0 opacity-90">
+                  <div className="absolute top-[-35%] right-[-55%] w-[85%] h-[70%] z-0 opacity-90">
                     <Image src="/images/HiKids-57.svg" alt="background patterns" fill className="object-contain object-right-top [filter:invert(74%)_sepia(51%)_saturate(595%)_hue-rotate(160deg)_brightness(94%)_contrast(94%)]" />
                   </div>
                 </MotionWrapper>
 
                 {/* Floating Decorative Shapes - Randomized Layout */}
                 <MotionWrapper type="scale" delay={0.6}>
-                  <div className="absolute -top-16 right-[10%] w-14 h-14 z-30 animate-float-slow opacity-80 -rotate-12">
+                  <div className="absolute -top-16 right-[10%] w-14 h-14 z-10 animate-float-slow opacity-80 -rotate-12">
                     <Image src="/images/HiKids-59.svg" alt="" fill className="object-contain [filter:invert(74%)_sepia(51%)_saturate(595%)_hue-rotate(160deg)_brightness(94%)_contrast(94%)]" />
                   </div>
                 </MotionWrapper>
@@ -107,12 +119,12 @@ export default async function HomePage({
                   </div>
                 </MotionWrapper>
 
-                <div className="absolute top-[-10%] left-[-25%] w-[120%] h-[150%] z-10 -rotate-[28deg] animate-float">
+                <div className="absolute top-[-20%] left-[-35%] w-[140%] h-[170%] z-10 -rotate-[28deg] animate-float">
                   <Image src="/images/hi.png" alt="HiKids mascot" fill className="object-contain object-bottom drop-shadow-lg scale-x-[-1]" />
                 </div>
 
                 <MotionWrapper direction="up" delay={0.6} duration={1.2}>
-                  <div className="absolute bottom-[-45%] right-[-90%] w-[220%] h-[320%] z-20">
+                  <div className="absolute bottom-[-45%] right-[-90%] w-[220%] h-[350%] z-20">
                     <Image src="/images/boy.png" alt="Student reading" fill className="object-contain object-bottom drop-shadow-[0_25px_50px_rgba(0,0,0,0.15)]" priority />
                   </div>
                 </MotionWrapper>
@@ -122,11 +134,10 @@ export default async function HomePage({
           </div>
         </div>
 
-
       </section>
 
       {/* Hero Divider */}
-      <div className="w-full relative -mt-[100px] lg:-mt-[100px] z-20">
+      <div className="w-full relative -mt-[100px] z-20">
         <WaveDivider color="white" />
       </div>
 

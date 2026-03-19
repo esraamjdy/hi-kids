@@ -44,51 +44,58 @@ export function ContactForm({ dict }: { dict: ContactFormDict }) {
 
   if (status === "success") {
     return (
-      <div className="rounded-[3rem] lg:rounded-[4rem] lg:rounded-[2.5rem] border border-secondary/30 bg-secondary/5 p-14 lg:p-20 lg:p-14 text-center">
-        <CheckCircle2 className="mx-auto mb-4 h-12 w-12 text-secondary" />
-        <p className=" text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-semibold text-foreground">{dict.success}</p>
+      <div className="rounded-[2.5rem] bg-emerald-50/50 border-2 border-emerald-100 p-12 text-center animate-scale-in">
+        <div className="mx-auto mb-6 h-20 w-20 flex items-center justify-center rounded-full bg-emerald-500 text-white shadow-xl shadow-emerald-200">
+           <CheckCircle2 className="h-10 w-10" />
+        </div>
+        <h3 className="text-2xl font-black font-fredoka text-slate-900 mb-2">Message Sent!</h3>
+        <p className="text-slate-600 font-medium">{dict.success}</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div>
-        <label
-          htmlFor="contact-name"
-          className="mb-2 block  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-semibold text-foreground"
-        >
-          {dict.name}
-        </label>
-        <input
-          id="contact-name"
-          name="name"
-          type="text"
-          required
-          className="w-full rounded-xl border border-input bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-        />
+    <form onSubmit={handleSubmit} className="space-y-8">
+      <div className="grid md:grid-cols-2 gap-8">
+        <div className="space-y-2">
+          <label
+            htmlFor="contact-name"
+            className="text-xs font-black uppercase tracking-widest text-slate-400 ml-2"
+          >
+            {dict.name}
+          </label>
+          <input
+            id="contact-name"
+            name="name"
+            type="text"
+            required
+            placeholder="John Doe"
+            className="w-full rounded-2xl border-2 border-slate-50 bg-slate-50/50 px-6 py-4 text-slate-900 placeholder:text-slate-300 focus:border-hikids-blue/30 focus:bg-white focus:outline-none transition-all duration-300"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <label
+            htmlFor="contact-email"
+            className="text-xs font-black uppercase tracking-widest text-slate-400 ml-2"
+          >
+            {dict.email}
+          </label>
+          <input
+            id="contact-email"
+            name="email"
+            type="email"
+            required
+            placeholder="john@example.com"
+            className="w-full rounded-2xl border-2 border-slate-50 bg-slate-50/50 px-6 py-4 text-slate-900 placeholder:text-slate-300 focus:border-hikids-blue/30 focus:bg-white focus:outline-none transition-all duration-300"
+          />
+        </div>
       </div>
 
-      <div>
-        <label
-          htmlFor="contact-email"
-          className="mb-2 block  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-semibold text-foreground"
-        >
-          {dict.email}
-        </label>
-        <input
-          id="contact-email"
-          name="email"
-          type="email"
-          required
-          className="w-full rounded-xl border border-input bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-        />
-      </div>
-
-      <div>
+      <div className="space-y-2">
         <label
           htmlFor="contact-subject"
-          className="mb-2 block  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-semibold text-foreground"
+          className="text-xs font-black uppercase tracking-widest text-slate-400 ml-2"
         >
           {dict.subject}
         </label>
@@ -97,14 +104,15 @@ export function ContactForm({ dict }: { dict: ContactFormDict }) {
           name="subject"
           type="text"
           required
-          className="w-full rounded-xl border border-input bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+          placeholder="How can we help?"
+          className="w-full rounded-2xl border-2 border-slate-50 bg-slate-50/50 px-6 py-4 text-slate-900 placeholder:text-slate-300 focus:border-hikids-blue/30 focus:bg-white focus:outline-none transition-all duration-300"
         />
       </div>
 
-      <div>
+      <div className="space-y-2">
         <label
           htmlFor="contact-message"
-          className="mb-2 block  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-semibold text-foreground"
+          className="text-xs font-black uppercase tracking-widest text-slate-400 ml-2"
         >
           {dict.message}
         </label>
@@ -113,23 +121,26 @@ export function ContactForm({ dict }: { dict: ContactFormDict }) {
           name="message"
           required
           rows={5}
-          className="w-full rounded-xl border border-input bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 resize-none"
+          placeholder="Your message here..."
+          className="w-full rounded-2xl border-2 border-slate-50 bg-slate-50/50 px-6 py-4 text-slate-900 placeholder:text-slate-300 focus:border-hikids-blue/30 focus:bg-white focus:outline-none transition-all duration-300 resize-none"
         />
       </div>
 
       {status === "error" && (
-        <p className=" text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] text-destructive">{dict.error}</p>
+        <div className="p-4 rounded-xl bg-red-50 border border-red-100 text-red-600 text-xs font-bold animate-shake">
+          {dict.error}
+        </div>
       )}
 
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3  text-5xl lg:text-[5rem] xl:text-[6rem] tracking-tighter leading-[1.0] font-semibold text-white-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 disabled:opacity-50"
+        className="group relative w-full inline-flex items-center justify-center gap-3 rounded-full bg-hikids-blue px-8 py-5 text-sm font-black uppercase tracking-widest text-white shadow-xl shadow-hikids-blue/20 transition-all hover:bg-hikids-blue/90 hover:-translate-y-1 active:scale-[0.98] disabled:opacity-50 disabled:translate-y-0"
       >
         {status === "loading" ? (
-          <Loader2 className="h-4 w-4 animate-spin" />
+          <Loader2 className="h-5 w-5 animate-spin" />
         ) : (
-          <Send className="h-4 w-4" />
+          <Send className="h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
         )}
         {dict.submit}
       </button>

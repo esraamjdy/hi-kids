@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Smartphone } from "lucide-react";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/dictionaries";
@@ -90,6 +90,16 @@ export function Header({ locale, dict }: HeaderProps) {
         {/* Right side */}
         <div className="flex items-center gap-4">
           <LanguageSwitcher locale={locale} scrolled={scrolled} isHome={isHome} />
+          <Link
+            href={`/${locale}/parents/app`} 
+            className={`hidden rounded-full px-7 py-3 text-[10px] font-black uppercase tracking-widest shadow-2xl transition-all hover:-translate-y-0.5 md:inline-flex items-center gap-2 border-2 ${isHome && !scrolled
+              ? "bg-slate-900 text-white border-transparent hover:bg-slate-800"
+              : "bg-white text-slate-900 border-white hover:bg-slate-100 shadow-white/10"
+              }`}
+          >
+            HiKids App <Smartphone size={14} className="animate-bounce" />
+          </Link>
+
           <Link
             href={`/${locale}/contact`}
             className={`hidden rounded-full px-8 py-3.5 text-sm font-black uppercase tracking-widest shadow-xl transition-all hover:-translate-y-0.5 lg:inline-flex ${isHome && !scrolled

@@ -100,15 +100,32 @@ export function Footer({ locale, dict }: FooterProps) {
           </div>
 
           {/* Support Info */}
-          <div>
-            <h4 className="text-sm font-bold text-slate-900 mb-6 uppercase tracking-wider">
-              Location
-            </h4>
-            <div className="flex items-start gap-3">
-              <MapPin className="h-5 w-5 text-slate-400 mt-0.5" />
-              <p className="text-[15px] text-slate-600">
-                HiKids International HQ<br />Global Network
-              </p>
+          <div className="flex flex-col space-y-8">
+            <div>
+              <h4 className="text-sm font-bold text-slate-900 mb-6 uppercase tracking-wider">
+                Location
+              </h4>
+              <div className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-slate-400 mt-0.5" />
+                <p className="text-[15px] text-slate-600">
+                  HiKids International HQ<br />Global Network
+                </p>
+              </div>
+            </div>
+
+            {/* App Store Links */}
+            <div className="space-y-4">
+              <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">
+                Get the HiKids App
+              </h4>
+              <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3">
+                <Link href={`/${locale}/parents/app`} className="h-10 w-32 relative bg-slate-900 rounded-lg flex items-center justify-center border border-white/10 hover:bg-slate-800 transition-colors">
+                   <Image src="/images/app-store.svg" alt="App Store" fill className="object-contain p-2" />
+                </Link>
+                <Link href={`/${locale}/parents/app`} className="h-10 w-32 relative bg-slate-900 rounded-lg flex items-center justify-center border border-white/10 hover:bg-slate-800 transition-colors">
+                   <Image src="/images/google-play.svg" alt="Google Play" fill className="object-contain p-2" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

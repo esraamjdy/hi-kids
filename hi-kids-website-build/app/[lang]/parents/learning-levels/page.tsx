@@ -4,17 +4,9 @@ import Image from "next/image";
 import {
   Star,
   Sparkles,
-  Layers,
-  Shield,
   ArrowRight,
-  CheckCircle2,
-  Navigation,
   Zap,
-  Check,
-  Info,
-  ChevronRight,
-  GraduationCap,
-  Globe
+  Check
 } from "lucide-react";
 import { getDictionary } from "@/lib/dictionaries";
 import { isValidLocale } from "@/lib/i18n";
@@ -38,14 +30,12 @@ export default async function LearningLevelsPage({
 
   const levelSvgs = ["/images/level-1.svg", "/images/level-2.svg", "/images/level-3.svg", "/images/level-4.svg"];
   const hexColors = ['#ED1C24', '#00AEEF', '#8CC63F', '#f0b952'];
-  const characters = ["/images/7.png", "/images/8.png", "/images/hi.png", "/images/boy.png"];
 
   return (
     <div className="bg-white overflow-hidden selection:bg-hikids-blue/20">
 
       {/* ─── IMMERSIVE STORY HEADER ─── */}
       <section className="relative min-h-[50vh] flex items-center pt-32 pb-20 overflow-hidden bg-[#FFEB00]">
-        {/* Background Decor */}
         <div className="absolute inset-0 opacity-[0.03] bg-[url('/images/moka-line-art-01.svg')] animate-drift pointer-events-none" />
 
         <div className="mx-auto max-w-[1600px] px-6 lg:px-16 w-full text-center lg:text-left z-10">
@@ -71,7 +61,6 @@ export default async function LearningLevelsPage({
           </div>
         </div>
 
-        {/* Peeking Character */}
         <div className="absolute right-0 bottom-0 translate-y-12 translate-x-12 opacity-30 lg:opacity-100">
           <Image src="/images/Moka-Dance.png" alt="Moka" width={600} height={600} className="object-contain" />
         </div>
@@ -82,113 +71,159 @@ export default async function LearningLevelsPage({
         <WaveDivider color="white" />
       </div>
 
-      {/* ─── THE INTERACTIVE EXPANDED MAP ─── */}
-      <section className="py-24 lg:py-48 bg-white relative">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 relative z-10 w-full">
+      {/* ─── VERTICAL INTERACTIVE DISCOVERY MAP ─── */}
+      <section className="bg-white py-16 lg:py-32 relative overflow-visible selection:bg-hikids-yellow/30">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 relative z-10">
 
-          <MotionWrapper className="text-center mb-24 max-w-4xl mx-auto space-y-8" direction="up">
-            <h2 className="text-4xl lg:text-6xl font-fredoka font-black text-slate-800 leading-tight">Every Step is a Milestone</h2>
-            <p className="text-lg lg:text-2xl text-slate-500 font-medium">
-              {t.subtitle}
-            </p>
+          {/* Premium Header */}
+          <MotionWrapper direction="up">
+            <div className="text-center flex flex-col items-center max-w-[1000px] w-full mx-auto mb-20 lg:mb-32 space-y-6">
+              <div className="relative text-center items-center flex flex-col">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-hikids-yellow/20 rounded-full blur-[100px] opacity-70 animate-pulse-slow pointer-events-none" />
+                <span className="mb-4 bg-slate-900/5 text-slate-900 text-[10px] font-black uppercase tracking-[0.3em] px-8 py-3 rounded-full inline-block border border-slate-900/10 backdrop-blur-md">
+                   Discovery Path
+                </span>
+                <h2 className="text-6xl lg:text-8xl xl:text-9xl font-fredoka font-black leading-[0.9] tracking-tight mb-4 relative z-10">
+                  Your Child's <br />
+                  <span className="text-[#FFEB00] text-7xl lg:text-9xl xl:text-[10rem] mt-2 inline-block transition-transform hover:scale-105 duration-300"
+                    style={{
+                      WebkitTextStroke: "16px #00AEEF",
+                      paintOrder: "stroke fill",
+                      filter: "drop-shadow(0 12px 0 rgba(0,0,0,0.1))"
+                    }}>
+                    Big Journey
+                  </span>
+                </h2>
+              </div>
+              <p className="text-xl lg:text-3xl text-slate-500 leading-relaxed max-w-3xl mx-auto font-medium opacity-80 italic">
+                {t.subtitle}
+              </p>
+            </div>
           </MotionWrapper>
 
-          {/* The Map Interface */}
-          <div className="relative space-y-48 lg:space-y-80">
+          {/* THE VERTICAL MAP CANVAS */}
+          <div className="relative w-full min-h-[1400px] lg:min-h-[1800px] mt-12 mb-32 group/map overflow-visible flex justify-center">
+            
+            {/* SVG Winding Map Path - EXTREMELY SUBTLE & CENTERED */}
+            <svg className="absolute inset-y-0 w-64 lg:w-[400px] h-full pointer-events-none drop-shadow-sm opacity-30 mx-auto" viewBox="0 0 200 1000" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="map-gradient-vertical-discovery" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#ED1C24" />
+                  <stop offset="25%" stopColor="#00AEEF" />
+                  <stop offset="50%" stopColor="#8CC63F" />
+                  <stop offset="100%" stopColor="#f0b952" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M 100 0 C 106 150, 106 250, 106 350 C 106 450, 94 550, 94 650 C 94 750, 100 850, 100 1000"
+                fill="none"
+                stroke="url(#map-gradient-vertical-discovery)"
+                strokeWidth="10"
+                strokeDasharray="20 15"
+                strokeLinecap="round"
+                className="animate-dash-vertical"
+              />
+            </svg>
 
-            {/* Vertical Connectivity Line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-[8px] -translate-x-1/2 overflow-hidden pointer-events-none hidden lg:block opacity-10">
-              <div className="w-full h-full bg-gradient-to-b from-hikids-red via-hikids-blue to-hikids-yellow" />
+            {/* Ambient Decorative Assets */}
+            <div className="absolute top-40 left-10 animate-float pointer-events-none opacity-20">
+               <Star size={64} className="text-hikids-yellow fill-current" />
+            </div>
+            <div className="absolute bottom-40 right-10 animate-float-slow pointer-events-none opacity-20">
+               <Sparkles size={80} className="text-hikids-blue fill-current" />
             </div>
 
+            {/* Level Pins & Messages */}
             {t.levels.map((level: any, i: number) => {
+              // Extremely Subtle Vertical Milestone Positions
+              const pinPositions = [
+                { left: "50%", top: "6%" },    // y = 60
+                { left: "53%", top: "35%" },   // y = 350 (Matches x=106)
+                { left: "47%", top: "65%" },   // y = 650 (Matches x=94)
+                { left: "50%", top: "94%" }    // y = 940
+              ];
+
               const isEven = i % 2 === 0;
+              const bubbleOrient = isEven 
+                ? "lg:left-[115%] lg:top-1/2 lg:-translate-y-1/2" 
+                : "lg:right-[115%] lg:top-1/2 lg:-translate-y-1/2"; 
+
+              const tailPos = isEven 
+                ? "-left-[16px] top-1/2 -translate-y-1/2 rotate-[225deg]" 
+                : "-right-[16px] top-1/2 -translate-y-1/2 rotate-[45deg]";    
+
               return (
-                <div key={level.name} className="relative">
+                <div 
+                  key={level.name} 
+                  className="absolute transition-all duration-300 z-10 hover:z-50 focus-within:z-50"
+                  style={{ 
+                    left: pinPositions[i].left, 
+                    top: pinPositions[i].top,
+                    transform: "translate(-50%, -50%)"
+                  }}
+                >
+                  <MotionItem>
+                    <div className="relative group/pin">
+                      
+                      <div className="w-24 h-24 md:w-32 md:h-32 lg:w-48 lg:h-48 bg-white rounded-full shadow-3xl border-4 flex items-center justify-center relative z-20 transition-all duration-700 cursor-pointer group-hover/pin:scale-110 group-hover/pin:rotate-6" style={{ borderColor: hexColors[i] }}>
+                        <Image src={levelSvgs[i]} alt="icon" width={110} height={110} className="object-contain transition-transform duration-700 group-hover/pin:scale-110" />
+                        
+                        <div className="absolute -top-2 -right-2 w-10 h-10 lg:w-16 lg:h-16 bg-white rounded-full flex items-center justify-center text-xl lg:text-4xl font-black font-fredoka shadow-xl z-30" style={{ color: hexColors[i] }}>
+                          {i + 1}
+                        </div>
+                      </div>
 
-                  {/* Level Node Pin */}
-                  <div className="hidden lg:flex absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-28 h-28 bg-white rounded-full items-center justify-center shadow-2xl border-4 z-50 group hover:scale-125 transition-transform duration-500"
-                    style={{ borderColor: hexColors[i] }}>
-                    <Image src={levelSvgs[i]} alt="icon" width={100} height={100} className="object-contain" />
-                  </div>
+                      <div className={`absolute opacity-100 scale-100 pointer-events-auto z-40 w-[85vw] sm:w-[26rem] lg:w-[32rem] transition-transform duration-500 group-hover/pin:scale-[1.02] ${bubbleOrient}`}>
+                        <div className="bg-white p-8 lg:p-12 rounded-[3.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.12)] border-2 border-slate-50 relative">
+                          
+                          <div className={`absolute w-12 h-12 bg-white border-t border-l border-slate-50 -z-10 ${tailPos}`} />
 
-                  <div className={`flex flex-col lg:flex-row items-stretch gap-12 lg:gap-20 ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+                          <div className="space-y-6">
+                             <div className="flex items-center gap-4">
+                                <span className="bg-slate-100 text-slate-500 text-[10px] font-black tracking-widest px-5 py-2 rounded-full uppercase">{level.age}</span>
+                                <div className="h-0.5 flex-1 bg-slate-50" />
+                                <span className="w-2 h-2 rounded-full" style={{ backgroundColor: hexColors[i] }} />
+                             </div>
 
-                    {/* Visual Showcase Zone */}
-                    <div className="w-full lg:w-1/2 flex items-center justify-center relative">
-                      <MotionWrapper type="scale" direction={isEven ? "right" : "left"}>
-                        <div className="relative group">
-                          {/* The Zone Map Card */}
-                          <div className="w-full aspect-[4/3] rounded-[4rem] bg-slate-50 overflow-hidden relative shadow-inner border-2 border-slate-100 group-hover:border-slate-200 transition-colors">
-                            <Image
-                              src={characters[i]}
-                              alt="Character Animation"
-                              fill
-                              className="object-contain p-12 lg:p-20 group-hover:scale-110 transition-transform duration-1000"
-                            />
-                            {/* Abstract Floating Shapes */}
-                            <div className="absolute top-10 right-10 w-24 h-24 rounded-full opacity-10 blur-2xl animate-pulse" style={{ backgroundColor: hexColors[i] }} />
-                            <div className="absolute bottom-10 left-10 w-32 h-32 rounded-full opacity-10 blur-2xl animate-drift" style={{ backgroundColor: hexColors[i] }} />
+                             <h4 className="text-3xl lg:text-4xl font-black font-fredoka text-slate-900 leading-tight">
+                                {level.focus}
+                             </h4>
 
-                            {/* Level Number Overlay */}
-                            <div className="absolute top-8 left-8 text-6xl font-black font-fredoka opacity-[0.05]" style={{ color: hexColors[i] }}>0{i + 1}</div>
+                             <p className="text-slate-500 text-base lg:text-lg leading-relaxed font-medium">
+                                {level.description}
+                             </p>
+
+                             <div className="pt-8 border-t border-slate-50 grid grid-cols-2 gap-5">
+                                {level.skills.map((skill: string, idx: number) => (
+                                   <div key={idx} className="flex items-center gap-3">
+                                      <div className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0" style={{ backgroundColor: `${hexColors[i]}15` }}>
+                                         <Check size={16} style={{ color: hexColors[i] }} strokeWidth={4} />
+                                      </div>
+                                      <span className="text-xs lg:text-sm font-bold text-slate-700">{skill}</span>
+                                   </div>
+                                ))}
+                             </div>
                           </div>
                         </div>
-                      </MotionWrapper>
+                      </div>
+
+                      <div className="absolute inset-0 rounded-full bg-white/30 scale-150 blur-3xl opacity-0 group-hover/pin:opacity-100 transition-opacity duration-700 -z-10 animate-pulse" />
+
                     </div>
-
-                    {/* Data Zone */}
-                    <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                      <MotionWrapper direction={isEven ? "left" : "right"}>
-                        <div className="space-y-8 p-10 lg:p-14 bg-white rounded-[4rem] border shadow-2xl shadow-slate-200/50 relative overflow-hidden group hover:shadow-hikids-yellow/5 transition-all">
-
-                          {/* Decorative corner accent */}
-                          <div className="absolute top-0 right-0 w-32 h-32 opacity-[0.03] grayscale pointer-events-none">
-                            <Image src="/images/moka-line-art-01.svg" alt="" fill className="object-contain" />
-                          </div>
-
-                          <div className="space-y-2">
-                            <div className="flex items-center gap-4">
-                              <div className="w-3 h-3 rounded-full animate-pulse" style={{ backgroundColor: hexColors[i] }} />
-                              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400">Level Progression</span>
-                            </div>
-                            <h3 className="text-4xl lg:text-7xl font-fredoka font-black text-slate-900 leading-tight">
-                              {level.name}
-                            </h3>
-                          </div>
-
-                          <div className="flex flex-wrap items-center gap-4">
-                            <div className="px-6 py-2 rounded-2xl bg-slate-900 text-white text-xs font-black uppercase tracking-widest shadow-xl">
-                              Focus: {level.focus}
-                            </div>
-                            <div className="px-6 py-2 rounded-2xl bg-white border border-slate-100 font-bold text-slate-400 uppercase tracking-widest text-[10px]">
-                              {level.age}
-                            </div>
-                          </div>
-
-                          <p className="text-lg lg:text-2xl text-slate-500 leading-relaxed font-medium">
-                            {level.description}
-                          </p>
-
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-                            {level.skills.map((skill: string) => (
-                              <div key={skill} className="flex items-center gap-3 p-5 rounded-3xl bg-[#fafafa] group/skill hover:bg-slate-900 hover:text-white transition-all cursor-default">
-                                <div className="w-10 h-10 rounded-2xl bg-white flex items-center justify-center shadow-sm group-hover/skill:bg-hikids-yellow group-hover/skill:rotate-12 transition-all">
-                                  <Check size={16} strokeWidth={4} style={{ color: hexColors[i] }} />
-                                </div>
-                                <span className="text-xs lg:text-sm font-black uppercase tracking-tight leading-tight">{skill}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </MotionWrapper>
-                    </div>
-
-                  </div>
+                  </MotionItem>
                 </div>
               );
             })}
           </div>
+
+          <MotionWrapper className="mt-20 lg:mt-40 max-w-4xl mx-auto text-center p-12 lg:p-24 rounded-[5rem] bg-gradient-to-br from-hikids-blue/5 to-hikids-yellow/5 border-2 border-hikids-blue/10 relative overflow-hidden" direction="up">
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-hikids-red via-hikids-blue to-hikids-yellow" />
+              <h4 className="text-4xl lg:text-6xl font-black font-fredoka text-slate-900 mb-8 leading-tight">The Path to <span className="text-hikids-blue">Excellence</span></h4>
+              <p className="text-lg lg:text-3xl text-slate-600 leading-relaxed font-medium max-w-3xl mx-auto opacity-90">
+                Each level is a doorway to the next, ensuring your child transitions with confidence, curiosity, and the skills to conquer the world.
+              </p>
+          </MotionWrapper>
+
         </div>
       </section>
 
@@ -220,14 +255,12 @@ export default async function LearningLevelsPage({
         <div className="mx-auto max-w-[1600px] px-6 lg:px-16 relative z-10 w-full">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-            {/* Visual Action Column */}
             <div className="flex justify-center relative">
               <MotionWrapper type="scale" className="relative w-full aspect-square max-w-[800px]">
                 <Image src="/images/Moka-Plays.png" alt="Moka Playful" fill className="object-contain drop-shadow-3xl" />
               </MotionWrapper>
             </div>
 
-            {/* Selection Text Column */}
             <div className="space-y-12">
               <MotionWrapper direction="left">
                 <div className="space-y-8 text-center lg:text-left">
