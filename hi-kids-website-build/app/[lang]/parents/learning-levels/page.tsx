@@ -42,9 +42,7 @@ export default async function LearningLevelsPage({
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-12 xl:col-span-8">
               <MotionWrapper direction="right">
-                <span className="bg-white/30 text-slate-900 border-white/20 text-[10px] font-black uppercase tracking-[0.3em] px-6 py-2 rounded-full inline-block border backdrop-blur-md mb-8">
-                  The Educational Journey
-                </span>
+                {/* Tag Removed */}
                 <h1 className="text-6xl lg:text-9xl font-fredoka font-black text-slate-900 leading-[0.95] tracking-tight">
                   A Path Designed <br className="hidden lg:block" />
                   for <span className="text-white text-7xl lg:text-[10rem] ml-1 inline-block transition-transform hover:scale-105 duration-300"
@@ -80,9 +78,7 @@ export default async function LearningLevelsPage({
             <div className="text-center flex flex-col items-center max-w-[1000px] w-full mx-auto mb-20 lg:mb-32 space-y-6">
               <div className="relative text-center items-center flex flex-col">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-hikids-yellow/20 rounded-full blur-[100px] opacity-70 animate-pulse-slow pointer-events-none" />
-                <span className="mb-4 bg-slate-900/5 text-slate-900 text-[10px] font-black uppercase tracking-[0.3em] px-8 py-3 rounded-full inline-block border border-slate-900/10 backdrop-blur-md">
-                   Discovery Path
-                </span>
+                {/* Tag Removed */}
                 <h2 className="text-6xl lg:text-8xl xl:text-9xl font-fredoka font-black leading-[0.9] tracking-tight mb-4 relative z-10">
                   Your Child's <br />
                   <span className="text-[#FFEB00] text-7xl lg:text-9xl xl:text-[10rem] mt-2 inline-block transition-transform hover:scale-105 duration-300"
@@ -264,9 +260,7 @@ export default async function LearningLevelsPage({
             <div className="space-y-12">
               <MotionWrapper direction="left">
                 <div className="space-y-8 text-center lg:text-left">
-                  <span className="bg-slate-900 text-white text-[10px] font-black uppercase tracking-[0.3em] px-8 py-3 rounded-full inline-block shadow-2xl">
-                    JOIN THE MOVEMENT
-                  </span>
+                  {/* Tag Removed */}
                   <h2 className="text-6xl lg:text-9xl font-fredoka font-black text-slate-900 tracking-tight leading-[0.95]">
                     Start your <br />
                     <span className="text-white inline-block transition-transform hover:scale-105 duration-300"

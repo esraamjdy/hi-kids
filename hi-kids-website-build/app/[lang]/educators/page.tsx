@@ -45,10 +45,7 @@ export default async function EducatorsPage({
             <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
               <MotionWrapper direction="right" delay={0.2}>
                 <div className="space-y-6">
-                  <div className="inline-flex items-center gap-4 rounded-full border border-white/10 bg-white/20 px-6 py-2 text-xs font-black text-white uppercase tracking-[0.2em] backdrop-blur-sm mx-auto lg:mx-0">
-                    <GraduationCap className="h-4 w-4" />
-                    Empowering the Next Generation
-                  </div>
+                  {/* Tag Removed */}
                   <h1 className="text-5xl lg:text-7xl xl:text-[7.5rem] font-fredoka font-black text-white leading-[1.05] tracking-tight text-balance">
                     Join Our <br className="hidden lg:block" />
                     World of <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
@@ -146,9 +143,7 @@ export default async function EducatorsPage({
             <div className="lg:col-span-6 space-y-10 order-1 lg:order-2">
                <MotionWrapper direction="left">
                   <div className="space-y-6 text-center lg:text-left">
-                     <span className="bg-white/20 text-white text-xs font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full inline-block border border-white/10 backdrop-blur-sm">
-                        PROFESSIONAL ELITE
-                     </span>
+                     {/* Tag Removed */}
                      <h2 className="text-5xl lg:text-7xl xl:text-[6.5rem] font-fredoka font-black text-white leading-[1.1] tracking-tight">
                         Elevate Your <br className="sm:hidden" />
                         <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-[7.5rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"

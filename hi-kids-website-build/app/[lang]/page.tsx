@@ -67,7 +67,6 @@ export default async function HomePage({
                         color: "#FFEB00",
                         WebkitTextStroke: "10px #00AEEF",
                         paintOrder: "stroke fill",
-                        filter: "drop-shadow(0 6px 0 rgba(0,0,0,0.1))",
                       }}
                     >
                       Future
@@ -150,10 +149,7 @@ export default async function HomePage({
           {/* Refined Section Header: Banner for tag, Heading below */}
           <MotionWrapper viewportAmount={0.3}>
             <div className="flex flex-col items-center mb-10 lg:mb-16 relative group">
-              {/* Tag - Simple Pill Style */}
-              <span className="mb-4 bg-hikids-blue/10 text-hikids-blue text-xs font-bold uppercase tracking-[0.15em] px-6 py-2 rounded-full inline-block border border-hikids-blue/20">
-                Pathways
-              </span>
+              {/* Tag Removed */}
 
               {/* Premium Standard Fredoka Heading */}
               <div className="text-center">
@@ -177,9 +173,9 @@ export default async function HomePage({
 
             {/* Business Owners */}
             <MotionItem>
-              <div className="bg-[#f9f28c] rounded-[2.5rem] p-10 lg:p-12 lg:pb-32 flex flex-col h-full shadow-2xl shadow-yellow-500/20 border border-yellow-300/50 hover:shadow-yellow-500/30 hover:-translate-y-2 hover:scale-105 transition-all duration-500 group relative overflow-hidden">
+              <div className="bg-[#4ab9ea] rounded-[2.5rem] p-10 lg:p-12 lg:pb-32 flex flex-col h-full shadow-2xl shadow-[#4ab9ea]/20 border border-[#00aae5]/50 hover:shadow-[#4ab9ea]/30 hover:-translate-y-2 hover:scale-105 transition-all duration-500 group relative overflow-hidden">
                 {/* Decorative background shape */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-hikids-yellow/30 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#00aae5]/30 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
                 {/* Businessman Background - Professional Integration */}
                 <div className="absolute bottom-0 right-0 w-[95%] h-[85%] opacity-[0.25] group-hover:opacity-40 pointer-events-none transition-all duration-700 group-hover:scale-[1.05]">
@@ -193,7 +189,7 @@ export default async function HomePage({
 
                 {/* Decorative wavy accent - Bottom Cloud (White Shadow) */}
                 <div
-                  className="absolute top-0 left-0 w-full h-full bg-white opacity-70 pointer-events-none z-10"
+                  className="absolute top-1 left-0 w-full h-full bg-white opacity-70 pointer-events-none z-10"
                   style={{
                     maskImage: "url('/images/HiKids-55.svg')",
                     WebkitMaskImage: "url('/images/HiKids-55.svg')",
@@ -206,7 +202,7 @@ export default async function HomePage({
 
                 {/* Decorative wavy accent - Bottom Cloud (Themed) */}
                 <div
-                  className="absolute top-0 left-0 w-full h-full bg-hikids-yellow opacity-100 pointer-events-none z-20"
+                  className="absolute top-0 left-0 w-full h-full bg-[#00aae5] opacity-100 pointer-events-none z-20"
                   style={{
                     maskImage: "url('/images/HiKids-55.svg')",
                     WebkitMaskImage: "url('/images/HiKids-55.svg')",
@@ -229,7 +225,7 @@ export default async function HomePage({
                 <div className="mb-6 relative z-30 flex-1">
                   <h3 className="text-5xl lg:text-6xl font-fredoka font-black leading-tight transition-transform hover:scale-105 duration-300"
                     style={{
-                      color: "#FFEB00",
+                      color: "#00aae5",
                       WebkitTextStroke: "10px #fff",
                       paintOrder: "stroke fill",
                       filter: "drop-shadow(0 6px 0 rgba(0,0,0,0.1))"
@@ -261,9 +257,9 @@ export default async function HomePage({
                             transform: 'scale(1.35)'
                           }}
                         />
-                        {/* Themed Fill Layer (Yellow) */}
+                        {/* Themed Fill Layer (Blue) */}
                         <div
-                          className="absolute inset-0 bg-[#FFEB00]"
+                          className="absolute inset-0 bg-[#00aae5]"
                           style={{
                             maskImage: "url('/images/HiKids-25.svg')",
                             WebkitMaskImage: "url('/images/HiKids-25.svg')",
@@ -282,7 +278,7 @@ export default async function HomePage({
                 <div className="mt-auto relative z-30 w-full flex justify-start">
                   <Link
                     href={`/${lang}/franchise`}
-                    className="bg-white text-[#063354] py-2.5 px-8 text-xs font-black uppercase tracking-[0.15em] w-auto inline-flex justify-center rounded-2xl border-2 border-white/50 hover:bg-[#FFEB00] hover:scale-105 transition-all duration-300"
+                    className="bg-white text-[#063354] py-2.5 px-8 text-xs font-black uppercase tracking-[0.15em] w-auto inline-flex justify-center rounded-2xl border-2 border-white/50 hover:bg-[#00aae5] hover:text-white hover:scale-105 transition-all duration-300"
                   >
                     See More <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
@@ -292,9 +288,9 @@ export default async function HomePage({
 
             {/* Educators */}
             <MotionItem>
-              <div className="bg-blue-200 rounded-[2.5rem] p-10 lg:p-12 lg:pb-32 flex flex-col h-full shadow-2xl shadow-blue-500/20 border border-blue-300/50 hover:shadow-blue-500/30 hover:-translate-y-2 hover:scale-105 transition-all duration-500 group relative overflow-hidden">
+              <div className="bg-[#ffde00] rounded-[2.5rem] p-10 lg:p-12 lg:pb-32 flex flex-col h-full shadow-2xl shadow-[#ffde00]/20 border border-[#ffc600]/50 hover:shadow-[#ffde00]/30 hover:-translate-y-2 hover:scale-105 transition-all duration-500 group relative overflow-hidden">
                 {/* Decorative background shape */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-hikids-blue/30 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#ffc600]/30 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
                 {/* Educators Background - Professional Integration */}
                 <div className="absolute bottom-0 right-0 w-[95%] h-[85%] opacity-[0.25] group-hover:opacity-45 pointer-events-none transition-all duration-700 group-hover:scale-[1.05]">
@@ -308,7 +304,7 @@ export default async function HomePage({
 
                 {/* Decorative wavy accent - Bottom Cloud (White Shadow) */}
                 <div
-                  className="absolute top-0 left-0 w-full h-full bg-white opacity-70 pointer-events-none z-10"
+                  className="absolute top-1 left-0 w-full h-full bg-white opacity-70 pointer-events-none z-10"
                   style={{
                     maskImage: "url('/images/HiKids-55.svg')",
                     WebkitMaskImage: "url('/images/HiKids-55.svg')",
@@ -321,7 +317,7 @@ export default async function HomePage({
 
                 {/* Decorative wavy accent - Bottom Cloud (Themed) */}
                 <div
-                  className="absolute top-0 left-0 w-full h-full bg-hikids-blue opacity-100 pointer-events-none z-20"
+                  className="absolute top-0 left-0 w-full h-full bg-[#ffc600] opacity-100 pointer-events-none z-20"
                   style={{
                     maskImage: "url('/images/HiKids-55.svg')",
                     WebkitMaskImage: "url('/images/HiKids-55.svg')",
@@ -342,14 +338,14 @@ export default async function HomePage({
                 <div className="mb-6 relative z-30 flex-1">
                   <h3 className="text-5xl lg:text-6xl font-fredoka font-black leading-tight transition-transform hover:scale-105 duration-300"
                     style={{
-                      color: "#00AEEF",
+                      color: "#ffc600",
                       WebkitTextStroke: "10px #fff",
                       paintOrder: "stroke fill",
                       filter: "drop-shadow(0 6px 0 rgba(0,0,0,0.1))"
                     }}>
                     Educator
                   </h3>
-                  <span className="text-xl font-bold text-[#063354] uppercase tracking-widest mt-2 block ml-1"></span>
+
                 </div>
 
                 {/* Checklist: Subpages */}
@@ -373,9 +369,9 @@ export default async function HomePage({
                             transform: 'scale(1.35)'
                           }}
                         />
-                        {/* Themed Fill Layer (Blue) */}
+                        {/* Themed Fill Layer (Yellow) */}
                         <div
-                          className="absolute inset-0 bg-hikids-blue"
+                          className="absolute inset-0 bg-[#ffc600]"
                           style={{
                             maskImage: "url('/images/HiKids-25.svg')",
                             WebkitMaskImage: "url('/images/HiKids-25.svg')",
@@ -394,7 +390,7 @@ export default async function HomePage({
                 <div className="mt-auto relative z-30 w-full flex justify-start">
                   <Link
                     href={`/${lang}/educators`}
-                    className="bg-white text-[#063354] py-2.5 px-8 text-xs font-black uppercase tracking-[0.15em] w-auto inline-flex justify-center rounded-2xl border-2 border-white/50 hover:bg-hikids-blue hover:text-white hover:scale-105 transition-all duration-300"
+                    className="bg-white text-[#063354] py-2.5 px-8 text-xs font-black uppercase tracking-[0.15em] w-auto inline-flex justify-center rounded-2xl border-2 border-white/50 hover:bg-[#ffc600] hover:text-white hover:scale-105 transition-all duration-300"
                   >
                     See More <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
@@ -404,9 +400,9 @@ export default async function HomePage({
 
             {/* Parents */}
             <MotionItem>
-              <div className="bg-[#f9f28c] rounded-[2.5rem] p-10 lg:p-12 lg:pb-32 flex flex-col h-full shadow-2xl shadow-yellow-500/20 border border-yellow-300/50 hover:shadow-yellow-500/30 hover:-translate-y-2 hover:scale-105 transition-all duration-500 group relative overflow-hidden">
+              <div className="bg-[#faf8c3] rounded-[2.5rem] p-10 lg:p-12 lg:pb-32 flex flex-col h-full shadow-2xl shadow-[#faf8c3]/20 border border-[#fff78f]/50 hover:shadow-[#faf8c3]/30 hover:-translate-y-2 hover:scale-105 transition-all duration-500 group relative overflow-hidden">
                 {/* Decorative background shape */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-hikids-yellow/20 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#fff78f]/50 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
                 {/* Parents Background - Professional Integration */}
                 <div className="absolute bottom-0 right-0 w-[95%] h-[85%] opacity-[0.15] group-hover:opacity-35 pointer-events-none transition-all duration-700 group-hover:scale-[1.05]">
@@ -420,7 +416,7 @@ export default async function HomePage({
 
                 {/* Decorative wavy accent - Bottom Cloud (White Shadow) */}
                 <div
-                  className="absolute top-0 left-0 w-full h-full bg-white opacity-70 pointer-events-none z-10"
+                  className="absolute top-1 left-0 w-full h-full bg-white opacity-70 pointer-events-none z-10"
                   style={{
                     maskImage: "url('/images/HiKids-55.svg')",
                     WebkitMaskImage: "url('/images/HiKids-55.svg')",
@@ -433,7 +429,7 @@ export default async function HomePage({
 
                 {/* Decorative wavy accent - Bottom Cloud (Themed) */}
                 <div
-                  className="absolute top-0 left-0 w-full h-full bg-hikids-yellow opacity-100 pointer-events-none z-20"
+                  className="absolute top-0 left-0 w-full h-full bg-[#fff78f] opacity-100 pointer-events-none z-20"
                   style={{
                     maskImage: "url('/images/HiKids-55.svg')",
                     WebkitMaskImage: "url('/images/HiKids-55.svg')",
@@ -454,14 +450,14 @@ export default async function HomePage({
                 <div className="mb-6 relative z-30 flex-1">
                   <h3 className="text-5xl lg:text-6xl font-fredoka font-black leading-tight transition-transform hover:scale-105 duration-300"
                     style={{
-                      color: "#FFEB00",
+                      color: "#fff78f",
                       WebkitTextStroke: "10px #fff",
                       paintOrder: "stroke fill",
                       filter: "drop-shadow(0 6px 0 rgba(0,0,0,0.1))"
                     }}>
                     Parents
                   </h3>
-                  <span className="text-xl font-bold text-[#063354] uppercase tracking-widest mt-2 block ml-1"></span>
+
                 </div>
 
                 {/* Checklist: Subpages */}
@@ -488,7 +484,7 @@ export default async function HomePage({
                         />
                         {/* Themed Fill Layer (Yellow) */}
                         <div
-                          className="absolute inset-0 bg-[#FFEB00]"
+                          className="absolute inset-0 bg-[#fff78f]"
                           style={{
                             maskImage: "url('/images/HiKids-25.svg')",
                             WebkitMaskImage: "url('/images/HiKids-25.svg')",
@@ -507,7 +503,7 @@ export default async function HomePage({
                 <div className="mt-auto relative z-30 w-full flex justify-start">
                   <Link
                     href={`/${lang}/parents`}
-                    className="bg-white text-[#063354] py-2.5 px-8 text-xs font-black uppercase tracking-[0.15em] w-auto inline-flex justify-center rounded-2xl border-2 border-white/50 hover:bg-[#FFEB00] hover:scale-105 transition-all duration-300"
+                    className="bg-white text-[#063354] py-2.5 px-8 text-xs font-black uppercase tracking-[0.15em] w-auto inline-flex justify-center rounded-2xl border-2 border-white/50 hover:bg-[#fff78f] hover:scale-105 transition-all duration-300"
                   >
                     See More <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
@@ -539,9 +535,6 @@ export default async function HomePage({
               <div className="relative text-center items-center flex flex-col">
                 {/* Creative Background Glows */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/5 rounded-full blur-[80px] opacity-70 animate-pulse-slow pointer-events-none" />
-                <span className="mb-4 bg-hikids-blue/10 text-hikids-blue text-xs font-bold uppercase tracking-[0.15em] px-6 py-2 rounded-full inline-block border border-hikids-blue/20">
-                  ABOUT
-                </span>
                 <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black leading-[1.1] tracking-tight mb-4 relative z-10">
                   What is <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
                     style={{
@@ -711,9 +704,7 @@ export default async function HomePage({
                   </div>
 
                   <div className="space-y-4 max-w-xl">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-hikids-yellow/30 text-[10px] font-black uppercase tracking-[0.2em] text-hikids-yellow relative overflow-hidden">
-                      <span className="relative z-10">Franchise Program</span>
-                    </div>
+                    {/* Tag Removed */}
                     <h4 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 tracking-tight !font-fredoka">Global Franchise Network</h4>
                     <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium opacity-90 text-balance">
                       {t.whatIs.subtitle || "A modern educational franchise built on progressive learning levels, designed to nurture potential worldwide."}
@@ -764,9 +755,8 @@ export default async function HomePage({
                     <h2 className="relative z-10 text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black leading-tight tracking-tight select-none pt-2 px-4 whitespace-nowrap text-slate-900">
                       Meet <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
                         style={{
-                          WebkitTextStroke: "12px #00AEEF",
-                          paintOrder: "stroke fill",
-                          filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                          WebkitTextStroke: "12px #fff",
+                          paintOrder: "stroke fill"
                         }}>
                         {dict.about.moka.title}
                       </span>
@@ -776,8 +766,7 @@ export default async function HomePage({
                       <h4 className="text-xl lg:text-3xl xl:text-4xl font-fredoka font-bold text-white leading-tight tracking-widest px-8"
                         style={{
                           WebkitTextStroke: "6px #00AEEF",
-                          paintOrder: "stroke fill",
-                          filter: "drop-shadow(0 4px 0 rgba(0,0,0,0.1))"
+                          paintOrder: "stroke fill"
                         }}>
                         {dict.about.moka.subtitle}
                       </h4>
@@ -822,16 +811,13 @@ export default async function HomePage({
             <div className="lg:col-span-7 space-y-10 pt-4">
               <MotionWrapper direction="right" delay={0.1}>
                 <div className="space-y-6">
-                  <span className="bg-hikids-blue/10 text-hikids-blue text-xs font-bold uppercase tracking-[0.15em] px-6 py-2 rounded-full inline-block border border-hikids-blue/20">
-                    The HiKids Difference
-                  </span>
+                  {/* Tag Removed */}
                   <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4">
                     Why HiKids is <br className="sm:hidden" />
                     <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
                       style={{
-                        WebkitTextStroke: "12px #00AEEF",
-                        paintOrder: "stroke fill",
-                        filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                        WebkitTextStroke: "12px #fff",
+                        paintOrder: "stroke fill"
                       }}>
                       Different
                     </span>
@@ -880,10 +866,10 @@ export default async function HomePage({
       </section>
 
       {/* ─── FINAL CTA SECTION: White Page with Yellow Card ─── */}
-      <section className="pt-8 pb-32 lg:pt-12 lg:pb-48 relative overflow-hidden bg-white">
+      <section className="pt-8 pb-48 lg:pt-12 lg:pb-64 relative overflow-hidden bg-white">
 
         <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10 w-full">
-          <div className="relative overflow-hidden rounded-[4rem] bg-[#FFEB00] border-4 border-white shadow-[0_32px_80px_-16px_rgba(255,235,0,0.3)] p-8 lg:p-12 flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
+          <div className="relative overflow-hidden rounded-[4rem] bg-[#FFEB00] border-4 border-white p-8 lg:p-12 flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
 
             {/* Background Texture inside card */}
             <div className="absolute inset-0 opacity-[0.04] pointer-events-none p-2">
@@ -916,17 +902,14 @@ export default async function HomePage({
             <div className="relative w-full lg:w-1/2 space-y-10 order-1 lg:order-2 text-center lg:text-left">
               <MotionWrapper direction="up" delay={0.1}>
                 <div className="space-y-8">
-                  <span className="bg-hikids-blue/10 text-hikids-blue text-xs font-black uppercase tracking-[0.2em] px-8 py-2.5 rounded-full inline-block border border-hikids-blue/20">
-                    Join the Family
-                  </span>
+                  {/* Tag Removed */}
 
                   <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-[#063354] leading-[1.05] tracking-tight">
                     Start your <br />
                     <span className="text-white text-6xl lg:text-8xl xl:text-9xl mt-2 inline-block transition-transform hover:scale-105 duration-300"
                       style={{
                         WebkitTextStroke: "12px #00AEEF",
-                        paintOrder: "stroke fill",
-                        filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                        paintOrder: "stroke fill"
                       }}>
                       Journey
                     </span>

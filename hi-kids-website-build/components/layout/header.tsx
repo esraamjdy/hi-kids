@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Smartphone } from "lucide-react";
+import { Menu, X, Smartphone, ChevronDown, GraduationCap, Users } from "lucide-react";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import type { Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/dictionaries";
@@ -17,6 +17,7 @@ interface HeaderProps {
 export function Header({ locale, dict }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [kindergartenOpen, setKindergartenOpen] = useState(false);
   const pathname = usePathname();
   const t = dict.common;
 
@@ -51,15 +52,15 @@ export function Header({ locale, dict }: HeaderProps) {
         {/* Logo */}
         <Link
           href={`/${locale}`}
-          className="flex items-center group transition-transform hover:scale-105 duration-500"
+          className="flex items-center group"
         >
           <div className="relative h-24 w-24 flex items-center justify-center">
             <Image
-              src="/images/logo-header.svg"
+              src="/images/HiKids-08.svg"
               alt="HiKids Logo"
               width={120}
               height={120}
-              className="object-contain scale-[1.4] transition-transform duration-500 group-hover:scale-[1.5]"
+              className="object-contain scale-[1.4]"
               priority
             />
           </div>
@@ -71,8 +72,6 @@ export function Header({ locale, dict }: HeaderProps) {
             { href: `/${locale}`, label: t.nav.home, active: pathname === `/${locale}` },
             { href: `/${locale}/about`, label: t.nav.about, active: isActive(`/${locale}/about`) },
             { href: `/${locale}/franchise`, label: t.nav.franchise, active: isInSection("franchise") },
-            { href: `/${locale}/educators`, label: t.nav.educators, active: isInSection("educators") },
-            { href: `/${locale}/parents`, label: t.nav.parents, active: isInSection("parents") },
           ].map((link) => (
             <Link
               key={link.href}
@@ -85,6 +84,54 @@ export function Header({ locale, dict }: HeaderProps) {
               {link.label}
             </Link>
           ))}
+
+          {/* Combined About Kindergarten Dropdown */}
+          <div 
+            className="relative"
+            onMouseEnter={() => setKindergartenOpen(true)}
+            onMouseLeave={() => setKindergartenOpen(false)}
+          >
+            <button
+              className={`rounded-2xl px-5 py-2.5 text-sm font-black uppercase tracking-widest transition-all inline-flex items-center gap-2 ${isInSection("educators") || isInSection("parents")
+                ? `${textColor} ${navActiveBg}`
+                : `${isHome && !scrolled ? "text-slate-600" : "text-white/90"} ${navHoverBg} hover:${textColor}`
+                }`}
+            >
+              {t.nav.aboutKindergarten}
+              <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${kindergartenOpen ? "rotate-180" : ""}`} />
+            </button>
+
+            {/* Dropdown Menu */}
+            <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 transition-all duration-300 ${kindergartenOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"}`}>
+              <div className="bg-white rounded-[2rem] shadow-2xl border border-slate-100 p-3 min-w-[280px] grid grid-cols-1 gap-1">
+                <Link
+                  href={`/${locale}/parents`}
+                  className={`flex items-start gap-4 p-4 rounded-2xl transition-all hover:bg-hikids-yellow/10 group ${isInSection("parents") ? "bg-hikids-yellow/5" : ""}`}
+                >
+                  <div className="h-10 w-10 shrink-0 rounded-xl bg-hikids-yellow/10 flex items-center justify-center text-hikids-yellow group-hover:scale-110 transition-transform">
+                    <Users size={20} />
+                  </div>
+                  <div>
+                    <div className="text-sm font-black text-slate-800 uppercase tracking-wider">{t.nav.parents}</div>
+                    <div className="text-[11px] font-medium text-slate-500 leading-tight mt-0.5">Resources for families & finding centers</div>
+                  </div>
+                </Link>
+
+                <Link
+                  href={`/${locale}/educators`}
+                  className={`flex items-start gap-4 p-4 rounded-2xl transition-all hover:bg-hikids-blue/10 group ${isInSection("educators") ? "bg-hikids-blue/5" : ""}`}
+                >
+                  <div className="h-10 w-10 shrink-0 rounded-xl bg-hikids-blue/10 flex items-center justify-center text-hikids-blue group-hover:scale-110 transition-transform">
+                    <GraduationCap size={20} />
+                  </div>
+                  <div>
+                    <div className="text-sm font-black text-slate-800 uppercase tracking-wider">{t.nav.educators}</div>
+                    <div className="text-[11px] font-medium text-slate-500 leading-tight mt-0.5">Training, materials & certifications</div>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
         </nav>
 
         {/* Right side */}
@@ -92,12 +139,13 @@ export function Header({ locale, dict }: HeaderProps) {
           <LanguageSwitcher locale={locale} scrolled={scrolled} isHome={isHome} />
           <Link
             href={`/${locale}/parents/app`} 
-            className={`hidden rounded-full px-7 py-3 text-[10px] font-black uppercase tracking-widest shadow-2xl transition-all hover:-translate-y-0.5 md:inline-flex items-center gap-2 border-2 ${isHome && !scrolled
-              ? "bg-slate-900 text-white border-transparent hover:bg-slate-800"
-              : "bg-white text-slate-900 border-white hover:bg-slate-100 shadow-white/10"
+            className={`hidden h-11 w-11 rounded-2xl transition-all md:inline-flex items-center justify-center ${isHome && !scrolled
+              ? "bg-slate-900/5 text-slate-800 hover:bg-slate-900/10 shadow-sm"
+              : "bg-white/10 text-white hover:bg-white/20"
               }`}
+            aria-label="HiKids App"
           >
-            HiKids App <Smartphone size={14} className="animate-bounce" />
+            <Smartphone size={20} />
           </Link>
 
           <Link
@@ -144,21 +192,33 @@ export function Header({ locale, dict }: HeaderProps) {
                 label={t.nav.franchise}
                 onClick={() => setMobileOpen(false)}
               />
-              <MobileLink
-                href={`/${locale}/educators`}
-                label={t.nav.educators}
-                onClick={() => setMobileOpen(false)}
-              />
-              <MobileLink
-                href={`/${locale}/parents`}
-                label={t.nav.parents}
-                onClick={() => setMobileOpen(false)}
-              />
-              <MobileLink
-                href={`/${locale}/contact`}
-                label={t.nav.contact}
-                onClick={() => setMobileOpen(false)}
-              />
+              
+              {/* Mobile About Kindergarten Group */}
+              <div className="mt-4 px-5">
+                <div className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-4">{t.nav.aboutKindergarten}</div>
+                <div className="grid grid-cols-1 gap-3">
+                  <MobileLink
+                    href={`/${locale}/parents`}
+                    label={t.nav.parents}
+                    onClick={() => setMobileOpen(false)}
+                    variant="sub"
+                  />
+                  <MobileLink
+                    href={`/${locale}/educators`}
+                    label={t.nav.educators}
+                    onClick={() => setMobileOpen(false)}
+                    variant="sub"
+                  />
+                </div>
+              </div>
+
+              <div className="mt-4">
+                <MobileLink
+                  href={`/${locale}/contact`}
+                  label={t.nav.contact}
+                  onClick={() => setMobileOpen(false)}
+                />
+              </div>
             </div>
           </nav>
         </div>
@@ -171,16 +231,20 @@ function MobileLink({
   href,
   label,
   onClick,
+  variant = "main",
 }: {
   href: string;
   label: string;
   onClick: () => void;
+  variant?: "main" | "sub";
 }) {
   return (
     <Link
       href={href}
       onClick={onClick}
-      className="rounded-2xl px-5 py-4 text-lg font-black tracking-tight text-foreground hover:bg-primary/5 hover:text-primary transition-all shadow-soft border border-transparent hover:border-primary/10"
+      className={`rounded-2xl px-5 py-4 font-black transition-all shadow-soft border border-transparent ${variant === "main" 
+        ? "text-lg tracking-tight text-foreground hover:bg-primary/5 hover:text-primary" 
+        : "text-sm uppercase tracking-widest text-slate-600 bg-slate-50 hover:bg-hikids-yellow/10 hover:text-hikids-yellow"}`}
     >
       {label}
     </Link>

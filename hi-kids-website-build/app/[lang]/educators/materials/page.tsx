@@ -36,9 +36,7 @@ export default async function MaterialsPage({
                
                <div className="flex-1 text-center lg:text-left pt-8">
                   <MotionWrapper direction="right">
-                    <span className="bg-blue-50 text-hikids-blue border-blue-100 text-xs font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full inline-block border backdrop-blur-sm mb-4">
-                        RESOURCE HUB
-                    </span>
+                    {/* Tag Removed */}
                     <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.1] tracking-tight text-balance">
                       Free <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
                           style={{
@@ -116,9 +114,7 @@ export default async function MaterialsPage({
             <div className="lg:col-span-6 space-y-10 order-1 lg:order-2">
                <MotionWrapper direction="left">
                   <div className="space-y-6 text-center lg:text-left">
-                     <span className="bg-white/20 text-white text-xs font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full inline-block border border-white/10 backdrop-blur-sm">
-                        PREMIUM LIBRARY
-                     </span>
+                     {/* Tag Removed */}
                      <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-white leading-[1.1] tracking-tight">
                         Need More <br className="sm:hidden" />
                         <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"

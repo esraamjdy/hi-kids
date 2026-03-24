@@ -36,9 +36,7 @@ export default async function CertificationPage({
                
                <div className="flex-1 text-center lg:text-left pt-8">
                   <MotionWrapper direction="right">
-                    <span className="bg-blue-50 text-hikids-blue border-blue-100 text-xs font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full inline-block border backdrop-blur-sm mb-4">
-                        PROFESSIONAL ELITE
-                    </span>
+                    {/* Tag Removed */}
                     <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.1] tracking-tight text-balance">
                       Earn Your <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
                           style={{
@@ -101,7 +99,7 @@ export default async function CertificationPage({
                   <div className="bg-blue-50 p-10 lg:p-14 rounded-[4rem] border border-blue-100 shadow-xl relative overflow-hidden group">
                      <div className="absolute top-0 right-0 w-32 h-32 bg-hikids-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                      <div className="relative z-10 mb-10">
-                        <span className="bg-white/50 text-hikids-blue text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full border border-blue-200">APPLICATION</span>
+                        {/* Tag Removed */}
                         <h3 className="text-3xl lg:text-5xl font-fredoka font-black text-slate-900 mt-6 leading-tight">{t.cta}</h3>
                      </div>
                      <CertificationForm dict={dict} />

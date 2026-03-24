@@ -43,11 +43,10 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                   <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4">
                     Where <br className="hidden lg:block" />
                     <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl mr-2 inline-block transition-transform hover:scale-105 duration-300"
-                        style={{
-                          WebkitTextStroke: "12px #00AEEF",
-                          paintOrder: "stroke fill",
-                          filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
-                        }}>
+                      style={{
+                        WebkitTextStroke: "12px #00AEEF",
+                        paintOrder: "stroke fill"
+                      }}>
                       Curiosity
                     </span>
                     <br /> Becomes <span className="text-hikids-blue">Capability</span>
@@ -61,16 +60,16 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
 
             {/* RIGHT – visual */}
             <div className="relative w-full flex items-center justify-center lg:justify-end">
-              <div className="relative w-[360px] h-[320px] lg:w-[420px] lg:h-[370px] xl:w-[480px] xl:h-[420px] overflow-visible">
-                
+              <div className="relative w-[550px] h-[480px] lg:w-[750px] lg:h-[650px] xl:w-[900px] xl:h-[800px] overflow-visible">
+
                 <MotionWrapper direction="down" delay={0.4}>
                   <div className="absolute top-[-35%] right-[-75%] w-[85%] h-[70%] z-0 opacity-90">
                     <Image src="/images/HiKids-57.svg" alt="" fill className="object-contain object-right-top [filter:invert(74%)_sepia(51%)_saturate(595%)_hue-rotate(160deg)_brightness(94%)_contrast(94%)]" />
                   </div>
                 </MotionWrapper>
 
-                <div className="absolute top-[-10%] left-[-25%] w-[120%] h-[150%] z-10 -rotate-[28deg] animate-float">
-                  <Image src="/images/Moka-Dance.png" alt="Moka Mascot" fill className="object-contain object-bottom drop-shadow-lg scale-x-[-1]" />
+                <div className="absolute top-[-65%] left-[-25%] w-[130%] h-[160%] z-10 -rotate-[22deg] animate-float">
+                  <Image src="/images/moka-3d.png" alt="Moka Mascot" fill className="object-contain object-bottom drop-shadow-lg" />
                 </div>
               </div>
             </div>
@@ -105,16 +104,13 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
             <div className="lg:col-span-6 space-y-8 pt-4">
               <MotionWrapper direction="left" delay={0.1}>
                 <div className="space-y-6">
-                  <span className="bg-hikids-blue/10 text-hikids-blue text-xs font-bold uppercase tracking-[0.15em] px-6 py-2 rounded-full inline-block border border-hikids-blue/20">
-                    OUR LEGACY
-                  </span>
+                  {/* Tag Removed */}
                   <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4">
                     Our <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
-                        style={{
-                          WebkitTextStroke: "12px #00AEEF",
-                          paintOrder: "stroke fill",
-                          filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
-                        }}>
+                      style={{
+                        WebkitTextStroke: "12px #00AEEF",
+                        paintOrder: "stroke fill"
+                      }}>
                       Story
                     </span>
                   </h2>
@@ -145,48 +141,44 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       <section className="py-4 lg:py-8 bg-blue-50 relative overflow-hidden">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
           <div className="space-y-12">
-            
+
             {/* MISSION (Left Text, Right Img) */}
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
               <div className="lg:col-span-7 space-y-6">
-                 <MotionWrapper direction="right">
-                    <span className="bg-hikids-green/10 text-hikids-green text-xs font-bold uppercase tracking-[0.15em] px-6 py-2 rounded-full inline-block border border-hikids-green/20">
-                      OUR MISSION
-                    </span>
-                    <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4 mt-4">
-                      {t.mission.title}
-                    </h2>
-                    <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed font-medium">
-                      {t.mission.description}
-                    </p>
-                 </MotionWrapper>
+                <MotionWrapper direction="right">
+                  {/* Tag Removed */}
+                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4 mt-4">
+                    {t.mission.title}
+                  </h2>
+                  <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed font-medium">
+                    {t.mission.description}
+                  </p>
+                </MotionWrapper>
               </div>
               <div className="lg:col-span-5 flex justify-center">
-                 <MotionWrapper type="scale" className="relative w-[300px] h-[300px] lg:w-[500px] lg:h-[500px]">
-                    <Image src="/images/HiKids-02.png" alt="Mission" fill className="object-contain drop-shadow-xl" />
-                 </MotionWrapper>
+                <MotionWrapper type="scale" className="relative w-[300px] h-[300px] lg:w-[500px] lg:h-[500px]">
+                  <Image src="/images/HiKids-02.png" alt="Mission" fill className="object-contain drop-shadow-xl" />
+                </MotionWrapper>
               </div>
             </div>
 
             {/* VISION (Right Text, Left Img) */}
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
               <div className="lg:col-span-5 flex justify-center order-2 lg:order-1">
-                 <MotionWrapper type="scale" className="relative w-[300px] h-[300px] lg:w-[500px] lg:h-[500px]">
-                    <Image src="/images/HiKids-03.png" alt="Vision" fill className="object-contain drop-shadow-xl" />
-                 </MotionWrapper>
+                <MotionWrapper type="scale" className="relative w-[300px] h-[300px] lg:w-[500px] lg:h-[500px]">
+                  <Image src="/images/HiKids-03.png" alt="Vision" fill className="object-contain drop-shadow-xl" />
+                </MotionWrapper>
               </div>
               <div className="lg:col-span-7 space-y-6 order-1 lg:order-2 text-right lg:text-left">
-                 <MotionWrapper direction="left">
-                    <span className="bg-hikids-blue/10 text-hikids-blue text-xs font-bold uppercase tracking-[0.15em] px-6 py-2 rounded-full inline-block border border-hikids-blue/20">
-                      OUR VISION
-                    </span>
-                    <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4 mt-4">
-                      {t.vision.title}
-                    </h2>
-                    <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed font-medium">
-                      {t.vision.description}
-                    </p>
-                 </MotionWrapper>
+                <MotionWrapper direction="left">
+                  {/* Tag Removed */}
+                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4 mt-4">
+                    {t.vision.title}
+                  </h2>
+                  <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed font-medium">
+                    {t.vision.description}
+                  </p>
+                </MotionWrapper>
               </div>
             </div>
           </div>
@@ -196,36 +188,35 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       {/* ─── THE METHOD ─── */}
       <section className="py-4 lg:py-8 bg-white relative overflow-hidden">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
-            <div className="text-center mb-12">
-                <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight">
-                    The HiKids <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block"
-                        style={{
-                          WebkitTextStroke: "12px #00AEEF",
-                          paintOrder: "stroke fill",
-                          filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
-                        }}>
-                      Method
-                    </span>
-                </h2>
-                <p className="text-lg lg:text-2xl text-slate-500 mt-6 font-medium">{t.method.subtitle}</p>
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight">
+              The HiKids <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block"
+                style={{
+                  WebkitTextStroke: "12px #00AEEF",
+                  paintOrder: "stroke fill"
+                }}>
+                Method
+              </span>
+            </h2>
+            <p className="text-lg lg:text-2xl text-slate-500 mt-6 font-medium">{t.method.subtitle}</p>
+          </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {t.method.pillars.map((pillar: { title: string; description: string }, i: number) => (
-                    <MotionItem key={i} className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 flex flex-col items-center text-center group hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
-                         <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-hikids-blue mb-6 shadow-sm group-hover:scale-110 transition-transform">
-                            {i === 0 && <Sparkles size={32} />}
-                            {i === 1 && <Rocket size={32} />}
-                            {i === 2 && <Smile size={32} />}
-                            {i === 3 && <Trophy size={32} />}
-                         </div>
-                         <h3 className="text-xl lg:text-2xl font-black text-slate-800 mb-3 font-fredoka">{pillar.title}</h3>
-                         <p className="text-slate-500 text-sm leading-relaxed font-medium">
-                            {pillar.description}
-                         </p>
-                    </MotionItem>
-                ))}
-            </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {t.method.pillars.map((pillar: { title: string; description: string }, i: number) => (
+              <MotionItem key={i} className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 flex flex-col items-center text-center group hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-hikids-blue mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                  {i === 0 && <Sparkles size={32} />}
+                  {i === 1 && <Rocket size={32} />}
+                  {i === 2 && <Smile size={32} />}
+                  {i === 3 && <Trophy size={32} />}
+                </div>
+                <h3 className="text-xl lg:text-2xl font-black text-slate-800 mb-3 font-fredoka">{pillar.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed font-medium">
+                  {pillar.description}
+                </p>
+              </MotionItem>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -233,7 +224,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       <section className="py-4 lg:py-8 bg-slate-50 relative overflow-hidden">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-            
+
             {/* Left: Founder Image */}
             <div className="lg:col-span-5">
               <MotionWrapper type="scale">
@@ -246,24 +237,24 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
 
             {/* Right: Content */}
             <div className="lg:col-span-7 space-y-8">
-               <MotionWrapper direction="left">
-                 <div className="space-y-4">
-                    <span className="text-xs font-black uppercase tracking-[0.4em] text-hikids-blue">FOUNDER SPOTLIGHT</span>
-                    <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-tight">
-                        {t.founder.name}
-                    </h2>
-                    <h4 className="text-xl lg:text-2xl font-bold text-slate-400 uppercase tracking-widest">{t.founder.role}</h4>
-                 </div>
-                 <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed font-medium mt-8">
-                    {t.founder.description}
-                 </p>
-                 <div className="relative p-10 mt-12 bg-white rounded-[2.5rem] border border-slate-100 shadow-xl group hover:-translate-y-2 transition-transform duration-500">
-                    <Quote className="absolute top-8 right-8 text-slate-100 group-hover:text-hikids-blue/10 transition-colors" size={80} />
-                    <p className="relative z-10 text-2xl lg:text-3xl font-black text-slate-800 leading-snug italic font-fredoka">
-                       &quot;{t.founder.quote}&quot;
-                    </p>
-                 </div>
-               </MotionWrapper>
+              <MotionWrapper direction="left">
+                <div className="space-y-4">
+                  {/* Tag Removed */}
+                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-tight">
+                    {t.founder.name}
+                  </h2>
+                  <h4 className="text-xl lg:text-2xl font-bold text-slate-400 uppercase tracking-widest">{t.founder.role}</h4>
+                </div>
+                <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed font-medium mt-8">
+                  {t.founder.description}
+                </p>
+                <div className="relative p-10 mt-12 bg-white rounded-[2.5rem] border border-slate-100 shadow-xl group hover:-translate-y-2 transition-transform duration-500">
+                  <Quote className="absolute top-8 right-8 text-slate-100 group-hover:text-hikids-blue/10 transition-colors" size={80} />
+                  <p className="relative z-10 text-2xl lg:text-3xl font-black text-slate-800 leading-snug italic font-fredoka">
+                    &quot;{t.founder.quote}&quot;
+                  </p>
+                </div>
+              </MotionWrapper>
             </div>
 
           </div>
@@ -291,23 +282,20 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
             <div className="lg:col-span-6 space-y-10 order-1 lg:order-2">
               <MotionWrapper direction="left" delay={0.1}>
                 <div className="space-y-6 text-center lg:text-left">
-                  <span className="bg-hikids-blue/10 text-hikids-blue text-xs font-bold uppercase tracking-[0.15em] px-6 py-2 rounded-full inline-block border border-hikids-blue/20">
-                    JOIN THE FAMILY
-                  </span>
-                  
+                  {/* Tag Removed */}
+
                   <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4">
                     Build the <br className="sm:hidden" />
                     <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
                       style={{
                         WebkitTextStroke: "12px #00AEEF",
-                        paintOrder: "stroke fill",
-                        filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                        paintOrder: "stroke fill"
                       }}>
                       Future
                     </span>
                     <br /> Together
                   </h2>
-                  
+
                   <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed max-w-xl font-medium mx-auto lg:mx-0">
                     HiKids is more than just schools. We are a community dedicated to raising the next generation.
                   </p>
@@ -323,10 +311,10 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                 </Link>
 
                 <Link
-                   href={`/${lang}/franchise`}
-                   className="btn-outline px-12 py-5 text-xl tracking-tight bg-white shadow-xl hover:shadow-2xl transition-all"
+                  href={`/${lang}/franchise`}
+                  className="btn-outline px-12 py-5 text-xl tracking-tight bg-white shadow-xl hover:shadow-2xl transition-all"
                 >
-                   Explore Franchise
+                  Explore Franchise
                 </Link>
               </div>
             </div>

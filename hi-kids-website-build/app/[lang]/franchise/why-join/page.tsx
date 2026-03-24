@@ -38,10 +38,7 @@ export default async function WhyJoinPage({
                
                <div className="flex-1 text-center lg:text-left pt-8">
                   <MotionWrapper direction="right">
-                    <span className="bg-yellow-100 text-[#FFEB00] border-yellow-200 text-xs font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full inline-block border backdrop-blur-sm mb-4"
-                        style={{ WebkitTextStroke: "1px #00AEEF" }}>
-                        BENEFITS
-                    </span>
+                    {/* Tag Removed */}
                     <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.1] tracking-tight text-balance">
                       Why <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
                           style={{
@@ -106,9 +103,7 @@ export default async function WhyJoinPage({
             <div className="lg:col-span-6 space-y-10 order-1 lg:order-2">
                <MotionWrapper direction="left">
                   <div className="space-y-6 text-center lg:text-left">
-                     <span className="bg-white/30 text-slate-900 text-xs font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full inline-block border border-slate-900/10 backdrop-blur-sm">
-                        OPPORTUNITY
-                     </span>
+                     {/* Tag Removed */}
                      <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.1] tracking-tight">
                         Your <br className="sm:hidden" />
                         <span className="text-white text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"

@@ -39,12 +39,7 @@ export default async function ContactPage({
 
         <div className="relative mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 z-10 w-full text-center lg:text-left">
           <div className="max-w-[900px] animate-fade-in-up">
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/40 backdrop-blur-md px-6 py-2.5 shadow-sm border border-white/20">
-              <Sparkles className="h-5 w-5 text-hikids-blue animate-pulse" />
-              <span className="text-xs lg:text-sm font-black uppercase tracking-widest text-slate-800">
-                {t.subtitle}
-              </span>
-            </div>
+            {/* Tag Removed */}
             <h1 className="text-5xl lg:text-8xl xl:text-9xl font-black font-fredoka text-slate-900 tracking-tight leading-[0.9] mb-8">
               {t.title}
             </h1>
@@ -117,7 +112,7 @@ export default async function ContactPage({
           <div className="grid lg:grid-cols-[1fr_1.5fr] gap-16 lg:gap-24 items-center">
             
             <div className="flex flex-col text-center lg:text-left">
-              <span className="text-hikids-blue font-black uppercase tracking-[0.2em] text-[10px] mb-4">Contact Form</span>
+              {/* Tag Removed */}
               <h2 className="text-5xl lg:text-7xl font-black font-fredoka text-slate-900 mb-8 leading-[0.95] tracking-tight">
                 {t.form.title}
               </h2>

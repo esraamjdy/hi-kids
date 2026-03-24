@@ -36,9 +36,7 @@ export default async function InquiryPage({
                
                <div className="flex-1 text-center lg:text-left pt-8">
                   <MotionWrapper direction="right">
-                    <span className="bg-hikids-blue/10 text-hikids-blue border-hikids-blue/20 text-xs font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full inline-block border backdrop-blur-sm mb-4">
-                        CONTACT
-                    </span>
+                    {/* Tag Removed */}
                     <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.1] tracking-tight text-balance">
                       Franchise <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
                           style={{
