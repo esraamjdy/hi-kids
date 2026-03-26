@@ -68,7 +68,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                   </div>
                 </MotionWrapper>
 
-                <div className="absolute top-[-65%] left-[-25%] w-[130%] h-[160%] z-10 -rotate-[22deg] animate-float">
+                <div className="absolute top-[-5%] left-[2%] w-[85%] h-[90%] z-10 -rotate-[22deg] animate-float">
                   <Image src="/images/moka-3d.png" alt="Moka Mascot" fill className="object-contain object-bottom drop-shadow-lg" />
                 </div>
               </div>
