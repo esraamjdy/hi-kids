@@ -126,18 +126,32 @@
       "franchise": {
         "title": "Business Owners",
         "description": "Open a HiKids kindergarten in your community. Access our proven model, brand, and complete support system.",
-        "cta": "Explore Franchise"
+        "cta": "Explore Franchise",
+        "titleOwner": "Franchise"
       },
       "educators": {
         "title": "Educators",
         "description": "Access free materials, teaching methods, and professional certification to elevate your early education practice.",
-        "cta": "Educator Resources"
+        "cta": "Educator Resources",
+        "titleOwner": "Educateurs"
       },
       "parents": {
         "title": "Parents",
         "description": "Find a HiKids kindergarten near you, explore our learning levels, and stay connected through our app.",
-        "cta": "Parent Resources"
+        "cta": "Parent Resources",
+        "titleOwner": "Parents"
       }
+    },
+    "pathways": {
+      "title": "Parcours",
+      "seeMore": "Voir plus"
+    },
+    "joinFamily": {
+      "title": "Rejoignez la famille",
+      "subtitle": "Commencez votre voyage avec HiKids",
+      "description": "Donnez du pouvoir à votre parcours avec HiKids. Que vous soyez parent, éducateur ou propriétaire d'entreprise — nous sommes là pour vous soutenir à chaque étape.",
+      "getStarted": "Commencer",
+      "contactUs": "Contactez-nous"
     }
   },
   "about": {
