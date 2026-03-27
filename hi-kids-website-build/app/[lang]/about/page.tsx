@@ -13,6 +13,7 @@ import { notFound } from "next/navigation";
 import { SectionHeader } from "@/components/section-header";
 import { WaveDivider } from "@/components/wave-divider";
 import { MotionWrapper, MotionContainer, MotionItem } from "@/components/motion-wrapper";
+import { AnimatedCounter } from "@/components/animated-counter";
 
 export const metadata: Metadata = {
   title: "About HiKids | Progressive Early Childhood Education",
@@ -28,7 +29,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
     <div className="bg-white overflow-hidden selection:bg-hikids-blue/20">
 
       {/* ─── HERO ─── */}
-      <section className="relative min-h-[30vh] lg:min-h-[45vh] flex items-center overflow-hidden bg-background pt-16 pb-8 lg:pt-12 lg:pb-12">
+      <section className="relative min-h-[30vh] lg:min-h-[45vh] flex items-center overflow-hidden bg-background pt-4 pb-32 lg:pt-2 lg:pb-48">
         <div className="absolute bottom-[20%] right-[10%] w-14 h-14 opacity-30 animate-sway hidden lg:block">
           <Sparkles className="text-slate-800" />
         </div>
@@ -39,19 +40,19 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
             {/* LEFT – headline */}
             <div className="relative text-center lg:text-left">
               <MotionWrapper direction="right" delay={0.2} duration={1}>
-                <div className="space-y-4 max-w-2xl mx-auto lg:mx-0 relative z-10">
-                  <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4">
-                    Where <br className="hidden lg:block" />
-                    <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl mr-2 inline-block transition-transform hover:scale-105 duration-300"
+                <div className="space-y-4 max-w-4xl mx-auto lg:mx-0 relative z-10">
+                  <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4 flex flex-col gap-y-2">
+                    <span className="text-hikids-blue">{t.hero.title.split(' ').slice(0, 1).join(' ')}</span>
+                    <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl inline-block transition-transform hover:scale-105 duration-300"
                       style={{
                         WebkitTextStroke: "12px #00AEEF",
                         paintOrder: "stroke fill"
                       }}>
-                      Curiosity
+                      {t.hero.title.split(' ').slice(1, -1).join(' ')}
                     </span>
-                    <br /> Becomes <span className="text-hikids-blue">Capability</span>
+                    <span className="text-hikids-blue">{t.hero.title.split(' ').slice(-1).join(' ')}</span>
                   </h1>
-                  <p className="text-author text-slate-700 leading-relaxed max-w-lg mx-auto lg:mx-0 opacity-90">
+                  <p className="text-author text-slate-700 leading-relaxed max-w-2xl mx-auto lg:mx-0 opacity-90">
                     {t.hero.subtitle}
                   </p>
                 </div>
@@ -60,16 +61,9 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
 
             {/* RIGHT – visual */}
             <div className="relative w-full flex items-center justify-center lg:justify-end">
-              <div className="relative w-[550px] h-[480px] lg:w-[750px] lg:h-[650px] xl:w-[900px] xl:h-[800px] overflow-visible">
-
-                <MotionWrapper direction="down" delay={0.4}>
-                  <div className="absolute top-[-35%] right-[-75%] w-[85%] h-[70%] z-0 opacity-90">
-                    <Image src="/images/HiKids-57.svg" alt="" fill className="object-contain object-right-top [filter:invert(74%)_sepia(51%)_saturate(595%)_hue-rotate(160deg)_brightness(94%)_contrast(94%)]" />
-                  </div>
-                </MotionWrapper>
-
-                <div className="absolute top-[-5%] left-[2%] w-[85%] h-[90%] z-10 -rotate-[22deg] animate-float">
-                  <Image src="/images/moka-3d.png" alt="Moka Mascot" fill className="object-contain object-bottom drop-shadow-lg" />
+              <div className="relative w-[550px] h-[480px] lg:w-[850px] lg:h-[750px] xl:w-[1000px] xl:h-[900px] overflow-visible">
+                <div className="absolute top-[-100%] left-[-30%] w-[170%] h-[170%] z-10 -rotate-[22deg] animate-float">
+                  <Image src="/images/3playing.png" alt="Moka Mascot" fill className="object-contain object-bottom drop-shadow-2xl" />
                 </div>
               </div>
             </div>
@@ -79,23 +73,23 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       </section>
 
       {/* Hero Divider */}
-      <div className="w-full relative -mt-[100px] lg:-mt-[100px] z-20">
+      <div className="w-full relative -mt-[180px] lg:-mt-[260px] z-20 pointer-events-none">
         <WaveDivider color="#fefce8" />
       </div>
 
       {/* ─── OUR STORY ─── */}
-      <section className="py-4 lg:py-8 bg-[#fefce8] relative overflow-hidden">
+      <section className="pb-8 lg:pb-16 bg-[#fefce8] relative overflow-hidden -mt-2 pt-0 lg:pt-0">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
-          <div className="grid lg:grid-cols-12 gap-6 lg:gap-12 items-center">
+          <div className="grid lg:grid-cols-12 gap-6 lg:gap-12 items-center -mt-8 lg:-mt-16">
 
             {/* Left Column: Character Image */}
             <div className="lg:col-span-6 flex justify-center lg:justify-center lg:sticky lg:top-16 lg:pt-2">
-              <MotionWrapper type="scale" delay={0.2} className="relative w-[450px] h-[450px] lg:w-[800px] lg:h-[800px] lg:-ml-16">
+              <MotionWrapper type="scale" delay={0.2} className="relative w-[550px] h-[550px] lg:w-[1000px] lg:h-[1000px] -ml-12 lg:-ml-48">
                 <Image
-                  src="/images/hi.png"
-                  alt="Moka"
+                  src="/images/picnic.png"
+                  alt="Moka Picnic"
                   fill
-                  className="object-contain drop-shadow-2xl"
+                  className="object-contain drop-shadow-2xl scale-[1.45] hover:scale-[1.55] transition-transform duration-700"
                 />
               </MotionWrapper>
             </div>
@@ -106,12 +100,12 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                 <div className="space-y-6">
                   {/* Tag Removed */}
                   <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4">
-                    Our <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                    <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
                       style={{
                         WebkitTextStroke: "12px #00AEEF",
                         paintOrder: "stroke fill"
                       }}>
-                      Story
+                      {t.story.title}
                     </span>
                   </h2>
                   <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed max-w-2xl font-medium">
@@ -124,7 +118,9 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
               <div className="grid grid-cols-2 gap-4">
                 {t.story.achievements.map((ach: { value: string; label: string }, i: number) => (
                   <MotionItem key={i} className="bg-white p-6 lg:p-8 rounded-[1.5rem] shadow-sm border border-slate-100 flex flex-col items-start text-left group hover:shadow-lg transition-all duration-500 hover:-translate-y-1">
-                    <div className="text-4xl lg:text-5xl font-black text-hikids-blue mb-2 font-fredoka group-hover:scale-110 transition-transform">{ach.value}</div>
+                    <div className="text-4xl lg:text-5xl font-black text-hikids-blue mb-2 font-fredoka group-hover:scale-110 transition-transform">
+                      <AnimatedCounter value={ach.value} />
+                    </div>
                     <p className="text-slate-500 text-sm lg:text-base leading-relaxed font-bold uppercase tracking-widest text-[10px]">
                       {ach.label}
                     </p>
@@ -138,49 +134,66 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       </section>
 
       {/* ─── MISSION & VISION ─── */}
-      <section className="py-4 lg:py-8 bg-blue-50 relative overflow-hidden">
+      <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-blue-50/50 relative overflow-hidden">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
-          <div className="space-y-12">
+          <div className="space-y-20 lg:space-y-32">
 
-            {/* MISSION (Left Text, Right Img) */}
-            <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-              <div className="lg:col-span-7 space-y-6">
-                <MotionWrapper direction="right">
-                  {/* Tag Removed */}
-                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4 mt-4">
-                    {t.mission.title}
+            {/* MISSION (Left Img, Right Text) */}
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 xl:gap-24 items-center">
+              <div className="lg:col-span-5 flex justify-center order-2 lg:order-1 relative items-center">
+                <MotionWrapper type="scale" className="w-full max-w-[500px]">
+                  {/* The actual sloped box */}
+                  <div className="relative w-full aspect-[4/3] rounded-[2rem] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] border-[8px] lg:border-[12px] border-white overflow-hidden -rotate-[4deg] hover:-rotate-[2deg] transition-all duration-700 group cursor-pointer bg-yellow-50">
+                    <Image src="/images/HiKids-02.png" alt="Mission" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  </div>
+                </MotionWrapper>
+              </div>
+              <div className="lg:col-span-7 space-y-6 order-1 lg:order-2">
+                <MotionWrapper direction="right" className="lg:px-4">
+                  <h2 className="text-5xl lg:text-6xl xl:text-7xl font-fredoka font-black leading-[1.1] tracking-tight mb-6 mt-4">
+                    <span className="text-white inline-block transition-transform hover:scale-105 duration-300"
+                      style={{
+                        WebkitTextStroke: "10px #FFEB00",
+                        paintOrder: "stroke fill"
+                      }}>
+                      {t.mission.title}
+                    </span>
                   </h2>
-                  <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed font-medium">
+                  <p className="text-xl lg:text-2xl text-slate-600 leading-relaxed font-medium">
                     {t.mission.description}
                   </p>
                 </MotionWrapper>
               </div>
-              <div className="lg:col-span-5 flex justify-center">
-                <MotionWrapper type="scale" className="relative w-[300px] h-[300px] lg:w-[500px] lg:h-[500px]">
-                  <Image src="/images/HiKids-02.png" alt="Mission" fill className="object-contain drop-shadow-xl" />
-                </MotionWrapper>
-              </div>
             </div>
 
-            {/* VISION (Right Text, Left Img) */}
-            <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-              <div className="lg:col-span-5 flex justify-center order-2 lg:order-1">
-                <MotionWrapper type="scale" className="relative w-[300px] h-[300px] lg:w-[500px] lg:h-[500px]">
-                  <Image src="/images/HiKids-03.png" alt="Vision" fill className="object-contain drop-shadow-xl" />
-                </MotionWrapper>
-              </div>
-              <div className="lg:col-span-7 space-y-6 order-1 lg:order-2 text-right lg:text-left">
-                <MotionWrapper direction="left">
-                  {/* Tag Removed */}
-                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4 mt-4">
-                    {t.vision.title}
+            {/* VISION (Right Text, Left Img equivalent without explicit orders) */}
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 xl:gap-24 items-center">
+              <div className="lg:col-span-7 space-y-6">
+                <MotionWrapper direction="left" className="lg:px-4">
+                  <h2 className="text-5xl lg:text-6xl xl:text-7xl font-fredoka font-black leading-[1.1] tracking-tight mb-6 mt-4">
+                    <span className="text-white inline-block transition-transform hover:scale-105 duration-300"
+                      style={{
+                        WebkitTextStroke: "10px #00AEEF",
+                        paintOrder: "stroke fill"
+                      }}>
+                      {t.vision.title}
+                    </span>
                   </h2>
-                  <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed font-medium">
+                  <p className="text-xl lg:text-2xl text-slate-600 leading-relaxed font-medium">
                     {t.vision.description}
                   </p>
                 </MotionWrapper>
               </div>
+              <div className="lg:col-span-5 flex justify-center relative items-center">
+                <MotionWrapper type="scale" className="w-full max-w-[500px]">
+                  {/* The actual sloped box */}
+                  <div className="relative w-full aspect-[4/3] rounded-[2rem] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] border-[8px] lg:border-[12px] border-white overflow-hidden rotate-[4deg] hover:rotate-[2deg] transition-all duration-700 group cursor-pointer bg-blue-50">
+                    <Image src="/images/HiKids-03.png" alt="Vision" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  </div>
+                </MotionWrapper>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -189,13 +202,13 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       <section className="py-4 lg:py-8 bg-white relative overflow-hidden">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
           <div className="text-center mb-12">
-            <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight">
-              The HiKids <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block"
+            <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight flex flex-col justify-center gap-y-2 items-center">
+              <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl inline-block"
                 style={{
                   WebkitTextStroke: "12px #00AEEF",
                   paintOrder: "stroke fill"
                 }}>
-                Method
+                {t.method.title}
               </span>
             </h2>
             <p className="text-lg lg:text-2xl text-slate-500 mt-6 font-medium">{t.method.subtitle}</p>
@@ -221,16 +234,15 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       </section>
 
       {/* ─── FOUNDER SPOTLIGHT ─── */}
-      <section className="py-4 lg:py-8 bg-slate-50 relative overflow-hidden">
+      <section className="py-16 lg:py-24 bg-gradient-to-br from-slate-50 to-[#fefce8]/50 relative overflow-hidden">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 xl:gap-24 items-center">
 
             {/* Left: Founder Image */}
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-5 relative">
               <MotionWrapper type="scale">
-                <div className="relative w-full aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white group">
-                  <Image src="/images/businessman.png" alt="Founder" fill className="object-cover group-hover:scale-105 transition-transform duration-1000 grayscale hover:grayscale-0" />
-                  <div className="absolute inset-0 bg-hikids-blue/5 group-hover:bg-transparent transition-colors" />
+                <div className="relative w-full aspect-[4/5] rounded-[3rem] overflow-hidden border-[12px] border-white group">
+                  <Image src="/images/businessman.png" alt="Amy - Founder" fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
                 </div>
               </MotionWrapper>
             </div>
@@ -239,18 +251,24 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
             <div className="lg:col-span-7 space-y-8">
               <MotionWrapper direction="left">
                 <div className="space-y-4">
-                  {/* Tag Removed */}
-                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-tight">
-                    {t.founder.name}
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-200/50 text-slate-600 font-bold text-sm tracking-widest uppercase mb-2">
+                    <Star size={18} />
+                    <span>Leadership</span>
+                  </div>
+                  <h2 className="text-5xl lg:text-6xl xl:text-7xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight">
+                    Amy Szymanska {/* Hardcoded per request */}
                   </h2>
-                  <h4 className="text-xl lg:text-2xl font-bold text-slate-400 uppercase tracking-widest">{t.founder.role}</h4>
+                  <h4 className="text-xl lg:text-2xl font-bold text-hikids-blue uppercase tracking-widest">{t.founder.role}</h4>
                 </div>
-                <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed font-medium mt-8">
+
+                <p className="text-xl lg:text-2xl text-slate-600 leading-relaxed font-medium mt-8">
                   {t.founder.description}
                 </p>
-                <div className="relative p-10 mt-12 bg-white rounded-[2.5rem] border border-slate-100 shadow-xl group hover:-translate-y-2 transition-transform duration-500">
-                  <Quote className="absolute top-8 right-8 text-slate-100 group-hover:text-hikids-blue/10 transition-colors" size={80} />
-                  <p className="relative z-10 text-2xl lg:text-3xl font-black text-slate-800 leading-snug italic font-fredoka">
+
+                <div className="relative p-8 lg:p-12 mt-12 bg-white rounded-[2.5rem] border border-slate-100 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] group hover:-translate-y-2 transition-transform duration-500 overflow-hidden">
+                  <div className="absolute top-0 left-0 w-2 h-full bg-[#FFEB00]"></div>
+                  <Quote className="absolute top-8 right-8 text-slate-100 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-500" size={60} />
+                  <p className="relative z-10 text-2xl lg:text-3xl font-black text-slate-700 leading-snug italic font-fredoka mt-4">
                     &quot;{t.founder.quote}&quot;
                   </p>
                 </div>
@@ -262,61 +280,58 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       </section>
 
       {/* ─── FINAL CTA ─── */}
-      <section className="py-4 lg:py-8 relative overflow-hidden bg-white">
+      {/* ─── FINAL CTA ─── */}
+      <section className="pb-16 lg:pb-24 pt-0 relative overflow-hidden bg-white">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
-            {/* Left Column: Character Image */}
-            <div className="lg:col-span-6 flex justify-center lg:justify-center lg:sticky lg:top-0 order-2 lg:order-1 mt-12 lg:mt-0">
-              <MotionWrapper type="scale" delay={0.2} className="relative w-[450px] h-[450px] lg:w-[1000px] lg:h-[1000px] lg:-ml-32">
-                <Image
-                  src="/images/Moka-Plays.png"
-                  alt="Moka Playing"
-                  fill
-                  className="object-contain drop-shadow-2xl"
-                />
-              </MotionWrapper>
-            </div>
-
-            {/* Right Column: Content */}
-            <div className="lg:col-span-6 space-y-10 order-1 lg:order-2">
-              <MotionWrapper direction="left" delay={0.1}>
-                <div className="space-y-6 text-center lg:text-left">
-                  {/* Tag Removed */}
-
+            {/* Content (Now Left) */}
+            <div className="lg:col-span-6 space-y-10 -mt-14 lg:-mt-28">
+              <MotionWrapper direction="right" delay={0.1}>
+                <div className="space-y-6 text-start">
                   <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4">
-                    Build the <br className="sm:hidden" />
-                    <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                    <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-[7rem] inline-block transition-transform hover:scale-105 duration-300"
                       style={{
                         WebkitTextStroke: "12px #00AEEF",
                         paintOrder: "stroke fill"
                       }}>
-                      Future
+                      {t.founder.title}
                     </span>
-                    <br /> Together
                   </h2>
 
-                  <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed max-w-xl font-medium mx-auto lg:mx-0">
-                    HiKids is more than just schools. We are a community dedicated to raising the next generation.
+                  <p className="text-xl lg:text-2xl text-slate-600 leading-relaxed max-w-xl font-medium mt-6">
+                    {t.founder.description}
                   </p>
                 </div>
               </MotionWrapper>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
+              <div className="flex flex-col sm:flex-row items-center justify-start gap-6">
                 <Link
                   href={`/${lang}/contact`}
                   className="btn-primary px-12 py-5 text-xl tracking-tight group"
                 >
-                  Contact Us <ArrowRight className="h-6 w-6 ml-2 group-hover:translate-x-1 transition-transform" />
+                  {dict.common.cta.contactUs} <ArrowRight className="h-6 w-6 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
 
                 <Link
                   href={`/${lang}/franchise`}
                   className="btn-outline px-12 py-5 text-xl tracking-tight bg-white shadow-xl hover:shadow-2xl transition-all"
                 >
-                  Explore Franchise
+                  {dict.home.audiences.franchise.cta}
                 </Link>
               </div>
+            </div>
+
+            {/* Character Image (Now Right) */}
+            <div className="lg:col-span-6 flex justify-center lg:justify-end -mt-12 lg:-mt-24">
+              <MotionWrapper type="scale" delay={0.2} className="relative w-[550px] h-[550px] lg:w-[1000px] lg:h-[1000px] lg:-mr-16">
+                <Image
+                  src="/images/flowers.png"
+                  alt="Flowers"
+                  fill
+                  className="object-contain drop-shadow-2xl scale-[1.1] lg:scale-110"
+                />
+              </MotionWrapper>
             </div>
 
           </div>

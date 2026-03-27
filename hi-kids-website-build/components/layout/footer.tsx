@@ -55,7 +55,7 @@ export function Footer({ locale, dict }: FooterProps) {
           {/* Column 2: Quick Navigation */}
           <div>
             <h4 className="text-[16px] font-black text-white uppercase tracking-[0.1em] mb-6">
-              Explore
+              {t.footer.explore}
             </h4>
             <ul className="grid grid-cols-1 gap-4">
               {[
@@ -79,7 +79,7 @@ export function Footer({ locale, dict }: FooterProps) {
           {/* Column 3: Direct Contact */}
           <div>
             <h4 className="text-[16px] font-black text-white uppercase tracking-[0.1em] mb-6">
-              Support
+              {t.footer.support}
             </h4>
             <div className="space-y-5">
               <a href={`mailto:${t.footer.email}`} className="group flex items-center gap-3 text-white/80 hover:text-white transition-all">
@@ -100,9 +100,9 @@ export function Footer({ locale, dict }: FooterProps) {
           {/* Column 4: Presence & Mobile */}
           <div className="space-y-6">
             <div>
-              <h4 className="text-[16px] font-black text-white uppercase tracking-[0.1em] mb-4">Location</h4>
+              <h4 className="text-[16px] font-black text-white uppercase tracking-[0.1em] mb-4">{t.footer.location}</h4>
               <p className="text-[17px] text-white/70 leading-relaxed">
-                HiKids International HQ<br />Global Training Centers
+                {t.footer.hq}<br />{t.footer.trainingCenter}
               </p>
             </div>
             <div className="flex gap-3">
@@ -125,14 +125,14 @@ export function Footer({ locale, dict }: FooterProps) {
           <div className="flex flex-col space-y-4 order-2 md:order-1">
             <div className="flex items-center gap-8">
               <Link href="#" className="text-[14px] font-bold text-white/50 hover:text-white transition-colors">
-                Privacy Policy
+                {t.footer.privacy}
               </Link>
               <Link href="#" className="text-[14px] font-bold text-white/50 hover:text-white transition-colors">
-                Terms of Service
+                {t.footer.terms}
               </Link>
             </div>
             <p className="text-[14px] font-bold text-white/40">
-              © {currentYear} HiKids International. All rights reserved.
+              © {currentYear} {t.footer.rights}
             </p>
           </div>
 
@@ -147,8 +147,8 @@ export function Footer({ locale, dict }: FooterProps) {
                 priority
               />
             </div>
-            <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mt-2">
-              Empower Every Journey
+            <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mt-2 text-center">
+              {t.footer.tagline}
             </p>
           </div>
 

@@ -60,7 +60,7 @@ export default async function HomePage({
               <MotionWrapper direction="right" delay={0.2} duration={1}>
                 <div className="space-y-4 max-w-2xl mx-auto lg:mx-0 relative z-10">
                   <h1 className="text-main-title text-slate-800 drop-shadow-sm leading-[1.05]">
-                    Shaping the{" "}
+                    {lang === 'pl' ? 'Kształtując ' : 'Shaping the '}
                     <span
                       className="inline-block transition-transform hover:scale-105 duration-300"
                       style={{
@@ -69,13 +69,13 @@ export default async function HomePage({
                         paintOrder: "stroke fill",
                       }}
                     >
-                      Future
+                      {lang === 'pl' ? 'przyszłość' : 'Future'}
                     </span>
                     <br />
-                    of Early Education
+                    {lang === 'pl' ? 'wczesnej edukacji' : 'of Early Education'}
                   </h1>
                   <p className="text-author text-slate-700 leading-relaxed max-w-lg mx-auto lg:mx-0 opacity-90">
-                    Empowering children through innovation and educational excellence.
+                    {t.hero.subtitle}
                   </p>
                 </div>
               </MotionWrapper>
@@ -153,16 +153,15 @@ export default async function HomePage({
 
               {/* Premium Standard Fredoka Heading */}
               <div className="text-center">
-                <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black leading-[1.1] tracking-tight text-center">
-                  <span className="text-hikids-green">Check Our </span>
-                  <br className="sm:hidden" />
+                <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black leading-[1.1] tracking-tight text-center flex flex-wrap justify-center items-center gap-x-2">
+                  <span className="text-hikids-green">{t.pathways.title.split(' ').slice(0, -1).join(' ')} </span>
                   <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
                     style={{
                       WebkitTextStroke: "12px #00AEEF",
                       paintOrder: "stroke fill",
                       filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
                     }}>
-                    Paths
+                    {t.pathways.title.split(' ').slice(-1)}
                   </span>
                 </h2>
               </div>
@@ -221,27 +220,25 @@ export default async function HomePage({
 
 
 
-                {/* Repositioned Title */}
                 <div className="mb-6 relative z-30 flex-1">
-                  <h3 className="text-5xl lg:text-6xl font-fredoka font-black leading-tight transition-transform hover:scale-105 duration-300"
+                  <h3 className="text-3xl lg:text-4xl xl:text-5xl font-fredoka font-black leading-tight transition-transform hover:scale-105 duration-300 hyphens-auto break-words"
                     style={{
                       color: "#00aae5",
                       WebkitTextStroke: "10px #fff",
                       paintOrder: "stroke fill",
                       filter: "drop-shadow(0 6px 0 rgba(0,0,0,0.1))"
                     }}>
-                    Business
+                    {t.audiences.franchise.titleOwner}
                   </h3>
-                  <span className="text-xl font-bold text-[#063354] uppercase tracking-widest mt-2 block ml-1">Owners</span>
                 </div>
 
                 {/* Checklist: Subpages */}
                 <div className="grid grid-cols-2 gap-y-5 gap-x-2 mb-8 relative z-30">
                   {[
-                    "Why Join",
-                    "What You Get",
-                    "The Model",
-                    "Brochure",
+                    dict.common.nav.franchiseItems.whyJoin,
+                    dict.common.nav.franchiseItems.whatYouGet,
+                    dict.common.nav.franchiseItems.model,
+                    dict.common.nav.franchiseItems.brochure,
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-4 text-[16px] lg:text-[17px] font-bold text-[#063354]">
                       <div className="relative w-8 h-8 flex-shrink-0">
@@ -280,7 +277,7 @@ export default async function HomePage({
                     href={`/${lang}/franchise`}
                     className="bg-white text-[#063354] py-2.5 px-8 text-xs font-black uppercase tracking-[0.15em] w-auto inline-flex justify-center rounded-2xl border-2 border-white/50 hover:bg-[#00aae5] hover:text-white hover:scale-105 transition-all duration-300"
                   >
-                    See More <ArrowRight className="w-4 h-4 ml-2" />
+                    {t.pathways.seeMore} <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
                 </div>
               </div>
@@ -336,24 +333,23 @@ export default async function HomePage({
 
 
                 <div className="mb-6 relative z-30 flex-1">
-                  <h3 className="text-5xl lg:text-6xl font-fredoka font-black leading-tight transition-transform hover:scale-105 duration-300"
+                  <h3 className="text-3xl lg:text-4xl xl:text-5xl font-fredoka font-black leading-tight transition-transform hover:scale-105 duration-300 hyphens-auto break-words"
                     style={{
                       color: "#ffc600",
                       WebkitTextStroke: "10px #fff",
                       paintOrder: "stroke fill",
                       filter: "drop-shadow(0 6px 0 rgba(0,0,0,0.1))"
                     }}>
-                    Educator
+                    {t.audiences.educators.titleOwner}
                   </h3>
-
                 </div>
 
                 {/* Checklist: Subpages */}
                 <div className="grid grid-cols-2 gap-y-5 gap-x-2 mb-8 relative z-30">
                   {[
-                    "Method",
-                    "Materials",
-                    "Certification",
+                    dict.common.nav.educatorItems.method,
+                    dict.common.nav.educatorItems.materials,
+                    dict.common.nav.educatorItems.certification,
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-4 text-[16px] lg:text-[17px] font-bold text-[#063354]">
                       <div className="relative w-8 h-8 flex-shrink-0">
@@ -392,7 +388,7 @@ export default async function HomePage({
                     href={`/${lang}/educators`}
                     className="bg-white text-[#063354] py-2.5 px-8 text-xs font-black uppercase tracking-[0.15em] w-auto inline-flex justify-center rounded-2xl border-2 border-white/50 hover:bg-[#ffc600] hover:text-white hover:scale-105 transition-all duration-300"
                   >
-                    See More <ArrowRight className="w-4 h-4 ml-2" />
+                    {t.pathways.seeMore} <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
                 </div>
               </div>
@@ -448,25 +444,24 @@ export default async function HomePage({
 
 
                 <div className="mb-6 relative z-30 flex-1">
-                  <h3 className="text-5xl lg:text-6xl font-fredoka font-black leading-tight transition-transform hover:scale-105 duration-300"
+                  <h3 className="text-3xl lg:text-4xl xl:text-5xl font-fredoka font-black leading-tight transition-transform hover:scale-105 duration-300 hyphens-auto break-words"
                     style={{
                       color: "#fff78f",
                       WebkitTextStroke: "10px #fff",
                       paintOrder: "stroke fill",
                       filter: "drop-shadow(0 6px 0 rgba(0,0,0,0.1))"
                     }}>
-                    Parents
+                    {t.audiences.parents.titleOwner}
                   </h3>
-
                 </div>
 
                 {/* Checklist: Subpages */}
                 <div className="grid grid-cols-2 gap-y-5 gap-x-2 mb-8 relative z-30">
                   {[
-                    "Why Choose",
-                    "Learning Levels",
-                    "Find Us",
-                    "Mobile App",
+                    dict.common.nav.parentItems.whyChoose,
+                    dict.common.nav.parentItems.learningLevels,
+                    dict.common.nav.parentItems.findUs,
+                    dict.common.nav.parentItems.mobileApp,
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-4 text-[16px] lg:text-[17px] font-bold text-[#063354]">
                       <div className="relative w-8 h-8 flex-shrink-0">
@@ -505,7 +500,7 @@ export default async function HomePage({
                     href={`/${lang}/parents`}
                     className="bg-white text-[#063354] py-2.5 px-8 text-xs font-black uppercase tracking-[0.15em] w-auto inline-flex justify-center rounded-2xl border-2 border-white/50 hover:bg-[#fff78f] hover:scale-105 transition-all duration-300"
                   >
-                    See More <ArrowRight className="w-4 h-4 ml-2" />
+                    {t.pathways.seeMore} <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
                 </div>
               </div>
@@ -535,15 +530,17 @@ export default async function HomePage({
               <div className="relative text-center items-center flex flex-col">
                 {/* Creative Background Glows */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/5 rounded-full blur-[80px] opacity-70 animate-pulse-slow pointer-events-none" />
-                <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black leading-[1.1] tracking-tight mb-4 relative z-10">
-                  What is <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black leading-[1.1] tracking-tight mb-4 relative z-10 w-full text-center flex justify-center items-center gap-2">
+                  <span>{t.whatIs.title.split(/Hi\s*Kids/i)[0]}</span>
+                  <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl inline-block transition-transform hover:scale-105 duration-300"
                     style={{
                       WebkitTextStroke: "12px #00AEEF",
                       paintOrder: "stroke fill",
                       filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
                     }}>
                     HiKids
-                  </span> ?
+                  </span>
+                  <span>?</span>
                 </h2>
               </div>
 
@@ -705,9 +702,9 @@ export default async function HomePage({
 
                   <div className="space-y-4 max-w-xl">
                     {/* Tag Removed */}
-                    <h4 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 tracking-tight !font-fredoka">Global Franchise Network</h4>
+                    <h4 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 tracking-tight !font-fredoka">{t.whatIs.globalNetwork}</h4>
                     <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium opacity-90 text-balance">
-                      {t.whatIs.subtitle || "A modern educational franchise built on progressive learning levels, designed to nurture potential worldwide."}
+                      {t.whatIs.subtitle}
                     </p>
                   </div>
                 </div>
@@ -717,7 +714,7 @@ export default async function HomePage({
                     href={`/${lang}/franchise`}
                     className="btn-primary px-10 py-4 text-xs tracking-widest uppercase hover:scale-105"
                   >
-                    Join the Network <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                    {t.whatIs.joinNetwork} <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -753,12 +750,12 @@ export default async function HomePage({
                   <div className="relative inline-flex flex-col items-center group mb-10">
                     {/* The Puffy Text Title */}
                     <h2 className="relative z-10 text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black leading-tight tracking-tight select-none pt-2 px-4 whitespace-nowrap text-slate-900">
-                      Meet <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                      {dict.about.moka.title.split(' ')[0]} <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
                         style={{
                           WebkitTextStroke: "12px #fff",
                           paintOrder: "stroke fill"
                         }}>
-                        {dict.about.moka.title}
+                        {dict.about.moka.title.split(' ').slice(1).join(' ')}
                       </span>
                     </h2>
 
@@ -812,14 +809,13 @@ export default async function HomePage({
               <MotionWrapper direction="right" delay={0.1}>
                 <div className="space-y-6">
                   {/* Tag Removed */}
-                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4">
-                    Why HiKids is <br className="sm:hidden" />
-                    <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4 flex flex-col items-start gap-y-2">
+                    <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl inline-block transition-transform hover:scale-105 duration-300"
                       style={{
                         WebkitTextStroke: "12px #fff",
                         paintOrder: "stroke fill"
                       }}>
-                      Different
+                      {t.whyDifferent.title}
                     </span>
                   </h2>
                   <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed max-w-2xl font-medium">
@@ -830,22 +826,21 @@ export default async function HomePage({
 
               {/* Feature Grid - Cards Alignment */}
               <div className="grid sm:grid-cols-2 gap-6">
-                {[
-                  { title: "Structured levels", desc: "Scientific progress tracking for every developmental stage.", icon: BookOpen },
-                  { title: "Modern method", desc: "Digital-first learning with interactive, gamified content.", icon: Zap },
-                  { title: "Proven model", desc: "A brand built on global success and business excellence.", icon: ShieldCheck },
-                  { title: "Teacher support", desc: "Continuous training and a community of global experts.", icon: GraduationCap }
-                ].map((item, i) => (
-                  <MotionItem key={i} className="bg-white p-8 lg:p-10 rounded-[2rem] shadow-sm border border-slate-100 flex flex-col items-start text-left group hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-hikids-blue mb-6 group-hover:scale-110 transition-transform">
-                      <item.icon size={24} />
-                    </div>
-                    <h3 className="text-xl lg:text-2xl font-black text-slate-800 mb-3 leading-tight">{item.title}</h3>
-                    <p className="text-slate-500 text-sm lg:text-base leading-relaxed font-medium">
-                      {item.desc}
-                    </p>
-                  </MotionItem>
-                ))}
+                {t.whyDifferent.features.map((item, i) => {
+                  const icons = [BookOpen, Zap, ShieldCheck, GraduationCap];
+                  const Icon = icons[i];
+                  return (
+                    <MotionItem key={i} className="bg-white p-8 lg:p-10 rounded-[2rem] shadow-sm border border-slate-100 flex flex-col items-start text-left group hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+                      <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-hikids-blue mb-6 group-hover:scale-110 transition-transform">
+                        <Icon size={24} />
+                      </div>
+                      <h3 className="text-xl lg:text-2xl font-black text-slate-800 mb-3 leading-tight">{item.title}</h3>
+                      <p className="text-slate-500 text-sm lg:text-base leading-relaxed font-medium">
+                        {item.description}
+                      </p>
+                    </MotionItem>
+                  )
+                })}
               </div>
             </div>
 
@@ -905,19 +900,17 @@ export default async function HomePage({
                   {/* Tag Removed */}
 
                   <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-[#063354] leading-[1.05] tracking-tight">
-                    Start your <br />
-                    <span className="text-white text-6xl lg:text-8xl xl:text-9xl mt-2 inline-block transition-transform hover:scale-105 duration-300"
+                    <span className="text-white mt-2 inline-block transition-transform hover:scale-105 duration-300"
                       style={{
                         WebkitTextStroke: "12px #00AEEF",
                         paintOrder: "stroke fill"
                       }}>
-                      Journey
+                      {t.joinFamily.subtitle}
                     </span>
-                    <br /> with HiKids
                   </h2>
 
-                  <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed font-medium max-w-xl mx-auto lg:mx-0 opacity-90">
-                    Empower your journey with HiKids. Whether you are a parent, educator, or business owner — we are here to support every step of the way.
+                  <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed font-medium max-w-xl mx-auto lg:mx-0 opacity-90 mt-6">
+                    {t.joinFamily.description}
                   </p>
                 </div>
               </MotionWrapper>
@@ -934,7 +927,7 @@ export default async function HomePage({
                   href={`/${lang}/contact`}
                   className="bg-white text-[#063354] hover:bg-slate-50 px-12 py-5 rounded-[2rem] text-lg font-black uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-sm"
                 >
-                  {dict.common.cta.contactUs}
+                  {t.joinFamily.contactUs}
                 </Link>
               </div>
             </div>

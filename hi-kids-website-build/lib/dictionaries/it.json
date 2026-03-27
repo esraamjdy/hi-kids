@@ -383,6 +383,13 @@
       "description": "Our brochure covers the HiKids method, franchise model, investment overview, and partner testimonials. No form required -- just click and download.",
       "cta": "Download Brochure (PDF)",
       "note": "Free download. No registration required."
+    },
+    "explore": {
+      "title": "Explore the Model"
+    },
+    "legacy": {
+      "title": "Build your Legacy",
+      "subtitle": "Join our international family of successful educators and business owners."
     }
   },
   "educators": {

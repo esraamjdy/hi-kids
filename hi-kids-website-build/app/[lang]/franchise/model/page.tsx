@@ -38,7 +38,7 @@ export default async function ModelPage({
                   <MotionWrapper direction="right">
                     {/* Tag Removed */}
                     <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.1] tracking-tight text-balance">
-                      Our Proven <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                      Our Proven <span className="text-white text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
                           style={{
                             WebkitTextStroke: "12px #00AEEF",
                             paintOrder: "stroke fill",
@@ -67,7 +67,7 @@ export default async function ModelPage({
                       <div className="w-20 h-20 shrink-0 rounded-full bg-slate-900 text-white flex items-center justify-center text-3xl font-black font-fredoka shadow-lg">
                         {i + 1}
                       </div>
-                      <div className={`flex-1 bg-slate-50 p-10 lg:p-14 rounded-[3rem] border border-slate-100 group hover:bg-white hover:shadow-xl transition-all duration-500 hover:-translate-y-2 ${i % 2 !== 0 ? 'text-right' : ''}`}>
+                      <div className={`flex-1 bg-blue-50/50 p-10 lg:p-14 rounded-[3rem] border border-blue-100 group hover:bg-white hover:shadow-xl transition-all duration-500 hover:-translate-y-2 ${i % 2 !== 0 ? 'text-right' : ''}`}>
                          <h3 className="text-2xl lg:text-4xl font-fredoka font-black text-slate-900 mb-4 group-hover:text-hikids-blue transition-colors">
                             {step.title}
                          </h3>
@@ -83,7 +83,7 @@ export default async function ModelPage({
       </section>
 
       {/* ─── INVESTMENT SECTION ─── */}
-      <section className="py-4 lg:py-8 bg-[#FFEB00] relative overflow-hidden">
+      <section className="py-4 lg:py-16 bg-[#00AEEF] relative overflow-hidden">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             
@@ -93,7 +93,7 @@ export default async function ModelPage({
                    <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.1] tracking-tight">
                       {t.investment.title}
                    </h2>
-                   <p className="text-lg lg:text-3xl text-slate-800 font-medium leading-relaxed opacity-90">
+                   <p className="text-lg lg:text-3xl text-white font-medium leading-relaxed opacity-90">
                       {t.investment.description}
                    </p>
                    <div className="pt-8 text-center lg:text-left">

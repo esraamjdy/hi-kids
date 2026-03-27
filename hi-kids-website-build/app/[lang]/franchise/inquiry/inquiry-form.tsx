@@ -81,7 +81,7 @@ export function FranchiseInquiryForm({ dict }: { dict: Dictionary }) {
           <input
             id="name"
             {...register("name")}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-6 py-4 text-lg text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-4 focus:ring-hikids-yellow/20 focus:border-hikids-yellow transition-all"
+            className="w-full rounded-2xl border border-slate-200 bg-white px-6 py-4 text-lg text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-4 focus:ring-hikids-blue/20 focus:border-hikids-blue transition-all"
             placeholder="e.g. John Doe"
           />
           {errors.name && (
@@ -98,7 +98,7 @@ export function FranchiseInquiryForm({ dict }: { dict: Dictionary }) {
             id="email"
             type="email"
             {...register("email")}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-6 py-4 text-lg text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-4 focus:ring-hikids-yellow/20 focus:border-hikids-yellow transition-all"
+            className="w-full rounded-2xl border border-slate-200 bg-white px-6 py-4 text-lg text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-4 focus:ring-hikids-blue/20 focus:border-hikids-blue transition-all"
             placeholder="john@example.com"
           />
           {errors.email && (
@@ -117,7 +117,7 @@ export function FranchiseInquiryForm({ dict }: { dict: Dictionary }) {
             id="phone"
             type="tel"
             {...register("phone")}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-6 py-4 text-lg text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-4 focus:ring-hikids-yellow/20 focus:border-hikids-yellow transition-all"
+            className="w-full rounded-2xl border border-slate-200 bg-white px-6 py-4 text-lg text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-4 focus:ring-hikids-blue/20 focus:border-hikids-blue transition-all"
             placeholder="+1 234 567 890"
           />
           {errors.phone && (
@@ -133,7 +133,7 @@ export function FranchiseInquiryForm({ dict }: { dict: Dictionary }) {
           <select
             id="country"
             {...register("country")}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-6 py-4 text-lg text-slate-900 focus:outline-none focus:ring-4 focus:ring-hikids-yellow/20 focus:border-hikids-yellow transition-all appearance-none cursor-pointer"
+            className="w-full rounded-2xl border border-slate-200 bg-white px-6 py-4 text-lg text-slate-900 focus:outline-none focus:ring-4 focus:ring-hikids-blue/20 focus:border-hikids-blue transition-all appearance-none cursor-pointer"
           >
             <option value="">Select Country</option>
             {countries.map((c) => (
@@ -157,7 +157,7 @@ export function FranchiseInquiryForm({ dict }: { dict: Dictionary }) {
           id="message"
           rows={6}
           {...register("message")}
-          className="w-full rounded-2xl border border-slate-200 bg-white px-6 py-4 text-lg text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-4 focus:ring-hikids-yellow/20 focus:border-hikids-yellow transition-all resize-none"
+          className="w-full rounded-2xl border border-slate-200 bg-white px-6 py-4 text-lg text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-4 focus:ring-hikids-blue/20 focus:border-hikids-blue transition-all resize-none"
           placeholder="How can we help you building your legacy?"
         />
         {errors.message && (
