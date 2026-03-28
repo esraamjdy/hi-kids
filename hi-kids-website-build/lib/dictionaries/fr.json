@@ -283,52 +283,62 @@
       "subtitle": "A franchise opportunity built for impact and growth.",
       "features": [
         {
-          "title": "Growing Market",
-          "description": "The global early education market is expanding rapidly. Parents increasingly seek structured, quality kindergarten programs for their children."
+          "title": "Marché en Croissance",
+          "description": "Le marché mondial de l'éducation préscolaire se développe rapidement. Les parents recherchent de plus en plus des programmes de maternelle structurés et de qualité pour leurs enfants."
         },
         {
-          "title": "Competitive Advantage",
-          "description": "Our progressive learning levels, branded materials, and app integration set HiKids apart from traditional kindergartens."
+          "title": "Avantage Concurrentiel",
+          "description": "Nos niveaux d'apprentissage progressifs, nos matériels de marque et l'intégration de notre application distinguent HiKids des jardins d'enfants traditionnels."
         },
         {
-          "title": "Structured System",
-          "description": "From curriculum to marketing, everything is systematized. You don't need education experience to succeed with HiKids."
+          "title": "Système Structuré",
+          "description": "Du programme d'études au marketing, tout est systématisé. Vous n'avez pas besoin d'expérience en éducation pour réussir avec HiKids."
         },
         {
-          "title": "Brand Recognition",
-          "description": "Benefit from a professionally built brand with consistent messaging, visual identity, and market positioning."
+          "title": "Reconnaissance de Marque",
+          "description": "Bénéficiez d'une marque construite professionnellement avec des messages cohérents, une identité visuelle et un positionnement sur le marché."
         }
-      ]
+      ],
+      "cta": {
+        "title": "Votre succès commence ici",
+        "subtitle": "Rejoignez notre réseau mondial d'éducateurs.",
+        "applyNow": "Postuler maintenant"
+      }
     },
     "whatYouGet": {
-      "title": "What You Get",
-      "subtitle": "Everything you need to launch and run a successful HiKids kindergarten.",
+      "title": "Ce que vous recevez",
+      "subtitle": "Tout ce dont vous avez besoin pour lancer et gérer une maternelle HiKids réussie.",
       "items": [
         {
-          "title": "License & Territory",
-          "description": "Exclusive territory rights and full licensing to operate under the HiKids brand."
+          "title": "Licence et Territoire",
+          "description": "Droits territoriaux exclusifs et licence complète pour opérer sous la marque HiKids."
         },
         {
-          "title": "Educational Framework",
-          "description": "Complete curriculum for all four progressive learning levels, including lesson plans and assessment tools."
+          "title": "Cadre Éducatif",
+          "description": "Programme complet pour les quatre niveaux d'apprentissage progressifs, y compris les plans de cours."
         },
         {
-          "title": "Teacher Materials",
-          "description": "Ready-to-use classroom materials, activity kits, and digital resources for educators."
+          "title": "Matériel Pédagogique",
+          "description": "Matériel de classe prêt à l'emploi, kits d'activités et ressources numériques pour les éducateurs."
         },
         {
-          "title": "Marketing Support",
-          "description": "Brand guidelines, marketing templates, social media assets, and launch campaign support."
+          "title": "Support Marketing",
+          "description": "Directives de marque, modèles marketing, ressources pour les réseaux sociaux et support de lancement."
         },
         {
-          "title": "Training Program",
-          "description": "Comprehensive training for franchise owners and their teaching staff, with ongoing professional development."
+          "title": "Programme de Formation",
+          "description": "Formation complète pour les franchisés et leur personnel enseignant, avec développement professionnel continu."
         },
         {
-          "title": "Technology Platform",
-          "description": "Access to the HiKids app for parent communication, progress tracking, and digital learning resources."
+          "title": "Plateforme Technologique",
+          "description": "Accès à l'application HiKids pour la communication avec les parents et le suivi des progrès."
         }
-      ]
+      ],
+      "cta": {
+        "title": "Commencez votre voyage",
+        "subtitle": "Faites partie du réseau de jardins d'enfants le plus innovant au monde.",
+        "applyNow": "Devenir partenaire"
+      }
     },
     "model": {
       "title": "Franchise Model",

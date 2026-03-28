@@ -309,7 +309,12 @@
           "title": "Brand Recognition",
           "description": "Benefit from a professionally built brand with consistent messaging, visual identity, and market positioning."
         }
-      ]
+      ],
+      "cta": {
+        "title": "Your Success Starts Here",
+        "subtitle": "Join our global network of educators.",
+        "applyNow": "Apply Now"
+      }
     },
     "whatYouGet": {
       "title": "What You Get",
@@ -339,7 +344,12 @@
           "title": "Technology Platform",
           "description": "Access to the HiKids app for parent communication, progress tracking, and digital learning resources."
         }
-      ]
+      ],
+      "cta": {
+        "title": "Start your Journey",
+        "subtitle": "Become part of the world's most innovative preschool franchise.",
+        "applyNow": "Partner Now"
+      }
     },
     "model": {
       "title": "Franchise Model",
