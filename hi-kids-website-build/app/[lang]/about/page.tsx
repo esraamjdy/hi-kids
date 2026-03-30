@@ -49,7 +49,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                     <span className="text-hikids-blue">{t.hero.title.split(' ').slice(0, 1).join(' ')}</span>
                     <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl inline-block transition-transform hover:scale-105 duration-300"
                       style={{
-                        WebkitTextStroke: "12px #00AEEF",
+                        WebkitTextStroke: "8px #00AEEF",
                         paintOrder: "stroke fill"
                       }}>
                       {t.hero.title.split(' ').slice(1, -1).join(' ')}
@@ -106,7 +106,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                   <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-800 leading-[1.1] tracking-tight mb-4">
                     <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
                       style={{
-                        WebkitTextStroke: "12px #00AEEF",
+                        WebkitTextStroke: "8px #00AEEF",
                         paintOrder: "stroke fill"
                       }}>
                       {t.story.title}
@@ -157,7 +157,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                   <h2 className="text-5xl lg:text-6xl xl:text-7xl font-fredoka font-bold leading-[1.1] tracking-tight mb-6 mt-4">
                     <span className="text-white inline-block transition-transform hover:scale-105 duration-300"
                       style={{
-                        WebkitTextStroke: "10px #FFEB00",
+                        WebkitTextStroke: "8px #FFEB00",
                         paintOrder: "stroke fill"
                       }}>
                       {t.mission.title}
@@ -177,7 +177,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                   <h2 className="text-5xl lg:text-6xl xl:text-7xl font-fredoka font-bold leading-[1.1] tracking-tight mb-6 mt-4">
                     <span className="text-white inline-block transition-transform hover:scale-105 duration-300"
                       style={{
-                        WebkitTextStroke: "10px #00AEEF",
+                        WebkitTextStroke: "8px #00AEEF",
                         paintOrder: "stroke fill"
                       }}>
                       {t.vision.title}
@@ -209,7 +209,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
             <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-800 leading-[1.1] tracking-tight flex flex-col justify-center gap-y-2 items-center">
               <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl inline-block"
                 style={{
-                  WebkitTextStroke: "12px #00AEEF",
+                  WebkitTextStroke: "8px #00AEEF",
                   paintOrder: "stroke fill"
                 }}>
                 {t.method.title}
@@ -296,7 +296,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                   <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-800 leading-[1.1] tracking-tight mb-4">
                     <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-[7rem] inline-block transition-transform hover:scale-105 duration-300"
                       style={{
-                        WebkitTextStroke: "12px #00AEEF",
+                        WebkitTextStroke: "8px #00AEEF",
                         paintOrder: "stroke fill"
                       }}>
                       {t.founder.title}

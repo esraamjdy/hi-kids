@@ -37,8 +37,8 @@ export default async function ContactPage({
         <div className="mx-auto max-w-[1500px] px-6 lg:px-16 w-full">
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-32 border-b border-slate-100 pb-16">
             {/* peeking mascot */}
-            <MotionWrapper type="scale" className="relative w-72 h-72 lg:w-96 lg:h-96 -mb-24 lg:-mb-32 z-10 lg:-ml-24">
-              <Image src="/images/Vacation.png" alt="Moka" fill className="object-contain drop-shadow-2xl scale-[1.6]" />
+            <MotionWrapper type="scale" className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-96 lg:h-96 -mb-16 sm:-mb-24 lg:-mb-32 z-10 lg:-ml-24">
+              <Image src="/images/Vacation.png" alt="Moka" fill className="object-contain drop-shadow-2xl scale-110 sm:scale-125 lg:scale-[1.6]" />
             </MotionWrapper>
 
             <div className="flex-1 text-center lg:text-left pt-8">
@@ -46,7 +46,7 @@ export default async function ContactPage({
                 <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-900 leading-[1.1] tracking-tight text-balance mb-6">
                   {t.title.split(' ').slice(0, -1).join(' ')} <span className="text-hikids-yellow text-6xl lg:text-[7rem] xl:text-[8.5rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
                     style={{
-                      WebkitTextStroke: "12px #0f172a",
+                      WebkitTextStroke: "8px #0f172a",
                       paintOrder: "stroke fill",
                       filter: "drop-shadow(0 8px 0 rgba(15, 23, 42, 0.1))"
                     }}>

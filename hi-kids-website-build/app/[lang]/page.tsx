@@ -46,7 +46,7 @@ export default async function HomePage({
 
 
       {/* ─── HERO ─── */}
-      <section className="relative min-h-[30vh] lg:min-h-[45vh] flex items-center overflow-hidden bg-background py-4 lg:py-8 pb-20 lg:pb-24">
+      <section className="relative min-h-[30vh] lg:min-h-[45vh] flex items-center overflow-hidden bg-background py-12 lg:py-8 pb-24 lg:pb-24">
 
         <div className="absolute bottom-[20%] right-[10%] w-14 h-14 opacity-30 animate-sway hidden lg:block">
           <Sparkles className="text-slate-800" />
@@ -65,7 +65,7 @@ export default async function HomePage({
                       className="inline-block transition-transform hover:scale-105 duration-300"
                       style={{
                         color: "#FFEB00",
-                        WebkitTextStroke: "10px #00AEEF",
+                        WebkitTextStroke: "6px #00AEEF",
                         paintOrder: "stroke fill",
                       }}
                     >
@@ -86,23 +86,23 @@ export default async function HomePage({
               <div className="relative w-[300px] h-[260px] sm:w-[360px] sm:h-[320px] lg:w-[420px] lg:h-[370px] xl:w-[480px] xl:h-[420px] overflow-visible">
 
                 <MotionWrapper direction="down" delay={0.4}>
-                  <div className="absolute top-[-35%] right-[-55%] w-[85%] h-[70%] z-0 opacity-90">
+                  <div className="absolute top-[-45%] sm:top-[-35%] right-[-55%] w-[85%] h-[70%] z-0 opacity-90">
                     <Image src="/images/HiKids-57.svg" alt="background patterns" fill className="object-contain object-right-top [filter:invert(74%)_sepia(51%)_saturate(595%)_hue-rotate(160deg)_brightness(94%)_contrast(94%)]" />
                   </div>
                 </MotionWrapper>
 
                 {/* Floating Decorative Shapes - Randomized Layout */}
                 <MotionWrapper type="scale" delay={0.6}>
-                  <div className="absolute -top-16 right-[10%] w-14 h-14 z-10 animate-float-slow opacity-80 -rotate-12">
+                  <div className="absolute -top-24 sm:-top-16 right-[10%] w-14 h-14 z-10 animate-float-slow opacity-80 -rotate-12">
                     <Image src="/images/HiKids-59.svg" alt="" fill className="object-contain [filter:invert(74%)_sepia(51%)_saturate(595%)_hue-rotate(160deg)_brightness(94%)_contrast(94%)]" />
                   </div>
                 </MotionWrapper>
 
-                <div className="absolute -top-[110%] -right-[900px] w-[2000px] h-[2000px] z-[-10] animate-wiggle opacity-30 rotate-12 pointer-events-none">
+                <div className="absolute -top-[50%] sm:-top-[140%] -right-[270px] sm:-right-[1000px] w-[800px] h-[800px] sm:w-[2200px] sm:h-[2200px] z-0 animate-wiggle opacity-30 rotate-12">
                   <Image src="/images/HiKids-25.svg" alt="" fill className="object-contain [filter:invert(74%)_sepia(51%)_saturate(595%)_hue-rotate(160deg)_brightness(94%)_contrast(94%)]" />
                 </div>
 
-                <div className="absolute -top-[70%] -right-[700px] w-[1600px] h-[1600px] z-0 animate-wiggle opacity-100 rotate-12">
+                <div className="absolute -top-[40%] sm:-top-[110%] -right-[270px] sm:-right-[900px] w-[800px] h-[800px] sm:w-[2000px] sm:h-[2000px] z-0 animate-wiggle opacity-100 rotate-12">
                   <Image src="/images/HiKids-25.svg" alt="" fill className="object-contain [filter:invert(74%)_sepia(51%)_saturate(595%)_hue-rotate(160deg)_brightness(94%)_contrast(94%)]" />
                 </div>
 
@@ -116,16 +116,15 @@ export default async function HomePage({
                   <div className="absolute -bottom-8 right-[20%] w-12 h-12 z-30 animate-drift opacity-50 rotate-[120deg]">
                     <Image src="/images/HiKids-26.svg" alt="" fill className="object-contain [filter:invert(74%)_sepia(51%)_saturate(595%)_hue-rotate(160deg)_brightness(94%)_contrast(94%)]" />
                   </div>
-                </MotionWrapper>
-
-                <div className="absolute top-[-20%] left-[-35%] w-[140%] h-[170%] z-10 -rotate-[28deg] animate-float">
-                  <Image src="/images/hi.png" alt="HiKids mascot" fill className="object-contain object-bottom drop-shadow-lg scale-x-[-1]" />
-                </div>
-
-                <MotionWrapper direction="up" delay={0.6} duration={1.2}>
-                  <div className="absolute bottom-[-45%] right-[-90%] w-[220%] h-[350%] z-20">
-                    <Image src="/images/boy.png" alt="Student reading" fill className="object-contain object-bottom drop-shadow-[0_25px_50px_rgba(0,0,0,0.15)]" priority />
+                  <div className="absolute top-[-30%] sm:top-[-20%] left-[-20%] sm:left-[-35%] w-[110%] sm:w-[140%] h-[140%] sm:h-[170%] z-10 -rotate-[22deg] sm:-rotate-[28deg] animate-float">
+                    <Image src="/images/hi.png" alt="HiKids mascot" fill className="object-contain object-bottom drop-shadow-lg scale-x-[-1]" />
                   </div>
+
+                  <MotionWrapper direction="up" delay={0.6} duration={1.2}>
+                    <div className="absolute bottom-[-35%] sm:bottom-[-45%] right-[-20%] sm:right-[-90%] w-[130%] sm:w-[220%] h-[200%] sm:h-[350%] z-20">
+                      <Image src="/images/boy.png" alt="Student reading" fill className="object-contain object-bottom drop-shadow-[0_25px_50px_rgba(0,0,0,0.15)]" priority />
+                    </div>
+                  </MotionWrapper>
                 </MotionWrapper>
               </div>
             </div>
@@ -136,19 +135,19 @@ export default async function HomePage({
       </section>
 
       {/* Hero Divider */}
-      <div className="w-full relative -mt-[100px] z-20">
+      <div className="w-full relative -mt-[30px] lg:-mt-[100px] z-20">
         <WaveDivider color="white" />
       </div>
 
       {/* ─── PATHWAYS ─── */}
-      <section className="bg-white py-8 lg:py-12 relative overflow-hidden">
+      <section className="bg-white pt-8 pb-12 lg:py-12 relative overflow-hidden">
 
 
         <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10 mt-0">
 
           {/* Refined Section Header: Banner for tag, Heading below */}
           <MotionWrapper viewportAmount={0.3}>
-            <div className="flex flex-col items-center mb-10 lg:mb-16 relative group">
+            <div className="flex flex-col items-center mb-4 lg:mb-16 relative group">
               {/* Tag Removed */}
 
               {/* Premium Standard Fredoka Heading */}
@@ -157,7 +156,7 @@ export default async function HomePage({
                   <span className="text-hikids-green">{t.pathways.title.split(' ').slice(0, -1).join(' ')} </span>
                   <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
                     style={{
-                      WebkitTextStroke: "12px #00AEEF",
+                      WebkitTextStroke: "8px #00AEEF",
                       paintOrder: "stroke fill",
                       filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
                     }}>
@@ -224,7 +223,7 @@ export default async function HomePage({
                   <h3 className="text-3xl lg:text-4xl xl:text-5xl font-fredoka font-bold leading-tight transition-transform hover:scale-105 duration-300 hyphens-auto break-words"
                     style={{
                       color: "#00aae5",
-                      WebkitTextStroke: "10px #fff",
+                      WebkitTextStroke: "6px #fff",
                       paintOrder: "stroke fill",
                       filter: "drop-shadow(0 6px 0 rgba(0,0,0,0.1))"
                     }}>
@@ -336,7 +335,7 @@ export default async function HomePage({
                   <h3 className="text-3xl lg:text-4xl xl:text-5xl font-fredoka font-bold leading-tight transition-transform hover:scale-105 duration-300 hyphens-auto break-words"
                     style={{
                       color: "#ffc600",
-                      WebkitTextStroke: "10px #fff",
+                      WebkitTextStroke: "6px #fff",
                       paintOrder: "stroke fill",
                       filter: "drop-shadow(0 6px 0 rgba(0,0,0,0.1))"
                     }}>
@@ -447,7 +446,7 @@ export default async function HomePage({
                   <h3 className="text-3xl lg:text-4xl xl:text-5xl font-fredoka font-bold leading-tight transition-transform hover:scale-105 duration-300 hyphens-auto break-words"
                     style={{
                       color: "#fff78f",
-                      WebkitTextStroke: "10px #fff",
+                      WebkitTextStroke: "6px #fff",
                       paintOrder: "stroke fill",
                       filter: "drop-shadow(0 6px 0 rgba(0,0,0,0.1))"
                     }}>
@@ -534,7 +533,7 @@ export default async function HomePage({
                   <span>{t.whatIs.title.replace(/Hi\s*Kids/i, '').replace('?', '').trim()}</span>
                   <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl inline-block transition-transform hover:scale-105 duration-300"
                     style={{
-                      WebkitTextStroke: "12px #00AEEF",
+                      WebkitTextStroke: "8px #00AEEF",
                       paintOrder: "stroke fill",
                       filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
                     }}>
@@ -670,9 +669,7 @@ export default async function HomePage({
                               <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5" style={{ backgroundColor: `${hexColors[i]}15` }}>
                                 <Check className="w-3 h-3" style={{ color: hexColors[i] }} strokeWidth={4} />
                               </div>
-                              <span className="text-slate-600 text-sm md:text-base font-medium leading-[1.4]">
-                                {point.trim().replace(/\.$/, '')}
-                              </span>
+                              <span className="text-slate-600 text-sm md:text-base font-medium leading-[1.4]">{point.trim().replace(/\.$/, '')}</span>
                             </li>
                           ))}
                         </ul>
@@ -731,12 +728,12 @@ export default async function HomePage({
 
             {/* Left Column: ONLY Character Image */}
             <div className="lg:col-span-6 flex justify-center lg:justify-center lg:sticky lg:top-16 lg:pt-2">
-              <MotionWrapper type="scale" delay={0.2} className="relative w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] lg:w-[800px] lg:h-[800px] lg:-ml-48">
+              <MotionWrapper type="scale" delay={0.2} className="relative w-[280px] h-[280px] sm:w-[450px] sm:h-[450px] lg:w-[800px] lg:h-[800px] lg:-ml-48">
                 <Image
                   src="/images/hi.png"
                   alt="Moka"
                   fill
-                  className="object-contain drop-shadow-2xl"
+                  className="object-contain drop-shadow-2xl scale-[1.1] sm:scale-100"
                 />
               </MotionWrapper>
             </div>
@@ -752,7 +749,7 @@ export default async function HomePage({
                     <h2 className="relative z-10 text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold leading-tight tracking-tight select-none pt-2 px-4 whitespace-nowrap text-slate-900">
                       {dict.about.moka.title.split(' ')[0]} <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
                         style={{
-                          WebkitTextStroke: "12px #fff",
+                          WebkitTextStroke: "8px #fff",
                           paintOrder: "stroke fill"
                         }}>
                         {dict.about.moka.title.split(' ').slice(1).join(' ')}
@@ -809,23 +806,23 @@ export default async function HomePage({
               <MotionWrapper direction="right" delay={0.1}>
                 <div className="space-y-6">
                   {/* Tag Removed */}
-                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-800 leading-[1.1] tracking-tight mb-4 flex flex-col items-start gap-y-2">
-                    <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl inline-block transition-transform hover:scale-105 duration-300"
+                  <h2 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-800 leading-[1.1] tracking-tight mb-4 flex flex-col items-start gap-y-2">
+                    <span className="text-[#FFEB00] text-5xl sm:text-6xl lg:text-8xl xl:text-9xl inline-block transition-transform hover:scale-105 duration-300"
                       style={{
-                        WebkitTextStroke: "12px #fff",
+                        WebkitTextStroke: "8px #fff",
                         paintOrder: "stroke fill"
                       }}>
                       {t.whyDifferent.title}
                     </span>
                   </h2>
-                  <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed max-w-2xl font-medium">
+                  <p className="text-base lg:text-2xl text-slate-600 leading-relaxed max-w-2xl font-medium">
                     {t.whyDifferent.subtitle}
                   </p>
                 </div>
               </MotionWrapper>
 
               {/* Feature Grid - Cards Alignment */}
-              <div className="grid sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
                 {t.whyDifferent.features.map((item, i) => {
                   const icons = [BookOpen, Zap, ShieldCheck, GraduationCap];
                   const Icon = icons[i];
@@ -845,8 +842,8 @@ export default async function HomePage({
             </div>
 
             {/* Right Column: Image Only (Sticky) */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-center lg:sticky lg:top-0">
-              <MotionWrapper type="scale" delay={0.2} className="relative w-[600px] h-[600px] lg:w-[1300px] lg:h-[1300px] lg:-mr-40 lg:-mt-48">
+            <div className="lg:col-span-5 flex justify-center lg:justify-center lg:sticky lg:top-0 order-first lg:order-last">
+              <MotionWrapper type="scale" delay={0.2} className="relative w-[220px] h-[220px] sm:w-[360px] sm:h-[360px] lg:w-[1300px] lg:h-[1300px] lg:-mr-40 lg:-mt-48">
                 <Image
                   src="/images/Moka-Dance.png"
                   alt={dict.common.mascot.mokaDancing}

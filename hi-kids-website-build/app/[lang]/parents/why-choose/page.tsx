@@ -52,7 +52,7 @@ export default async function WhyChoosePage({
                 <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-900 leading-[1.1] tracking-tight text-balance">
                   {t.heroTitle1} <span className="text-white text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
                     style={{
-                      WebkitTextStroke: "12px #00AEEF",
+                      WebkitTextStroke: "8px #00AEEF",
                       paintOrder: "stroke fill",
                       filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
                     }}>

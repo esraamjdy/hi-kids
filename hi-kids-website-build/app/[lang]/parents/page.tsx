@@ -62,7 +62,7 @@ export default async function ParentsPage({
                     {t.heroTitle1} <br className="hidden lg:block" />
                     <span className="text-hikids-yellow inline-block transition-transform hover:scale-105 hover:-rotate-1 duration-300 ml-4 py-2"
                       style={{
-                        WebkitTextStroke: "12px #0f172a",
+                        WebkitTextStroke: "8px #0f172a",
                         paintOrder: "stroke fill",
                         filter: "drop-shadow(6px 10px 0 #0f172a)"
                       }}>
@@ -114,7 +114,7 @@ export default async function ParentsPage({
             <h2 className="text-4xl sm:text-5xl lg:text-7xl xl:text-[8rem] font-fredoka font-bold text-slate-800 leading-[0.9] tracking-tight">
               {t.portalTitle1} <span className="text-hikids-yellow inline-block transition-transform hover:scale-105 hover:-rotate-1 duration-300 ml-4 py-2"
                 style={{
-                  WebkitTextStroke: "12px #0f172a",
+                  WebkitTextStroke: "8px #0f172a",
                   paintOrder: "stroke fill",
                   filter: "drop-shadow(6px 10px 0 #0f172a)"
                 }}>
@@ -161,7 +161,7 @@ export default async function ParentsPage({
                     {t.ctaTitle1} <br className="hidden lg:block" />
                     <span className="text-white inline-block transition-transform hover:scale-105 hover:-rotate-1 duration-300 ml-4 py-2"
                       style={{
-                        WebkitTextStroke: "12px #0f172a",
+                        WebkitTextStroke: "8px #0f172a",
                         paintOrder: "stroke fill",
                         filter: "drop-shadow(6px 10px 0 #0f172a)"
                       }}>
