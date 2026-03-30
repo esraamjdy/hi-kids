@@ -65,7 +65,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
 
             {/* RIGHT – visual */}
             <div className="relative w-full flex items-center justify-center lg:justify-end">
-              <div className="relative w-[550px] h-[480px] lg:w-[850px] lg:h-[750px] xl:w-[1000px] xl:h-[900px] overflow-visible">
+              <div className="relative w-[280px] h-[240px] sm:w-[550px] sm:h-[480px] lg:w-[850px] lg:h-[750px] xl:w-[1000px] xl:h-[900px] overflow-visible">
                 <div className="absolute top-[-100%] left-[-30%] w-[170%] h-[170%] z-10 -rotate-[22deg] animate-float">
                   <Image src="/images/3playing.png" alt={t.mascotAlt.mokaMascot} fill className="object-contain object-bottom drop-shadow-2xl" />
                 </div>
@@ -88,7 +88,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
 
             {/* Left Column: Character Image */}
             <div className="lg:col-span-6 flex justify-center lg:justify-center lg:sticky lg:top-16 lg:pt-2">
-              <MotionWrapper type="scale" delay={0.2} className="relative w-[550px] h-[550px] lg:w-[1000px] lg:h-[1000px] -ml-12 lg:-ml-48">
+              <MotionWrapper type="scale" delay={0.2} className="relative w-[300px] h-[300px] sm:w-[550px] sm:h-[550px] lg:w-[1000px] lg:h-[1000px] -ml-12 lg:-ml-48">
                 <Image
                   src="/images/picnic.png"
                   alt={t.mascotAlt.mokaPicnic}
@@ -148,7 +148,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                 <MotionWrapper type="scale" className="w-full max-w-[500px]">
                   {/* The actual sloped box */}
                   <div className="relative w-full aspect-[4/3] rounded-[2rem] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] border-[8px] lg:border-[12px] border-white overflow-hidden -rotate-[4deg] hover:-rotate-[2deg] transition-all duration-700 group cursor-pointer bg-yellow-50">
-                    <Image src="/images/HiKids-02.png" alt={t.mascotAlt.mission} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <Image src="/images/kg1.jpg" alt={t.mascotAlt.mission} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
                 </MotionWrapper>
               </div>
@@ -192,7 +192,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                 <MotionWrapper type="scale" className="w-full max-w-[500px]">
                   {/* The actual sloped box */}
                   <div className="relative w-full aspect-[4/3] rounded-[2rem] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] border-[8px] lg:border-[12px] border-white overflow-hidden rotate-[4deg] hover:rotate-[2deg] transition-all duration-700 group cursor-pointer bg-blue-50">
-                    <Image src="/images/HiKids-03.png" alt={t.mascotAlt.vision} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <Image src="/images/kg2.jpg" alt={t.mascotAlt.vision} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
                 </MotionWrapper>
               </div>
@@ -328,7 +328,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
 
             {/* Character Image (Now Right) */}
             <div className="lg:col-span-6 flex justify-center lg:justify-end -mt-12 lg:-mt-24">
-              <MotionWrapper type="scale" delay={0.2} className="relative w-[550px] h-[550px] lg:w-[1000px] lg:h-[1000px] lg:-mr-16">
+              <MotionWrapper type="scale" delay={0.2} className="relative w-[300px] h-[300px] sm:w-[550px] sm:h-[550px] lg:w-[1000px] lg:h-[1000px] lg:-mr-16">
                 <Image
                   src="/images/flowers.png"
                   alt={t.mascotAlt.flowers}

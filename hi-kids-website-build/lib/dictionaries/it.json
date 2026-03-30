@@ -804,32 +804,38 @@
       ]
     },
     "whyChoose": {
-      "title": "Why Choose HiKids",
-      "subtitle": "Your child's safety, happiness, and development are at the heart of everything we do.",
+      "title": "Perché Scegliere HiKids",
+      "subtitle": "La sicurezza, la felicità e lo sviluppo del tuo bambino sono al centro di tutto ciò che facciamo.",
+      "heroTitle1": "Perché",
+      "heroTitle2": "Scegliere",
+      "ctaTitle1": "Il Miglior",
+      "ctaTitle2": "Inizio",
+      "ctaDesc": "Trova un asilo HiKids vicino a te e scopri la differenza del nostro approccio progressivo.",
+      "ctaBtn": "Trova un Centro",
       "sections": [
         {
-          "title": "Proven Educational Method",
-          "description": "Our progressive learning levels are backed by modern pedagogy and designed by early education experts. Every activity has a developmental purpose."
+          "title": "Metodo Educativo Comprovato",
+          "description": "I nostri livelli di apprendimento progressivi si basano sulla pedagogia moderna e sono progettati da esperti. Ogni attività ha uno scopo di sviluppo."
         },
         {
-          "title": "Safety First",
-          "description": "All HiKids locations maintain the highest safety standards, including certified staff, secure facilities, and comprehensive health protocols."
+          "title": "La Sicurezza Prima di Tutto",
+          "description": "Tutte le sedi HiKids mantengono i più alti standard di sicurezza, con personale certificato, strutture sicure e protocolli sanitari completi."
         },
         {
-          "title": "Emotional Development",
-          "description": "We prioritize social-emotional learning because we know that happy, confident children are better learners. Empathy, self-regulation, and resilience are core to our approach."
+          "title": "Sviluppo Emotivo",
+          "description": "Diamo priorità all'apprendimento socio-emotivo perché sappiamo che i bambini felici e sicuri di sé imparano meglio. Empatia, autoregolazione e resilienza sono fondamentali."
         },
         {
-          "title": "Parent Partnership",
-          "description": "Stay connected through our app, regular progress reports, and parent-teacher conferences. You're always part of your child's learning journey."
+          "title": "Partnership con i Genitori",
+          "description": "Resta in contatto tramite la nostra app, report periodici e colloqui scuola-famiglia. Sei sempre parte del percorso educativo del tuo bambino."
         },
         {
-          "title": "Qualified Educators",
-          "description": "Every HiKids teacher is trained and certified in our method, ensuring consistent quality across all locations."
+          "title": "Educatori Qualificati",
+          "description": "Ogni insegnante HiKids è formato e certificato nel nostro metodo, garantendo una qualità costante in tutte le sedi."
         },
         {
-          "title": "International Standards",
-          "description": "Whether in London, Warsaw, or Milan, your child receives the same high-quality HiKids experience."
+          "title": "Standard Internazionali",
+          "description": "Che sia a Londra, Varsavia o Milano, il tuo bambino riceve la stessa esperienza HiKids di alta qualità."
         }
       ]
     },

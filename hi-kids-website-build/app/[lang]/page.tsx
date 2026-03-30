@@ -83,7 +83,7 @@ export default async function HomePage({
 
             {/* RIGHT – visual */}
             <div className="relative w-full flex items-center justify-center lg:justify-center">
-              <div className="relative w-[360px] h-[320px] lg:w-[420px] lg:h-[370px] xl:w-[480px] xl:h-[420px] overflow-visible">
+              <div className="relative w-[300px] h-[260px] sm:w-[360px] sm:h-[320px] lg:w-[420px] lg:h-[370px] xl:w-[480px] xl:h-[420px] overflow-visible">
 
                 <MotionWrapper direction="down" delay={0.4}>
                   <div className="absolute top-[-35%] right-[-55%] w-[85%] h-[70%] z-0 opacity-90">
@@ -731,7 +731,7 @@ export default async function HomePage({
 
             {/* Left Column: ONLY Character Image */}
             <div className="lg:col-span-6 flex justify-center lg:justify-center lg:sticky lg:top-16 lg:pt-2">
-              <MotionWrapper type="scale" delay={0.2} className="relative w-[450px] h-[450px] lg:w-[800px] lg:h-[800px] lg:-ml-48">
+              <MotionWrapper type="scale" delay={0.2} className="relative w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] lg:w-[800px] lg:h-[800px] lg:-ml-48">
                 <Image
                   src="/images/hi.png"
                   alt="Moka"

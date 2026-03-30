@@ -74,7 +74,7 @@ export default async function FranchiseLandingPage({
             <div className="lg:col-span-7 space-y-10 text-center lg:text-left relative z-10 lg:translate-x-8 xl:translate-x-16">
               <MotionWrapper direction="right">
                 <div className="space-y-8">
-                  <h1 className="text-6xl lg:text-7xl xl:text-[8rem] font-fredoka font-bold text-slate-900 leading-[0.9] tracking-tight text-balance">
+                  <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-[8rem] font-fredoka font-bold text-slate-900 leading-[0.9] tracking-tight text-balance">
                     {t.title.split(' ').slice(0, -2).join(' ')} <br className="hidden lg:block" />
                     {t.title.split(' ').slice(-2, -1).join(' ')} 
                     <span className="text-hikids-yellow inline-block transition-transform hover:scale-105 hover:-rotate-1 duration-300 ml-4 py-2"
@@ -119,7 +119,7 @@ export default async function FranchiseLandingPage({
               return (
                 <MotionItem
                   key={stat.label}
-                  className="group relative rounded-[4rem] bg-white p-10 lg:p-14 transition-all duration-500 shadow-2xl shadow-blue-500/10 hover:shadow-blue-500/30 hover:-translate-y-4 border-b-8 border-hikids-blue/20 border-x-2 border-t-2 border-blue-50 overflow-hidden text-center"
+                  className="group relative rounded-[4rem] bg-white p-8 sm:p-10 lg:p-14 transition-all duration-500 shadow-2xl shadow-blue-500/10 hover:shadow-blue-500/30 hover:-translate-y-4 border-b-8 border-hikids-blue/20 border-x-2 border-t-2 border-blue-50 overflow-hidden text-center"
                 >
                   <div className="mb-8 mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-blue-50 text-hikids-blue group-hover:bg-[#00AEEF] group-hover:text-white transition-all duration-500 group-hover:scale-110 shadow-inner">
                     <Icon size={36} />
@@ -144,7 +144,7 @@ export default async function FranchiseLandingPage({
       <section className="py-4 lg:py-16 bg-blue-50 relative overflow-hidden">
         <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10 w-full">
           <div className="text-center mb-16">
-            <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-800 leading-[1.1] tracking-tight">
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-800 leading-[1.1] tracking-tight">
               {dict.franchise.explore.title.split(' ').slice(0, -1).join(' ')} <span className="text-white text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
                 style={{
                   WebkitTextStroke: "12px #00AEEF",
@@ -159,7 +159,7 @@ export default async function FranchiseLandingPage({
           <div className="grid md:grid-cols-3 gap-8">
             {pathwayLinks.map((path, i) => (
               <MotionItem key={i} className="h-full">
-                <Link href={path.href} className="group block h-full bg-white p-10 lg:p-12 rounded-[3.5rem] border border-blue-100 shadow-sm hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 relative overflow-hidden">
+                <Link href={path.href} className="group block h-full bg-white p-8 sm:p-10 lg:p-12 rounded-[3.5rem] border border-blue-100 shadow-sm hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-hikids-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-hikids-blue/10 transition-colors" />
                   <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-hikids-blue mb-8 shadow-inner group-hover:scale-110 transition-transform">
                     <path.icon size={32} />
@@ -187,7 +187,7 @@ export default async function FranchiseLandingPage({
 
             {/* Left Column: Mascot */}
             <div className="relative w-full lg:w-1/2 flex justify-center lg:justify-center order-2 lg:order-1 mt-12 lg:mt-0">
-              <MotionWrapper type="scale" className="relative w-[420px] h-[420px] lg:w-[850px] lg:h-[850px] lg:-ml-10 lg:-my-32 lg:-translate-y-12">
+              <MotionWrapper type="scale" className="relative w-[300px] h-[300px] sm:w-[420px] sm:h-[420px] lg:w-[850px] lg:h-[850px] lg:-ml-10 lg:-my-32 lg:-translate-y-12">
                 <Image src="/images/moka-and-olly.png" alt={dict.franchise.landing.altMokaOlly} fill className="object-contain drop-shadow-2xl hover:scale-110 transition-transform duration-500 rotate-[-2deg]" />
               </MotionWrapper>
             </div>
@@ -197,7 +197,7 @@ export default async function FranchiseLandingPage({
               <MotionWrapper direction="left">
                 <div className="space-y-6">
                   {/* Tag Removed */}
-                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-900 leading-[1.05] tracking-tight">
+                  <h2 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-900 leading-[1.05] tracking-tight">
                     {dict.franchise.legacy.title.split(' ').slice(0, -1).join(' ')} <br className="sm:hidden" />
                     <span className="text-hikids-yellow text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
                       style={{

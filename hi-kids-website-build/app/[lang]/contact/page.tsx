@@ -35,15 +35,15 @@ export default async function ContactPage({
       {/* ─── CREATIVE HEADER (No Hero) ─── */}
       <section className="relative pt-12 pb-8 lg:pt-16 lg:pb-12 bg-white overflow-visible">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-16 w-full">
-          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 border-b border-slate-100 pb-16">
+          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-32 border-b border-slate-100 pb-16">
             {/* peeking mascot */}
-            <MotionWrapper type="scale" className="relative w-48 h-48 lg:w-72 lg:h-72 -mb-24 lg:-mb-32 z-10">
-              <Image src="/images/showering.png" alt="Moka" fill className="object-contain drop-shadow-2xl" />
+            <MotionWrapper type="scale" className="relative w-72 h-72 lg:w-96 lg:h-96 -mb-24 lg:-mb-32 z-10 lg:-ml-24">
+              <Image src="/images/Vacation.png" alt="Moka" fill className="object-contain drop-shadow-2xl scale-[1.6]" />
             </MotionWrapper>
 
             <div className="flex-1 text-center lg:text-left pt-8">
               <MotionWrapper direction="right">
-                <h1 className="text-5xl lg:text-8xl xl:text-9xl font-fredoka font-bold text-slate-900 leading-[0.9] tracking-tight text-balance mb-6">
+                <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-900 leading-[1.1] tracking-tight text-balance mb-6">
                   {t.title.split(' ').slice(0, -1).join(' ')} <span className="text-hikids-yellow text-6xl lg:text-[7rem] xl:text-[8.5rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
                     style={{
                       WebkitTextStroke: "12px #0f172a",

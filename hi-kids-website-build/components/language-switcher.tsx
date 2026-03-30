@@ -54,16 +54,19 @@ export function LanguageSwitcher({
             <button
               key={l}
               onClick={() => switchLocale(l)}
-              className={`flex w-full items-center justify-between rounded-2xl px-4 py-3 text-sm transition-all ${l === locale
+              className={`flex w-full items-center justify-between rounded-2xl px-4 py-3 text-sm transition-all group ${
+                l === locale
                   ? "bg-primary text-white shadow-xl shadow-primary/20"
-                  : "text-muted-foreground hover:text-white hover:bg-primary/5"
-                }`}
+                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+              }`}
             >
               <span className="font-bold tracking-widest uppercase">
                 {localeLabels[l]}
               </span>
               <span
-                className={`text-xs font-bold ${l === locale ? "text-white/80" : "text-muted-foreground/60"}`}
+                className={`text-xs font-bold transition-colors ${
+                  l === locale ? "text-white/80" : "text-muted-foreground/60 group-hover:text-slate-500"
+                }`}
               >
                 {localeNames[l]}
               </span>

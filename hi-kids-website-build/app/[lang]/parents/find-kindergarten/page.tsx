@@ -44,7 +44,7 @@ export default async function FindKindergartenPage({
             <div className="flex-1 text-center lg:text-left pt-8">
               <MotionWrapper direction="right">
                 {/* Tag Removed */}
-                <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-900 leading-[1.1] tracking-tight text-balance">
+                <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-900 leading-[1.1] tracking-tight text-balance">
                   {t.findA} <span className="text-white text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
                     style={{
                       WebkitTextStroke: "12px #00AEEF",
@@ -70,7 +70,7 @@ export default async function FindKindergartenPage({
 
           {/* Interactive Map */}
           <MotionWrapper type="fade" className="mb-20">
-            <div className="relative rounded-[4rem] overflow-hidden border-8 border-yellow-50 shadow-2xl group hover:border-[#FFEB00] transition-colors duration-500 bg-slate-100 h-[600px]">
+            <div className="relative rounded-[4rem] overflow-hidden border-8 border-yellow-50 shadow-2xl group hover:border-[#FFEB00] transition-colors duration-500 bg-slate-100 h-[400px] sm:h-[600px]">
               <iframe
                 title={t.mapTitle}
                 src={mapSrc}

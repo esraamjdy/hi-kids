@@ -829,6 +829,12 @@
     "whyChoose": {
       "title": "Why Choose HiKids",
       "subtitle": "Discover what makes HiKids the right choice for your family.",
+      "heroTitle1": "Why",
+      "heroTitle2": "Choose",
+      "ctaTitle1": "Give the",
+      "ctaTitle2": "Best Start",
+      "ctaDesc": "Find a HiKids kindergarten near you and see the difference our progressive approach makes.",
+      "ctaBtn": "Find Center Now",
       "sections": [
         {
           "title": "Proven Educational Method",
