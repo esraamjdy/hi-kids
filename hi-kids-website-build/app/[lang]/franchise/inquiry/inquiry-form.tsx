@@ -51,7 +51,7 @@ export function FranchiseInquiryForm({ dict }: { dict: Dictionary }) {
         <div className="w-24 h-24 bg-hikids-green/10 rounded-full flex items-center justify-center text-hikids-green mb-4">
            <CheckCircle2 size={48} />
         </div>
-        <h3 className="text-3xl lg:text-4xl font-fredoka font-black text-slate-900">{t.success}</h3>
+        <h3 className="text-3xl lg:text-4xl font-fredoka font-bold text-slate-900">{t.success}</h3>
         <p className="text-lg text-slate-500 max-w-sm">Thank you for your interest! Our team will contact you within 24 hours.</p>
         <button 
            onClick={() => setStatus("idle")}

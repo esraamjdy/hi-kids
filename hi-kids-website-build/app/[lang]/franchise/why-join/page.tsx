@@ -8,9 +8,13 @@ import { notFound } from "next/navigation";
 import { WaveDivider } from "@/components/wave-divider";
 import { MotionWrapper, MotionContainer, MotionItem } from "@/components/motion-wrapper";
 
-export const metadata: Metadata = {
-  title: "Why Join HiKids | Franchise Benefits",
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const dict = await getDictionary(lang as any);
+  return {
+    title: dict.franchise.whyJoin.metaTitle,
+  };
+}
 
 export default async function WhyJoinPage({
   params,
@@ -33,13 +37,13 @@ export default async function WhyJoinPage({
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 border-b border-slate-100 pb-12 mb-4">
             {/* peeking mascot */}
             <MotionWrapper type="scale" className="relative w-48 h-48 lg:w-64 lg:h-64 -mb-16 lg:-mb-24 z-10">
-              <Image src="/images/Moka-Calm.png" alt="Moka" fill className="object-contain drop-shadow-2xl" />
+              <Image src="/images/Moka-Calm.png" alt={dict.about.mascotAlt.mokaCalm} fill className="object-contain drop-shadow-2xl" />
             </MotionWrapper>
 
             <div className="flex-1 text-center lg:text-left pt-8">
               <MotionWrapper direction="right">
                 {/* Tag Removed */}
-                <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.1] tracking-tight text-balance">
+                <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-900 leading-[1.1] tracking-tight text-balance">
                   {t.title.replace('?', '').split(' ').slice(0, -1).join(' ')} <span className="text-white text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
                     style={{
                       WebkitTextStroke: "12px #00AEEF",
@@ -74,7 +78,7 @@ export default async function WhyJoinPage({
                   <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-sm border border-blue-200 text-hikids-blue group-hover:bg-[#00AEEF] group-hover:text-white transition-all duration-500 group-hover:scale-110">
                     <Icon size={32} />
                   </div>
-                  <h3 className="text-2xl lg:text-4xl font-fredoka font-black text-slate-900 mb-6 group-hover:text-hikids-blue transition-colors">
+                  <h3 className="text-2xl lg:text-4xl font-fredoka font-bold text-slate-900 mb-6 group-hover:text-hikids-blue transition-colors">
                     {feature.title}
                   </h3>
                   <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed font-medium text-balance">
@@ -95,16 +99,16 @@ export default async function WhyJoinPage({
             {/* Left Column: Mascot */}
             <div className="lg:col-span-5 flex justify-center lg:justify-center order-2 lg:order-1 mt-12 lg:mt-0">
               <MotionWrapper type="scale" className="relative w-[550px] h-[550px] lg:w-[1700px] lg:h-[1700px] lg:-ml-96 lg:-my-80">
-                <Image src="/images/eating-together.png" alt="Moka Plays" fill className="object-contain drop-shadow-2xl" />
+                <Image src="/images/eating-together.png" alt={dict.about.mascotAlt.eatingTogether} fill className="object-contain drop-shadow-2xl" />
               </MotionWrapper>
             </div>
 
             {/* Right Column: Text */}
-            <div className="lg:col-span-7 space-y-10 order-1 lg:order-2 lg:pl-24">
+            <div className="lg:col-span-7 space-y-10 order-1 lg:order-2 lg:pl-12">
               <MotionWrapper direction="left">
                 <div className="space-y-6 text-center lg:text-left">
                   {/* Tag Removed */}
-                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.1] tracking-tight">
+                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-900 leading-[1.1] tracking-tight">
                     {t.cta.title.split(' ').slice(0, -2).join(' ')} <br className="sm:hidden" />
                     <span className="text-white text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
                       style={{

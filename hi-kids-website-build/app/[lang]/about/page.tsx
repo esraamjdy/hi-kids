@@ -15,9 +15,13 @@ import { WaveDivider } from "@/components/wave-divider";
 import { MotionWrapper, MotionContainer, MotionItem } from "@/components/motion-wrapper";
 import { AnimatedCounter } from "@/components/animated-counter";
 
-export const metadata: Metadata = {
-  title: "About HiKids | Progressive Early Childhood Education",
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const dict = await getDictionary(lang as any);
+  return {
+    title: dict.about.metaTitle,
+  };
+}
 
 export default async function AboutPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -41,7 +45,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
             <div className="relative text-center lg:text-left">
               <MotionWrapper direction="right" delay={0.2} duration={1}>
                 <div className="space-y-4 max-w-4xl mx-auto lg:mx-0 relative z-10">
-                  <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4 flex flex-col gap-y-2">
+                  <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-800 leading-[1.1] tracking-tight mb-4 flex flex-col gap-y-2">
                     <span className="text-hikids-blue">{t.hero.title.split(' ').slice(0, 1).join(' ')}</span>
                     <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl inline-block transition-transform hover:scale-105 duration-300"
                       style={{
@@ -63,7 +67,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
             <div className="relative w-full flex items-center justify-center lg:justify-end">
               <div className="relative w-[550px] h-[480px] lg:w-[850px] lg:h-[750px] xl:w-[1000px] xl:h-[900px] overflow-visible">
                 <div className="absolute top-[-100%] left-[-30%] w-[170%] h-[170%] z-10 -rotate-[22deg] animate-float">
-                  <Image src="/images/3playing.png" alt="Moka Mascot" fill className="object-contain object-bottom drop-shadow-2xl" />
+                  <Image src="/images/3playing.png" alt={t.mascotAlt.mokaMascot} fill className="object-contain object-bottom drop-shadow-2xl" />
                 </div>
               </div>
             </div>
@@ -87,7 +91,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
               <MotionWrapper type="scale" delay={0.2} className="relative w-[550px] h-[550px] lg:w-[1000px] lg:h-[1000px] -ml-12 lg:-ml-48">
                 <Image
                   src="/images/picnic.png"
-                  alt="Moka Picnic"
+                  alt={t.mascotAlt.mokaPicnic}
                   fill
                   className="object-contain drop-shadow-2xl scale-[1.45] hover:scale-[1.55] transition-transform duration-700"
                 />
@@ -99,7 +103,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
               <MotionWrapper direction="left" delay={0.1}>
                 <div className="space-y-6">
                   {/* Tag Removed */}
-                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4">
+                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-800 leading-[1.1] tracking-tight mb-4">
                     <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
                       style={{
                         WebkitTextStroke: "12px #00AEEF",
@@ -144,13 +148,13 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                 <MotionWrapper type="scale" className="w-full max-w-[500px]">
                   {/* The actual sloped box */}
                   <div className="relative w-full aspect-[4/3] rounded-[2rem] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] border-[8px] lg:border-[12px] border-white overflow-hidden -rotate-[4deg] hover:-rotate-[2deg] transition-all duration-700 group cursor-pointer bg-yellow-50">
-                    <Image src="/images/HiKids-02.png" alt="Mission" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <Image src="/images/HiKids-02.png" alt={t.mascotAlt.mission} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
                 </MotionWrapper>
               </div>
               <div className="lg:col-span-7 space-y-6 order-1 lg:order-2">
                 <MotionWrapper direction="right" className="lg:px-4">
-                  <h2 className="text-5xl lg:text-6xl xl:text-7xl font-fredoka font-black leading-[1.1] tracking-tight mb-6 mt-4">
+                  <h2 className="text-5xl lg:text-6xl xl:text-7xl font-fredoka font-bold leading-[1.1] tracking-tight mb-6 mt-4">
                     <span className="text-white inline-block transition-transform hover:scale-105 duration-300"
                       style={{
                         WebkitTextStroke: "10px #FFEB00",
@@ -170,7 +174,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 xl:gap-24 items-center">
               <div className="lg:col-span-7 space-y-6">
                 <MotionWrapper direction="left" className="lg:px-4">
-                  <h2 className="text-5xl lg:text-6xl xl:text-7xl font-fredoka font-black leading-[1.1] tracking-tight mb-6 mt-4">
+                  <h2 className="text-5xl lg:text-6xl xl:text-7xl font-fredoka font-bold leading-[1.1] tracking-tight mb-6 mt-4">
                     <span className="text-white inline-block transition-transform hover:scale-105 duration-300"
                       style={{
                         WebkitTextStroke: "10px #00AEEF",
@@ -188,7 +192,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                 <MotionWrapper type="scale" className="w-full max-w-[500px]">
                   {/* The actual sloped box */}
                   <div className="relative w-full aspect-[4/3] rounded-[2rem] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] border-[8px] lg:border-[12px] border-white overflow-hidden rotate-[4deg] hover:rotate-[2deg] transition-all duration-700 group cursor-pointer bg-blue-50">
-                    <Image src="/images/HiKids-03.png" alt="Vision" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <Image src="/images/HiKids-03.png" alt={t.mascotAlt.vision} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
                 </MotionWrapper>
               </div>
@@ -202,7 +206,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       <section className="py-4 lg:py-8 bg-white relative overflow-hidden">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
           <div className="text-center mb-12">
-            <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight flex flex-col justify-center gap-y-2 items-center">
+            <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-800 leading-[1.1] tracking-tight flex flex-col justify-center gap-y-2 items-center">
               <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl inline-block"
                 style={{
                   WebkitTextStroke: "12px #00AEEF",
@@ -242,7 +246,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
             <div className="lg:col-span-5 relative">
               <MotionWrapper type="scale">
                 <div className="relative w-full aspect-[4/5] rounded-[3rem] overflow-hidden border-[12px] border-white group">
-                  <Image src="/images/businessman.png" alt="Amy - Founder" fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
+                  <Image src="/images/businessman.png" alt={t.mascotAlt.founder} fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
                 </div>
               </MotionWrapper>
             </div>
@@ -253,10 +257,10 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                 <div className="space-y-4">
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-200/50 text-slate-600 font-bold text-sm tracking-widest uppercase mb-2">
                     <Star size={18} />
-                    <span>Leadership</span>
+                    <span>{t.leadershipLabel}</span>
                   </div>
-                  <h2 className="text-5xl lg:text-6xl xl:text-7xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight">
-                    Amy Szymanska {/* Hardcoded per request */}
+                  <h2 className="text-5xl lg:text-6xl xl:text-7xl font-fredoka font-bold text-slate-800 leading-[1.1] tracking-tight">
+                    {t.founder.name}
                   </h2>
                   <h4 className="text-xl lg:text-2xl font-bold text-hikids-blue uppercase tracking-widest">{t.founder.role}</h4>
                 </div>
@@ -289,7 +293,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
             <div className="lg:col-span-6 space-y-10 -mt-14 lg:-mt-28">
               <MotionWrapper direction="right" delay={0.1}>
                 <div className="space-y-6 text-start">
-                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4">
+                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-800 leading-[1.1] tracking-tight mb-4">
                     <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-[7rem] inline-block transition-transform hover:scale-105 duration-300"
                       style={{
                         WebkitTextStroke: "12px #00AEEF",
@@ -327,7 +331,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
               <MotionWrapper type="scale" delay={0.2} className="relative w-[550px] h-[550px] lg:w-[1000px] lg:h-[1000px] lg:-mr-16">
                 <Image
                   src="/images/flowers.png"
-                  alt="Flowers"
+                  alt={t.mascotAlt.flowers}
                   fill
                   className="object-contain drop-shadow-2xl scale-[1.1] lg:scale-110"
                 />

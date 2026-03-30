@@ -20,9 +20,10 @@
       },
       "educatorItems": {
         "overview": "Overview",
-        "materials": "Materials",
-        "method": "Method",
-        "certification": "Certification"
+        "materials": "Free Materials",
+        "podcast": "HiKids Podcast",
+        "method": "Teaching Method",
+        "certification": "Online Certification"
       },
       "parentItems": {
         "overview": "Overview",
@@ -32,7 +33,9 @@
         "app": "HiKids App",
         "findUs": "Find Us",
         "mobileApp": "Mobile App"
-      }
+      },
+      "educatorSub": "Training, materials & certifications",
+      "parentSub": "Resources for families & finding centers"
     },
     "cta": {
       "learnMore": "Learn More",
@@ -64,6 +67,11 @@
       "trainingCenter": "Global Training Centers",
       "tagline": "Empower Every Journey"
     },
+    "mascot": {
+      "mokaDancing": "Moka Dancing",
+      "mokaPlaying": "Moka Playing",
+      "mokaHello": "Moka saying hello"
+    },
     "languages": {
       "en": "English",
       "fr": "French",
@@ -73,7 +81,9 @@
   },
   "home": {
     "hero": {
-      "title": "Shaping the Future of Early Education",
+      "titlePart1": "Shaping the ",
+      "titleAccent": "Future",
+      "titlePart2": "of Early Education",
       "subtitle": "Empowering children through innovation and educational excellence.",
       "ctaFranchise": "For Business Owners",
       "ctaEducators": "For Educators",
@@ -107,7 +117,8 @@
       ],
       "franchiseProgram": "Franchise Program",
       "joinNetwork": "Join the network",
-      "globalNetwork": "Global Franchise Network"
+      "globalNetwork": "Global Franchise Network",
+      "levelLabel": "Level"
     },
     "whyDifferent": {
       "title": "THE HIKIDS DIFFERENCE",
@@ -170,6 +181,8 @@
       "title": "Where Curiosity Becomes Capability",
       "subtitle": "Dedicated to providing the highest quality early education through innovation, care, and community."
     },
+    "metaTitle": "About HiKids | Progressive Early Childhood Education",
+    "leadershipLabel": "Leadership",
     "story": {
       "title": "Our Story",
       "subtitle": "A Legacy of Learning & Love",
@@ -240,7 +253,7 @@
     },
     "founder": {
       "title": "Build the Future",
-      "name": "Dr. Sarah Miller",
+      "name": "Amy Szymanska",
       "role": "Founder & Visionary",
       "description": "Together HiKids is more than just schools. We are a community dedicated to raising the next generation.",
       "quote": "Our goal isn't just to teach kids facts, but to nurture a life-long love for learning and discovery."
@@ -263,6 +276,16 @@
           "description": "Facing new challenges with a smile and a positive heart."
         }
       ]
+    },
+    "mascotAlt": {
+      "mokaMascot": "Moka Mascot",
+      "mokaPicnic": "Moka Picnic",
+      "mission": "Mission",
+      "vision": "Vision",
+      "founder": "Amy - Founder",
+      "flowers": "Flowers",
+      "mokaCalm": "Moka",
+      "eatingTogether": "Moka Eating Together"
     }
   },
   "franchise": {
@@ -270,6 +293,9 @@
       "title": "Lead the Future of Education",
       "subtitle": "Join a growing network of passionate entrepreneurs bringing world-class early education to their communities.",
       "cta": "Start Your Journey",
+      "metaTitle": "Open a HiKids Kindergarten | Franchise Opportunities",
+      "altHoldingHand": "Franchise Opportunity",
+      "altMokaOlly": "Moka and Olly building the future",
       "stats": [
         {
           "value": "50+",
@@ -290,8 +316,9 @@
       ]
     },
     "whyJoin": {
-      "title": "Why Join HiKids",
+      "title": "Why Join HiKids?",
       "subtitle": "A franchise opportunity built for impact and growth.",
+      "metaTitle": "Why Join HiKids | Franchise Benefits",
       "features": [
         {
           "title": "Growing Market",
@@ -383,8 +410,13 @@
       }
     },
     "inquiry": {
-      "title": "Franchise Inquiry",
+      "title": "Application Form",
       "subtitle": "Ready to bring HiKids to your community? Fill out the form below and our team will be in touch.",
+      "brochure": {
+        "title": "Need More Information?",
+        "description": "Download our comprehensive franchise brochure to learn more about the HiKids model and opportunities.",
+        "button": "Download Brochure"
+      },
       "form": {
         "name": "Full Name",
         "email": "Email Address",
@@ -420,7 +452,8 @@
       "note": "Free download. No registration required."
     },
     "explore": {
-      "title": "Explore the Model"
+      "title": "Explore the Model",
+      "discoverPlan": "Discover Plan"
     },
     "legacy": {
       "title": "Build your Legacy",
@@ -431,6 +464,15 @@
     "landing": {
       "title": "Join Our World of Educators",
       "subtitle": "Access free materials, proven teaching methods, and professional certification to elevate your early education practice.",
+      "heroTitle1": "Advance Your",
+      "heroTitle2": "Practice",
+      "heroSubtitle": "Professional resources, global certification, and a world-class framework designed by early education experts.",
+      "pathwaysTitle1": "Your",
+      "pathwaysTitle2": "Journey",
+      "ctaTitle1": "Elevate Your",
+      "ctaTitle2": "Practice",
+      "ctaSubtitle": "Learn the world-class HiKids method and earn your international certification.",
+      "ctaBtn": "Get Certified",
       "features": [
         {
           "title": "Free Materials",
@@ -438,12 +480,17 @@
           "cta": "Browse Materials"
         },
         {
+          "title": "HiKids Podcast",
+          "description": "Listen to experts discuss the latest in early childhood education and HiKids innovations.",
+          "cta": "Listen Now"
+        },
+        {
           "title": "Teaching Method",
           "description": "Learn about the HiKids approach to progressive, play-based early education.",
           "cta": "Explore Method"
         },
         {
-          "title": "Certification",
+          "title": "Online Certification",
           "description": "Get certified in the HiKids method and stand out as a qualified early educator.",
           "cta": "Get Certified"
         }
@@ -451,62 +498,149 @@
     },
     "materials": {
       "title": "Free Materials",
-      "subtitle": "Download activity sheets, lesson structures, and classroom resources at no cost.",
+      "subtitle": "Download downloadable resources, activity sheets, and lesson structures at no cost.",
+      "heroTitle1": "Free",
+      "heroTitle2": "Materials",
+      "standardAccess": "Standard Access",
+      "fileMeta": "PDF • 4.8MB",
+      "getFile": "GET FILE",
+      "premiumTag": "Premium Library",
+      "ctaTitle1": "Expert",
+      "ctaTitle2": "Resources",
+      "ctaSubtitle": "Unlock our exclusive collection of world-class teaching framework guides and international assessment toolkits.",
+      "ctaBtn": "Get Certified Access",
       "items": [
         {
-          "title": "Activity Sheets: Explorers Level",
+          "title": "Explorers Activity Sheets",
           "description": "Sensory and motor skill activities for ages 2-3.",
-          "type": "PDF"
+          "type": "Activity Sheets"
         },
         {
-          "title": "Activity Sheets: Discoverers Level",
+          "title": "Discoverers Activity Sheets",
           "description": "Creative expression and early numeracy activities for ages 3-4.",
-          "type": "PDF"
+          "type": "Activity Sheets"
         },
         {
-          "title": "Lesson Plan Template",
-          "description": "A structured weekly lesson plan template following the HiKids method.",
-          "type": "PDF"
+          "title": "Innovators Activity Sheets",
+          "description": "Critical thinking and pre-literacy activities for ages 4-5.",
+          "type": "Activity Sheets"
         },
         {
-          "title": "Classroom Setup Guide",
-          "description": "How to organize your classroom for progressive learning levels.",
-          "type": "PDF"
+          "title": "Structured Lesson Template",
+          "description": "A structured weekly lesson plan template following the HiKids framework.",
+          "type": "Lesson Structure"
         },
         {
-          "title": "Parent Communication Kit",
-          "description": "Templates for progress reports, newsletters, and parent meetings.",
-          "type": "PDF"
+          "title": "Classroom Planning Guide",
+          "description": "How to organize your space for progressive learning levels.",
+          "type": "Resource"
         },
         {
           "title": "Assessment Toolkit",
           "description": "Developmental milestone checklists and observation forms.",
-          "type": "PDF"
+          "type": "Downloadable Resource"
+        }
+      ]
+    },
+    "podcast": {
+      "title": "HiKids Podcast",
+      "subtitle": "Insightful conversations on modern education, teacher growth, and child development.",
+      "subscribe": "Subscribe on",
+      "heroTitle1": "Audio",
+      "heroTitle2": "Deep Dives",
+      "browseEpisodes": "Browse Episodes",
+      "ourEpisodes": "Our Episodes",
+      "bannerTitle1": "Stay Always",
+      "bannerTitle2": "Synched",
+      "listenNow": "LISTEN NOW",
+      "episodes": [
+        {
+          "title": "The Power of Progressive Levels",
+          "topic": "Pedagogy",
+          "description": "Discussing the transition from Explorers to Leaders with our founder.",
+          "duration": "18 min"
+        },
+        {
+          "title": "Classroom Management in 2024",
+          "topic": "Practice",
+          "description": "Innovative strategies for maintaining engagement and joyful order.",
+          "duration": "24 min"
+        },
+        {
+          "title": "The Role of Play-Based Tech",
+          "topic": "Technology",
+          "description": "How Digital-First learning accelerates social-emotional growth.",
+          "duration": "21 min"
         }
       ]
     },
     "method": {
       "title": "Teaching Method",
-      "subtitle": "Learn about the HiKids approach to progressive, play-based early education.",
-      "overview": "The HiKids method integrates structured curriculum with child-led exploration. Teachers act as facilitators, guiding children through carefully designed activities that build skills progressively across four developmental levels.",
+      "subtitle": "Master the HiKids framework: How to implement the structure in your classroom.",
+      "heroTitle1": "The HiKids",
+      "heroTitle2": "Method",
+      "overview": "The HiKids method integrates structured framework with child-led exploration. Facilitators guide children through activities that build skills across four levels.",
+      "ctaTitle1": "Become a",
+      "ctaTitle2": "Facilitator",
+      "ctaSubtitle": "Join the elite circle of global educators implementing the HiKids framework.",
+      "ctaBtn": "Apply Now",
       "sections": [
         {
-          "title": "Framework Overview",
-          "description": "Our curriculum is organized into thematic units that span all four learning levels. Each unit includes hands-on activities, group exercises, and individual exploration time."
+          "title": "How to Implement",
+          "description": "Practical steps for daily adoption. Transitioning from theory to classroom practice with HiKids materials.",
+          "content": [
+            {
+              "subtitle": "Step 01. Initial Setup",
+              "text": "Arrange dynamic learning stations tailored to the HiKids developmental zones."
+            },
+            {
+              "subtitle": "Step 02. Daily Integration",
+              "text": "Seamlessly blend our specialized Activity Sheets into your daily lesson sequences."
+            },
+            {
+              "subtitle": "Step 03. Progress Tracking",
+              "text": "Utilize observation-based metrics to document key developmental milestones."
+            }
+          ]
+        },
+        {
+          "title": "Framework Explanation",
+          "description": "A detailed look at our thematic units and how they expand across ages. This is the core of our educational engine.",
+          "content": [
+            {
+              "subtitle": "Explorers (Ages 2-3)",
+              "text": "Prioritizes gross motor skills and foundational sensory discovery."
+            },
+            {
+              "subtitle": "Discoverers (Ages 3-4)",
+              "text": "Encourages creative expression, early numeracy, and cooperative peer play."
+            },
+            {
+              "subtitle": "Innovators (Ages 4-5)",
+              "text": "Builds vital critical thinking, pre-literacy, and advanced social-emotional competencies."
+            }
+          ]
         },
         {
           "title": "Classroom Structure",
-          "description": "A typical HiKids day includes circle time, guided activities, free play, outdoor exploration, and reflection. The balance between structure and freedom is key to our approach."
-        },
-        {
-          "title": "Assessment Approach",
-          "description": "We use observation-based assessment rather than testing. Teachers document children's progress through portfolios, milestone checklists, and regular parent conferences."
-        },
-        {
-          "title": "Inclusive Practice",
-          "description": "The HiKids method is designed to be adaptable for children with diverse learning needs. Differentiation strategies are built into every lesson plan."
+          "description": "The physical and temporal organization of a HiKids environment. The balance between structure and freedom.",
+          "content": [
+            {
+              "subtitle": "Circle Time",
+              "text": "Group bonding, daily concept introduction, and collaborative storytelling sessions."
+            },
+            {
+              "subtitle": "Free Play",
+              "text": "Unstructured exploration in safe, thematic learning stations crafted for self-discovery."
+            },
+            {
+              "subtitle": "Focus Sessions",
+              "text": "Guided, educator-led micro-lessons targeting specific cognitive capabilities."
+            }
+          ]
         }
-      ]
+      ],
+      "phaseTag": "Phase"
     },
     "certification": {
       "title": "Certification",
@@ -521,7 +655,17 @@
       ],
       "cta": "Request Certification Information",
       "success": "Thank you! We've sent the certification program details to your email.",
-      "emailPlaceholder": "Enter your email address"
+      "emailPlaceholder": "Enter your email address",
+      "heroTitle1": "Earn Your",
+      "heroTitle2": "Certificate",
+      "whyTitle": "Why Get Certified?",
+      "verifiedTitle": "Verified Excellence",
+      "verifiedDesc": "Your certification is globally tracked and verifies your expertise in the HiKids pedagogical model.",
+      "formLabel": "Your Professional Email",
+      "formSubmit": "Apply Now",
+      "formLoading": "Processing...",
+      "formError": "Something went wrong. Please try again.",
+      "successDesc": "We've received your request. Check your inbox for the next steps!"
     },
     "journey": {
       "title": "Your Journey"
@@ -556,11 +700,23 @@
           "description": "Stay connected to your child's progress with our mobile app.",
           "cta": "Get the App"
         }
-      ]
+      ],
+      "heroTitle1": "Bright Future",
+      "heroTitle2": "Starts Here",
+      "portalTitle1": "Family",
+      "portalTitle2": "Portal",
+      "ctaTitle1": "Start child's",
+      "ctaTitle2": "Success",
+      "ctaSubtitle": "Your child deserves the best start. Join our progressive community today and witness the HiKids difference.",
+      "findCenter": "Find a Center"
     },
     "findKindergarten": {
       "title": "Find a Kindergarten",
       "subtitle": "Locate a HiKids kindergarten near you with our interactive map.",
+      "findA": "Find a",
+      "center": "Center",
+      "mapTitle": "HiKids Locations Map",
+      "networkLabel": "HiKids Global Network",
       "branches": [
         {
           "name": "HiKids London Central",
@@ -602,6 +758,23 @@
     "learningLevels": {
       "title": "Learning Levels",
       "subtitle": "Understand the four progressive stages your child will experience.",
+      "journeyHeader": "Your Child's",
+      "journeyTitle": "Big Journey",
+      "pathTitle": "The Path to",
+      "excellence": "Excellence",
+      "excellenceDesc": "Each level is a doorway to the next, ensuring your child transitions with confidence, curiosity, and the skills to conquer the world.",
+      "possibilitiesHeader": "A World of",
+      "possibilitiesTitle": "Possibilities",
+      "possibilitiesDesc": "Our curriculum is a live roadmap, constantly evolving with the latest international standards to give every child their best unique start.",
+      "possibilitiesBadges": [
+        "Global Curriculum",
+        "Elite Staff",
+        "Safe Haven"
+      ],
+      "successHeader": "Start your",
+      "successTitle": "Success",
+      "successDesc": "The journey of a thousand steps begins with a single level.",
+      "visitCenters": "Visit Centers",
       "levels": [
         {
           "name": "Explorers",
@@ -696,7 +869,20 @@
       ],
       "downloadTitle": "Download the App",
       "appStore": "Download on the App Store",
-      "googlePlay": "Get it on Google Play"
+      "googlePlay": "Get it on Google Play",
+      "metaTitle": "HiKids App | Stay Connected",
+      "companionTitle1": "HiKids",
+      "companionTitle2": "Companion",
+      "stayConnectedTitle1": "Stay Connected",
+      "stayConnectedTitle2": "Every Step.",
+      "secureTitle1": "Safe &",
+      "secureTitle2": "Secure",
+      "secureSubtitle": "Your data is encrypted and secure. Stay connected with peace of mind.",
+      "findCenterBtn": "Find Center",
+      "downloadSubtitle": "Available on iOS and Android. Empowering your child's success with world-class connectivity.",
+      "newUpdate": "New Update",
+      "childReportReady": "Child's report is ready!",
+      "loginSecureAccess": "Login / Secure Access"
     },
     "success": {
       "title": "Start child's Success",
@@ -728,6 +914,10 @@
         "email": "press@hikids.com"
       }
     ],
+    "heroSubtitle": "Have a question about our levels, franchising, or just want to say hi? We're all ears!",
+    "formSubtitle": "Ready to join the HiKids family? Drop us a line and our team will get back to you within 24 hours.",
+    "fastResponse": "Fast Response Guarantee",
+    "supportChannel": "24/7 Support Channel",
     "form": {
       "title": "Send Us a Message",
       "name": "Your Name",
@@ -736,7 +926,14 @@
       "message": "Your Message",
       "submit": "Send Message",
       "success": "Thank you for your message! We'll get back to you within 24 hours.",
-      "error": "Something went wrong. Please try again."
+      "error": "Something went wrong. Please try again.",
+      "sent": "Message Sent!",
+      "placeholders": {
+        "name": "John Doe",
+        "email": "john@example.com",
+        "subject": "How can we help?",
+        "message": "Your message here..."
+      }
     }
   }
 }

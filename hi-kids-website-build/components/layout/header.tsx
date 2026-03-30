@@ -86,7 +86,7 @@ export function Header({ locale, dict }: HeaderProps) {
           ))}
 
           {/* Combined About Kindergarten Dropdown */}
-          <div 
+          <div
             className="relative"
             onMouseEnter={() => setKindergartenOpen(true)}
             onMouseLeave={() => setKindergartenOpen(false)}
@@ -105,28 +105,28 @@ export function Header({ locale, dict }: HeaderProps) {
             <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 transition-all duration-300 ${kindergartenOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"}`}>
               <div className="bg-white rounded-[2rem] shadow-2xl border border-slate-100 p-3 min-w-[280px] grid grid-cols-1 gap-1">
                 <Link
-                  href={`/${locale}/parents`}
-                  className={`flex items-start gap-4 p-4 rounded-2xl transition-all hover:bg-hikids-yellow/10 group ${isInSection("parents") ? "bg-hikids-yellow/5" : ""}`}
+                  href={`/${locale}/educators`}
+                  className={`flex items-start gap-4 p-4 rounded-2xl transition-all hover:bg-[#ffde00] group ${isInSection("educators") ? "bg-[#ffde00]/10" : ""}`}
                 >
-                  <div className="h-10 w-10 shrink-0 rounded-xl bg-hikids-yellow/10 flex items-center justify-center text-hikids-yellow group-hover:scale-110 transition-transform">
-                    <Users size={20} />
+                  <div className="h-10 w-10 shrink-0 rounded-xl bg-[#ffde00]/20 flex items-center justify-center text-slate-800 group-hover:bg-white group-hover:scale-110 transition-all shadow-sm">
+                    <GraduationCap size={20} />
                   </div>
                   <div>
-                    <div className="text-sm font-black text-slate-800 uppercase tracking-wider">{t.nav.parents}</div>
-                    <div className="text-[11px] font-medium text-slate-500 leading-tight mt-0.5">Resources for families & finding centers</div>
+                    <div className="text-sm font-black text-slate-800 uppercase tracking-wider group-hover:text-slate-900 transition-colors">{t.nav.educators}</div>
+                    <div className="text-[11px] font-medium text-slate-500 leading-tight mt-0.5 group-hover:text-slate-900/70 transition-colors">{t.nav.educatorSub}</div>
                   </div>
                 </Link>
 
                 <Link
-                  href={`/${locale}/educators`}
-                  className={`flex items-start gap-4 p-4 rounded-2xl transition-all hover:bg-hikids-blue/10 group ${isInSection("educators") ? "bg-hikids-blue/5" : ""}`}
+                  href={`/${locale}/parents`}
+                  className={`flex items-start gap-4 p-4 rounded-2xl transition-all hover:bg-[#00AEEF] group ${isInSection("parents") ? "bg-[#00AEEF]/10" : ""}`}
                 >
-                  <div className="h-10 w-10 shrink-0 rounded-xl bg-hikids-blue/10 flex items-center justify-center text-hikids-blue group-hover:scale-110 transition-transform">
-                    <GraduationCap size={20} />
+                  <div className="h-10 w-10 shrink-0 rounded-xl bg-[#00AEEF]/20 flex items-center justify-center text-slate-800 group-hover:bg-white group-hover:scale-110 transition-all shadow-sm">
+                    <Users size={20} />
                   </div>
                   <div>
-                    <div className="text-sm font-black text-slate-800 uppercase tracking-wider">{t.nav.educators}</div>
-                    <div className="text-[11px] font-medium text-slate-500 leading-tight mt-0.5">Training, materials & certifications</div>
+                    <div className="text-sm font-black text-slate-800 uppercase tracking-wider group-hover:text-white transition-colors">{t.nav.parents}</div>
+                    <div className="text-[11px] font-medium text-slate-500 leading-tight mt-0.5 group-hover:text-white/80 transition-colors">{t.nav.parentSub}</div>
                   </div>
                 </Link>
               </div>
@@ -138,7 +138,7 @@ export function Header({ locale, dict }: HeaderProps) {
         <div className="flex items-center gap-4">
           <LanguageSwitcher locale={locale} scrolled={scrolled} isHome={isHome} />
           <Link
-            href={`/${locale}/parents/app`} 
+            href={`/${locale}/parents/app`}
             className={`hidden h-11 w-11 rounded-2xl transition-all md:inline-flex items-center justify-center ${isHome && !scrolled
               ? "bg-slate-900/5 text-slate-800 hover:bg-slate-900/10 shadow-sm"
               : "bg-white/10 text-white hover:bg-white/20"
@@ -192,20 +192,20 @@ export function Header({ locale, dict }: HeaderProps) {
                 label={t.nav.franchise}
                 onClick={() => setMobileOpen(false)}
               />
-              
+
               {/* Mobile About Kindergarten Group */}
               <div className="mt-4 px-5">
                 <div className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-4">{t.nav.aboutKindergarten}</div>
                 <div className="grid grid-cols-1 gap-3">
                   <MobileLink
-                    href={`/${locale}/parents`}
-                    label={t.nav.parents}
+                    href={`/${locale}/educators`}
+                    label={t.nav.educators}
                     onClick={() => setMobileOpen(false)}
                     variant="sub"
                   />
                   <MobileLink
-                    href={`/${locale}/educators`}
-                    label={t.nav.educators}
+                    href={`/${locale}/parents`}
+                    label={t.nav.parents}
                     onClick={() => setMobileOpen(false)}
                     variant="sub"
                   />
@@ -242,8 +242,8 @@ function MobileLink({
     <Link
       href={href}
       onClick={onClick}
-      className={`rounded-2xl px-5 py-4 font-black transition-all shadow-soft border border-transparent ${variant === "main" 
-        ? "text-lg tracking-tight text-foreground hover:bg-primary/5 hover:text-primary" 
+      className={`rounded-2xl px-5 py-4 font-black transition-all shadow-soft border border-transparent ${variant === "main"
+        ? "text-lg tracking-tight text-foreground hover:bg-primary/5 hover:text-primary"
         : "text-sm uppercase tracking-widest text-slate-600 bg-slate-50 hover:bg-hikids-yellow/10 hover:text-hikids-yellow"}`}
     >
       {label}

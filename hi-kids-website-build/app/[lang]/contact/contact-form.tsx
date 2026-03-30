@@ -11,6 +11,13 @@ interface ContactFormDict {
   submit: string;
   success: string;
   error: string;
+  sent: string;
+  placeholders: {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+  };
 }
 
 export function ContactForm({ dict }: { dict: ContactFormDict }) {
@@ -48,7 +55,7 @@ export function ContactForm({ dict }: { dict: ContactFormDict }) {
         <div className="mx-auto mb-6 h-20 w-20 flex items-center justify-center rounded-full bg-emerald-500 text-white shadow-xl shadow-emerald-200">
            <CheckCircle2 className="h-10 w-10" />
         </div>
-        <h3 className="text-2xl font-black font-fredoka text-slate-900 mb-2">Message Sent!</h3>
+        <h3 className="text-2xl font-bold font-fredoka text-slate-900 mb-2">{dict.sent}</h3>
         <p className="text-slate-600 font-medium">{dict.success}</p>
       </div>
     );
@@ -69,7 +76,7 @@ export function ContactForm({ dict }: { dict: ContactFormDict }) {
             name="name"
             type="text"
             required
-            placeholder="John Doe"
+            placeholder={dict.placeholders.name}
             className="w-full rounded-2xl border-2 border-slate-50 bg-slate-50/50 px-6 py-4 text-slate-900 placeholder:text-slate-300 focus:border-hikids-blue/30 focus:bg-white focus:outline-none transition-all duration-300"
           />
         </div>
@@ -86,7 +93,7 @@ export function ContactForm({ dict }: { dict: ContactFormDict }) {
             name="email"
             type="email"
             required
-            placeholder="john@example.com"
+            placeholder={dict.placeholders.email}
             className="w-full rounded-2xl border-2 border-slate-50 bg-slate-50/50 px-6 py-4 text-slate-900 placeholder:text-slate-300 focus:border-hikids-blue/30 focus:bg-white focus:outline-none transition-all duration-300"
           />
         </div>
@@ -104,7 +111,7 @@ export function ContactForm({ dict }: { dict: ContactFormDict }) {
           name="subject"
           type="text"
           required
-          placeholder="How can we help?"
+          placeholder={dict.placeholders.subject}
           className="w-full rounded-2xl border-2 border-slate-50 bg-slate-50/50 px-6 py-4 text-slate-900 placeholder:text-slate-300 focus:border-hikids-blue/30 focus:bg-white focus:outline-none transition-all duration-300"
         />
       </div>
@@ -121,7 +128,7 @@ export function ContactForm({ dict }: { dict: ContactFormDict }) {
           name="message"
           required
           rows={5}
-          placeholder="Your message here..."
+          placeholder={dict.placeholders.message}
           className="w-full rounded-2xl border-2 border-slate-50 bg-slate-50/50 px-6 py-4 text-slate-900 placeholder:text-slate-300 focus:border-hikids-blue/30 focus:bg-white focus:outline-none transition-all duration-300 resize-none"
         />
       </div>

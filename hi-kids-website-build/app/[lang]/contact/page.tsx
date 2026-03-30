@@ -6,10 +6,15 @@ import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 import { ContactForm } from "./contact-form";
 import { SectionHeader } from "@/components/section-header";
+import { MotionWrapper, MotionContainer, MotionItem } from "@/components/motion-wrapper";
 
-export const metadata: Metadata = {
-  title: "Contact Us | HiKids Global",
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const dict = await getDictionary(lang as any);
+  return {
+    title: `${dict.contact.title} | ${dict.common.brand} Global`,
+  };
+}
 
 export default async function ContactPage({
   params,
@@ -25,35 +30,42 @@ export default async function ContactPage({
   const colors = ["bg-primary", "bg-secondary", "bg-primary", "bg-hikids-blue"];
 
   return (
-    <>
-      {/* ─── ENHANCED CONTACT HERO ─── */}
-      <section className="relative min-h-[50vh] lg:min-h-[65vh] flex items-center overflow-hidden bg-hikids-yellow pt-32 pb-24 lg:pt-48 lg:pb-32">
-        {/* Playful Background Elements */}
-        <div className="absolute inset-0 opacity-20 bg-[url('/images/pattern.png')] bg-repeat mix-blend-multiply pointer-events-none" />
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-white/5 to-white/20 pointer-events-none" />
+    <div className="bg-white overflow-hidden selection:bg-hikids-blue/20">
 
-        {/* Character Integration */}
-        <div className="absolute right-[-5%] bottom-[-10%] w-[350px] lg:w-[500px] opacity-20 lg:opacity-40 pointer-events-none select-none">
-          <Image src="/images/Moka-Wink.png" alt="Moka Buddy" width={600} height={600} className="object-contain animate-float" priority />
-        </div>
+      {/* ─── CREATIVE HEADER (No Hero) ─── */}
+      <section className="relative pt-12 pb-8 lg:pt-16 lg:pb-12 bg-white overflow-visible">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 w-full">
+          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 border-b border-slate-100 pb-16">
+            {/* peeking mascot */}
+            <MotionWrapper type="scale" className="relative w-48 h-48 lg:w-72 lg:h-72 -mb-24 lg:-mb-32 z-10">
+              <Image src="/images/showering.png" alt="Moka" fill className="object-contain drop-shadow-2xl" />
+            </MotionWrapper>
 
-        <div className="relative mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 z-10 w-full text-center lg:text-left">
-          <div className="max-w-[900px] animate-fade-in-up">
-            {/* Tag Removed */}
-            <h1 className="text-5xl lg:text-8xl xl:text-9xl font-black font-fredoka text-slate-900 tracking-tight leading-[0.9] mb-8">
-              {t.title}
-            </h1>
-            <p className="text-lg lg:text-2xl text-slate-700/80 font-medium max-w-2xl leading-relaxed">
-               Have a question about our levels, franchising, or just want to say hi? We&apos;re all ears!
-            </p>
+            <div className="flex-1 text-center lg:text-left pt-8">
+              <MotionWrapper direction="right">
+                <h1 className="text-5xl lg:text-8xl xl:text-9xl font-fredoka font-bold text-slate-900 leading-[0.9] tracking-tight text-balance mb-6">
+                  {t.title.split(' ').slice(0, -1).join(' ')} <span className="text-hikids-yellow text-6xl lg:text-[7rem] xl:text-[8.5rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
+                    style={{
+                      WebkitTextStroke: "12px #0f172a",
+                      paintOrder: "stroke fill",
+                      filter: "drop-shadow(0 8px 0 rgba(15, 23, 42, 0.1))"
+                    }}>
+                    {t.title.split(' ').slice(-1).join(' ')}
+                  </span>
+                </h1>
+                <p className="text-author text-slate-500 max-w-2xl mx-auto lg:mx-0 font-medium">
+                  {t.heroSubtitle}
+                </p>
+              </MotionWrapper>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ─── INTERACTIVE CATEGORIES ─── */}
-      <section className="py-24 lg:py-32 bg-white relative overflow-hidden">
-        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10">
-          <div className="grid gap-8 lg:gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <section className="py-24 lg:py-32 bg-white relative">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+          <div className="grid gap-6 lg:gap-8 md:grid-cols-2 lg:grid-cols-4">
             {t.categories.map(
               (
                 category: {
@@ -66,34 +78,30 @@ export default async function ContactPage({
                 const Icon = icons[i];
                 const badgeColor = colors[i].replace('bg-', 'text-');
                 return (
-                  <div
+                  <MotionItem
                     key={category.title}
-                    className="group relative rounded-[2.5rem] bg-slate-50 p-10 lg:p-12 transition-all hover:shadow-3xl hover:-translate-y-3 duration-500 overflow-hidden border-2 border-transparent hover:border-hikids-yellow/30"
+                    className="group relative rounded-[3rem] bg-slate-50 p-10 lg:p-12 transition-all hover:shadow-2xl hover:-translate-y-2 duration-500 overflow-hidden border border-slate-100 flex flex-col items-center text-center"
                   >
-                    <div className={`mb-8 flex h-16 w-16 items-center justify-center rounded-2xl ${colors[i]} text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg shadow-black/5`}>
-                      <Icon className="h-8 w-8" strokeWidth={2.5} />
+                    <div className={`mb-8 flex h-20 w-20 items-center justify-center rounded-[2rem] bg-white text-slate-900 group-hover:bg-hikids-blue group-hover:text-white transition-all duration-500 shadow-sm border border-slate-100`}>
+                      <Icon size={32} strokeWidth={2.5} />
                     </div>
-                    
-                    <h3 className="text-2xl font-black font-fredoka text-slate-900 mb-4 tracking-tight">
+
+                    <h3 className="text-2xl lg:text-3xl font-bold font-fredoka text-slate-900 mb-4 tracking-tight">
                       {category.title}
                     </h3>
-                    
-                    <p className="text-slate-500 font-medium text-sm leading-relaxed mb-8">
+
+                    <p className="text-slate-500 font-medium text-sm lg:text-base leading-relaxed mb-10 text-balance h-auto lg:h-[72px]">
                       {category.description}
                     </p>
-                    
+
                     <a
                       href={`mailto:${category.email}`}
-                      className="mt-auto inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all group/link"
+                      className="mt-auto w-full inline-flex items-center justify-center gap-3 px-6 py-5 rounded-[2rem] bg-white border border-slate-200 shadow-sm hover:bg-slate-900 hover:text-white transition-all duration-500 font-bold text-xs lg:text-sm tracking-tight"
                     >
-                      <div className={`flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 ${badgeColor} transition-colors group-hover/link:bg-slate-900 group-hover/link:text-white`}>
-                        <Mail className="h-5 w-5" />
-                      </div>
-                      <span className="text-xs font-black tracking-tight text-slate-800 break-all">
-                        {category.email}
-                      </span>
+                      <Mail size={18} className="shrink-0" />
+                      <span className="break-all">{category.email}</span>
                     </a>
-                  </div>
+                  </MotionItem>
                 );
               }
             )}
@@ -102,51 +110,50 @@ export default async function ContactPage({
       </section>
 
       {/* ─── PREMIUM CONTACT FORM ─── */}
-      <section className="py-24 lg:py-48 relative overflow-hidden bg-slate-50">
+      <section className="py-24 lg:py-48 relative overflow-hidden bg-slate-50/50">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-hikids-yellow/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-hikids-yellow/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
           <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-hikids-blue/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3" />
         </div>
 
-        <div className="mx-auto max-w-[1200px] w-full px-6 lg:px-16 relative z-10">
-          <div className="grid lg:grid-cols-[1fr_1.5fr] gap-16 lg:gap-24 items-center">
-            
-            <div className="flex flex-col text-center lg:text-left">
-              {/* Tag Removed */}
-              <h2 className="text-5xl lg:text-7xl font-black font-fredoka text-slate-900 mb-8 leading-[0.95] tracking-tight">
-                {t.form.title}
-              </h2>
-              <p className="text-lg text-slate-500 font-medium leading-relaxed max-w-lg mx-auto lg:mx-0">
-                Ready to join the HiKids family? Drop us a line and our team will get back to you within 24 hours.
-              </p>
-              
-              <div className="mt-12 space-y-6 hidden lg:block">
-                 <div className="flex items-center gap-4 text-slate-700">
-                    <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-hikids-yellow">
-                       <Send size={20} />
-                    </div>
-                    <span className="font-bold">Fast Response Guarantee</span>
-                 </div>
-                 <div className="flex items-center gap-4 text-slate-700">
-                    <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-hikids-blue">
-                       <Mail size={20} />
-                    </div>
-                    <span className="font-bold">24/7 Support Channel</span>
-                 </div>
+        <div className="mx-auto max-w-[1400px] w-full px-6 lg:px-16 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 items-center">
+
+            <div className="flex flex-col text-center lg:text-left space-y-10">
+              <MotionWrapper direction="right">
+                <h2 className="text-5xl lg:text-8xl font-bold font-fredoka text-slate-900 leading-[0.95] tracking-tight">
+                  {t.form.title}
+                </h2>
+                <p className="text-lg lg:text-2xl text-slate-500 font-medium leading-relaxed max-w-xl mx-auto lg:mx-0 mt-8">
+                  {t.formSubtitle}
+                </p>
+              </MotionWrapper>
+
+              <div className="space-y-6 hidden lg:block pt-8">
+                <MotionWrapper delay={0.1} className="flex items-center gap-6 text-slate-700 group">
+                  <div className="w-16 h-16 rounded-[1.5rem] bg-white shadow-sm flex items-center justify-center text-hikids-yellow group-hover:scale-110 transition-transform">
+                    <Send size={24} />
+                  </div>
+                  <span className="text-xl font-bold font-fredoka uppercase tracking-widest">{t.fastResponse}</span>
+                </MotionWrapper>
+                <MotionWrapper delay={0.2} className="flex items-center gap-6 text-slate-700 group">
+                  <div className="w-16 h-16 rounded-[1.5rem] bg-white shadow-sm flex items-center justify-center text-hikids-blue group-hover:scale-110 transition-transform">
+                    <Mail size={24} />
+                  </div>
+                  <span className="text-xl font-bold font-fredoka uppercase tracking-widest">{t.supportChannel}</span>
+                </MotionWrapper>
               </div>
             </div>
 
-            <div className="bg-white rounded-[3.5rem] p-10 lg:p-14 shadow-[0_40px_100px_rgba(0,0,0,0.08)] border border-slate-100 relative group transition-all hover:shadow-[0_45px_120px_rgba(0,0,0,0.12)]">
-              <ContactForm dict={t.form} />
-            </div>
+            <MotionWrapper type="scale" delay={0.3} className="relative">
+              <div className="absolute -inset-4 bg-white/50 blur-2xl rounded-[4rem] -z-10" />
+              <div className="bg-white rounded-[4rem] p-10 lg:p-16 shadow-[0_40px_100px_rgba(0,0,0,0.06)] border border-slate-100 group transition-all hover:shadow-[0_45px_120px_rgba(0,0,0,0.1)]">
+                <ContactForm dict={t.form} />
+              </div>
+            </MotionWrapper>
           </div>
         </div>
-
-        {/* Floaties */}
-        <div className="absolute top-[20%] left-[5%] animate-float pointer-events-none opacity-20 hidden xl:block">
-           <Image src="/images/1.png" alt="" width={150} height={150} className="grayscale brightness-110" />
-        </div>
       </section>
-    </>
+    </div>
   );
 }

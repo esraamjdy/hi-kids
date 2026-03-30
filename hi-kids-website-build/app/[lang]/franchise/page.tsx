@@ -10,9 +10,13 @@ import { MotionWrapper, MotionContainer, MotionItem } from "@/components/motion-
 import { CtaCard } from "@/components/cta-card";
 import { AnimatedCounter } from "@/components/animated-counter";
 
-export const metadata: Metadata = {
-  title: "Open a HiKids Kindergarten | Franchise Opportunities",
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const dict = await getDictionary(lang as any);
+  return {
+    title: dict.franchise.landing.metaTitle,
+  };
+}
 
 export default async function FranchiseLandingPage({
   params,
@@ -50,48 +54,47 @@ export default async function FranchiseLandingPage({
     <div className="bg-white overflow-hidden selection:bg-hikids-blue/20">
 
       {/* ─── HERO ─── */}
-      <section className="relative min-h-[35vh] lg:min-h-[50vh] flex items-center overflow-hidden bg-[#00AEEF] py-4 lg:py-8">
-
+      <section className="relative min-h-[40vh] lg:min-h-[55vh] flex items-center overflow-visible bg-[#00AEEF] py-12 lg:py-20">
         <div className="relative mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 z-10 w-full">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-center">
 
-            {/* Left Visual: Stats or Mascot */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-start order-1">
-              <MotionWrapper type="scale" delay={0.4} className="relative w-[350px] h-[350px] lg:w-[700px] lg:h-[700px] lg:-ml-32">
+            {/* Left Visual: Clear Alignment */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-start">
+              <MotionWrapper type="fade" className="relative w-full max-w-[18rem] sm:max-w-sm md:max-w-md lg:max-w-[32rem] xl:max-w-[38rem] aspect-square z-10">
                 <Image
                   src="/images/Holding-hand.png"
-                  alt="Moka"
+                  alt={t.altHoldingHand}
                   fill
-                  className="object-contain drop-shadow-2xl"
+                  className="object-contain drop-shadow-2xl scale-[1.1] lg:scale-[1.2] xl:scale-[1.3] origin-center lg:origin-left"
                 />
               </MotionWrapper>
             </div>
 
             {/* Right Content */}
-            <div className="lg:col-span-7 space-y-8 text-center lg:text-left order-2 lg:-mr-32 relative z-10">
-              <MotionWrapper direction="left" delay={0.2}>
-                <div className="space-y-6">
-                  {/* Tag Removed */}
-                  <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.05] tracking-tight text-balance">
-                    {t.title.split(' ').slice(0, -1).join(' ')} <br className="hidden lg:block" />
-                    <span className="text-hikids-yellow text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
+            <div className="lg:col-span-7 space-y-10 text-center lg:text-left relative z-10 lg:translate-x-8 xl:translate-x-16">
+              <MotionWrapper direction="right">
+                <div className="space-y-8">
+                  <h1 className="text-6xl lg:text-7xl xl:text-[8rem] font-fredoka font-bold text-slate-900 leading-[0.9] tracking-tight text-balance">
+                    {t.title.split(' ').slice(0, -2).join(' ')} <br className="hidden lg:block" />
+                    {t.title.split(' ').slice(-2, -1).join(' ')} 
+                    <span className="text-hikids-yellow inline-block transition-transform hover:scale-105 hover:-rotate-1 duration-300 ml-4 py-2"
                       style={{
-                        WebkitTextStroke: "12px #0056b3",
+                        WebkitTextStroke: "12px #0f172a",
                         paintOrder: "stroke fill",
-                        filter: "drop-shadow(0 8px 0 rgba(0,0,0,0.1))"
+                        filter: "drop-shadow(6px 10px 0 #0f172a)"
                       }}>
                       {t.title.split(' ').slice(-1).join(' ')}
                     </span>
                   </h1>
-                  <p className="text-lg lg:text-3xl text-white leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium opacity-90">
+                  <p className="text-xl lg:text-3xl text-white leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium opacity-95">
                     {t.subtitle}
                   </p>
-                  <div className="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
+                  <div className="pt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
                     <Link
                       href={`/${lang}/franchise/inquiry`}
-                      className="btn-primary !bg-slate-900 !text-white px-12 py-5 text-xl tracking-tight !rounded-3xl hover:scale-105 transition-transform"
+                      className="group relative bg-slate-900 text-white px-16 py-7 rounded-[3rem] text-2xl font-black transition-all hover:scale-105 active:scale-95 text-center flex items-center justify-center gap-4 hover:bg-hikids-yellow hover:text-slate-900 shadow-2xl"
                     >
-                      {t.cta} <ArrowRight className="h-6 w-6 ml-2" />
+                      {t.cta} <ArrowRight className="h-8 w-8 transition-transform group-hover:translate-x-2" />
                     </Link>
                   </div>
                 </div>
@@ -109,7 +112,7 @@ export default async function FranchiseLandingPage({
 
       {/* ─── GROWTH STATS ─── */}
       <section className="py-4 lg:py-8 bg-white relative overflow-hidden">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10 w-full">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {t.stats.map((stat: any, i: number) => {
               const Icon = statsIcons[i];
@@ -139,9 +142,9 @@ export default async function FranchiseLandingPage({
 
       {/* ─── THE MODEL – ZigZag ─── */}
       <section className="py-4 lg:py-16 bg-blue-50 relative overflow-hidden">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-16 relative z-10 w-full">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-16 xl:px-24 relative z-10 w-full">
           <div className="text-center mb-16">
-            <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight">
+            <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-800 leading-[1.1] tracking-tight">
               {dict.franchise.explore.title.split(' ').slice(0, -1).join(' ')} <span className="text-white text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
                 style={{
                   WebkitTextStroke: "12px #00AEEF",
@@ -166,7 +169,7 @@ export default async function FranchiseLandingPage({
                     {path.description}
                   </p>
                   <div className="inline-flex items-center text-hikids-blue font-bold text-lg group-hover:translate-x-2 transition-transform">
-                    Discover Plan <ArrowRight className="ml-2 h-5 w-5" />
+                    {dict.franchise.explore.discoverPlan} <ArrowRight className="ml-2 h-5 w-5" />
                   </div>
                 </Link>
               </MotionItem>
@@ -185,7 +188,7 @@ export default async function FranchiseLandingPage({
             {/* Left Column: Mascot */}
             <div className="relative w-full lg:w-1/2 flex justify-center lg:justify-center order-2 lg:order-1 mt-12 lg:mt-0">
               <MotionWrapper type="scale" className="relative w-[420px] h-[420px] lg:w-[850px] lg:h-[850px] lg:-ml-10 lg:-my-32 lg:-translate-y-12">
-                <Image src="/images/moka-and-olly.png" alt="Moka Plays" fill className="object-contain drop-shadow-2xl hover:scale-110 transition-transform duration-500 rotate-[-2deg]" />
+                <Image src="/images/moka-and-olly.png" alt={dict.franchise.landing.altMokaOlly} fill className="object-contain drop-shadow-2xl hover:scale-110 transition-transform duration-500 rotate-[-2deg]" />
               </MotionWrapper>
             </div>
 
@@ -194,7 +197,7 @@ export default async function FranchiseLandingPage({
               <MotionWrapper direction="left">
                 <div className="space-y-6">
                   {/* Tag Removed */}
-                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.05] tracking-tight">
+                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-900 leading-[1.05] tracking-tight">
                     {dict.franchise.legacy.title.split(' ').slice(0, -1).join(' ')} <br className="sm:hidden" />
                     <span className="text-hikids-yellow text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
                       style={{

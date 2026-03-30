@@ -39,7 +39,7 @@ export default async function WhatYouGetPage({
             <div className="flex-1 text-center lg:text-left pt-8">
               <MotionWrapper direction="right">
                 {/* Tag Removed */}
-                <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.1] tracking-tight text-balance">
+                <h1 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-900 leading-[1.1] tracking-tight text-balance">
                   {t.title.replace('?', '').split(' ').slice(0, -1).join(' ')} <span className="text-white text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
                     style={{
                       WebkitTextStroke: "12px #00AEEF",
@@ -74,7 +74,7 @@ export default async function WhatYouGetPage({
                   <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-sm border border-blue-200 text-hikids-blue group-hover:bg-[#00AEEF] group-hover:text-white transition-all duration-500 group-hover:scale-110">
                     <Icon size={32} />
                   </div>
-                  <h3 className="text-2xl lg:text-4xl font-fredoka font-black text-slate-900 mb-6 group-hover:text-hikids-blue transition-colors">
+                  <h3 className="text-2xl lg:text-4xl font-fredoka font-bold text-slate-900 mb-6 group-hover:text-hikids-blue transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-lg lg:text-2xl text-slate-600 leading-relaxed font-medium text-balance">
@@ -100,11 +100,11 @@ export default async function WhatYouGetPage({
             </div>
 
             {/* Right Column: Text */}
-            <div className="lg:col-span-7 space-y-10 order-1 lg:order-2 lg:pl-24">
+            <div className="lg:col-span-7 space-y-10 order-1 lg:order-2 lg:pl-12">
               <MotionWrapper direction="left">
                 <div className="space-y-6 text-center lg:text-left">
                   {/* Tag Removed */}
-                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-900 leading-[1.1] tracking-tight">
+                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-900 leading-[1.1] tracking-tight">
                     {t.cta.title.split(' ').slice(0, -2).join(' ')} <br className="sm:hidden" />
                     <span className="text-white text-6xl lg:text-8xl xl:text-[7rem] ml-2 inline-block transition-transform hover:scale-105 duration-300"
                       style={{

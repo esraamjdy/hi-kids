@@ -7,54 +7,70 @@
       "about": "Chi siamo",
       "franchise": "Franchise",
       "aboutKindergarten": "Informazioni sull'asilo",
-      "educators": "Educators",
-      "parents": "Parents",
-      "contact": "Contact",
+      "educators": "Educatori",
+      "parents": "Genitori",
+      "contact": "Contatti",
       "franchiseItems": {
-        "overview": "Overview",
-        "whyJoin": "Why Join HiKids",
-        "whatYouGet": "What You Get",
-        "model": "Franchise Model",
-        "inquiry": "Inquiry Form",
-        "brochure": "Download Brochure"
+        "overview": "Panoramica",
+        "whyJoin": "Perché noi",
+        "whatYouGet": "Cosa ottieni",
+        "model": "Il Modello",
+        "inquiry": "Modulo di contatto",
+        "brochure": "Brochure"
       },
       "educatorItems": {
-        "overview": "Overview",
-        "materials": "Free Materials",
-        "method": "Teaching Method",
-        "certification": "Certification"
+        "overview": "Panoramica",
+        "materials": "Materiali Gratuiti",
+        "podcast": "HiKids Podcast",
+        "method": "Metodo d'Insegnamento",
+        "certification": "Certificazione Online"
       },
       "parentItems": {
-        "overview": "Overview",
-        "findKindergarten": "Find a Kindergarten",
-        "learningLevels": "Learning Levels",
-        "whyChoose": "Why Choose HiKids",
-        "app": "HiKids App"
-      }
+        "overview": "Panoramica",
+        "findKindergarten": "Trova un asilo",
+        "learningLevels": "Livelli di Apprendimento",
+        "whyChoose": "Perché scegliere",
+        "app": "Applicazione HiKids",
+        "findUs": "Dove siamo",
+        "mobileApp": "App Mobile"
+      },
+      "educatorSub": "Formazione, materiale e certificazioni",
+      "parentSub": "Risorse per le famiglie e ricerca centri"
     },
     "cta": {
-      "learnMore": "Learn More",
-      "getStarted": "Get Started",
-      "contactUs": "Contact Us",
-      "downloadBrochure": "Download Brochure",
-      "applyNow": "Apply Now",
-      "findKindergarten": "Find a Kindergarten",
-      "forBusinessOwners": "For Business Owners",
-      "forEducators": "For Educators",
-      "forParents": "For Parents"
+      "learnMore": "Scopri di più",
+      "getStarted": "Inizia ora",
+      "contactUs": "Contattaci",
+      "downloadBrochure": "Scarica la brochure",
+      "applyNow": "Candidati ora",
+      "findKindergarten": "Trova un asilo",
+      "forBusinessOwners": "Per le Aziende",
+      "forEducators": "Per gli Educatori",
+      "forParents": "Per i Genitori"
     },
     "footer": {
-      "about": "About HiKids",
-      "aboutText": "HiKids is a modern kindergarten franchise bringing structured, progressive early education to communities worldwide.",
-      "quickLinks": "Quick Links",
-      "contactInfo": "Contact Info",
+      "about": "Informazioni su HiKids",
+      "aboutText": "HiKids è una moderna franchigia per l'infanzia che offre un'educazione strutturata e progressiva in tutto il mondo.",
+      "quickLinks": "Link rapidi",
+      "contactInfo": "Contatti",
       "email": "hello@hikids.com",
-      "phone": "+1 (555) 123-4567",
-      "address": "123 Education Lane, Learning City",
-      "followUs": "Follow Us",
-      "rights": "All rights reserved.",
+      "phone": "+39 02 1234 5678",
+      "address": "Via Torino 27, Milano",
+      "followUs": "Seguici",
+      "rights": "HiKids International. Tutti i diritti riservati.",
       "privacy": "Privacy Policy",
-      "terms": "Terms of Service"
+      "terms": "Termini di servizio",
+      "explore": "Esplora",
+      "support": "Supporto",
+      "location": "Sede",
+      "hq": "Sede HiKids International",
+      "trainingCenter": "Centri di Formazione Globali",
+      "tagline": "Potenzia ogni viaggio"
+    },
+    "mascot": {
+      "mokaDancing": "Moka che balla",
+      "mokaPlaying": "Moka che gioca",
+      "mokaHello": "Moka che saluta"
     },
     "languages": {
       "en": "English",
@@ -65,80 +81,85 @@
   },
   "home": {
     "hero": {
-      "title": "Shaping the Future of Early Education",
-      "subtitle": "HiKids brings a structured, progressive approach to kindergarten learning -- empowering children, educators, and communities around the world.",
-      "ctaFranchise": "For Business Owners",
-      "ctaEducators": "For Educators",
-      "ctaParents": "For Parents"
+      "titlePart1": "Plasmando il ",
+      "titleAccent": "futuro",
+      "titlePart2": " dell'educazione",
+      "subtitle": "HiKids porta un approccio strutturato e progressivo all'apprendimento infantile.",
+      "ctaFranchise": "Per gli Imprenditori",
+      "ctaEducators": "Per gli Educatori",
+      "ctaParents": "Per i Genitori"
     },
     "whatIs": {
-      "title": "What is HiKids?",
-      "subtitle": "A modern educational franchise built on progressive learning levels, designed to nurture every child's potential from their earliest years.",
-      "description": "HiKids combines structured curriculum with creative, play-based learning. Our method guides children through progressive developmental levels, ensuring each milestone is celebrated and built upon.",
+      "title": "Cos'è HiKids?",
+      "subtitle": "Una moderna franchigia educativa costruita su livelli di apprendimento progressivi.",
+      "description": "HiKids combina un curriculum strutturato con un apprendimento creativo basato sul gioco. Il nostro metodo guida i bambini attraverso livelli di sviluppo progressivi.",
       "levels": [
         {
           "name": "Explorers",
-          "age": "Ages 2-3",
-          "description": "Sensory discovery, basic social skills, and language foundations through guided play."
+          "age": "Età 2-3",
+          "description": "Scoperta sensoriale, abilità sociali di base e fondamenta linguistiche."
         },
         {
           "name": "Discoverers",
-          "age": "Ages 3-4",
-          "description": "Creative expression, early numeracy, and collaborative learning adventures."
+          "age": "Età 3-4",
+          "description": "Espressione creativa, primi numeri e avventure di apprendimento collaborativo."
         },
         {
           "name": "Innovators",
-          "age": "Ages 4-5",
-          "description": "Critical thinking, problem-solving, and pre-literacy skills for school readiness."
+          "age": "Età 4-5",
+          "description": "Pensiero critico, problem-solving e abilità di pre-scrittura."
         },
         {
           "name": "Leaders",
-          "age": "Ages 5-6",
-          "description": "Independence, advanced communication, and social-emotional leadership development."
+          "age": "Età 5-6",
+          "description": "Indipendenza, comunicazione avanzata e sviluppo della leadership."
         }
-      ]
+      ],
+      "globalNetwork": "Rete globale di asili",
+      "joinNetwork": "Unisciti a noi",
+      "levelLabel": "Livello"
     },
     "whyDifferent": {
-      "title": "Why HiKids is Different",
-      "subtitle": "We combine the best of modern early education with a proven franchise model.",
+      "title": "LA DIFFERENZA HIKIDS",
+      "subtitle": "Uniamo il meglio dell'educazione moderna con un modello di franchigia collaudato.",
       "features": [
         {
-          "title": "Structured Levels",
-          "description": "Four progressive learning stages ensure every child develops at the right pace with clear milestones."
+          "title": "Livelli strutturati",
+          "description": "Monitoraggio scientifico dei progressi per ogni fase dello sviluppo."
         },
         {
-          "title": "Modern Method",
-          "description": "Our curriculum blends Montessori-inspired independence with structured, evidence-based learning outcomes."
+          "title": "Metodo moderno",
+          "description": "Apprendimento digitale con contenuti interattivi e gamificati."
         },
         {
-          "title": "Brand Strength",
-          "description": "A recognizable, trusted brand with consistent quality across all locations worldwide."
+          "title": "Modello collaudato",
+          "description": "Un marchio costruito sul successo globale e l'eccellenza aziendale."
         },
         {
-          "title": "Teacher Support",
-          "description": "Comprehensive training, materials, and ongoing professional development for every educator."
+          "title": "Supporto insegnanti",
+          "description": "Formazione continua e una comunità di esperti globali."
         }
       ]
     },
     "audiences": {
-      "title": "How Can We Help You?",
-      "subtitle": "HiKids serves three communities. Find the path that's right for you.",
+      "title": "Come possiamo aiutarti?",
+      "subtitle": "HiKids serve tre comunità. Trova il percorso giusto per te.",
       "franchise": {
-        "title": "Business Owners",
-        "description": "Open a HiKids kindergarten in your community. Access our proven model, brand, and complete support system.",
-        "cta": "Explore Franchise",
-        "titleOwner": "Franchise"
+        "title": "Proprietari d'Azienda",
+        "description": "Apri un asilo HiKids. Accedi al nostro modello, marchio e sistema di supporto completo.",
+        "cta": "Esplora Franchise",
+        "titleOwner": "Aziende"
       },
       "educators": {
-        "title": "Educators",
-        "description": "Access free materials, teaching methods, and professional certification to elevate your early education practice.",
-        "cta": "Educator Resources",
+        "title": "Educatori",
+        "description": "Accedi a materiali gratuiti, metodi d'insegnamento e certificazione professionale.",
+        "cta": "Risorse Educatori",
         "titleOwner": "Educatori"
       },
       "parents": {
-        "title": "Parents",
-        "description": "Find a HiKids kindergarten near you, explore our learning levels, and stay connected through our app.",
-        "cta": "Parent Resources",
+        "title": "Genitori",
+        "description": "Trova un asilo HiKids, esplora i livelli di apprendimento e resta connesso tramite l'app.",
+        "cta": "Risorse Genitori",
         "titleOwner": "Genitori"
       }
     },
@@ -156,131 +177,147 @@
   },
   "about": {
     "hero": {
-      "title": "About HiKids",
-      "subtitle": "Dedicated to providing the highest quality early education through innovation, care, and community."
+      "title": "Dove la curiosità diventa capacità",
+      "subtitle": "Dedicati a fornire l'educazione della più alta qualità attraverso innovazione e cura."
     },
+    "metaTitle": "Su HiKids | Educazione Infantile Progressiva",
+    "leadershipLabel": "Leadership",
     "story": {
-      "title": "Our Story",
-      "subtitle": "A Legacy of Learning & Love",
-      "description": "HiKids was born from a vision to revolutionize early childhood education. What started as a single innovative center has grown into a global family of kindergartens, united by a belief that every child deserves a brilliant start. Our journey is one of continuous discovery, driven by the smiles of our children and the trust of our parents.",
+      "title": "La Nostra Storia",
+      "subtitle": "Un'eredità di apprendimento e amore",
+      "description": "HiKids è nata da una visione per rivoluzionare l'educazione dell'infanzia. Quello che è iniziato come un singolo centro innovativo è diventato una famiglia globale.",
       "achievements": [
         {
-          "label": "Years of Excellence",
+          "label": "Anni di Eccellenza",
           "value": "12+"
         },
         {
-          "label": "Global Locations",
+          "label": "Sedi Globali",
           "value": "50+"
         },
         {
-          "label": "Happy Children",
+          "label": "Bambini Felici",
           "value": "10,000+"
         },
         {
-          "label": "Certified Educators",
+          "label": "Educatori Certificati",
           "value": "500+"
         }
       ]
     },
     "mission": {
-      "title": "Our Mission",
-      "description": "To make world-class early education accessible to every child by empowering local entrepreneurs and educators with a proven, structured, and joyful learning system."
+      "title": "La Nostra Missione",
+      "description": "Rendere l'educazione dell'infanzia di classe mondiale accessibile a ogni bambino fornendo agli imprenditori locali un sistema di apprendimento gioioso."
     },
     "vision": {
-      "title": "Our Vision",
-      "description": "A world where every child has access to nurturing, progressive early education that celebrates their unique potential and prepares them for lifelong learning."
+      "title": "La Nostra Visione",
+      "description": "Un mondo dove ogni bambino ha accesso a un'educazione infantile stimolante e progressiva che celebra il suo potenziale unico."
     },
     "method": {
-      "title": "The HiKids Method",
-      "subtitle": "Our proprietary educational approach combines the best of modern pedagogy.",
+      "title": "Il Metodo HiKids",
+      "subtitle": "Il nostro approccio educativo combina il meglio della pedagogia moderna.",
       "pillars": [
         {
-          "title": "Play-Based Learning",
-          "description": "Children learn best through guided play experiences that stimulate curiosity and creativity."
+          "title": "Apprendimento basato sul Gioco",
+          "description": "I bambini imparano meglio attraverso esperienze di gioco guidate che stimolano la curiosità."
         },
         {
-          "title": "Progressive Milestones",
-          "description": "Clear developmental goals for each age group, with regular assessments and celebrations."
+          "title": "Traguardi Progressivi",
+          "description": "Obiettivi di sviluppo chiari per ogni fascia d'età, con valutazioni regolari."
         },
         {
-          "title": "Emotional Intelligence",
-          "description": "Social-emotional skills are woven into every activity, building empathy and self-awareness."
+          "title": "Intelligenza Emotiva",
+          "description": "Le abilità socio-emotive sono intrecciate in ogni attività."
         },
         {
-          "title": "Parent Partnership",
-          "description": "Regular communication and involvement keeps families connected to their child's learning journey."
+          "title": "Partnership con i Genitori",
+          "description": "La comunicazione regolare permette alle famiglie di rimanere connesse al percorso del bambino."
         }
       ]
     },
     "philosophy": {
-      "title": "Educational Philosophy",
-      "description": "We believe every child is born with incredible potential. Our role is to create safe, stimulating environments where that potential can flourish. The HiKids philosophy centers on respect for the child, structured exploration, and the joy of discovery.",
+      "title": "Filosofia Educativa",
+      "description": "Crediamo che ogni bambino nasca con un potenziale incredibile. Il nostro ruolo è creare ambienti sicuri e stimolanti.",
       "principles": [
-        "Every child learns at their own pace",
-        "Play is the language of childhood",
-        "Safety and trust are the foundation",
-        "Teachers are guides, not gatekeepers",
-        "Families are essential partners"
+        "Ogni bambino impara al proprio ritmo",
+        "Il gioco è il linguaggio dell'infanzia",
+        "La sicurezza e la fiducia sono le fondamenta",
+        "Gli insegnanti sono guide",
+        "Le famiglie sono partner essenziali"
       ]
     },
     "levels": {
-      "title": "Progressive Levels System",
-      "subtitle": "Our four-stage developmental journey ensures every child is supported and challenged appropriately."
+      "title": "Sistema di Livelli Progressivi",
+      "subtitle": "Il nostro viaggio di sviluppo in quattro fasi assicura un supporto adeguato."
     },
     "founder": {
-      "title": "Meet the Founder",
-      "name": "Dr. Sarah Miller",
-      "role": "Founder & Visionary",
-      "description": "With over 20 years of experience in early childhood development, Dr. Sarah Miller founded HiKids to bridge the gap between academic rigor and the pure joy of play. Her innovative approach has set new standards for early education worldwide.",
-      "quote": "Our goal isn't just to teach kids facts, but to nurture a life-long love for learning and discovery."
+      "title": "Costruire il Futuro",
+      "name": "Amy Szymanska",
+      "role": "Fondatrice & Visionaria",
+      "description": "Insieme, HiKids è più di semplici scuole. Siamo una comunità dedicata alla crescita della prossima generazione.",
+      "quote": "Il nostro obiettivo non è solo insegnare fatti ai bambini, ma nutrire un amore per l'apprendimento per tutta la vita."
     },
     "moka": {
-      "title": "Meet Moka",
-      "subtitle": "Your Learning Companion",
-      "description": "Moka is the heart and soul of the HiKids family. As our friendly mascot, Moka accompanies children through every level, making learning an adventure filled with curiosity and kindness.",
+      "title": "Incontra Moka",
+      "subtitle": "Il tuo compagno d'apprendimento",
+      "description": "Moka è il cuore e l'anima della famiglia HiKids. Come nostra amichevole mascotte, Moka accompagna i bambini in ogni livello.",
       "traits": [
         {
-          "title": "Inquisitive",
-          "description": "Always exploring new ideas and asking 'why'."
+          "title": "Curioso",
+          "description": "Sempre alla ricerca di nuove idee e chiede sempre 'perché'."
         },
         {
-          "title": "Empathetic",
-          "description": "Showing kindness and understanding to every friend."
+          "title": "Empatico",
+          "description": "Mostra gentilezza e comprensione verso ogni amico."
         },
         {
-          "title": "Courageous",
-          "description": "Facing new challenges with a smile and a positive heart."
+          "title": "Coraggioso",
+          "description": "Affronta le nuove sfide con un sorriso e un cuore positivo."
         }
       ]
+    },
+    "mascotAlt": {
+      "mokaMascot": "Mascotte Moka",
+      "mokaPicnic": "Moka al picnic",
+      "mission": "Missione",
+      "vision": "Visione",
+      "founder": "Amy - Fondatrice",
+      "flowers": "Fiori",
+      "mokaCalm": "Moka Calmo",
+      "eatingTogether": "Mangiare insieme"
     }
   },
   "franchise": {
     "landing": {
-      "title": "Open a HiKids Kindergarten",
-      "subtitle": "Join a growing network of passionate entrepreneurs bringing world-class early education to their communities.",
-      "cta": "Start Your Journey",
+      "title": "Guida il futuro dell'educazione",
+      "subtitle": "Unisciti a una rete crescente di imprenditori appassionati che portano un'educazione infantile di classe mondiale alle loro comunità.",
+      "cta": "Inizia il tuo viaggio",
+      "metaTitle": "Apri un asilo HiKids | Opportunità di franchising",
+      "altHoldingHand": "Opportunità di franchising",
+      "altMokaOlly": "Moka e Olly costruiscono il futuro",
       "stats": [
         {
           "value": "50+",
-          "label": "Locations"
+          "label": "Sedi"
         },
         {
           "value": "12",
-          "label": "Countries"
+          "label": "Paesi"
         },
         {
           "value": "10K+",
-          "label": "Children Served"
+          "label": "Bambini serviti"
         },
         {
           "value": "95%",
-          "label": "Partner Satisfaction"
+          "label": "Soddisfazione partner"
         }
       ]
     },
     "whyJoin": {
-      "title": "Why Join HiKids",
-      "subtitle": "A franchise opportunity built for impact and growth.",
+      "title": "Perché le unirsi a HiKids ?",
+      "subtitle": "Un'opportunità di franchising creata per impatto e crescita.",
+      "metaTitle": "Perché HiKids | Vantaggi del franchising",
       "features": [
         {
           "title": "Mercato in Crescita",
@@ -341,48 +378,53 @@
       }
     },
     "model": {
-      "title": "Franchise Model",
-      "subtitle": "A clear path from interest to opening day and beyond.",
+      "title": "Modello di franchising",
+      "subtitle": "Un percorso chiaro dall'interesse al giorno dell'apertura e oltre.",
       "steps": [
         {
-          "title": "Initial Inquiry",
-          "description": "Submit your application and have an introductory call with our franchise development team."
+          "title": "Richiesta iniziale",
+          "description": "Invia la tua candidatura e partecipa a una chiamata conoscitiva con il nostro team."
         },
         {
-          "title": "Discovery & Approval",
-          "description": "Learn about the model in depth, review territories, and receive formal approval to proceed."
+          "title": "Scoperta e approvazione",
+          "description": "Approfondisci il modello, esamina i territori e ricevi l'approvazione formale."
         },
         {
-          "title": "Agreement & Training",
-          "description": "Sign your franchise agreement and begin comprehensive owner and staff training."
+          "title": "Accordo e formazione",
+          "description": "Firma il contratto e inizia la formazione completa per proprietari e personale."
         },
         {
-          "title": "Setup & Launch",
-          "description": "Prepare your facility, hire staff, and launch with full marketing and operational support."
+          "title": "Configurazione e lancio",
+          "description": "Prepara la tua struttura, assumi il personale e lancia la tua attività con supporto completo."
         },
         {
-          "title": "Ongoing Growth",
-          "description": "Receive continuous support, curriculum updates, and business development guidance."
+          "title": "Crescita continua",
+          "description": "Ricevi supporto costante, aggiornamenti del curriculum e guida allo sviluppo aziendale."
         }
       ],
       "investment": {
-        "title": "Investment Overview",
-        "description": "Our franchise model is designed to be accessible with a clear return path. Contact us for detailed financial information tailored to your market.",
-        "cta": "Request Financial Details"
+        "title": "Panoramica dell'investimento",
+        "description": "Il nostro modello è progettato per essere accessibile con un percorso di rientro chiaro. Contattaci per dettagli finanziari.",
+        "cta": "Richiedi dettagli finanziari"
       }
     },
     "inquiry": {
-      "title": "Franchise Inquiry",
-      "subtitle": "Ready to bring HiKids to your community? Fill out the form below and our team will be in touch.",
+      "title": "Modulo di domanda",
+      "subtitle": "Pronto a portare HiKids nella tua comunità? Compila il modulo sottostante e il nostro team ti contatterà.",
+      "brochure": {
+        "title": "Hai bisogno di più informazioni?",
+        "description": "Scarica la nostra brochure completa per saperne di più sul modello HiKids e sulle opportunità.",
+        "button": "Scarica la brochure"
+      },
       "form": {
-        "name": "Full Name",
-        "email": "Email Address",
-        "phone": "Phone Number",
-        "country": "Country",
-        "message": "Tell us about yourself and your interest in HiKids",
-        "submit": "Submit Inquiry",
-        "success": "Thank you for your inquiry! Our team will contact you within 2 business days.",
-        "error": "Something went wrong. Please try again or email us directly."
+        "name": "Nome e cognome",
+        "email": "Indirizzo e-mail",
+        "phone": "Numero di telefono",
+        "country": "Paese",
+        "message": "Parlaci di te e del tuo interesse per HiKids",
+        "submit": "Invia candidatura",
+        "success": "Grazie per la tua candidatura! Il nostro team ti contatterà entro 2 giorni lavorativi.",
+        "error": "Qualcosa è andato storto. Riprova o inviaci un'e-mail direttamente."
       },
       "countries": [
         "United States",
@@ -402,147 +444,256 @@
       ]
     },
     "brochure": {
-      "title": "Download Our Franchise Brochure",
-      "subtitle": "Get a comprehensive overview of the HiKids franchise opportunity in one convenient document.",
-      "description": "Our brochure covers the HiKids method, franchise model, investment overview, and partner testimonials. No form required -- just click and download.",
-      "cta": "Download Brochure (PDF)",
-      "note": "Free download. No registration required."
+      "title": "Scarica la nostra brochure di franchising",
+      "subtitle": "Ottieni una panoramica completa dell'opportunità di franchising HiKids in un unico documento.",
+      "description": "La nostra brochure copre il metodo HiKids, il modello di franchising e l'investimento.",
+      "cta": "Scarica Brochure (PDF)",
+      "note": "Download gratuito. Nessuna registrazione richiesta."
     },
     "explore": {
-      "title": "Explore the Model"
+      "title": "Esplora il modello",
+      "discoverPlan": "Scopri il piano"
     },
     "legacy": {
-      "title": "Build your Legacy",
-      "subtitle": "Join our international family of successful educators and business owners."
+      "title": "Costruisci il tuo successo",
+      "subtitle": "Unisciti alla nostra famiglia internazionale di educatori e imprenditori di successo."
     }
   },
   "educators": {
     "landing": {
       "title": "For Educators",
       "subtitle": "Access free materials, proven teaching methods, and professional certification to elevate your early education practice.",
+      "heroTitle1": "Potenzia",
+      "heroTitle2": "la Tua Pratica",
+      "heroSubtitle": "Risorse professionali, certificazione globale e struttura di livello mondiale progettata da esperti.",
+      "pathwaysTitle1": "Il Tuo",
+      "pathwaysTitle2": "Percorso",
+      "ctaTitle1": "Migliora",
+      "ctaTitle2": "la Tua Pratica",
+      "ctaSubtitle": "Impara il metodo HiKids e ottieni la tua certificazione internazionale.",
+      "ctaBtn": "Ottieni Certificazione",
       "features": [
         {
-          "title": "Free Materials",
-          "description": "Download activity sheets, lesson structures, and classroom resources at no cost.",
-          "cta": "Browse Materials"
+          "title": "Materiali Gratuiti",
+          "description": "Scarica schede attività, strutture delle lezioni e risorse per la classe senza alcun costo.",
+          "cta": "Sfoglia"
         },
         {
-          "title": "Teaching Method",
-          "description": "Learn about the HiKids approach to progressive, play-based early education.",
-          "cta": "Explore Method"
+          "title": "Podcast HiKids",
+          "description": "Ascolta gli esperti discutere le ultime novità sull'educazione della prima infanzia e le innovazioni HiKids.",
+          "cta": "Ascolta Ora"
         },
         {
-          "title": "Certification",
-          "description": "Get certified in the HiKids method and stand out as a qualified early educator.",
-          "cta": "Get Certified"
+          "title": "Metodo di Insegnamento",
+          "description": "Scopri l'approccio HiKids all'educazione della prima infanzia progressiva e basata sul gioco.",
+          "cta": "Esplora"
+        },
+        {
+          "title": "Certificazione Online",
+          "description": "Ottieni la certificazione nel metodo HiKids e distinguiti come educatore qualificato.",
+          "cta": "Ottieni Certificazione"
         }
       ]
     },
     "materials": {
-      "title": "Free Educational Materials",
-      "subtitle": "High-quality resources to enhance your classroom, completely free.",
+      "title": "Materiali Gratuiti",
+      "subtitle": "Risorse di alta qualità per la tua classe, completamente gratuite.",
+      "heroTitle1": "Materiali",
+      "heroTitle2": "Gratuiti",
+      "standardAccess": "Accesso Standard",
+      "fileMeta": "PDF • 4.8MB",
+      "getFile": "SCARICA",
+      "premiumTag": "Libreria Premium",
+      "ctaTitle1": "Risorse per",
+      "ctaTitle2": "Esperti",
+      "ctaSubtitle": "Sblocca la nostra esclusiva collezione di guide internazionali per l'insegnamento e strumenti di valutazione.",
+      "ctaBtn": "Ottieni Accesso Certificato",
       "items": [
         {
-          "title": "Activity Sheets: Explorers Level",
-          "description": "Sensory and motor skill activities for ages 2-3.",
-          "type": "PDF"
+          "title": "Schede Attività Esploratori",
+          "description": "Attività sensoriali e motorie per età 2-3.",
+          "type": "Schede Attività"
         },
         {
-          "title": "Activity Sheets: Discoverers Level",
-          "description": "Creative expression and early numeracy activities for ages 3-4.",
-          "type": "PDF"
+          "title": "Schede Attività Scopritori",
+          "description": "Espressione creativa e prima numerazione per età 3-4.",
+          "type": "Schede Attività"
         },
         {
-          "title": "Lesson Plan Template",
-          "description": "A structured weekly lesson plan template following the HiKids method.",
-          "type": "PDF"
+          "title": "Schede Attività Innovatori",
+          "description": "Pensiero critico e attività di pre-alfabetizzazione per età 4-5.",
+          "type": "Schede Attività"
+        }
+      ]
+    },
+    "podcast": {
+      "title": "HiKids Podcast",
+      "subtitle": "Conversazioni stimolanti sull'educazione moderna, la crescita degli insegnanti e lo sviluppo dei bambini.",
+      "subscribe": "Iscriviti su",
+      "heroTitle1": "Audio",
+      "heroTitle2": "Approfondimenti",
+      "browseEpisodes": "Sfoglia gli episodi",
+      "ourEpisodes": "I Nostri Episodi",
+      "bannerTitle1": "Rimani Sempre",
+      "bannerTitle2": "Sincronizzato",
+      "listenNow": "ASCOLTA ORA",
+      "episodes": [
+        {
+          "title": "Il potere dei livelli progressivi",
+          "topic": "Pedagogia",
+          "description": "Discutere la transizione dagli Esploratori ai Leader con il nostro fondatore.",
+          "duration": "18 min"
         },
         {
-          "title": "Classroom Setup Guide",
-          "description": "How to organize your classroom for progressive learning levels.",
-          "type": "PDF"
+          "title": "Gestione della classe nel 2024",
+          "topic": "Pratica",
+          "description": "Strategie innovative per mantenere il coinvolgimento e l'ordine gioioso.",
+          "duration": "24 min"
         },
         {
-          "title": "Parent Communication Kit",
-          "description": "Templates for progress reports, newsletters, and parent meetings.",
-          "type": "PDF"
-        },
-        {
-          "title": "Assessment Toolkit",
-          "description": "Developmental milestone checklists and observation forms.",
-          "type": "PDF"
+          "title": "Il ruolo della tecnologia basata sul gioco",
+          "topic": "Tecnologia",
+          "description": "Come l'apprendimento digitale accelera la crescita socio-emotiva.",
+          "duration": "21 min"
         }
       ]
     },
     "method": {
       "title": "The HiKids Teaching Method",
       "subtitle": "A comprehensive approach to early education that brings out the best in every child.",
+      "heroTitle1": "Il Metodo",
+      "heroTitle2": "HiKids",
       "overview": "The HiKids method integrates structured curriculum with child-led exploration. Teachers act as facilitators, guiding children through carefully designed activities that build skills progressively across four developmental levels.",
+      "ctaTitle1": "Diventa un",
+      "ctaTitle2": "Facilitatore",
+      "ctaSubtitle": "Unisciti all'élite degli educatori globali che implementano il framework HiKids.",
+      "ctaBtn": "Candidati Ora",
       "sections": [
         {
-          "title": "Framework Overview",
-          "description": "Our curriculum is organized into thematic units that span all four learning levels. Each unit includes hands-on activities, group exercises, and individual exploration time."
+          "title": "Come Implementare",
+          "description": "Passaggi pratici per l'adozione quotidiana. Dalla teoria alla pratica in classe con i materiali HiKids.",
+          "content": [
+            {
+              "subtitle": "Passo 01. Configurazione Iniziale",
+              "text": "Organizza stazioni di apprendimento dinamiche personalizzate per le aree HiKids."
+            },
+            {
+              "subtitle": "Passo 02. Integrazione Quotidiana",
+              "text": "Integra perfettamente le nostre Schede Attività nelle tue lezioni giornaliere."
+            },
+            {
+              "subtitle": "Passo 03. Monitoraggio Progressi",
+              "text": "Utilizza metriche basate sull'osservazione per documentare i traguardi principali."
+            }
+          ]
         },
         {
-          "title": "Classroom Structure",
-          "description": "A typical HiKids day includes circle time, guided activities, free play, outdoor exploration, and reflection. The balance between structure and freedom is key to our approach."
+          "title": "Spiegazione del Framework",
+          "description": "Uno sguardo dettagliato alle nostre unità tematiche e a come si espandono per fasce d'età. Questo è il cuore del nostro motore educativo.",
+          "content": [
+            {
+              "subtitle": "Esploratori (2-3 Anni)",
+              "text": "Privilegia le abilità motorie globali e la scoperta sensoriale di base."
+            },
+            {
+              "subtitle": "Scopritori (3-4 Anni)",
+              "text": "Incoraggia l'espressione creativa, le basi del calcolo e il gioco cooperativo."
+            },
+            {
+              "subtitle": "Innovatori (4-5 Anni)",
+              "text": "Sviluppa pensiero critico, pre-alfabetizzazione e competenze socio-emotive avanzate."
+            }
+          ]
         },
         {
-          "title": "Assessment Approach",
-          "description": "We use observation-based assessment rather than testing. Teachers document children's progress through portfolios, milestone checklists, and regular parent conferences."
-        },
-        {
-          "title": "Inclusive Practice",
-          "description": "The HiKids method is designed to be adaptable for children with diverse learning needs. Differentiation strategies are built into every lesson plan."
+          "title": "Struttura della Classe",
+          "description": "L'organizzazione fisica e temporale di un ambiente HiKids. L'equilibrio tra struttura e libertà.",
+          "content": [
+            {
+              "subtitle": "Raccoglimento",
+              "text": "Momenti in gruppo, introduzione ai concetti quotidiani e sessioni collaborative."
+            },
+            {
+              "subtitle": "Gioco Libero",
+              "text": "Esplorazione non strutturata in stazioni sicure progettate per la scoperta autonoma."
+            },
+            {
+              "subtitle": "Sessioni Interattive",
+              "text": "Micro-lezioni guidate mirate a specifiche capacità cognitive dei bambini."
+            }
+          ]
         }
-      ]
+      ],
+      "phaseTag": "Fase"
     },
     "certification": {
-      "title": "HiKids Educator Certification",
-      "subtitle": "Become a certified HiKids educator and gain recognition for your commitment to quality early education.",
-      "description": "Our certification program covers the full HiKids method, including progressive learning levels, assessment techniques, and classroom management. Upon completion, you receive a digital certificate and access to our educator community.",
+      "title": "Certificazione",
+      "subtitle": "Ottieni la tua certificazione HiKids e mettiti in luce come educatore qualificato nella nostra rete.",
+      "description": "Il nostro programma di certificazione copre l'intero metodo HiKids, inclusi i livelli di apprendimento progressivi, le tecniche di valutazione e la gestione della classe. Al termine, riceverai un certificato digitale e l'accesso alla nostra comunità di educatori.",
       "benefits": [
-        "Comprehensive training in the HiKids method",
-        "Digital certificate upon completion",
-        "Access to exclusive educator community",
-        "Ongoing professional development resources",
-        "Priority consideration for HiKids positions"
+        "Formazione completa nel metodo HiKids",
+        "Certificato digitale al termine",
+        "Accesso alla comunità esclusiva degli educatori",
+        "Risorse continue per lo sviluppo professionale",
+        "Considerazione prioritaria per le posizioni HiKids"
       ],
-      "cta": "Request Certification Information",
-      "success": "Thank you! We've sent the certification program details to your email.",
-      "emailPlaceholder": "Enter your email address"
+      "cta": "Richiedi informazioni sulla certificazione",
+      "success": "Grazie! Abbiamo inviato i dettagli del programma di certificazione via email.",
+      "emailPlaceholder": "Inserisci il tuo indirizzo email",
+      "heroTitle1": "Ottieni il",
+      "heroTitle2": "Certificato",
+      "whyTitle": "Perché certificarsi?",
+      "verifiedTitle": "Eccellenza Verificata",
+      "verifiedDesc": "La tua certificazione è tracciata a livello globale e verifica la tua competenza nel modello pedagogico HiKids.",
+      "formLabel": "La Tua Email Professionale",
+      "formSubmit": "Candidati Ora",
+      "formLoading": "Elaborazione in corso...",
+      "formError": "Qualcosa è andato storto. Riprova.",
+      "successDesc": "Abbiamo ricevuto la tua richiesta. Controlla la tua casella di posta per i prossimi passi!"
     }
   },
   "parents": {
     "landing": {
       "title": "For Parents",
-      "subtitle": "Everything you need to support your child's learning journey with HiKids.",
+      "subtitle": "Tutto ciò di cui hai bisogno per supportare il percorso di apprendimento del tuo bambino con HiKids.",
       "features": [
         {
-          "title": "Find a Kindergarten",
-          "description": "Locate a HiKids kindergarten near you with our interactive map.",
-          "cta": "Find Nearby"
+          "title": "Trova un asilo",
+          "description": "Trova un asilo HiKids vicino a te sulla nostra mappa interattiva.",
+          "cta": "Trova nelle vicinanze"
         },
         {
-          "title": "Learning Levels",
-          "description": "Understand the four progressive stages your child will experience.",
-          "cta": "View Levels"
+          "title": "Livelli di apprendimento",
+          "description": "Comprendi le quattro fasi progressive dello sviluppo del tuo bambino.",
+          "cta": "Vedi i livelli"
         },
         {
-          "title": "Why Choose HiKids",
-          "description": "Discover what makes HiKids the right choice for your family.",
-          "cta": "Learn Why"
+          "title": "Perché HiKids",
+          "description": "Scopri cosa rende HiKids la scelta giusta per la tua famiglia.",
+          "cta": "Scopri perché"
         },
         {
-          "title": "HiKids App",
-          "description": "Stay connected to your child's progress with our mobile app.",
-          "cta": "Get the App"
+          "title": "App HiKids",
+          "description": "Resta aggiornato sui progressi del tuo bambino con la nostra applicazione.",
+          "cta": "Scarica l'app"
         }
-      ]
+      ],
+      "heroTitle1": "Un Futuro Splendido",
+      "heroTitle2": "Inizia Qui",
+      "portalTitle1": "Portale",
+      "portalTitle2": "Famiglia",
+      "ctaTitle1": "Il Successo",
+      "ctaTitle2": "Inizia",
+      "ctaSubtitle": "Il tuo bambino merita il miglior inizio. Unisciti alla nostra comunità progressista oggi stesso.",
+      "findCenter": "Trova un Centro"
     },
     "findKindergarten": {
-      "title": "Find a HiKids Kindergarten",
-      "subtitle": "Use the map below to find a HiKids location near you.",
+      "title": "Trova un asilo",
+      "subtitle": "Trova un asilo HiKids vicino a te con la nostra mappa interattiva.",
+      "findA": "Trova un",
+      "center": "Centro",
+      "mapTitle": "Mappa delle sedi HiKids",
+      "networkLabel": "Rete globale HiKids",
       "branches": [
         {
           "name": "HiKids London Central",
@@ -570,67 +721,84 @@
           "address": "27 Via Torino, Milan, Italy",
           "phone": "+39 02 1234 5678",
           "lat": 45.4642,
-          "lng": 9.1900
+          "lng": 9.19
         },
         {
           "name": "HiKids Berlin Mitte",
           "address": "5 Friedrichstrasse, Berlin, Germany",
           "phone": "+49 30 1234 5678",
-          "lat": 52.5200,
-          "lng": 13.4050
+          "lat": 52.52,
+          "lng": 13.405
         }
       ]
     },
     "learningLevels": {
-      "title": "Our Learning Levels",
-      "subtitle": "A progressive journey designed to meet your child where they are and take them where they can go.",
+      "title": "Livelli di Apprendimento",
+      "subtitle": "Scopri le quattro fasi progressive che il tuo bambino vivrà con HiKids.",
+      "journeyHeader": "Il Grande",
+      "journeyTitle": "Viaggio",
+      "pathTitle": "Il Percorso per",
+      "excellence": "l'Eccellenza",
+      "excellenceDesc": "Ogni livello è una porta verso il successivo, garantendo che il tuo bambino passi con fiducia e curiosità.",
+      "possibilitiesHeader": "Un Mondo di",
+      "possibilitiesTitle": "Possibilità",
+      "possibilitiesDesc": "Il nostro curriculum è una tabella di marcia viva, in costante evoluzione con i migliori standard internazionali.",
+      "possibilitiesBadges": [
+        "Curriculum Globale",
+        "Staff d'Élite",
+        "Rifugio Sicuro"
+      ],
+      "successHeader": "Inizia il tuo",
+      "successTitle": "Successo",
+      "successDesc": "Il viaggio di mille passi inizia con un singolo livello.",
+      "visitCenters": "Visita i Centri",
       "levels": [
         {
           "name": "Explorers",
-          "age": "Ages 2-3",
-          "focus": "Sensory Discovery",
-          "description": "Your child begins their learning journey through sensory play, basic social interactions, and language foundations. Every day is an adventure of discovery.",
+          "age": "Età 2-3 anni",
+          "focus": "Scoperta Sensoriale",
+          "description": "Il tuo bambino inizia il suo viaggio attraverso il gioco sensoriale, le interazioni sociali di base e le basi linguistiche. Ogni giorno è una scoperta.",
           "skills": [
-            "Fine motor development",
-            "Language foundations",
-            "Social awareness",
-            "Sensory exploration"
+            "Sviluppo motorio fine",
+            "Fondamenta del linguaggio",
+            "Consapevolezza sociale",
+            "Esplorazione sensoriale"
           ]
         },
         {
           "name": "Discoverers",
-          "age": "Ages 3-4",
-          "focus": "Creative Expression",
-          "description": "Children expand their world through creative arts, early numeracy, and collaborative play. They learn to express themselves and work with others.",
+          "age": "Età 3-4 anni",
+          "focus": "Espressione Creativa",
+          "description": "I bambini espandono il loro mondo attraverso le arti creative, il calcolo precoce e il gioco collaborativo. Imparano a esprimersi e a collaborare.",
           "skills": [
-            "Creative expression",
-            "Early numeracy",
-            "Collaborative play",
-            "Emotional regulation"
+            "Espressione creativa",
+            "Primi numeri",
+            "Gioco collaborativo",
+            "Regolazione emotiva"
           ]
         },
         {
           "name": "Innovators",
-          "age": "Ages 4-5",
-          "focus": "Critical Thinking",
-          "description": "Problem-solving, pre-literacy, and scientific thinking take center stage. Children learn to ask questions, test ideas, and think independently.",
+          "age": "Età 4-5 anni",
+          "focus": "Pensiero Critico",
+          "description": "Problem-solving e pensiero scientifico diventano centrali. I bambini imparano a porre domande e a pensare in modo indipendente.",
           "skills": [
-            "Pre-literacy skills",
-            "Problem-solving",
-            "Scientific thinking",
-            "Independence"
+            "Abilità di pre-scrittura",
+            "Risoluzione di problemi",
+            "Pensiero scientifico",
+            "Indipendenza"
           ]
         },
         {
           "name": "Leaders",
-          "age": "Ages 5-6",
-          "focus": "School Readiness",
-          "description": "The final stage prepares children for primary school with advanced communication, leadership skills, and a love for learning.",
+          "age": "Età 5-6 anni",
+          "focus": "Preparazione alla Scuola",
+          "description": "La fase finale prepara i bambini alla scuola primaria con comunicazione avanzata, leadership e amore per l'apprendimento.",
           "skills": [
-            "Advanced literacy",
-            "Mathematical thinking",
-            "Leadership skills",
-            "School transition readiness"
+            "Alfabetizzazione avanzata",
+            "Pensiero matematico",
+            "Capacità di leadership",
+            "Preparazione alla transizione"
           ]
         }
       ]
@@ -666,19 +834,32 @@
       ]
     },
     "app": {
-      "title": "The HiKids App",
-      "subtitle": "Stay connected to your child's learning journey, right from your phone.",
-      "description": "The HiKids app gives parents real-time updates on daily activities, progress reports, photo sharing, and direct messaging with teachers. It's the easiest way to stay involved in your child's education.",
+      "title": "L'App HiKids",
+      "subtitle": "Resta connesso al percorso del tuo bambino.",
+      "description": "L'app HiKids fornisce ai genitori aggiornamenti in tempo reale sulle attività quotidiane, rapporti sui progressi, condivisione di foto e messaggistica diretta con gli insegnanti.",
       "features": [
-        "Daily activity updates and photos",
-        "Progress tracking across learning levels",
-        "Direct messaging with teachers",
-        "Event calendar and reminders",
-        "Digital portfolio of your child's work"
+        "Aggiornamenti quotidiani e foto",
+        "Monitoraggio dei progressi del bambino",
+        "Messaggistica diretta con gli insegnanti",
+        "Calendario degli eventi e promemoria",
+        "Portfolio digitale del lavoro del bambino"
       ],
-      "downloadTitle": "Download the App",
-      "appStore": "Download on the App Store",
-      "googlePlay": "Get it on Google Play"
+      "downloadTitle": "Scarica l'applicazione",
+      "appStore": "App Store",
+      "googlePlay": "Google Play",
+      "metaTitle": "App HiKids | Resta Connesso",
+      "companionTitle1": "HiKids",
+      "companionTitle2": "Companion",
+      "stayConnectedTitle1": "Resta Connesso",
+      "stayConnectedTitle2": "A ogni passo.",
+      "secureTitle1": "Sicuro &",
+      "secureTitle2": "Protetto",
+      "secureSubtitle": "I tuoi dati sono crittografati e sicuri. Resta connesso in tutta tranquillità.",
+      "findCenterBtn": "Trova centro",
+      "downloadSubtitle": "Disponibile su iOS e Android. Favorisci il successo del tuo bambino con una connettività di classe mondiale.",
+      "newUpdate": "Nuovo Aggiornamento",
+      "childReportReady": "Il rapporto del bambino è pronto!",
+      "loginSecureAccess": "Login / Accesso Sicuro"
     }
   },
   "contact": {
@@ -686,35 +867,46 @@
     "subtitle": "We'd love to hear from you. Choose the category that best fits your inquiry.",
     "categories": [
       {
-        "title": "General Inquiries",
-        "description": "Questions about HiKids, our mission, or anything else.",
+        "title": "Richieste Generali",
+        "description": "Domande su HiKids o sulla nostra missione.",
         "email": "hello@hikids.com"
       },
       {
-        "title": "Franchise Inquiries",
-        "description": "Interested in opening a HiKids kindergarten? Let's talk.",
+        "title": "Richieste Franchising",
+        "description": "Interessato ad aprire un asilo HiKids?",
         "email": "franchise@hikids.com"
       },
       {
-        "title": "Educator Inquiries",
-        "description": "Questions about materials, certification, or teaching methods.",
+        "title": "Richieste Educatori",
+        "description": "Domande su materiali o metodi.",
         "email": "educators@hikids.com"
       },
       {
-        "title": "Press & Media",
-        "description": "Media inquiries, press kits, and partnership requests.",
+        "title": "Presa & Media",
+        "description": "Ufficio stampa e collaborazioni.",
         "email": "press@hikids.com"
       }
     ],
+    "heroSubtitle": "Hai una domanda sui nostri livelli, franchising o vuoi solo salutarci?",
+    "formSubtitle": "Pronto a unirti alla famiglia HiKids? Scrivici e il nostro team ti risponderà entro 24 ore.",
+    "fastResponse": "Risposta Rapida Garantita",
+    "supportChannel": "Supporto 24/7",
     "form": {
-      "title": "Send Us a Message",
-      "name": "Your Name",
-      "email": "Email Address",
-      "subject": "Subject",
-      "message": "Your Message",
-      "submit": "Send Message",
-      "success": "Thank you for your message! We'll get back to you within 24 hours.",
-      "error": "Something went wrong. Please try again."
+      "title": "Inviaci un messaggio",
+      "name": "Tuo Nome",
+      "email": "Indirizzo Email",
+      "subject": "Oggetto",
+      "message": "Tuo Messaggio",
+      "submit": "Invia Messaggio",
+      "success": "Grazie! Ti risponderemo entro 24 ore.",
+      "error": "Si è verificato un errore. Riprova.",
+      "sent": "Messaggio Inviato!",
+      "placeholders": {
+        "name": "Mario Rossi",
+        "email": "mario@esempio.com",
+        "subject": "Come possiamo aiutarti?",
+        "message": "Tuo messaggio qui..."
+      }
     }
   }
 }

@@ -60,7 +60,7 @@ export default async function HomePage({
               <MotionWrapper direction="right" delay={0.2} duration={1}>
                 <div className="space-y-4 max-w-2xl mx-auto lg:mx-0 relative z-10">
                   <h1 className="text-main-title text-slate-800 drop-shadow-sm leading-[1.05]">
-                    {lang === 'pl' ? 'Kształtując ' : 'Shaping the '}
+                    {t.hero.titlePart1}
                     <span
                       className="inline-block transition-transform hover:scale-105 duration-300"
                       style={{
@@ -69,10 +69,10 @@ export default async function HomePage({
                         paintOrder: "stroke fill",
                       }}
                     >
-                      {lang === 'pl' ? 'przyszłość' : 'Future'}
+                      {t.hero.titleAccent}
                     </span>
                     <br />
-                    {lang === 'pl' ? 'wczesnej edukacji' : 'of Early Education'}
+                    {t.hero.titlePart2}
                   </h1>
                   <p className="text-author text-slate-700 leading-relaxed max-w-lg mx-auto lg:mx-0 opacity-90">
                     {t.hero.subtitle}
@@ -153,7 +153,7 @@ export default async function HomePage({
 
               {/* Premium Standard Fredoka Heading */}
               <div className="text-center">
-                <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black leading-[1.1] tracking-tight text-center flex flex-wrap justify-center items-center gap-x-2">
+                <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold leading-[1.1] tracking-tight text-center flex flex-wrap justify-center items-center gap-x-2">
                   <span className="text-hikids-green">{t.pathways.title.split(' ').slice(0, -1).join(' ')} </span>
                   <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
                     style={{
@@ -221,7 +221,7 @@ export default async function HomePage({
 
 
                 <div className="mb-6 relative z-30 flex-1">
-                  <h3 className="text-3xl lg:text-4xl xl:text-5xl font-fredoka font-black leading-tight transition-transform hover:scale-105 duration-300 hyphens-auto break-words"
+                  <h3 className="text-3xl lg:text-4xl xl:text-5xl font-fredoka font-bold leading-tight transition-transform hover:scale-105 duration-300 hyphens-auto break-words"
                     style={{
                       color: "#00aae5",
                       WebkitTextStroke: "10px #fff",
@@ -333,7 +333,7 @@ export default async function HomePage({
 
 
                 <div className="mb-6 relative z-30 flex-1">
-                  <h3 className="text-3xl lg:text-4xl xl:text-5xl font-fredoka font-black leading-tight transition-transform hover:scale-105 duration-300 hyphens-auto break-words"
+                  <h3 className="text-3xl lg:text-4xl xl:text-5xl font-fredoka font-bold leading-tight transition-transform hover:scale-105 duration-300 hyphens-auto break-words"
                     style={{
                       color: "#ffc600",
                       WebkitTextStroke: "10px #fff",
@@ -444,7 +444,7 @@ export default async function HomePage({
 
 
                 <div className="mb-6 relative z-30 flex-1">
-                  <h3 className="text-3xl lg:text-4xl xl:text-5xl font-fredoka font-black leading-tight transition-transform hover:scale-105 duration-300 hyphens-auto break-words"
+                  <h3 className="text-3xl lg:text-4xl xl:text-5xl font-fredoka font-bold leading-tight transition-transform hover:scale-105 duration-300 hyphens-auto break-words"
                     style={{
                       color: "#fff78f",
                       WebkitTextStroke: "10px #fff",
@@ -530,8 +530,8 @@ export default async function HomePage({
               <div className="relative text-center items-center flex flex-col">
                 {/* Creative Background Glows */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/5 rounded-full blur-[80px] opacity-70 animate-pulse-slow pointer-events-none" />
-                <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black leading-[1.1] tracking-tight mb-4 relative z-10 w-full text-center flex justify-center items-center gap-2">
-                  <span>{t.whatIs.title.split(/Hi\s*Kids/i)[0]}</span>
+                <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold leading-[1.1] tracking-tight mb-4 relative z-10 w-full text-center flex justify-center items-center gap-2">
+                  <span>{t.whatIs.title.replace(/Hi\s*Kids/i, '').replace('?', '').trim()}</span>
                   <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl inline-block transition-transform hover:scale-105 duration-300"
                     style={{
                       WebkitTextStroke: "12px #00AEEF",
@@ -540,7 +540,7 @@ export default async function HomePage({
                     }}>
                     HiKids
                   </span>
-                  <span>?</span>
+                  <span>{t.whatIs.title.includes('?') ? '?' : ''}</span>
                 </h2>
               </div>
 
@@ -657,7 +657,7 @@ export default async function HomePage({
                       <div className="relative z-10">
                         <div className="flex flex-col gap-1 mb-6">
                           <span className="text-[10px] font-bold tracking-[0.2em] uppercase" style={{ color: hexColors[i] }}>
-                            Level 0{i + 1}
+                            {t.whatIs.levelLabel} 0{i + 1}
                           </span>
                           <h4 className="text-xl md:text-2xl font-black text-slate-800">
                             {level.age}
@@ -749,7 +749,7 @@ export default async function HomePage({
                   {/* Flexible Fancy Title Container (9-Slice Stretching Banner) */}
                   <div className="relative inline-flex flex-col items-center group mb-10">
                     {/* The Puffy Text Title */}
-                    <h2 className="relative z-10 text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black leading-tight tracking-tight select-none pt-2 px-4 whitespace-nowrap text-slate-900">
+                    <h2 className="relative z-10 text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold leading-tight tracking-tight select-none pt-2 px-4 whitespace-nowrap text-slate-900">
                       {dict.about.moka.title.split(' ')[0]} <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl ml-2 inline-block transition-transform hover:scale-105 duration-300"
                         style={{
                           WebkitTextStroke: "12px #fff",
@@ -809,7 +809,7 @@ export default async function HomePage({
               <MotionWrapper direction="right" delay={0.1}>
                 <div className="space-y-6">
                   {/* Tag Removed */}
-                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-slate-800 leading-[1.1] tracking-tight mb-4 flex flex-col items-start gap-y-2">
+                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-slate-800 leading-[1.1] tracking-tight mb-4 flex flex-col items-start gap-y-2">
                     <span className="text-[#FFEB00] text-6xl lg:text-8xl xl:text-9xl inline-block transition-transform hover:scale-105 duration-300"
                       style={{
                         WebkitTextStroke: "12px #fff",
@@ -849,7 +849,7 @@ export default async function HomePage({
               <MotionWrapper type="scale" delay={0.2} className="relative w-[600px] h-[600px] lg:w-[1300px] lg:h-[1300px] lg:-mr-40 lg:-mt-48">
                 <Image
                   src="/images/Moka-Dance.png"
-                  alt="Moka Dancing"
+                  alt={dict.common.mascot.mokaDancing}
                   fill
                   className="object-contain drop-shadow-2xl"
                 />
@@ -886,7 +886,7 @@ export default async function HomePage({
               <MotionWrapper type="scale" delay={0.2} className="relative w-[360px] h-[360px] lg:w-[650px] lg:h-[650px] lg:-ml-24">
                 <Image
                   src="/images/Moka-Plays.png"
-                  alt="Moka Playing"
+                  alt={dict.common.mascot.mokaPlaying}
                   fill
                   className="object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.2)]"
                 />
@@ -899,7 +899,7 @@ export default async function HomePage({
                 <div className="space-y-8">
                   {/* Tag Removed */}
 
-                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-black text-[#063354] leading-[1.05] tracking-tight">
+                  <h2 className="text-5xl lg:text-7xl xl:text-8xl font-fredoka font-bold text-[#063354] leading-[1.05] tracking-tight">
                     <span className="text-white mt-2 inline-block transition-transform hover:scale-105 duration-300"
                       style={{
                         WebkitTextStroke: "12px #00AEEF",
